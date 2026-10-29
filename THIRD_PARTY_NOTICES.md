@@ -26,6 +26,9 @@ copyright notices are in `src/fonts/LICENSE.txt`.
 - Aristotle, *Nicomachean Ethics*, ed. I. Bywater (1894), and Euripides, *Bacchae*, ed.
   G. Murray (1913), as published by the Perseus Digital Library.
 - Genesis 11:3 in the King James Version (1611).
+- One sentence of Darius I's Susa foundation charter (DSf §3j) in R. G. Kent's translation,
+  *Old Persian: Grammar, Texts, Lexicon* (1953), quoted with attribution as published at
+  avesta.org.
 
 Short dictionary glosses are cited from Liddell, Scott and Jones, *A Greek–English
 Lexicon* (9th ed.) and Lewis and Short, *A Latin Dictionary*, both through Logeion

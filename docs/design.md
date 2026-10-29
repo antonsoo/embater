@@ -32,5 +32,4 @@ the number of columns or the spacing re-derives the whole front.
 - A side elevation and section of each order, which would show the mutules' slope, the
   Ionic capital's cushion and the leaning of the entablature (III.5.13).
 - The stylobate's curvature and the entasis, whose diagrams Vitruvius promised and are lost.
-- A Persian plate (Persepolis), which would connect Greek stonecutters to Achaemenid
-  columns through Darius's Susa foundation charter.
+- A Roman plate for the arch and the vault, which Gonia's arch room already treats in depth.
