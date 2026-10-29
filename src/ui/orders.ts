@@ -252,6 +252,7 @@ export function mountOrders(root: HTMLElement): void {
   <form class="controls" aria-label="Drawing controls"></form>
   <div class="plate-wrap">
     <figure class="plate" id="plate"></figure>
+    <p class="readout" id="readout" aria-hidden="true">Point at a part to see its name; select it to read about it.</p>
     <p class="legend"><span class="ink-text">Black lines</span>: Vitruvius fixes the size. <span class="ink-chosen">Grey lines</span>: he names the part but leaves its form to the draughtsman. <span class="ink-dim">Red</span>: measurements in modules.</p>
   </div>
   <aside class="side">
@@ -267,7 +268,16 @@ export function mountOrders(root: HTMLElement): void {
   const plate = $("#plate", root);
   const card = $("#card", root);
   const key = $("#key", root);
+  const readout = $("#readout", root);
   let current: Built | null = null;
+
+  function showName(part: string | null | undefined): void {
+    const t = part ? term(part) : undefined;
+    const w = t?.words[0];
+    readout.innerHTML = t
+      ? `<b>${esc(t.english)}</b>${w ? ` <span lang="${w.lang}">${esc(w.word)}</span>${w.romanized ? ` <i>${esc(w.romanized)}</i>` : ""}: ${esc(w.literal)}` : ""}`
+      : "Point at a part to see its name; select it to read about it.";
+  }
 
   function controls(): string {
     const order = segment(
@@ -464,9 +474,11 @@ export function mountOrders(root: HTMLElement): void {
     if (part)
       for (const el of plate.querySelectorAll(`[data-part="${CSS.escape(part)}"]`))
         el.classList.add("hov");
+    showName(part);
   });
   plate.addEventListener("pointerleave", () => {
     for (const el of plate.querySelectorAll(".hov")) el.classList.remove("hov");
+    showName(null);
   });
   key.addEventListener("click", (event) => {
     const part = (event.target as Element).closest("button")?.dataset.part;
