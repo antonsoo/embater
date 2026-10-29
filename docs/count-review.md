@@ -56,3 +56,25 @@ Build with Node 24 or later: `npm ci && npm run check`. The production output is
 `dist/`. `npm run data:build` verifies every extracted quotation against the retained
 catalogue and regenerates the TypeScript data. Hosted-file and public-browser results
 are recorded separately in `docs/review/` after publication.
+
+## Public edition: 29 October 2026
+
+[Open the comparison](https://antonsoo.github.io/embater/compare.html). Source
+revision `1004ec903438e38ae7409724cab4c5f02c733db2` passed the checks in a clean
+Node 24.22.1 clone. Regenerating the catalogue caused no source change. All 35
+build files matched the working build and the canonical public files, including
+all five HTML pages, fonts, licenses and service worker.
+[Clean-build inventory](review/clean-build.json) and [public hashes](review/hosted.json).
+
+[Eight public browser contexts](review/public-browser.json) repeated the count
+changes, uncertain records, diagram enlargement and arrow-key panning, actual
+downloads and offline navigation. A phone can retain the overview or enlarge the
+diagram until each numbered space is readable.
+
+![The enlarged phone diagram can be panned with touch or arrow keys](assets/count-enlarged-phone.png)
+
+The legacy Pages deployment
+[succeeded](https://github.com/antonsoo/embater/actions/runs/40946502271).
+The source [CI run](https://github.com/antonsoo/embater/actions/runs/40946449051)
+returned failure with no executed steps. [Job receipt](review/ci.json).
+The clean-build and public-operation evidence above is independent of CI.
