@@ -1,4 +1,4 @@
-import{a as e,i as t,n,o as r,r as i}from"./rules-CaB3inR8.js";import{n as a,t as o}from"./card-BGb-ePBG.js";import{n as s,t as c}from"./world-C8n-wzuV.js";function l(e){let t=new URLSearchParams(location.hash.slice(1)).get(`plate`),r=s.find(e=>e.id===t)??s[0],l=null;e.innerHTML=`
+import{a as e,i as t,n,o as r,r as i}from"./rules-DI3JqaL1.js";import{n as a,t as o}from"./card-BfSHnho-.js";import{n as s,t as c}from"./world-bONZDfUi.js";function l(e){let t=new URLSearchParams(location.hash.slice(1)).get(`plate`),r=s.find(e=>e.id===t)??s[0],l=null;e.innerHTML=`
 <section class="lede">
   <h1>Other ancient builders, in their own words</h1>
   <p>Seven traditions beyond the Greek temple, each with a drawing and the names its builders used. These plates are schematic: unlike the Greek orders, they are not computed from an ancient rulebook, and grey marks what is reconstructed.</p>
