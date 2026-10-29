@@ -104,7 +104,7 @@ export function mountComparison(root: HTMLElement): void {
   root.innerHTML = `<section class="count-intro"><p class="count-kicker">A word changes the plan · Vitruvius III.4.3</p><h1>Count the spaces.</h1>
   <p>Six columns across the front. Twice as many along the side? Read the noun carefully: Vitruvius doubles the <i>intercolumnia</i>, the spaces between them. Try both readings, then put the rule beside a building record.</p></section>
   <section class="count-bench" aria-label="Compare a rule with a temple">
-    <div class="count-drawing"><figure id="count-plate"></figure><p class="count-limit">Equal spacing makes the counts visible. These are not measured plans; column counts alone do not give a building’s length or width.</p></div>
+    <div class="count-drawing"><div id="count-frame" class="count-frame" tabindex="0" role="region" aria-label="Count diagram; enlarge to read and pan"><figure id="count-plate"></figure></div><button type="button" id="count-zoom" aria-pressed="false" aria-controls="count-frame">Enlarge the diagram</button><p id="count-pan-hint" class="count-limit" hidden>Swipe or focus the diagram and use the arrow keys to pan.</p><p class="count-limit">Equal spacing makes the counts visible. These are not measured plans; column counts alone do not give a building’s length or width.</p></div>
     <aside class="count-controls">
       <fieldset class="count-reading"><legend>1. What do you double?</legend><label><input type="radio" name="reading" value="gaps"${reading === "gaps" ? " checked" : ""}> The spaces · Vitruvius</label><label><input type="radio" name="reading" value="columns"${reading === "columns" ? " checked" : ""}> The columns · a trial reading</label></fieldset>
       <p id="count-equation" class="count-equation" role="status" aria-live="polite"></p>
@@ -124,6 +124,14 @@ export function mountComparison(root: HTMLElement): void {
   <dl class="count-words"><div><dt lang="la">intercolumnia</dt><dd>spaces between columns; neuter plural</dd></div><div><dt lang="la">totidem bis</dt><dd>twice as many; the number of spaces</dd></div><div><dt lang="la">columnarum</dt><dd>of columns; the rival count he criticizes</dd></div></dl>
   <p>His separate description of the peripteral plan is explicit: <span lang="la">senas columnas</span>, six columns at each end, and <span lang="la">cum angularibus undenas</span>, eleven along the sides including the corners (III.2.5). <a href="./plans.html#type=peripteral">Explore the seven plan types</a>.</p>
   <p class="muted">${esc(attribution)} <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">License</a>. <a href="./plans.html#evidence">Date ranges, exclusions and the full method</a>.</p></section>`;
+  $("#count-zoom", root).addEventListener("click", () => {
+    const button = $("#count-zoom", root);
+    const enlarged = button.getAttribute("aria-pressed") !== "true";
+    button.setAttribute("aria-pressed", String(enlarged));
+    button.textContent = enlarged ? "Fit the diagram to the page" : "Enlarge the diagram";
+    $("#count-frame", root).classList.toggle("count-enlarged", enlarged);
+    $("#count-pan-hint", root).hidden = !enlarged;
+  });
   const include = root.querySelector<HTMLInputElement>("#include-uncertain");
   const eligible = () => FLANKS.filter((r) => include?.checked || r.status === "ok");
   function refreshRecords(): void {

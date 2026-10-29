@@ -32,6 +32,16 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         assert.equal(await page.locator('[data-diagram="11"] circle').count(), 30);
         assert.equal(await page.locator('[data-diagram="17"] circle').count(), 42);
         const gapTally = await page.locator("#count-tally").innerText();
+        await page.locator("#count-zoom").click();
+        assert.equal(await page.locator("#count-zoom").getAttribute("aria-pressed"), "true");
+        const frame = page.locator("#count-frame");
+        assert.ok(await frame.evaluate((e) => e.scrollWidth > e.clientWidth));
+        await frame.focus();
+        await page.keyboard.press("ArrowRight");
+        await page.waitForFunction(() => document.querySelector("#count-frame").scrollLeft > 0);
+        await page.screenshot({ path: `${output}/${id}-enlarged.png` });
+        await page.locator("#count-zoom").click();
+        assert.equal(await frame.evaluate((e) => e.scrollWidth <= e.clientWidth), true);
         await page.getByLabel("The columns · a trial reading", { exact: true }).check();
         assert.match(await page.locator("#count-equation").innerText(), /12 columns → 11 spaces/);
         assert.equal(await page.locator('[data-diagram="12"] circle').count(), 32);
@@ -136,6 +146,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           downloads: downloads.map((f) => f.split("/").pop()),
           offlinePages: 5,
           portableNetworkRequests: 0,
+          enlargedDiagramKeyboardPan: true,
           errors,
         });
         await context.close();

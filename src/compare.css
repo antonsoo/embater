@@ -22,6 +22,21 @@
   gap: 36px;
   align-items: start;
 }
+.count-drawing {
+  min-width: 0;
+}
+.count-frame {
+  overflow: auto;
+}
+.count-frame.count-enlarged {
+  max-height: 75vh;
+}
+.count-enlarged #count-plate {
+  min-width: 1140px;
+}
+#count-zoom {
+  margin-top: 14px;
+}
 #count-plate {
   margin: 0;
   background: #f8f9f5;
@@ -116,7 +131,8 @@
   margin-top: 24px;
 }
 .count-downloads button,
-#save-count-csv {
+#save-count-csv,
+#count-zoom {
   min-height: 44px;
   background: var(--sheet);
   border: 1px solid var(--rule);
@@ -126,7 +142,8 @@
   cursor: pointer;
 }
 .count-downloads button:hover,
-#save-count-csv:hover {
+#save-count-csv:hover,
+#count-zoom:hover {
   border-color: var(--caeruleum);
 }
 .count-population {

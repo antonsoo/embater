@@ -24,6 +24,7 @@ and new translation; the latter has not had a second philological review.
 built app in Chromium and Firefox at 1440 and 375 pixels in both themes.
 [Local results](review/count-browser.json) record eight contexts. Each context:
 
+- enlarges the diagram and pans it with the arrow keys, then restores the overview;
 - changes from eleven to twelve predicted columns, checks Aphaia's match, and
   changes back to the stated rule;
 - checks Priene, includes uncertain restorations, and selects an uncertain record
