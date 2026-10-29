@@ -1,0 +1,7 @@
+
+# Preserve redistributed license text byte-for-byte, including its original whitespace.
+public/FONT-LICENSE.txt -whitespace
+
+# Actual browser downloads retained as evidence, without text normalization.
+docs/review/selinus-reading.html -whitespace
+docs/review/temple-counts.csv -whitespace

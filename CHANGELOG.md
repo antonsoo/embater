@@ -2,6 +2,11 @@
 
 ## 0.1.0 (2026-10-29)
 
+- Count the spaces: compare two readings with individual Perseus temple records,
+  inspect uncertain restorations and save HTML, SVG and CSV source sheets.
+- Save all five pages for offline reading with complete-edition integrity checks.
+
+
 - Doric, Ionic, Corinthian and Tuscan fronts computed from Vitruvius's rules, with
   every part selectable and named in Greek and Latin.
 - The editors' corrections behind Vitruvius's printed totals (27 and 42, 19½ and

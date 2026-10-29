@@ -144,7 +144,7 @@ export function mountPlans(root: HTMLElement): void {
 
   root.innerHTML = `
 <section class="lede">
-  <h1>Seven plans, and the temples that broke the rule</h1>
+  <h1>Seven plans, and the buildings before the rule</h1>
   <p>Vitruvius names seven kinds of temple plan and gives each a Greek name. Choose one to see it laid out from his rules. Then check one of his rules against the temples themselves.</p>
 </section>
 <section class="bench">
@@ -159,8 +159,9 @@ export function mountPlans(root: HTMLElement): void {
   <aside class="side"><div class="card" id="plan-card"></div><div class="card part-card" id="part-card" hidden></div>
   <div class="key"><h2>Parts of the plan</h2><ul id="plan-key"></ul></div></aside>
 </section>
-<section class="evidence">
+<section class="evidence" id="evidence">
   <h2>Vitruvius against the buildings</h2>
+  <p><a href="./compare.html">Count the columns beside the rule →</a></p>
   <p class="evidence-lede">Vitruvius wants the long side of a peripteral temple to have twice as many intercolumniations as the front: six columns across, eleven down the side. He calls temples that simply double the columns a mistake, because "the length then appears to run on by one intercolumniation more than it should" (III.4.3). The Perseus Digital Library's catalogue of Greek buildings lists ${FLANKS.length} six-column peripteral temples with their column counts.</p>
   <figure class="chart" id="chart-flanks">${flankChart()}
     <figcaption>Each dot is a temple at the middle of its Perseus date range; the bar spans the range. Hollow: Perseus calls the restoration uncertain. Dots on one row are nudged apart to stay visible. Hover or focus a dot for the catalogue's own wording.</figcaption>
@@ -239,7 +240,7 @@ export function mountPlans(root: HTMLElement): void {
       })
       .join("");
     selectPart(part && parts.includes(part) ? part : null);
-    history.replaceState(null, "", `#type=${type}`);
+    if (location.hash !== "#evidence") history.replaceState(null, "", `#type=${type}`);
   }
 
   draw();

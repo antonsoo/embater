@@ -1,3 +1,5 @@
+import { setupOffline } from "../offline";
+
 export function esc(value: string): string {
   return value
     .replaceAll("&", "&amp;")
@@ -12,11 +14,12 @@ export function $(selector: string, root: ParentNode = document): HTMLElement {
   return el;
 }
 
-export type Page = "orders" | "plans" | "world" | "drill";
+export type Page = "orders" | "plans" | "compare" | "world" | "drill";
 
 const PAGES: [Page, string, string][] = [
   ["orders", "./", "Orders"],
   ["plans", "./plans.html", "Plans"],
+  ["compare", "./compare.html", "Count"],
   ["world", "./world.html", "World"],
   ["drill", "./drill.html", "Drill"],
 ];
@@ -38,12 +41,14 @@ export function masthead(current: Page): string {
 export function footer(): string {
   return `<footer class="foot">
   <p>Latin from F. Krohn's Teubner Vitruvius (1912); Greek senses from LSJ and Latin from Lewis &amp; Short, via Logeion; temple measurements from the Perseus Digital Library. English translations are new. <a href="https://github.com/antonsoo/embater">Source and notes</a>.</p>
-</footer>`;
+<p><a href="./LICENSE.txt">Code license</a> · <a href="./FONT-LICENSE.txt">Font licenses</a> · <a href="./THIRD_PARTY_NOTICES.txt">Text and data credits</a></p>
+<p id="offline-status" class="muted"></p></footer>`;
 }
 
 const THEME_KEY = "embater-theme";
 
 export function setupTheme(): void {
+  setupOffline();
   const root = document.documentElement;
   try {
     const saved = localStorage.getItem(THEME_KEY);

@@ -7,8 +7,7 @@
 
 ![A Doric hexastyle front computed from Vitruvius, with the triglyphs selected and their Greek name, sources and Euripides quotation beside it](docs/assets/orders-doric.png)
 
-Vitruvius wrote the only architectural treatise that survives from antiquity, and he
-builds a Doric temple from a single number. Divide the front into 42 parts; one part is
+Vitruvius’s Roman architectural treatise builds a Doric temple from a single number. Divide the front into 42 parts; one part is
 the module, which "in Greek is called *embatēr*". Every column, beam and groove follows.
 
 Most diagrams of the classical orders redraw Renaissance plates. Embater computes each
@@ -19,8 +18,28 @@ measurements of real temples.
 
 **[Open the site](https://antonsoo.github.io/embater/)**: [Orders](https://antonsoo.github.io/embater/) ·
 [Plans and evidence](https://antonsoo.github.io/embater/plans.html) ·
+[Count the spaces](https://antonsoo.github.io/embater/compare.html) ·
 [World](https://antonsoo.github.io/embater/world.html) ·
 [Drill](https://antonsoo.github.io/embater/drill.html)
+
+## Count the spaces
+
+Six columns enclose five spaces. Doubling those spaces predicts eleven columns
+along a side; doubling the columns gives twelve. [The comparison](https://antonsoo.github.io/embater/compare.html)
+lets you try both readings of III.4.3, choose any of the 31 Perseus records,
+include or exclude the two uncertain restorations, and inspect the exact source
+quotation. Four of the 29 unflagged records match eleven; four match twelve.
+These counts do not establish measured plan proportions or historical influence.
+
+Save the current comparison as a standalone illustrated HTML reading or SVG.
+The CSV contains the selected population, source quotations, URLs, uncertainties
+and computed counts. The reading opens offline and can be printed. All five app
+pages also work offline once the footer reports the complete edition saved;
+external source links still need a connection.
+
+![Vitruvius's eleven beside the seventeen of Selinus Temple C, with selectable readings and the source quotation](docs/assets/count-desktop.png)
+
+[Method, limitations and browser review](docs/count-review.md).
 
 ## What it shows
 
@@ -147,9 +166,8 @@ flowchart LR
   guttae under a regula, the acroteria and the leaves of a Corinthian capital to the
   draughtsman. All of these are drawn grey, and so is the horizontal placement of the
   volute's eye, a disputed reading.
-- **No framework.** Vite, TypeScript and hand-written SVG. About 60 KB of gzipped
-  JavaScript across the four pages, self-hosted fonts (EB Garamond, GFS Didot), no
-  network requests after load, no tracking.
+- **No framework.** Vite, TypeScript and hand-written SVG. Five pages, self-hosted fonts (EB Garamond, GFS Didot), complete
+  offline editions and no tracking.
 
 Tests (`npm test`, 35 of them) check the claims above, not just that things render:
 
