@@ -343,6 +343,118 @@ export const PLATES: Plate[] = [
     ],
   },
   {
+    id: "persia",
+    title: "Stone from Elam, carvers from Ionia",
+    place: "Persepolis and Susa, about 520–450 BCE",
+    lede: "The columned halls of the Persian kings stood on very tall, slender stone columns, each crowned by the foreparts of two bulls that carried the roof beams between their necks.",
+    paragraphs: [
+      "Darius I's foundation charter for his palace at Susa lists where everything came from: cedar from Lebanon, gold from Sardis and Bactria, lapis lazuli from Sogdiana, ivory from Nubia, Sind and Arachosia. Of the columns it says: 'The stone columns which were here wrought, a village named Abiradu, in Elam -- from there were brought. The stone-cutters who wrought the stone, those were Ionians and Sardians.'",
+      "The Ionians were Greeks of the Anatolian coast. Their Old Persian name, Yaunā, became the Persian and Arabic name for Greece, Yūnān. The volutes under the bulls have often been compared with the Ionic capital; the charter says who cut the stone, not whose design it was.",
+    ],
+    terms: [
+      {
+        id: "apadana",
+        english: "columned hall",
+        words: [
+          {
+            lang: "peo",
+            word: "𐎠𐎱𐎭𐎠𐎴",
+            romanized: "apadāna",
+            literal: "a hypostyle hall; a citadel",
+            source:
+              "Wiktionary; borrowed into Hebrew and Aramaic, and the ancestor of Persian ayvān",
+          },
+        ],
+        note: "A square hall of many columns, with porticoes on three sides, where the Persian kings received delegations.",
+      },
+      {
+        id: "stuna",
+        english: "column",
+        words: [
+          {
+            lang: "peo",
+            word: "𐎿𐎬𐎢𐎴𐎠",
+            romanized: "stūnā",
+            literal: "column, pillar",
+            source: "Wiktionary; it survives as Persian sotun",
+          },
+        ],
+        note: "Very tall and slender, fluted, on a bell-shaped base. Several stand at Persepolis today.",
+      },
+      {
+        id: "protome",
+        english: "double-bull capital",
+        words: [
+          {
+            lang: "grc",
+            word: "προτομή",
+            romanized: "protomē",
+            literal:
+              "the front part cut off: the head and forequarters of an animal, of bulls among others",
+            source: "LSJ",
+          },
+        ],
+        note: "Two kneeling bulls set back to back. The beam of the roof rested in the saddle between their necks.",
+      },
+      {
+        id: "persian-volute",
+        english: "volutes",
+        words: [],
+        note: "Paired vertical scrolls between the crown and the bulls. Their form has long been compared with Greek Ionic volutes.",
+      },
+      {
+        id: "crown",
+        english: "leaf crown",
+        words: [],
+        note: "A ring of drooping leaves and an upturned flower at the top of the shaft.",
+      },
+      {
+        id: "bell-base",
+        english: "bell base",
+        words: [],
+        note: "An inverted bell carved with petals, on a stepped plinth.",
+      },
+      {
+        id: "yauna",
+        english: "Ionians, the stonecutters",
+        words: [
+          {
+            lang: "peo",
+            word: "𐎹𐎢𐎴𐎠",
+            romanized: "Yaunā",
+            literal: "Ionian, Greek; on Darius's tomb a figure is labelled 'this is a Greek'",
+            source: "Wiktionary (DNa)",
+          },
+          {
+            lang: "peo",
+            word: "𐎿𐎱𐎼𐎭",
+            romanized: "Sparda",
+            literal: "Sardis; Lydia",
+            source: "Wiktionary",
+          },
+        ],
+        note: "The charter names Ionians and Sardians as the men who cut the stone columns.",
+        quote: {
+          text: "The stone columns which were here wrought, a village named Abiradu, in Elam -- from there were brought. The stone-cutters who wrought the stone, those were Ionians and Sardians.",
+          lang: "en",
+          translation:
+            "Darius on his palace at Susa. The columns came from Elam; the men who cut them came from the Greek coast and from Lydia.",
+          cite: "Darius I, Susa foundation charter (DSf) §3j, tr. R. G. Kent, Old Persian (1953)",
+        },
+      },
+    ],
+    sources: [
+      {
+        label: "Darius I, Susa foundation charter (DSf), Kent's translation at avesta.org",
+        url: "https://www.avesta.org/op/op.htm#dsf",
+      },
+      {
+        label: "Wiktionary: Old Persian apadāna",
+        url: "https://en.wiktionary.org/wiki/%F0%90%8E%A0%F0%90%8E%B1%F0%90%8E%AD%F0%90%8E%A0%F0%90%8E%B4",
+      },
+    ],
+  },
+  {
     id: "india",
     title: "An egg, an umbrella, a railing",
     place: "Sanchi, India, 3rd–1st century BCE",

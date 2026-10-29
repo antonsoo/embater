@@ -702,9 +702,189 @@ export function temploPlate(): Elevation {
   return plate(pieces, { x0: -2.5, x1: 102, y0: -0.8, y1: 40 });
 }
 
+export function persiaPlate(): Elevation {
+  const pieces: Piece[] = [];
+  const cx = 0;
+  // Stepped plinth and bell base with petals.
+  pieces.push(rect("bell-base", cx - 2.6, 0, 5.2, 0.5));
+  pieces.push(rect("bell-base", cx - 2.2, 0.5, 4.4, 0.45));
+  const bell: Pt[] = [[0, 0.95], ...quad([2.0, 0.95], [1.5, 2.4], [0.95, 3.0], 12), [0, 3.0]];
+  pieces.push(poly("bell-base", mirrored(cx, bell), true));
+  for (let k = -4; k <= 4; k++) {
+    const x = cx + k * 0.42;
+    pieces.push(
+      poly(
+        "bell-base",
+        [
+          [x - 0.2, 1.0],
+          [x, 2.6 - Math.abs(k) * 0.12],
+          [x + 0.2, 1.0],
+        ],
+        false,
+        "chosen",
+        "line",
+      ),
+    );
+  }
+  pieces.push(rect("bell-base", cx - 1.05, 3.0, 2.1, 0.3));
+  // A tall fluted shaft.
+  const top = 21;
+  pieces.push(
+    poly(
+      "stuna",
+      [
+        [cx - 0.85, 3.3],
+        [cx + 0.85, 3.3],
+        [cx + 0.78, top],
+        [cx - 0.78, top],
+      ],
+      true,
+    ),
+  );
+  for (let k = 0; k < 24; k++) {
+    const a = ((k + 0.5) / 24) * 2 * Math.PI - Math.PI;
+    if (Math.cos(a) <= 0.05) continue;
+    pieces.push(
+      poly(
+        "stuna",
+        [
+          [cx + 0.85 * Math.sin(a), 3.3],
+          [cx + 0.78 * Math.sin(a), top],
+        ],
+        false,
+        "text",
+        "line",
+      ),
+    );
+  }
+  pieces.push(
+    poly(
+      "stuna",
+      [
+        [cx + 0.35, 3.3],
+        [cx + 0.85, 3.3],
+        [cx + 0.78, top],
+        [cx + 0.32, top],
+      ],
+      true,
+      "chosen",
+      "shade",
+    ),
+  );
+  // Crown: drooping leaves, then an upturned flower.
+  for (let k = -3; k <= 3; k++) {
+    const x = cx + k * 0.32;
+    const path = quad([x, top], [x + k * 0.25, top + 1.4], [x + k * 0.42, top + 0.5], 8);
+    pieces.push(poly("crown", strip(path, 0.26, 0.6), true, "text", "ornament"));
+  }
+  const flower: Pt[] = [
+    [0, top + 1.0],
+    ...quad([0.7, top + 1.0], [1.5, top + 1.8], [1.6, top + 3.0], 10),
+    [0, top + 3.0],
+  ];
+  pieces.push(poly("crown", mirrored(cx, flower), true));
+  for (let k = -3; k <= 3; k++)
+    pieces.push(
+      poly(
+        "crown",
+        [
+          [cx + k * 0.2, top + 1.05],
+          [cx + k * 0.48, top + 2.95],
+        ],
+        false,
+        "chosen",
+        "line",
+      ),
+    );
+  // Block with paired vertical volutes.
+  const vb = top + 3.0;
+  pieces.push(rect("persian-volute", cx - 1.4, vb, 2.8, 3.6));
+  for (const side of [-1, 1] as const) {
+    const x = cx + side * 0.8;
+    for (const [y, dir] of [
+      [vb + 0.85, 1],
+      [vb + 2.75, -1],
+    ] as const) {
+      const pts: Pt[] = [];
+      for (let i = 0; i <= 60; i++) {
+        const t = (i / 60) * Math.PI * 4;
+        const r = 0.55 * (1 - i / 72);
+        pts.push([x + side * r * Math.sin(t), y - dir * r * Math.cos(t)]);
+      }
+      pieces.push(poly("persian-volute", pts, false, "text", "line"));
+    }
+    pieces.push(
+      poly(
+        "persian-volute",
+        [
+          [x + side * 0.55, vb + 0.85],
+          [x + side * 0.55, vb + 2.75],
+        ],
+        false,
+        "text",
+        "line",
+      ),
+    );
+  }
+  // Two kneeling bulls back to back; the roof beam rests in the saddle between their necks.
+  const by = vb + 3.6;
+  for (const side of [-1, 1] as const) {
+    const s = side;
+    const body: Pt[] = [
+      [cx, by],
+      [cx + s * 2.4, by],
+      [cx + s * 2.7, by + 0.6],
+      [cx + s * 2.4, by + 1.2],
+      [cx + s * 3.3, by + 1.5],
+      [cx + s * 3.6, by + 2.1],
+      [cx + s * 3.2, by + 2.4],
+      [cx + s * 2.6, by + 2.3],
+      [cx + s * 2.3, by + 2.9],
+      [cx + s * 1.8, by + 3.0],
+      [cx + s * 1.5, by + 2.3],
+      [cx + s * 0.6, by + 2.1],
+      [cx + s * 0.5, by + 1.7],
+      [cx, by + 1.7],
+    ];
+    pieces.push(poly("protome", body, true));
+    pieces.push(
+      poly(
+        "protome",
+        [
+          [cx + s * 2.35, by + 2.75],
+          [cx + s * 2.0, by + 3.5],
+          [cx + s * 2.5, by + 3.1],
+        ],
+        false,
+        "text",
+        "line",
+      ),
+    );
+    pieces.push(
+      poly(
+        "protome",
+        [
+          [cx + s * 1.1, by + 0.1],
+          [cx + s * 1.25, by + 0.8],
+          [cx + s * 2.2, by + 0.8],
+        ],
+        false,
+        "chosen",
+        "line",
+      ),
+    );
+    pieces.push(circlePiece("protome", cx + s * 2.95, by + 2.0, 0.09));
+  }
+  pieces.push(rect("apadana", cx - 0.62, by + 1.7, 1.24, 1.0, "chosen"));
+  pieces.push(rect("apadana", cx - 4.6, by + 2.7, 9.2, 0.9, "chosen"));
+  pieces.push(rect("apadana", cx - 5, -0.4, 10, 0.4, "chosen", "shade"));
+  return plate(pieces, { x0: -5.4, x1: 5.4, y0: -0.6, y1: by + 4.0 });
+}
+
 export const WORLD_DRAWINGS: Record<string, () => Elevation> = {
   egypt: egyptPlate,
   mesopotamia: zigguratPlate,
+  persia: persiaPlate,
   india: stupaPlate,
   china: hanPlate,
   mexico: temploPlate,

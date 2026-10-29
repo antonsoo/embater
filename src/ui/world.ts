@@ -12,7 +12,7 @@ export function mountWorld(root: HTMLElement): void {
   root.innerHTML = `
 <section class="lede">
   <h1>Other ancient builders, in their own words</h1>
-  <p>Five traditions far from Greece, each with a drawing and the names its builders used. These plates are schematic: unlike the Greek orders, they are not computed from an ancient rulebook, and grey marks what is reconstructed.</p>
+  <p>Six traditions beyond the Greek temple, each with a drawing and the names its builders used. These plates are schematic: unlike the Greek orders, they are not computed from an ancient rulebook, and grey marks what is reconstructed.</p>
 </section>
 <section class="bench">
   <form class="controls" aria-label="Tradition"><fieldset class="seg"><legend>Tradition</legend><div class="seg-row">${PLATES.map(

@@ -54,6 +54,9 @@ Some of what the vocabulary turns up:
 - **Egypt:** the plant columns of Karnak, and the Greek kitchen words for
   Egyptian monuments (πυραμίς is also a cake; ὀβελίσκος is a little roasting spit).
 - **Ur:** the ziggurat, whose Akkadian name *ziqqurratum* also named a ziggurat-shaped cake.
+- **Persepolis and Susa:** the double-bull column, and Darius's charter saying the
+  stone was cut by Ionians and Sardians. Their Old Persian name, *Yaunā*, became the
+  Persian and Arabic word for Greece.
 - **Sanchi:** the stupa as an egg (*aṇḍa*) under a royal umbrella (*chattra*).
 - **China:** a Han hall of the kind shown by clay tomb models.
 - **Tenochtitlan:** the Templo Mayor, seven temples built one inside the next.
