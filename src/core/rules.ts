@@ -475,6 +475,15 @@ const list: Rule[] = [
     english:
       "Lay out the length of the temple so that its width is half its length, and the cella itself a quarter longer than it is wide, including the wall in which the doors stand. The remaining three parts run forward as the pronaos to the antae of the walls, and the antae should be as thick as the columns.",
   },
+  {
+    id: "tholus",
+    cite: "IV.8.3",
+    page: 92,
+    latin:
+      "in medio tecti ratio ita habeatur, uti, quanta diametros totius operis erit futura, dimidia altitudo fiat tholi praeter florem",
+    english:
+      "In the middle of the roof let the rule be that the height of the dome, not counting the flower on top, is half the diameter of the whole work.",
+  },
 ];
 
 export const RULES: ReadonlyMap<string, Rule> = new Map(list.map((rule) => [rule.id, rule]));

@@ -110,6 +110,11 @@ body {
   stroke: var(--chosen);
 }
 
+.plate-svg [data-part="sphere"].line {
+  stroke-dasharray: 6 5;
+  opacity: 0.9;
+}
+
 .plate-svg .shade {
   fill: var(--hatch);
   stroke: none;

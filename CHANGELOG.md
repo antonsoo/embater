@@ -8,7 +8,7 @@
   29½, 11½, 18 and 24½), checked against the triglyph and intercolumniation arithmetic.
 - Vitruvius's seven temple plans, and two comparisons with the Perseus catalogue:
   flank column counts by date, and column slenderness.
-- Schematic plates for Egypt, Mesopotamia, Persia, India, China and Tenochtitlan
+- Schematic plates for Egypt, Mesopotamia, Rome, Persia, India, China and Tenochtitlan
   with sourced vocabulary.
 - The name of the part under the pointer appears below the drawing.
 - A spaced-repetition drill over every deck.

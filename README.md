@@ -54,6 +54,8 @@ Some of what the vocabulary turns up:
 - **Egypt:** the plant columns of Karnak, and the Greek kitchen words for
   Egyptian monuments (πυραμίς is also a cake; ὀβελίσκος is a little roasting spit).
 - **Ur:** the ziggurat, whose Akkadian name *ziqqurratum* also named a ziggurat-shaped cake.
+- **Rome:** a section through the Pantheon, where a sphere 43.3 metres across fits
+  inside, and Vitruvius's rule that a round temple's dome is a hemisphere.
 - **Persepolis and Susa:** the double-bull column, and Darius's charter saying the
   stone was cut by Ionians and Sardians. Their Old Persian name, *Yaunā*, became the
   Persian and Arabic word for Greece.

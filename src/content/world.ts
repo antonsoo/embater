@@ -343,6 +343,144 @@ export const PLATES: Plate[] = [
     ],
   },
   {
+    id: "rome",
+    title: "A sphere inside a temple",
+    place: "Rome, the Pantheon, early second century CE",
+    lede: "The Pantheon's rotunda is as high, up to the opening in its dome, as it is wide: about 43.3 metres. A ball that size would fit inside, resting on the floor.",
+    paragraphs: [
+      "Vitruvius tells the builder of a round temple to make the dome half as high as the whole building is wide: a hemisphere (IV.8.3). The Pantheon sets such a dome on a cylinder exactly as tall as the dome's radius, so the whole interior holds a sphere.",
+      "The dome is unreinforced concrete, thinning from about 6.4 metres at its base to 1.2 metres around the opening, which is ringed with stone 9.1 metres across. Latin caementum, the rough stone in such concrete, is the source of English 'cement'.",
+      "The inscription over the porch names Marcus Agrippa, but the building standing today is a second-century reconstruction, completed under Hadrian. Cassius Dio, writing about a century later, guessed that the name came from its vault, which 'resembles the heavens'.",
+    ],
+    terms: [
+      {
+        id: "pantheum",
+        english: "Pantheon",
+        words: [
+          {
+            lang: "la",
+            word: "Pantheum",
+            romanized: "Pantheum",
+            literal: "the classical Latin form of the name",
+            source: "Pliny, Natural History 36.38",
+          },
+          {
+            lang: "grc",
+            word: "Πάνθειον",
+            romanized: "Pantheion",
+            literal: "a temple or place consecrated to all the gods; 'esp. the Pantheon at Rome'",
+            source: "LSJ s.v. πάνθειος, citing Cassius Dio 53.27",
+          },
+        ],
+        note: "The rotunda: a drum wall 6.4 metres thick carrying the dome.",
+        quote: {
+          text: "M·AGRIPPA·L·F·COS·TERTIVM·FECIT",
+          lang: "la",
+          translation:
+            "Marcus Agrippa, son of Lucius, consul for the third time, made this. The words are Agrippa's; the building is a later rebuilding that kept them.",
+          cite: "Inscription on the frieze of the porch",
+        },
+      },
+      {
+        id: "tholus",
+        english: "dome",
+        words: [
+          {
+            lang: "la",
+            word: "tholus",
+            literal: "a dome, a cupola, a rotunda; borrowed from Greek",
+            source: "Lewis & Short",
+          },
+          {
+            lang: "grc",
+            word: "θόλος",
+            romanized: "tholos",
+            literal: "a round building with a conical roof, a rotunda",
+            source: "LSJ, citing the Odyssey 22.442",
+          },
+          {
+            lang: "la",
+            word: "caementum",
+            literal:
+              "rough unhewn stone, as from the quarry; from caedo, 'cut'; the source of English 'cement'",
+            source: "Lewis & Short",
+          },
+        ],
+        note: "Vitruvius's rule makes it a hemisphere: half as high as the building is wide. Here the inside of the dome is part of a sphere 43.3 metres across.",
+        rules: ["tholus"],
+      },
+      {
+        id: "oculus-dome",
+        english: "the opening",
+        words: [
+          {
+            lang: "la",
+            word: "oculus",
+            literal: "an eye; Lewis & Short relate it to Greek ὄσσε and English 'eye'",
+            source: "Lewis & Short",
+          },
+        ],
+        note: "The only window. The same Latin word names the eye at the centre of an Ionic volute.",
+      },
+      {
+        id: "lacunaria",
+        english: "coffers",
+        words: [
+          {
+            lang: "la",
+            word: "lacunar",
+            literal:
+              "a panelled ceiling, 'so called from its sunken spaces'; from lacuna, a hollow",
+            source: "Lewis & Short; Vitruvius IV.3.1",
+          },
+        ],
+        note: "Rings of sunken panels lighten the dome and draw the eye up toward the opening. They are drawn schematically.",
+      },
+      {
+        id: "rotunda",
+        english: "drum",
+        words: [
+          {
+            lang: "la",
+            word: "rotundus",
+            literal: "wheel-shaped, round; from rota, a wheel",
+            source: "Lewis & Short",
+          },
+        ],
+        note: "The cylindrical wall, as high as the dome's radius, with eight great niches carrying the thrust down to the ground.",
+      },
+      {
+        id: "porticus",
+        english: "porch",
+        words: [
+          {
+            lang: "la",
+            word: "porticus",
+            literal: "a walk roofed on columns, a colonnade; from porta, a gate",
+            source: "Lewis & Short",
+          },
+        ],
+        note: "A Greek-style temple front with granite Corinthian columns, eight across and two groups of four behind, set against a round building.",
+      },
+      {
+        id: "sphere",
+        english: "the sphere that fits",
+        words: [],
+        note: "The dashed circle is a sphere as wide as the rotunda: it touches the floor and the inside of the dome. Its size, 43.3 metres, is the building's width and height.",
+      },
+    ],
+    sources: [
+      {
+        label: "Pantheon, Rome: dimensions, inscription and dating, with references",
+        url: "https://en.wikipedia.org/wiki/Pantheon,_Rome",
+      },
+      {
+        label: "Vitruvius IV.8.3 on the round temple's dome (Krohn 1912, p. 92)",
+        url: "https://archive.org/details/vitruviidearchit00vitr_1",
+      },
+    ],
+  },
+  {
     id: "persia",
     title: "Stone from Elam, carvers from Ionia",
     place: "Persepolis and Susa, about 520–450 BCE",

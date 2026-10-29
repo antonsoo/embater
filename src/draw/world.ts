@@ -881,9 +881,108 @@ export function persiaPlate(): Elevation {
   return plate(pieces, { x0: -5.4, x1: 5.4, y0: -0.6, y1: by + 4.0 });
 }
 
+export function pantheonPlate(): Elevation {
+  const pieces: Piece[] = [];
+  const R = 21.65;
+  const wall = 6.4;
+  const oculus = 9.1 / 2;
+  // The drum, cut through, as high as the dome's radius.
+  for (const side of [-1, 1] as const) {
+    const x0 = side * R;
+    const x1 = side * (R + wall);
+    pieces.push(
+      poly(
+        "rotunda",
+        [
+          [x0, 0],
+          [x1, 0],
+          [x1, R + 1.5],
+          [x0, R],
+        ],
+        true,
+        "text",
+        "groove",
+      ),
+    );
+    pieces.push(
+      rect("rotunda", Math.min(x0, x1) + (side === 1 ? 0.6 : 0.6), 2, wall - 1.2, 9, "chosen"),
+    );
+  }
+  // The dome: inner hemisphere, outer surface thinning from 6.4 m to 1.2 m at the opening.
+  const inner: Pt[] = [];
+  const outer: Pt[] = [];
+  const top = Math.acos(oculus / R);
+  for (let i = 0; i <= 60; i++) {
+    const a = (i / 60) * top;
+    inner.push([R * Math.cos(a), R + R * Math.sin(a)]);
+    const t = a / top;
+    const thick = wall - (wall - 1.2) * t ** 0.8;
+    outer.push([(R + thick) * Math.cos(a), R + (R + thick) * Math.sin(a)]);
+  }
+  for (const side of [-1, 1] as const) {
+    const flip = (p: Pt): Pt => [side * p[0], p[1]];
+    pieces.push(
+      poly(
+        "tholus",
+        [...inner.map(flip), ...[...outer].reverse().map(flip)],
+        true,
+        "text",
+        "groove",
+      ),
+    );
+    // Coffers: five rings of sunken panels on the inner surface.
+    for (let k = 0; k < 5; k++) {
+      const a0 = 0.12 + k * 0.2;
+      const a1 = a0 + 0.13;
+      const d = 0.9;
+      const p = (a: number, r: number): Pt => flip([r * Math.cos(a), R + r * Math.sin(a)]);
+      pieces.push(
+        poly(
+          "lacunaria",
+          [p(a0, R), p(a0, R + d), p(a1, R + d), p(a1, R)],
+          true,
+          "chosen",
+          "solid",
+        ),
+      );
+    }
+  }
+  // The opening at the top.
+  pieces.push(rect("oculus-dome", -oculus, 2 * R - 0.4, 2 * oculus, 1.6, "text", "shade"));
+  // The sphere that fits inside.
+  pieces.push({
+    part: "sphere",
+    shape: { kind: "circle", cx: 0, cy: R, r: R },
+    given: "chosen",
+    ink: "line",
+  });
+  pieces.push(circlePiece("sphere", 0, R, 0.35, "chosen"));
+  // The porch on the left, schematic: two columns of its depth under a pediment roof.
+  const px0 = -(R + wall) - 16;
+  for (const x of [px0 + 1.2, px0 + 8.5]) {
+    pieces.push(rect("porticus", x - 0.75, 0, 1.5, 12.5));
+    pieces.push(rect("porticus", x - 1.1, 12.5, 2.2, 1.6, "chosen", "ornament"));
+  }
+  pieces.push(rect("porticus", px0 - 0.4, 14.1, 16.6, 2.4));
+  pieces.push(
+    poly(
+      "porticus",
+      [
+        [px0 - 0.8, 16.5],
+        [-(R + wall), 16.5],
+        [-(R + wall), 22.5],
+      ],
+      true,
+    ),
+  );
+  pieces.push(rect("rotunda", -(R + wall) - 14, -0.6, 2 * (R + wall) + 14, 0.6, "chosen", "shade"));
+  return plate(pieces, { x0: px0 - 1.5, x1: R + wall + 3, y0: -0.8, y1: 2 * R + 2 });
+}
+
 export const WORLD_DRAWINGS: Record<string, () => Elevation> = {
   egypt: egyptPlate,
   mesopotamia: zigguratPlate,
+  rome: pantheonPlate,
   persia: persiaPlate,
   india: stupaPlate,
   china: hanPlate,

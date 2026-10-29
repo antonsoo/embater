@@ -12,7 +12,7 @@ export function mountWorld(root: HTMLElement): void {
   root.innerHTML = `
 <section class="lede">
   <h1>Other ancient builders, in their own words</h1>
-  <p>Six traditions beyond the Greek temple, each with a drawing and the names its builders used. These plates are schematic: unlike the Greek orders, they are not computed from an ancient rulebook, and grey marks what is reconstructed.</p>
+  <p>Seven traditions beyond the Greek temple, each with a drawing and the names its builders used. These plates are schematic: unlike the Greek orders, they are not computed from an ancient rulebook, and grey marks what is reconstructed.</p>
 </section>
 <section class="bench">
   <form class="controls" aria-label="Tradition"><fieldset class="seg"><legend>Tradition</legend><div class="seg-row">${PLATES.map(
@@ -40,7 +40,7 @@ export function mountWorld(root: HTMLElement): void {
       for (const el of plateEl.querySelectorAll(`[data-part="${CSS.escape(id)}"]`))
         el.classList.add("sel");
       key.querySelector(`[data-part="${CSS.escape(id)}"]`)?.setAttribute("aria-pressed", "true");
-      card.innerHTML = termCard(t, { rules: false });
+      card.innerHTML = termCard(t);
     } else {
       card.innerHTML = `<article class="card-body"><h2 class="card-title">${esc(current.title)}</h2><p class="card-count">${esc(current.place)}</p><p class="card-note">${esc(current.lede)}</p><p class="card-hint">Select a part of the drawing, or a name below.</p></article>`;
     }
