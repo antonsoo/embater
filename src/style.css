@@ -4,6 +4,7 @@
   --ink: #1f2328;
   --ink-soft: #4a5058;
   --chosen: #8b9199;
+  --chosen-text: #626870;
   --rule: #c9cdc6;
   --caeruleum: #1f4e9c;
   --caeruleum-wash: rgba(31, 78, 156, 0.82);
@@ -23,6 +24,7 @@
     --ink: #dfe3dc;
     --ink-soft: #aab1ab;
     --chosen: #7d858d;
+    --chosen-text: #a3aab1;
     --rule: #39414b;
     --caeruleum: #86a8e6;
     --caeruleum-wash: rgba(110, 150, 225, 0.72);
@@ -40,6 +42,7 @@
   --ink: #dfe3dc;
   --ink-soft: #aab1ab;
   --chosen: #7d858d;
+  --chosen-text: #a3aab1;
   --rule: #39414b;
   --caeruleum: #86a8e6;
   --caeruleum-wash: rgba(110, 150, 225, 0.72);
@@ -287,9 +290,8 @@ main {
 
 .seg-row {
   display: flex;
-  border: 1px solid var(--rule);
-  border-radius: 3px;
-  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 1px 0 0 1px;
 }
 
 .seg label {
@@ -306,15 +308,12 @@ main {
 
 .seg span {
   display: block;
+  margin: -1px 0 0 -1px;
   padding: 0.28rem 0.75rem;
   font-size: 0.98rem;
-  border-left: 1px solid var(--rule);
+  border: 1px solid var(--rule);
   background: var(--sheet);
   color: var(--ink-soft);
-}
-
-.seg label:first-child span {
-  border-left: 0;
 }
 
 .seg input:checked + span {
@@ -417,7 +416,7 @@ main {
 }
 
 .ink-chosen {
-  color: var(--chosen);
+  color: var(--chosen-text);
 }
 
 .ink-dim {
@@ -473,7 +472,7 @@ main {
 
 .word-lang {
   font-size: 0.85rem;
-  color: var(--chosen);
+  color: var(--chosen-text);
 }
 
 .word-literal {
@@ -1152,6 +1151,6 @@ code {
 
 @media (max-width: 52rem) {
   .drill-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
