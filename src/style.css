@@ -1,0 +1,1156 @@
+:root {
+  --marble: #eceee9;
+  --sheet: #f8f9f5;
+  --ink: #1f2328;
+  --ink-soft: #4a5058;
+  --chosen: #8b9199;
+  --rule: #c9cdc6;
+  --caeruleum: #1f4e9c;
+  --caeruleum-wash: rgba(31, 78, 156, 0.82);
+  --minium: #b3321f;
+  --groove: #2a2f36;
+  --doric: #a0661a;
+  --ionic: #1f4e9c;
+  --display: "GFS Didot", "EB Garamond", Georgia, serif;
+  --text: "EB Garamond", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --marble: #151a20;
+    --sheet: #1b2128;
+    --ink: #dfe3dc;
+    --ink-soft: #aab1ab;
+    --chosen: #7d858d;
+    --rule: #39414b;
+    --caeruleum: #86a8e6;
+    --caeruleum-wash: rgba(110, 150, 225, 0.72);
+    --minium: #e5826c;
+    --groove: #0e1216;
+    --doric: #c08532;
+    --ionic: #6a90e8;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --marble: #151a20;
+  --sheet: #1b2128;
+  --ink: #dfe3dc;
+  --ink-soft: #aab1ab;
+  --chosen: #7d858d;
+  --rule: #39414b;
+  --caeruleum: #86a8e6;
+  --caeruleum-wash: rgba(110, 150, 225, 0.72);
+  --minium: #e5826c;
+  --groove: #0e1216;
+  --doric: #c08532;
+  --ionic: #6a90e8;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--marble);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+/* The engraved plate. Strokes stay a constant width however far the drawing is scaled. */
+.plate-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.plate-svg .pc {
+  vector-effect: non-scaling-stroke;
+  stroke-linejoin: round;
+}
+
+.plate-svg .solid {
+  fill: var(--sheet);
+  stroke: var(--ink);
+  stroke-width: 0.9px;
+}
+
+.plate-svg .solid.chosen,
+.plate-svg .ornament {
+  stroke: var(--chosen);
+}
+
+.plate-svg .ornament {
+  fill: var(--sheet);
+  stroke-width: 0.8px;
+}
+
+.plate-svg .groove {
+  fill: var(--groove);
+  stroke: none;
+}
+
+.plate-svg .line {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 0.55px;
+  opacity: 0.75;
+}
+
+.plate-svg .line.chosen {
+  stroke: var(--chosen);
+}
+
+.plate-svg .shade {
+  fill: var(--hatch);
+  stroke: none;
+}
+
+.plate-svg .hatch-line {
+  stroke: var(--ink);
+  opacity: 0.38;
+}
+
+.plate-svg .dim line {
+  stroke: var(--minium);
+  stroke-width: 0.8px;
+  vector-effect: non-scaling-stroke;
+}
+
+.plate-svg .dim text {
+  fill: var(--minium);
+  font-family: var(--text);
+  font-style: italic;
+  text-anchor: middle;
+}
+
+/* Page frame ------------------------------------------------------------- */
+
+a {
+  color: var(--caeruleum);
+  text-underline-offset: 0.18em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--caeruleum);
+  outline-offset: 2px;
+}
+
+.mast {
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand-greek {
+  font-family: var(--display);
+  font-size: 1.7rem;
+  letter-spacing: 0.01em;
+}
+
+.brand-name {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.pages {
+  display: flex;
+  gap: 1.4rem;
+  margin-left: auto;
+}
+
+.pages a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid transparent;
+}
+
+.pages a:hover {
+  color: var(--ink);
+}
+
+.pages a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.theme {
+  align-self: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.3rem;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.theme svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+}
+
+main {
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.lede {
+  max-width: 52rem;
+  padding: 1.6rem 0 0.4rem;
+}
+
+.lede h1 {
+  margin: 0 0 0.6rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+}
+
+.lede p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+[lang="grc"] {
+  font-family: var(--text);
+}
+
+/* EB Garamond's Latin locale forms turn u into v; readers expect the dictionary spelling. */
+[lang="la"] {
+  font-feature-settings: "locl" 0;
+  font-language-override: "ENG";
+}
+
+/* Bench: controls, plate, side panel ------------------------------------ */
+
+.bench {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  grid-template-areas:
+    "controls controls"
+    "plate side";
+  gap: 1rem 2rem;
+}
+
+.controls {
+  grid-area: controls;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.8rem 1.4rem;
+  padding: 0.8rem 0 0.4rem;
+}
+
+.seg {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.seg legend,
+.slider > span {
+  padding: 0;
+  margin-bottom: 0.25rem;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.seg-row {
+  display: flex;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.seg label {
+  position: relative;
+}
+
+.seg input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.seg span {
+  display: block;
+  padding: 0.28rem 0.75rem;
+  font-size: 0.98rem;
+  border-left: 1px solid var(--rule);
+  background: var(--sheet);
+  color: var(--ink-soft);
+}
+
+.seg label:first-child span {
+  border-left: 0;
+}
+
+.seg input:checked + span {
+  background: var(--ink);
+  color: var(--sheet);
+}
+
+.seg input:focus-visible + span {
+  outline: 2px solid var(--caeruleum);
+  outline-offset: -2px;
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  min-width: 14rem;
+}
+
+.slider input {
+  accent-color: var(--minium);
+}
+
+.check {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  padding-bottom: 0.3rem;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.check input {
+  accent-color: var(--minium);
+}
+
+.plate-wrap {
+  grid-area: plate;
+  min-width: 0;
+}
+
+.plate {
+  margin: 0;
+  padding: 1.2rem;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  outline: 1px solid var(--rule);
+  outline-offset: 4px;
+}
+
+.plate .pc {
+  cursor: pointer;
+  transition: fill 0.15s ease;
+}
+
+.plate .pc.hov.solid,
+.plate .pc.hov.ornament {
+  fill: color-mix(in srgb, var(--caeruleum) 16%, var(--sheet));
+}
+
+.plate .pc.sel.solid,
+.plate .pc.sel.ornament,
+.plate .pc.sel.groove {
+  fill: var(--caeruleum-wash);
+  stroke: var(--caeruleum);
+}
+
+.plate .pc.sel.line {
+  stroke: var(--caeruleum);
+  stroke-width: 1.6px;
+  opacity: 1;
+}
+
+.plate .pc.sel.shade {
+  fill: var(--caeruleum-wash);
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.2rem;
+  align-items: end;
+}
+
+.detail-grid.single {
+  grid-template-columns: 1fr;
+}
+
+.detail-grid .plate-svg {
+  max-height: 72vh;
+}
+
+.legend {
+  margin: 0.8rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.ink-text {
+  color: var(--ink);
+}
+
+.ink-chosen {
+  color: var(--chosen);
+}
+
+.ink-dim {
+  color: var(--minium);
+}
+
+.side {
+  grid-area: side;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  min-width: 0;
+}
+
+.card {
+  position: sticky;
+  top: 1rem;
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: var(--sheet);
+  border-top: 3px solid var(--caeruleum);
+}
+
+.card-hint {
+  margin: 0 0 0.6rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.card-title {
+  margin: 0 0 0.8rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.word {
+  margin-bottom: 0.75rem;
+}
+
+.word p {
+  margin: 0;
+}
+
+.word-native {
+  font-size: 1.45rem;
+}
+
+.word-rom {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.word-lang {
+  font-size: 0.85rem;
+  color: var(--chosen);
+}
+
+.word-literal {
+  font-style: italic;
+}
+
+.word-source {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.card-note {
+  margin: 0.9rem 0 0.6rem;
+}
+
+.quote {
+  margin: 0.8rem 0;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--rule);
+}
+
+.quote p {
+  margin: 0 0 0.3rem;
+}
+
+.quote p[lang="grc"] {
+  font-size: 1.12rem;
+}
+
+.quote-en {
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+}
+
+.quote cite {
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+
+.rule {
+  margin-top: 0.5rem;
+  font-size: 0.97rem;
+}
+
+.rule summary {
+  cursor: pointer;
+  color: var(--minium);
+  font-style: italic;
+}
+
+.rule p {
+  margin: 0.4rem 0;
+}
+
+.rule-la {
+  font-style: italic;
+}
+
+.rule-page {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.deeper {
+  margin: 0.8rem 0 0;
+  font-size: 0.97rem;
+}
+
+.key h2,
+.derivation h2 {
+  margin: 0 0 0.5rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.key ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 1rem;
+}
+
+.key li {
+  break-inside: avoid;
+}
+
+.key button {
+  width: 100%;
+  padding: 0.12rem 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.98rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.key button:hover .key-en,
+.key button[aria-pressed="true"] .key-en {
+  color: var(--caeruleum);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.key-native {
+  color: var(--ink-soft);
+}
+
+/* Below the bench ---------------------------------------------------------- */
+
+.below {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 2rem;
+  margin-top: 2.2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--rule);
+}
+
+.derivation {
+  max-width: 44rem;
+}
+
+.derivation p {
+  margin: 0 0 0.8rem;
+}
+
+.sum {
+  font-size: 1.25rem;
+  color: var(--minium);
+}
+
+.sum b {
+  color: var(--ink);
+}
+
+.readings {
+  border-collapse: collapse;
+  margin: 1rem 0 0.4rem;
+}
+
+.readings caption {
+  text-align: left;
+  font-style: italic;
+  color: var(--ink-soft);
+  padding-bottom: 0.3rem;
+}
+
+.readings th,
+.readings td {
+  padding: 0.3rem 1rem 0.3rem 0;
+  text-align: left;
+  border-top: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.readings th {
+  font-weight: 400;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.reading-note {
+  color: var(--ink-soft);
+}
+
+.facts {
+  margin: 0;
+}
+
+.facts div {
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.facts dt {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.foot {
+  max-width: 88rem;
+  margin: 0 auto;
+  padding: 1.2rem 1.5rem 2.4rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+/* Narrow screens ------------------------------------------------------------ */
+
+@media (max-width: 64rem) {
+  .bench,
+  .below {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "controls"
+      "plate"
+      "side";
+  }
+
+  .card {
+    position: static;
+  }
+}
+
+@media (max-width: 40rem) {
+  .mast {
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .pages {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    gap: 1.1rem;
+  }
+
+  .theme {
+    margin-left: auto;
+  }
+
+  main {
+    padding: 0 1rem 2rem;
+  }
+
+  .plate {
+    padding: 0.5rem;
+  }
+
+  .seg span {
+    padding: 0.28rem 0.55rem;
+  }
+
+  .slider {
+    min-width: 100%;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .key ul {
+    columns: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plate .pc {
+    transition: none;
+  }
+}
+
+/* Plans and evidence ---------------------------------------------------------- */
+
+.plan-plate .plate-svg {
+  max-height: 78vh;
+}
+
+.card-count {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.part-card {
+  position: static;
+  border-top-color: var(--rule);
+}
+
+.evidence {
+  max-width: 64rem;
+  margin-top: 3rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid var(--rule);
+}
+
+.evidence > h2 {
+  margin: 0 0 0.6rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.evidence-lede,
+.findings p {
+  max-width: 46rem;
+}
+
+.chart {
+  position: relative;
+  margin: 1.6rem 0 1rem;
+  padding: 1rem 1rem 0.6rem;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+}
+
+.chart figcaption {
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+  padding: 0.4rem 0.2rem 0;
+}
+
+.chart-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--text);
+}
+
+.ch-grid {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.ch-axis {
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+}
+
+.ch-tick,
+.ch-title {
+  fill: var(--ink-soft);
+  font-size: 13px;
+}
+
+.ch-title {
+  font-style: italic;
+}
+
+.ch-ref {
+  stroke: var(--minium);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+  opacity: 0.7;
+}
+
+.ch-ref.strong {
+  stroke-width: 2;
+  stroke-dasharray: none;
+  opacity: 1;
+}
+
+.ch-ref-label,
+.ch-ref.strong-label {
+  font-size: 13px;
+  font-style: italic;
+  fill: var(--ink-soft);
+}
+
+.ch-ref.strong-label {
+  fill: var(--ink);
+}
+
+.ch-band {
+  fill: var(--minium);
+  opacity: 0.1;
+}
+
+.ch-range {
+  stroke: var(--chosen);
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.ch-dot {
+  stroke: var(--sheet);
+  stroke-width: 2;
+}
+
+.ch-dot.single {
+  fill: var(--ink);
+}
+
+.ch-dot.doric {
+  fill: var(--doric);
+}
+
+.ch-dot.ionic {
+  fill: var(--ionic);
+}
+
+.ch-dot.hollow {
+  fill: var(--sheet);
+  stroke-width: 2;
+}
+
+.ch-dot.single.hollow {
+  stroke: var(--ink);
+}
+
+.ch-dot.doric.hollow {
+  stroke: var(--doric);
+}
+
+.ch-dot.ionic.hollow {
+  stroke: var(--ionic);
+}
+
+.ch-hit {
+  fill: transparent;
+}
+
+.ch-point {
+  cursor: default;
+  outline: none;
+}
+
+.ch-point:focus-visible .ch-dot {
+  stroke: var(--caeruleum);
+  stroke-width: 3;
+}
+
+.ch-label {
+  font-size: 12.5px;
+  fill: var(--ink-soft);
+}
+
+.ch-tooltip {
+  position: absolute;
+  z-index: 2;
+  width: 260px;
+  padding: 0.5rem 0.65rem;
+  background: var(--ink);
+  color: var(--sheet);
+  font-size: 0.88rem;
+  line-height: 1.35;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+.swatch {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  vertical-align: -0.05rem;
+}
+
+.swatch.doric {
+  background: var(--doric);
+}
+
+.swatch.ionic {
+  background: var(--ionic);
+  border-radius: 1px;
+  transform: rotate(45deg) scale(0.85);
+}
+
+.findings b {
+  font-weight: 600;
+}
+
+.data {
+  margin-top: 1.6rem;
+}
+
+.data summary {
+  cursor: pointer;
+  font-family: var(--display);
+  font-size: 1.15rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.93rem;
+}
+
+.data-table caption {
+  text-align: left;
+  font-style: italic;
+  color: var(--ink-soft);
+  padding-bottom: 0.3rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.35rem 0.6rem 0.35rem 0;
+  border-top: 1px solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+code {
+  font-size: 0.9em;
+}
+
+/* World ---------------------------------------------------------------------- */
+
+.world-plate .plate-svg {
+  max-height: 70vh;
+}
+
+.world-below h3 {
+  margin: 1.4rem 0 0.4rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.sources {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.97rem;
+}
+
+.words-title {
+  margin: 0 0 0.4rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.25rem;
+}
+
+.facts dd [lang] {
+  font-size: 1.1rem;
+}
+
+/* Drill ------------------------------------------------------------------------ */
+
+.drill-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.drill-plate .plate-svg {
+  max-height: 76vh;
+}
+
+.drill-plate .pc.miss.solid,
+.drill-plate .pc.miss.ornament,
+.drill-plate .pc.miss.groove {
+  fill: color-mix(in srgb, var(--minium) 45%, var(--sheet));
+  stroke: var(--minium);
+}
+
+.drill-q h2,
+.drill-boxes h2 {
+  margin: 0 0 0.8rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.35rem;
+}
+
+.options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.opt,
+.next {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.opt:hover:not(:disabled) {
+  border-color: var(--caeruleum);
+}
+
+.opt-native {
+  font-size: 1.3rem;
+}
+
+.opt-rom {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.opt.is-right {
+  border-color: var(--caeruleum);
+  box-shadow: inset 4px 0 0 var(--caeruleum);
+}
+
+.opt.is-wrong {
+  border-color: var(--minium);
+  box-shadow: inset 4px 0 0 var(--minium);
+}
+
+.opt:disabled {
+  cursor: default;
+}
+
+.find-word {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.verdict {
+  margin: 1.2rem 0 0.4rem;
+  font-family: var(--display);
+  font-size: 1.3rem;
+}
+
+.verdict.ok {
+  color: var(--caeruleum);
+}
+
+.verdict.no {
+  color: var(--minium);
+}
+
+.drill-feedback .card-body {
+  padding: 0.9rem 1rem;
+  background: var(--sheet);
+  border-top: 3px solid var(--caeruleum);
+}
+
+.next {
+  margin-top: 0.9rem;
+  background: var(--ink);
+  color: var(--sheet);
+}
+
+.drill-boxes {
+  margin-top: 2rem;
+}
+
+.box-row {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-end;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 4.2rem;
+}
+
+.box-bar {
+  width: 100%;
+  min-height: 2px;
+  background: var(--caeruleum);
+  border-radius: 3px 3px 0 0;
+}
+
+.box-n {
+  font-size: 1.05rem;
+}
+
+.box-label {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.2;
+}
+
+@media (max-width: 52rem) {
+  .drill-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,12 @@
+import "./fonts/fonts.css";
+import "./style.css";
+import { footer, masthead, setupTheme } from "./ui/dom";
+import { mountOrders } from "./ui/orders";
+
+const app = document.querySelector<HTMLDivElement>("#app");
+if (app) {
+  app.innerHTML = `${masthead("orders")}<main id="main"></main>${footer()}`;
+  setupTheme();
+  const main = app.querySelector<HTMLElement>("#main");
+  if (main) mountOrders(main);
+}
