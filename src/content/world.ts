@@ -269,6 +269,7 @@ export const PLATES: Plate[] = [
           },
         ],
         note: "From zaqārum, 'to build high'. The stages are solid: there is no room inside, only a shrine on top.",
+        deeper: { label: "Compare two sources for Babylon's tower in Gonia", url: "https://antonsoo.github.io/gonia/babylon.html" },
       },
       {
         id: "libittu",
