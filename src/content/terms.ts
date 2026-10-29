@@ -256,7 +256,7 @@ export const GREEK_TERMS: Term[] = [
         source: "Vitruvius IV.3.4, III.5.8",
       },
     ],
-    note: "The beam that spans from column to column. In the Doric order it is one module high; in the Ionic its height depends on how tall the columns are in feet, and Vitruvius's table jumps by almost half at fifteen feet.",
+    note: "The beam that spans from column to column. In the Doric order it is one module high; in the Ionic its height depends on how tall the columns are in feet, and Vitruvius's table jumps by about half at fifteen feet.",
     rules: ["doric-epistyle", "ionic-epistyle"],
   },
   {
@@ -341,7 +341,7 @@ export const GREEK_TERMS: Term[] = [
         source: "Vitruvius IV.3.5",
       },
     ],
-    note: "One module wide and a module and a half high, set over every column and between them. Vitruvius explains it as a board nailed over the cut end of a roof beam and 'painted with blue wax' (IV.2.2). Because the corner triglyph must sit at the corner, it cannot also sit over the corner column's centre: the famous Doric corner problem.",
+    note: "One module wide and a module and a half high, set over every column and between them. Vitruvius explains it as a board nailed over the cut end of a roof beam and 'painted with blue wax' (IV.2.2). Greek builders put the last triglyph at the very corner, where it cannot also sit over the corner column's centre: the Doric corner problem. Vitruvius keeps it over the column and ends the frieze with a half-metope.",
     rules: ["doric-triglyph", "triglyph-origin"],
     quote: {
       text: "αἰρέσθω λαβὼν πηκτῶν πρὸς οἴκους κλιμάκων προσαμβάσεις, ὡς πασσαλεύσῃ κρᾶτα τριγλύφοις τόδε λέοντος",
@@ -525,7 +525,7 @@ export const GREEK_TERMS: Term[] = [
       },
       { lang: "la", word: "tympanum", literal: "drum; panel", source: "Vitruvius III.5.12" },
     ],
-    note: "The triangular wall inside the pediment. Its height at the peak is a ninth of the corona's whole length, which gives a roof pitch of about 12½° on a hexastyle front.",
+    note: "The triangular wall inside the pediment. Its height at the peak is a ninth of the corona's whole length, which gives a roof pitch of about 13° on a hexastyle front.",
     rules: ["ionic-corona"],
   },
   {
@@ -652,7 +652,7 @@ export const GREEK_TERMS: Term[] = [
         word: "τροχίλος",
         romanized: "trochilos",
         literal:
-          "the Egyptian plover (which Herodotus says cleans the crocodile's mouth); a wren; the sheave of a pulley",
+          "the Egyptian plover (which Herodotus says picks leeches from the crocodile's throat); a wren; the sheave of a pulley",
         source: "Vitruvius III.5.2 'quam Graeci τροχιλον dicunt'; LSJ",
       },
     ],
@@ -977,7 +977,7 @@ export const GREEK_TERMS: Term[] = [
         source: "Lewis & Short",
       },
     ],
-    note: "The rafters of the timber roof. Latin borrowed the word for a gelded workhorse: the beast that carries the load. Vitruvius's clause on the roof's fall is obscure, so the pitch is drawn by convention.",
+    note: "The rafters of the timber roof. The same Latin word means a gelding, a workhorse. Vitruvius's clause on the roof's fall is obscure, so the pitch is drawn by convention.",
   },
   {
     id: "columen",

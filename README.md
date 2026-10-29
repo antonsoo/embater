@@ -42,7 +42,7 @@ Some of what the vocabulary turns up:
   its name with the zodiac.
 - The hollow in an Attic base is σκοτία, "darkness", for the shadow it holds. Vitruvius's
   other Greek name for it, τροχίλος, is also the Egyptian plover that Herodotus says
-  cleans the crocodile's teeth.
+  picks leeches from the crocodile's throat.
 - The Athenian building accounts call the centres of the volutes ὀφθαλμοί, "eyes", as
   Vitruvius's Latin does (*oculus*). The Latin for a rafter, *cantherius*, is a gelding.
 
@@ -55,7 +55,7 @@ Some of what the vocabulary turns up:
   Egyptian monuments (πυραμίς is also a cake; ὀβελίσκος is a little roasting spit).
 - **Ur:** the ziggurat, whose Akkadian name *ziqqurratum* also named a ziggurat-shaped cake.
 - **Sanchi:** the stupa as an egg (*aṇḍa*) under a royal umbrella (*chattra*).
-- **China:** a Han hall known only from clay tomb models.
+- **China:** a Han hall of the kind shown by clay tomb models.
 - **Tenochtitlan:** the Templo Mayor, seven temples built one inside the next.
 
 ![The Sanchi stupa plate with the harmikā selected and its Sanskrit entry from Monier-Williams](docs/assets/world-india.png)
