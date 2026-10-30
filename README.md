@@ -10,9 +10,9 @@
 Vitruvius’s Roman architectural treatise builds a Doric temple from a single number. Divide the front into 42 parts; one part is
 the module, which "in Greek is called *embatēr*". Every column, beam and groove follows.
 
-Most diagrams of the classical orders redraw Renaissance plates. Embater computes each
-drawing from Vitruvius's Latin instead, rule by rule. It draws what the text fixes in
-black and what a draughtsman has to invent in grey, and names every part in the
+Embater computes its drawings from Vitruvius's Latin, with explicit choices where the
+passages do not determine a unique plan. Black features follow cited rules within the
+selected model; grey geometry includes illustrative choices. It names every part in the
 languages of the people who built it. It then checks two of his rules against
 measurements of real temples.
 
@@ -21,6 +21,23 @@ measurements of real temples.
 [Count the spaces](https://antonsoo.github.io/embater/compare.html) ·
 [World](https://antonsoo.github.io/embater/world.html) ·
 [Drill](https://antonsoo.github.io/embater/drill.html)
+
+## A description is not a complete plan
+
+[What do the words actually fix?](https://antonsoo.github.io/embater/plans.html#type=dipteral&clear=2&flank=17)
+lets you vary the spacing and the unstated flank counts while inspecting what is
+prescribed, calculated or chosen. A dipteral outer rectangle of 8 × 15 yields
+34 columns on the inner ring; 8 × 17 yields 38. These match the editor's and the
+manuscripts' competing numbers, but changing the assumed geometry changes the answer.
+
+Switch prostyle to amphiprostyle: rear columns appear while the cella stays intact.
+The hypaethral drawing also preserves the two entrances named in III.2.8. Read the
+Latin beside seven complete retained pages of Krohn's edition, enlarge and pan the
+scans, and save an illustrated reading with the actual selected plan, source pages,
+fonts and licenses. The SVG is independently usable; **Copy plan link** restores
+these choices without changing the URL while you experiment.
+
+[Source audit, geometry corrections and browser evidence](docs/plan-audit.md).
 
 ## Count the spaces
 
@@ -66,7 +83,8 @@ Some of what the vocabulary turns up:
   Vitruvius's Latin does (*oculus*). The Latin for a rafter, *cantherius*, is a gelding.
 
 **The plans.** Vitruvius's seven plan types, from a temple *in antis* (Greek ναὸς ἐν
-παραστάσιν) to the open-roofed hypaethral, laid out from III.2 and IV.4.
+παραστάσιν) to the open-roofed hypaethral. The claim table distinguishes III.2 and IV.4
+from modern calculations and choices; the plans are not unique reconstructions.
 
 **The world.** Schematic plates with sourced vocabulary:
 
@@ -90,10 +108,10 @@ Progress stays in your browser.
 
 ## What the evidence says
 
-### The printed numbers are corrections, and the arithmetic says they are right
+### Printed corrections can be checked within a stated model
 
 The manuscripts of IV.3.3 give the Doric front as **28** modules for four columns and
-**32** for six. Every modern text prints **27** and **42**, which Krohn's apparatus credits
+**32** for six. Krohn prints **27** and **42**, which his apparatus credits
 to the sixteenth-century editor Philander. Embater lays the front out from the triglyph
 rhythm instead: triglyphs one module wide, square metopes 1½ wide, one triglyph over
 every column and two between. The front then measures 27 and 42 exactly.
@@ -102,12 +120,13 @@ The test suite goes further. Try every whole number of triglyphs between the col
 a four-column front can only measure 19½, 27, 34½…, and a six-column front 29½, 42,
 54½…. Neither 28 nor 32 is reachable. The same holds for the one-triglyph spacing (19½ and
 29½, credited to Barbaro) and the eustyle Ionic front (11½, 18 and 24½, where the
-manuscripts have 19 and 25). Vitruvius's other numbers cross-check too. A dipteral plan
-of eight by fifteen columns has an inner ring of exactly **34**, the number Krohn prints
-for the columns Hermogenes removed (the manuscripts have 38). And his systyle spacing
+manuscripts have 19 and 25). These checks establish consistency with the selected models, not the original
+wording. A dipteral plan of eight by fifteen columns has an inner ring of exactly
+**34**, the number Krohn prints for the columns Hermogenes removed; eight by seventeen
+gives the manuscripts' **38**. The new plan controls expose this dependency. His systyle spacing
 leaves a gap between bases equal to one base, as III.3.2 says it should.
 
-### Vitruvius's flank rule describes the temples of his sources, not the Parthenon
+### Later records in this catalogue fit the flank rule more often
 
 He wants the long side of a six-column temple to have eleven columns, twice as many
 gaps as the front, and calls temples with twelve a mistake (III.4.3). The Perseus
@@ -154,7 +173,9 @@ flowchart LR
 
 - **One model, three uses.** Each order builder returns a list of pieces in modules. A
   piece is a rectangle, polygon or circle with a part id, and it records whether the text
-  fixes its size (`"text"`) or the drawing had to choose (`"chosen"`). The same pieces
+  determines its dimension or arrangement within the model (`"text"`), or the drawing
+  had to choose (`"chosen"`). Plan positions still depend on the selected spacing and
+  the assumptions listed in the claim table. The same pieces
   feed the drawing, the clickable key, the tests and the drill.
 - **Rules, not proportions copied from a plate.** `src/core/rules.ts` quotes each passage
   of Krohn's Teubner text (Leipzig 1912) with its printed page. Every number was checked
@@ -169,12 +190,13 @@ flowchart LR
 - **No framework.** Vite, TypeScript and hand-written SVG. Five pages, self-hosted fonts (EB Garamond, GFS Didot), complete
   offline editions and no tracking.
 
-Tests (`npm test`, 35 of them) check the claims above, not just that things render:
+Tests (`npm test`, 39 of them) check the claims above, not just that things render:
 
 - the reachable front widths;
 - square metopes and the half-metopes;
 - the taper bands, the volute's 4½ and 3½ parts, and both bases summing to half a diameter;
 - the Corinthian abacus diagonal and the 6 × 11 and 34-column plans;
+- preserved cella geometry, rear access, valid alternative counts and complete cited pages;
 - the evidence medians;
 - that every part drawn anywhere has a sourced name;
 - the Leitner weighting, measured over 40,000 draws.

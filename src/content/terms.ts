@@ -1028,7 +1028,7 @@ export const PLAN_TERMS: Term[] = [
         source: "Lewis & Short",
       },
     ],
-    note: "In plan a column is a circle one diameter across. The plans here use systyle spacing, two diameters clear between columns.",
+    note: "In plan a column is a circle one diameter across. The plans start with systyle spacing, two diameters clear between columns; the spacing control also offers 1½ and 3 diameters. A plan type does not fix this choice.",
     rules: ["species"],
   },
   {
@@ -1204,8 +1204,8 @@ export const PLAN_CARDS: Record<string, PlanCard> = {
       literal: "with a portico at either end",
       source: "LSJ, which knows the word only from Vitruvius",
     },
-    note: "The same porch and pediment at the back as at the front.",
-    rules: ["prostyle"],
+    note: "Adds rear columns and a pediment to the prostyle arrangement. The passage does not prescribe a second enclosed porch cut out of the cella. This drawing keeps the prostyle body intact.",
+    rules: ["prostyle", "cella-plan"],
   },
   peripteral: {
     english: "peripteral",
@@ -1216,7 +1216,7 @@ export const PLAN_CARDS: Record<string, PlanCard> = {
       literal: "winged all round",
       source: "LSJ",
     },
-    note: "Six columns across the ends and eleven down each side, so the sides have twice as many intercolumniations as the front. Most real Greek temples have more: see the chart below.",
+    note: "Six columns across the ends and eleven down each side, so the sides have twice as many intercolumniations as the front. Most six-column temples in the Perseus sample below have more.",
     rules: ["peripteral", "flanks"],
   },
   pseudodipteral: {
@@ -1228,7 +1228,7 @@ export const PLAN_CARDS: Record<string, PlanCard> = {
       literal: "falsely double-winged: one row of columns, with room for two",
       source: "LSJ",
     },
-    note: "Hermogenes' invention, Vitruvius says: take a dipteral temple, leave out the inner ring, and you save the cost of 34 columns while keeping a wide walk round the cella.",
+    note: "Hermogenes' invention, Vitruvius says: leave out the inner rows while keeping a wide walk round the cella. Krohn prints a saving of 34 columns, correcting the manuscripts’ 38; the arithmetic depends on the assumed plan.",
     rules: ["pseudodipteral", "hermogenes"],
   },
   dipteral: {
@@ -1240,8 +1240,8 @@ export const PLAN_CARDS: Record<string, PlanCard> = {
       literal: "two-winged, of insects; of a temple, with a double colonnade",
       source: "LSJ",
     },
-    note: "Two rings of columns all round. Vitruvius names the Ionic temple of Diana at Ephesus by Chersiphron. He does not give a flank count; this one follows his rule of twice as many intercolumniations on the sides.",
-    rules: ["dipteral", "flanks"],
+    note: "Two rings of columns all round. Vitruvius names the Ionic temple of Diana at Ephesus by Chersiphron. III.2 does not give a flank count. The initial 15 extends his separate peripteral rule; changing that choice changes the inner count.",
+    rules: ["dipteral", "hermogenes"],
   },
   hypaethral: {
     english: "hypaethral",

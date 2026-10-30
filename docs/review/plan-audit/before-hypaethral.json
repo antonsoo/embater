@@ -1,0 +1,41 @@
+{
+  "source": "a8dfdaa84f751eecdda487f6f8ce4453ad9b5524",
+  "walls": [
+    {
+      "part": "naos",
+      "shape": {
+        "kind": "rect",
+        "x": -7,
+        "y": 10,
+        "w": 5,
+        "h": 1
+      },
+      "given": "chosen",
+      "ink": "groove"
+    },
+    {
+      "part": "naos",
+      "shape": {
+        "kind": "rect",
+        "x": 2,
+        "y": 10,
+        "w": 5,
+        "h": 1
+      },
+      "given": "chosen",
+      "ink": "groove"
+    },
+    {
+      "part": "naos",
+      "shape": {
+        "kind": "rect",
+        "x": -7,
+        "y": 47.5,
+        "w": 14,
+        "h": 1
+      },
+      "given": "chosen",
+      "ink": "groove"
+    }
+  ]
+}

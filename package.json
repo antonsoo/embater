@@ -34,7 +34,8 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "npm run lint && npm run typecheck && npm test && npm run build",
     "data:build": "python3 scripts/build_temples.py && biome format --write src/data/temples.ts",
-    "data:fetch": "python3 scripts/perseus_fetch.py"
+    "data:fetch": "python3 scripts/perseus_fetch.py",
+    "test:plans": "node scripts/plan-review.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

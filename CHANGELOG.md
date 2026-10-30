@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Preserve the prostyle cella when rear columns are added for an amphiprostyle;
+  draw the hypaethral rear entrance specified in III.2.8.
+- Expose spacing and optional flank counts, with a live table separating source
+  prescriptions, calculations and drawing choices. Compare 34 and 38 inner columns.
+- Retain seven complete Krohn pages, correct spanning page references, and provide
+  an enlarging source reader, explicit shared links and standalone HTML/SVG exports.
+
 ## 0.1.0 (2026-10-29)
 
 - Count the spaces: compare two readings with individual Perseus temple records,

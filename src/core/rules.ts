@@ -10,6 +10,7 @@ export interface Rule {
   id: string;
   cite: string;
   page: number;
+  pageEnd?: number;
   latin: string;
   english: string;
   reading?: { manuscripts: string; printed: string; editor: string; note: string };
@@ -428,6 +429,7 @@ const list: Rule[] = [
     id: "prostyle",
     cite: "III.2.3–4",
     page: 62,
+    pageEnd: 63,
     latin:
       "prostylos omnia habet quemadmodum in antis, columnas autem contra antas angulares duas supraque epistylia … amphiprostylos omnia habet ea, quae prostylos, praetereaque habet in postico ad eundem modum columnas et fastigium.",
     english:
@@ -446,10 +448,11 @@ const list: Rule[] = [
     id: "dipteral",
     cite: "III.2.7–8",
     page: 63,
+    pageEnd: 64,
     latin:
-      "dipteros autem octastylos et pronao et postico, sed circa aedem duplices habet ordines columnarum … hypaethros vero decastylos est in pronao et postico, reliqua omnia eadem habet quae dipteros, sed interiore parte columnas in altitudine duplices, remotas a parietibus ad circumitionem ut porticus peristyliorum, medium autem sub divo est sine tecto",
+      "dipteros autem octastylos et pronao et postico, sed circa aedem duplices habet ordines columnarum … hypaethros vero decastylos est in pronao et postico, reliqua omnia eadem habet quae dipteros, sed interiore parte columnas in altitudine duplices, remotas a parietibus ad circumitionem ut porticus peristyliorum, medium autem sub divo est sine tecto. aditus valvarum ex utraque parte in pronao et postico.",
     english:
-      "The dipteral has eight columns on front and back, but a double row of columns around the temple … The hypaethral has ten columns on front and back and everything else as the dipteral, but inside, two-storey columns set away from the walls so one can walk round, like the porticoes of a peristyle; the middle is under the sky, without a roof.",
+      "The dipteral has eight columns on front and back, but a double row of columns around the temple … The hypaethral has ten columns on front and back and everything else as the dipteral, but inside, two-storey columns set away from the walls so one can walk round, like the porticoes of a peristyle; the middle is under the sky, without a roof. Doorways give access at both ends, in the front porch and at the rear.",
   },
   {
     id: "hermogenes",
@@ -463,13 +466,14 @@ const list: Rule[] = [
       manuscripts: "xxxviii (38)",
       printed: "xxxiv (34)",
       editor: "Philander, a sixteenth-century editor",
-      note: "A dipteral plan of eight by fifteen has an inner ring of six by thirteen: 34 columns. The plan drawn here gives the printed number; whether Vitruvius wrote it is another matter.",
+      note: "A dipteral plan of eight by fifteen has an inner ring of six by thirteen: 34 columns. The initial 8 by 15 model gives the printed number; changing its flank count changes the result. Whether Vitruvius wrote 34 is another matter.",
     },
   },
   {
     id: "cella-plan",
     cite: "IV.4.1",
     page: 85,
+    pageEnd: 86,
     latin:
       "distribuitur autem longitudo aedis, uti latitudo sit longitudinis dimidiae partis, ipsaque cella parte quarta longior sit, quam est latitudo, cum pariete, qui paries valvarum habuerit conlocationem. reliquae tres partes pronai ad antas parietum procurrant, quae antae columnarum crassitudinem habere debent",
     english:

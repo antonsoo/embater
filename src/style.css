@@ -1171,3 +1171,189 @@ code {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* The plan ledger distinguishes the named arrangement from the geometry chosen for it. */
+.plan-plate {
+  min-height: 0;
+}
+.plan-plate .plate-svg {
+  max-height: 42rem;
+}
+.plan-plate .groove.chosen {
+  fill: var(--chosen);
+}
+.plan-plate .groove.chosen.sel {
+  fill: var(--caeruleum);
+}
+.plan-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+.plan-choices label {
+  display: grid;
+  gap: 0.35rem;
+}
+.plan-choices [hidden] {
+  display: none;
+}
+.plan-reading {
+  margin: 3rem 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+}
+.plan-reading > p {
+  max-width: 55rem;
+}
+.plan-reading select,
+.plan-reading input,
+.plan-choices select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.6rem;
+  max-width: 100%;
+}
+.plan-ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+.plan-ledger caption {
+  text-align: left;
+  font-size: 1.35rem;
+  margin: 1rem 0;
+}
+.plan-ledger th,
+.plan-ledger td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.plan-ledger th {
+  font-weight: 500;
+}
+.plan-ledger td:first-child {
+  width: 9rem;
+  color: var(--minium);
+}
+.plan-ledger th[scope="row"] {
+  width: 12rem;
+}
+.plan-ledger small {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--ink-soft);
+}
+.plan-actions,
+.plan-share {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.plan-actions button,
+.plan-share button,
+#plan-source-zoom {
+  font: inherit;
+  border: 1px solid var(--rule);
+  background: var(--sheet);
+  color: var(--caeruleum);
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+.plan-share input {
+  flex: 1;
+  min-width: 0;
+}
+.plan-transcription {
+  margin: 2rem 0;
+}
+.plan-passage {
+  max-width: 56rem;
+  border-top: 1px solid var(--rule);
+  padding: 1rem 0;
+}
+.plan-passage [lang="la"] {
+  color: var(--minium);
+}
+.plan-source {
+  display: grid;
+  grid-template-columns: minmax(15rem, 1fr) minmax(0, 2fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.plan-source label,
+.plan-source select {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+#plan-source-frame {
+  height: 36rem;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+}
+#plan-source-image {
+  display: block;
+  height: auto;
+}
+#plan-source-image[hidden] {
+  display: none;
+}
+@media (max-width: 700px) {
+  .plan-source {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .plan-ledger th,
+  .plan-ledger td {
+    padding: 0.45rem 0.3rem;
+  }
+  .plan-ledger td:first-child,
+  .plan-ledger th[scope="row"] {
+    width: auto;
+  }
+  .plan-share {
+    display: grid;
+  }
+  .plan-plate .plate-svg {
+    max-height: 33rem;
+  }
+}
+#plan-source-image {
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .plan-ledger,
+  .plan-ledger tbody {
+    display: block;
+  }
+  .plan-ledger thead {
+    position: absolute;
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .plan-ledger tr {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.65rem 0;
+  }
+  .plan-ledger td,
+  .plan-ledger th {
+    border: 0;
+  }
+  .plan-ledger td:last-child {
+    grid-column: 1 / -1;
+  }
+  .plan-ledger caption {
+    display: block;
+  }
+}

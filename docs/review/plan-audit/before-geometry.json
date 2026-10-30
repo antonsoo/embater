@@ -1,0 +1,104 @@
+[
+  {
+    "type": "in-antis",
+    "floor": {
+      "part": "naos",
+      "shape": {
+        "kind": "rect",
+        "x": -4,
+        "y": 8.5,
+        "w": 8,
+        "h": 10.5
+      },
+      "given": "text",
+      "ink": "solid"
+    },
+    "porch": [
+      {
+        "part": "pronaos",
+        "shape": {
+          "kind": "rect",
+          "x": -4,
+          "y": 0,
+          "w": 8,
+          "h": 7.5
+        },
+        "given": "text",
+        "ink": "shade"
+      }
+    ],
+    "columns": 2
+  },
+  {
+    "type": "prostyle",
+    "floor": {
+      "part": "naos",
+      "shape": {
+        "kind": "rect",
+        "x": -4,
+        "y": 8.5,
+        "w": 8,
+        "h": 10.5
+      },
+      "given": "text",
+      "ink": "solid"
+    },
+    "porch": [
+      {
+        "part": "pronaos",
+        "shape": {
+          "kind": "rect",
+          "x": -4,
+          "y": 0,
+          "w": 8,
+          "h": 7.5
+        },
+        "given": "text",
+        "ink": "shade"
+      }
+    ],
+    "columns": 4
+  },
+  {
+    "type": "amphiprostyle",
+    "floor": {
+      "part": "naos",
+      "shape": {
+        "kind": "rect",
+        "x": -4,
+        "y": 8.5,
+        "w": 8,
+        "h": 3
+      },
+      "given": "text",
+      "ink": "solid"
+    },
+    "porch": [
+      {
+        "part": "pronaos",
+        "shape": {
+          "kind": "rect",
+          "x": -4,
+          "y": 0,
+          "w": 8,
+          "h": 7.5
+        },
+        "given": "text",
+        "ink": "shade"
+      },
+      {
+        "part": "opisthodomos",
+        "shape": {
+          "kind": "rect",
+          "x": -4,
+          "y": 12.5,
+          "w": 8,
+          "h": 7.5
+        },
+        "given": "text",
+        "ink": "shade"
+      }
+    ],
+    "columns": 8
+  }
+]

@@ -1,12 +1,22 @@
+import { PLAN_PLATES } from "../content/plan-plates";
 import { PLAN_CARDS, TERMS, term } from "../content/terms";
 import { flankPeriods, midYear, slenderSummary, vitruvianFlank } from "../core/evidence";
-import { PLAN_TYPES, type PlanType, plan } from "../core/plan";
+import {
+  CLEAR_SPACINGS,
+  type ClearSpacing,
+  flankChoices,
+  PLAN_TYPES,
+  type PlanType,
+  plan,
+} from "../core/plan";
 import { RULES } from "../core/rules";
 import { EXCLUDED, FLANKS, PERSEUS_FETCHED, SLENDER } from "../data/temples";
 import { attachTooltips, type DotPoint, renderDotChart, year } from "../draw/charts";
 import { renderElevation } from "../draw/render";
+import { planHash, planReading, planSvg, verified } from "../plan-export";
 import { termCard } from "./card";
 import { $, esc } from "./dom";
+import { claimsTable, planPassages } from "./plan-reading";
 
 const LABELS: Record<PlanType, string> = {
   "in-antis": "In antis",
@@ -36,7 +46,7 @@ function typeCard(type: PlanType, columns: number, inner: number): string {
           r.reading
             ? `<p class="rule-page">Manuscripts: ${esc(r.reading.manuscripts)}. Printed: ${esc(r.reading.printed)}, ${esc(r.reading.editor)}. ${esc(r.reading.note)}</p>`
             : ""
-        }<p class="rule-page">Krohn 1912, p. ${r.page}</p></details>`,
+        }<p class="rule-page">Krohn 1912, ${r.pageEnd ? `pp. ${r.page}–${r.pageEnd}` : `p. ${r.page}`}</p></details>`,
     )
     .join("");
   const w = card.word;
@@ -130,6 +140,12 @@ export function mountPlans(root: HTMLElement): void {
   let type: PlanType = PLAN_TYPES.includes(requested as PlanType)
     ? (requested as PlanType)
     : "peripteral";
+  let clear: ClearSpacing = CLEAR_SPACINGS.includes(Number(params.get("clear")) as ClearSpacing)
+    ? (Number(params.get("clear")) as ClearSpacing)
+    : 2;
+  let flank = flankChoices(type).includes(Number(params.get("flank")))
+    ? Number(params.get("flank"))
+    : undefined;
   let part: string | null = null;
   const periods = flankPeriods(FLANKS);
   const doubled = FLANKS.filter((r) => r.flank === 12 && r.status === "ok").sort(
@@ -145,7 +161,7 @@ export function mountPlans(root: HTMLElement): void {
   root.innerHTML = `
 <section class="lede">
   <h1>Seven plans, and the buildings before the rule</h1>
-  <p>Vitruvius names seven kinds of temple plan and gives each a Greek name. Choose one to see it laid out from his rules. Then check one of his rules against the temples themselves.</p>
+  <p>Vitruvius names seven kinds of temple plan and gives each a Greek name. Choose one, then change what his description leaves open. Inspect the Latin, the calculations and the drawing choices separately. Below, compare his rules with measured temples.</p>
 </section>
 <section class="bench">
   <form class="controls" aria-label="Plan type">
@@ -153,11 +169,22 @@ export function mountPlans(root: HTMLElement): void {
       (t) =>
         `<label><input type="radio" name="type" value="${t}"${t === type ? " checked" : ""}><span>${LABELS[t]}</span></label>`,
     ).join("")}</div></fieldset>
+    <div class="plan-choices"><label for="plan-spacing">Clear space between columns<select id="plan-spacing">${CLEAR_SPACINGS.map((v) => `<option value="${v}"${v === clear ? " selected" : ""}>${v} D · ${v === 1.5 ? "pycnostyle" : v === 2 ? "systyle" : "diastyle"}</option>`).join("")}</select></label><label id="flank-choice" for="plan-flank" hidden>Columns on each long side · a drawing choice<select id="plan-flank"></select></label></div>
   </form>
-  <div class="plate-wrap"><figure class="plate plan-plate" id="plan"></figure>
-  <p class="legend">Front at the bottom. <span class="ink-text">Black</span>: laid out from Vitruvius's numbers. <span class="ink-chosen">Grey</span>: drawn by convention. Hatching: the porches and the walk round the cella.</p></div>
+  <div class="plate-wrap"><figure class="plate plan-plate" id="plan"></figure><p id="plan-measure" class="legend" aria-live="polite"></p>
+  <p class="legend">Front at the bottom. <span class="ink-text">Black columns</span>: the type’s arrangement within the selected model. <span class="ink-chosen">Grey</span>: illustrative geometry. Spacing and some counts are choices; the table below gives their basis. Hatching: porches and the walk round the cella.</p></div>
   <aside class="side"><div class="card" id="plan-card"></div><div class="card part-card" id="part-card" hidden></div>
   <div class="key"><h2>Parts of the plan</h2><ul id="plan-key"></ul></div></aside>
+</section>
+<section class="plan-reading" id="reading">
+  <h2>What do the words actually fix?</h2>
+  <p>Try prostyle, then amphiprostyle: rear columns appear, but the cella keeps its length. Try dipteral with 15, then 17 columns down each side: the inner count changes from the editor’s 34 to the manuscripts’ 38. The text and the assumed geometry must be examined together.</p>
+  <div id="plan-ledger" aria-live="polite"></div>
+  <div class="plan-actions"><button type="button" id="save-plan">Save illustrated reading</button><button type="button" id="cancel-plan" hidden>Cancel save</button><button type="button" id="save-plan-svg">Save diagram (SVG)</button></div>
+  <p id="plan-save-status" role="status">The illustrated reading includes the selected plan, Latin, English and complete cited pages. It opens offline.</p>
+  <label for="plan-link">Link to these choices</label><div class="plan-share"><input id="plan-link" type="text" readonly><button type="button" id="copy-plan">Copy plan link</button></div><p id="plan-copy-status" role="status"></p>
+  <details class="plan-transcription"><summary>Read the Latin and English together</summary><div id="plan-passages"></div></details>
+  <div class="plan-source"><div><h3>Check the printed edition</h3><p>Krohn’s 1912 text, including the editor’s apparatus. These are complete pages, retained with the offline edition.</p><label for="plan-source-page">Printed page</label><select id="plan-source-page">${PLAN_PLATES.map((p) => `<option value="${p.page}"${p.page === 63 ? " selected" : ""}>${p.page} · ${p.page === 62 ? "in antis; prostyle begins" : p.page === 63 ? "prostyle and the other types" : p.page === 64 ? "rear access; column spacing" : p.page === 66 ? "34 or 38 inner columns" : p.page === 69 ? "double the spaces" : p.page === 85 ? "cella proportions begin" : "cella proportions continue"}</option>`).join("")}</select><button id="plan-source-zoom" type="button" aria-pressed="false">Enlarge page</button><p id="plan-source-status" role="status"></p><p><a id="plan-source-original" href="https://archive.org/details/vitruviidearchit00vitr_1">Original scan at Internet Archive</a></p></div><div id="plan-source-frame" tabindex="0" role="region" aria-label="Printed source page; scroll or use arrow keys when enlarged"><img id="plan-source-image" alt="" hidden></div></div>
 </section>
 <section class="evidence" id="evidence">
   <h2>Vitruvius against the buildings</h2>
@@ -168,7 +195,7 @@ export function mountPlans(root: HTMLElement): void {
   </figure>
   <div class="findings">
     <p>Before 500 BCE the median long side has <b>${early?.median}</b> columns (${early?.n} temples, ${early?.min}–${early?.max}). In the fifth century it is <b>${classical?.median}</b> (${classical?.n} temples). From 400 BCE on, ${lateAtRule} of the ${late?.n} temples have exactly <b>${vitruvianFlank(6)}</b>, Vitruvius's number; the exception, Delphi, was rebuilt on the foundations of its Archaic predecessor.</p>
-    <p>The "doubled" plan he calls an error, six by twelve, appears ${doubled.length} times, all dated between ${-doubledFrom} and ${-doubledTo} BCE: ${doubled.map((r) => esc(short(r.name))).join(", ")}. His rule fits the fourth century and after, the age of Hermogenes and the other Greek architects he cites, not the century of the Parthenon.</p>
+    <p>The "doubled" plan he calls an error, six by twelve, appears ${doubled.length} times, all dated between ${-doubledFrom} and ${-doubledTo} BCE: ${doubled.map((r) => esc(short(r.name))).join(", ")}. The later records in this catalogue fit his rule more often. That pattern alone does not establish which buildings influenced his prescription.</p>
   </div>
   <figure class="chart" id="chart-slender">${slenderChart()}
     <figcaption><span class="swatch doric"></span> Doric, circles. <span class="swatch ionic"></span> Ionic, diamonds. Hollow: Perseus gives estimates. Height is the whole column, capital included, divided by the lower diameter.</figcaption>
@@ -221,7 +248,7 @@ export function mountPlans(root: HTMLElement): void {
   }
 
   function draw(): void {
-    const p = plan(type);
+    const p = plan(type, { clear, flank });
     plate.innerHTML = renderElevation(p, {
       id: "plan",
       title: `${LABELS[type]} temple plan`,
@@ -229,6 +256,20 @@ export function mountPlans(root: HTMLElement): void {
       margin: 0.6,
     });
     card.innerHTML = typeCard(type, p.columns, p.innerColumns);
+    $("#plan-measure", root).textContent = p.body
+      ? `Body ${p.body.width} × ${p.body.length} D. Cella allocation ${p.body.cella} D; clear floor ${p.body.clearWidth} × ${p.body.clearLength} D.`
+      : `${p.front} × ${p.flank} outer arrangement: ${p.columns} columns${p.innerColumns ? `; ${p.innerColumns} on the inner ring` : ""}.`;
+    $("#plan-ledger", root).innerHTML = claimsTable(p);
+    $("#plan-passages", root).innerHTML = planPassages(p);
+    const choices = flankChoices(type);
+    $("#flank-choice", root).hidden = !choices.length;
+    $("#plan-flank", root).innerHTML = choices
+      .map((v) => `<option value="${v}"${v === p.flank ? " selected" : ""}>${v} columns</option>`)
+      .join("");
+    const link = new URL(location.href);
+    link.hash = planHash(p);
+    ($("#plan-link", root) as HTMLInputElement).value = link.href;
+    $("#plan-copy-status", root).textContent = "";
     const parts = [...new Set(p.pieces.map((x) => x.part))].filter((id) => TERMS.has(id));
     key.innerHTML = parts
       .map((id) => {
@@ -240,12 +281,31 @@ export function mountPlans(root: HTMLElement): void {
       })
       .join("");
     selectPart(part && parts.includes(part) ? part : null);
-    if (location.hash !== "#evidence") history.replaceState(null, "", `#type=${type}`);
   }
 
   draw();
+  window.addEventListener("hashchange", () => {
+    const incoming = new URLSearchParams(location.hash.slice(1));
+    if (!incoming.has("type")) return;
+    const name = incoming.get("type") as PlanType;
+    type = PLAN_TYPES.includes(name) ? name : "peripteral";
+    const spacing = Number(incoming.get("clear")) as ClearSpacing;
+    clear = CLEAR_SPACINGS.includes(spacing) ? spacing : 2;
+    const count = Number(incoming.get("flank"));
+    flank = flankChoices(type).includes(count) ? count : undefined;
+    for (const radio of root.querySelectorAll<HTMLInputElement>('input[name="type"]'))
+      radio.checked = radio.value === type;
+    ($("#plan-spacing", root) as HTMLSelectElement).value = String(clear);
+    draw();
+  });
   root.querySelector("form")?.addEventListener("input", (e) => {
-    type = (e.target as HTMLInputElement).value as PlanType;
+    const input = e.target as HTMLInputElement;
+    if (input.name === "type" && PLAN_TYPES.includes(input.value as PlanType)) {
+      type = input.value as PlanType;
+      flank = undefined;
+    } else if (input.id === "plan-spacing") clear = Number(input.value) as ClearSpacing;
+    else if (input.id === "plan-flank") flank = Number(input.value);
+    else return;
     draw();
   });
   plate.addEventListener("click", (e) => {
@@ -257,4 +317,124 @@ export function mountPlans(root: HTMLElement): void {
     if (id) selectPart(id === part ? null : id);
   });
   for (const id of ["#chart-flanks", "#chart-slender"]) attachTooltips($(id, root));
+
+  $("#copy-plan", root).addEventListener("click", async () => {
+    const input = $("#plan-link", root) as HTMLInputElement;
+    try {
+      await navigator.clipboard.writeText(input.value);
+      $("#plan-copy-status", root).textContent = "Plan link copied.";
+    } catch {
+      input.focus();
+      input.select();
+      $("#plan-copy-status", root).textContent = "Select and copy this plan link.";
+    }
+  });
+  function save(content: string, mime: string, name: string): void {
+    const url = URL.createObjectURL(new Blob([content], { type: mime }));
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  $("#save-plan-svg", root).addEventListener("click", () => {
+    save(planSvg(plan(type, { clear, flank })), "image/svg+xml", `embater-${type}.svg`);
+  });
+  let saveRequest = 0;
+  const saveButton = $("#save-plan", root) as HTMLButtonElement;
+  const cancel = $("#cancel-plan", root);
+  cancel.addEventListener("click", () => {
+    saveRequest++;
+    saveButton.disabled = false;
+    cancel.hidden = true;
+    $("#plan-save-status", root).textContent = "Save cancelled. No file was downloaded.";
+  });
+  saveButton.addEventListener("click", async () => {
+    const request = ++saveRequest;
+    const snapshot = plan(type, { clear, flank });
+    saveButton.disabled = true;
+    cancel.hidden = false;
+    $("#plan-save-status", root).textContent =
+      `Preparing the ${snapshot.type} reading with ${snapshot.clear} D clear spacing…`;
+    try {
+      const html = await planReading(snapshot);
+      if (request !== saveRequest) return;
+      save(html, "text/html", `embater-${snapshot.type}-reading.html`);
+      $("#plan-save-status", root).textContent =
+        `Saved ${snapshot.type}: ${snapshot.clear} D clear${snapshot.flank ? `, ${snapshot.front} × ${snapshot.flank} outer columns` : ""}, with complete cited pages.`;
+    } catch (error) {
+      if (request === saveRequest)
+        $("#plan-save-status", root).textContent =
+          error instanceof Error ? error.message : "The reading could not be saved.";
+    } finally {
+      if (request === saveRequest) {
+        saveButton.disabled = false;
+        cancel.hidden = true;
+      }
+    }
+  });
+  let sourceRequest = 0;
+  let sourceUrl: string | undefined;
+  let enlarged = false;
+  const sourceImage = $("#plan-source-image", root) as HTMLImageElement;
+  const sourceFrame = $("#plan-source-frame", root);
+  const zoom = $("#plan-source-zoom", root) as HTMLButtonElement;
+  function sizeSource(): void {
+    sourceImage.style.width = enlarged ? `${sourceImage.naturalWidth}px` : "auto";
+    sourceImage.style.maxWidth = enlarged ? "none" : "100%";
+    sourceImage.style.maxHeight = enlarged ? "none" : "100%";
+    zoom.setAttribute("aria-pressed", String(enlarged));
+    zoom.textContent = enlarged ? "Fit page" : "Enlarge page";
+  }
+  async function loadSource(): Promise<void> {
+    const request = ++sourceRequest;
+    const selected = Number(($("#plan-source-page", root) as HTMLSelectElement).value);
+    const plate = PLAN_PLATES.find((p) => p.page === selected);
+    if (!plate) return;
+    sourceImage.hidden = true;
+    zoom.disabled = true;
+    $("#plan-source-status", root).textContent = `Loading printed page ${selected}…`;
+    ($("#plan-source-original", root) as HTMLAnchorElement).href = plate.url;
+    try {
+      const bytes = await verified(`${import.meta.env.BASE_URL}${plate.path}`, plate.sha256);
+      if (request !== sourceRequest) return;
+      const url = URL.createObjectURL(new Blob([bytes], { type: "image/jpeg" }));
+      const img = new Image();
+      img.src = url;
+      try {
+        await img.decode();
+      } catch (error) {
+        URL.revokeObjectURL(url);
+        throw error;
+      }
+      if (request !== sourceRequest) {
+        URL.revokeObjectURL(url);
+        return;
+      }
+      if (sourceUrl) URL.revokeObjectURL(sourceUrl);
+      sourceUrl = url;
+      sourceImage.src = url;
+      sourceImage.alt = `Complete printed page ${selected} of Krohn’s 1912 Vitruvius`;
+      await sourceImage.decode();
+      if (request !== sourceRequest) return;
+      sourceImage.hidden = false;
+      zoom.disabled = false;
+      sizeSource();
+      sourceFrame.scrollTo(0, 0);
+      $("#plan-source-status", root).textContent =
+        `Printed page ${selected}. ${selected === 66 ? "The apparatus at line 4 gives xxxiv Phil.: xxxviii in the manuscripts." : selected === 63 ? "Amphiprostyle is section 4; the ringed types follow below." : selected === 86 ? "The cella and porch sentence continues at the top." : "Read the full page beside the transcription."}`;
+    } catch (error) {
+      if (request === sourceRequest)
+        $("#plan-source-status", root).textContent =
+          error instanceof Error ? error.message : "Could not load this source page.";
+    }
+  }
+  $("#plan-source-page", root).addEventListener("change", () => {
+    void loadSource();
+  });
+  zoom.addEventListener("click", () => {
+    enlarged = !enlarged;
+    sizeSource();
+  });
+  void loadSource();
 }

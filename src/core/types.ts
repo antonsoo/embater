@@ -7,7 +7,9 @@ export type Shape =
   | { kind: "circle"; cx: number; cy: number; r: number };
 
 /**
- * Whether the text fixes this piece. "text": its size follows from a cited rule.
+ * Whether a cited rule determines this feature within the selected drawing model.
+ * "text": prescribed dimension or column arrangement; plan positions still depend
+ * on the selected spacing and the assumptions listed beside the drawing.
  * "chosen": Vitruvius names the part but leaves its form or size to the draughtsman,
  * so the drawing had to choose. The renderer draws the two differently.
  */

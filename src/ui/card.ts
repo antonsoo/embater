@@ -40,7 +40,7 @@ export function termCard(term: Term, options: { rules?: boolean } = {}): string 
           .filter((r) => r !== undefined)
           .map(
             (r) => `<details class="rule"><summary>Vitruvius ${esc(r.cite)}</summary>
-<p class="rule-la" lang="la">${esc(r.latin)}</p><p class="rule-en">${esc(r.english)}</p><p class="rule-page">Krohn 1912, p. ${r.page}</p></details>`,
+<p class="rule-la" lang="la">${esc(r.latin)}</p><p class="rule-en">${esc(r.english)}</p><p class="rule-page">Krohn 1912, ${r.pageEnd ? `pp. ${r.page}–${r.pageEnd}` : `p. ${r.page}`}</p></details>`,
           )
           .join("");
   const deeper = term.deeper

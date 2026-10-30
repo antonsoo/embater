@@ -1,0 +1,113 @@
+{
+  "base": "http://127.0.0.1:4486/embater/",
+  "receipts": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "colorScheme": "light",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": [
+        "chromium-1440-light.html",
+        "chromium-1440-light.svg",
+        "chromium-1440-light.csv"
+      ],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "colorScheme": "dark",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": ["chromium-1440-dark.html", "chromium-1440-dark.svg", "chromium-1440-dark.csv"],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "colorScheme": "light",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": ["chromium-375-light.html", "chromium-375-light.svg", "chromium-375-light.csv"],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "colorScheme": "dark",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": ["chromium-375-dark.html", "chromium-375-dark.svg", "chromium-375-dark.csv"],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "colorScheme": "light",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": ["firefox-1440-light.html", "firefox-1440-light.svg", "firefox-1440-light.csv"],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "colorScheme": "dark",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": ["firefox-1440-dark.html", "firefox-1440-dark.svg", "firefox-1440-dark.csv"],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "colorScheme": "light",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": ["firefox-375-light.html", "firefox-375-light.svg", "firefox-375-light.csv"],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "colorScheme": "dark",
+      "gapTally": "4 of 29 records match 11 flank columns. Excludes 2 uncertain restorations.",
+      "doubledTally": "4 of 29 records match 12 flank columns. Excludes 2 uncertain restorations.",
+      "records": 31,
+      "downloads": ["firefox-375-dark.html", "firefox-375-dark.svg", "firefox-375-dark.csv"],
+      "offlinePages": 5,
+      "portableNetworkRequests": 0,
+      "enlargedDiagramKeyboardPan": true,
+      "errors": []
+    }
+  ]
+}
