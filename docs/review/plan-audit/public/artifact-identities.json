@@ -1,0 +1,254 @@
+[
+  {
+    "file": "chromium-1440-dark-body.png",
+    "bytes": 106411,
+    "sha256": "ba11bbdc0b054101c933e0ef160dbf5929d25822b19a588d12cba5f68b73bfa2",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-1440-dark-body.png"
+  },
+  {
+    "file": "chromium-1440-dark-ledger.png",
+    "bytes": 130583,
+    "sha256": "b45657a90a7c5a89c07d607a50efe6567608fac365792e525d6d7cbc8a5460a3",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-1440-dark-ledger.png"
+  },
+  {
+    "file": "chromium-1440-dark-portable.png",
+    "bytes": 68599,
+    "sha256": "3d87d0427daca79ed696d9679c943c97c95e78af22ce7bf190701e1692e5761c",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-1440-dark-portable.png"
+  },
+  {
+    "file": "chromium-1440-dark-source.png",
+    "bytes": 517964,
+    "sha256": "2c03c50f7fd9eb90c195c45c20df14e1ac37bb22ffd34d85ee71c74dc8edf744",
+    "identicalToLocal": false,
+    "retained": "docs/review/plan-audit/public/chromium-1440-dark-source.png"
+  },
+  {
+    "file": "chromium-1440-light-body.png",
+    "bytes": 105243,
+    "sha256": "03d1e6a7b2a116c5bf258acb8722aa9a946d5a3626399e7a8cfb50ffdeea6cdd",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-1440-light-body.png"
+  },
+  {
+    "file": "chromium-1440-light-ledger.png",
+    "bytes": 128039,
+    "sha256": "233f47138a95602d5eddc76dc4df39af7ceca84f7b78d3d42d9bba2be2f44e56",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-1440-light-ledger.png"
+  },
+  {
+    "file": "chromium-1440-light-portable.png",
+    "bytes": 68599,
+    "sha256": "3d87d0427daca79ed696d9679c943c97c95e78af22ce7bf190701e1692e5761c",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-1440-light-portable.png"
+  },
+  {
+    "file": "chromium-1440-light-source.png",
+    "bytes": 516159,
+    "sha256": "4477be011fcf57f55c122bf1c3c5185ac7c2e8395c53634560cdc3925235dfa6",
+    "identicalToLocal": false,
+    "retained": "docs/review/plan-audit/public/chromium-1440-light-source.png"
+  },
+  {
+    "file": "chromium-375-dark-body.png",
+    "bytes": 50833,
+    "sha256": "d64267aee37b11be3911a86a6ed6e6dcadfd0b2d2c5bdf604ab1cd9270f881cf",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-dark-body.png"
+  },
+  {
+    "file": "chromium-375-dark-ledger.png",
+    "bytes": 70109,
+    "sha256": "4a508b412ad515379d06898d159a00731bed15a6191ac3bee2d6659348454b38",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-dark-ledger.png"
+  },
+  {
+    "file": "chromium-375-dark-portable.png",
+    "bytes": 46802,
+    "sha256": "6dec8aa7155d0b44fb39f133b848712d8bf39a9d35ea91fac01dc797c5b3f2d1",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-dark-portable.png"
+  },
+  {
+    "file": "chromium-375-dark-source.png",
+    "bytes": 173634,
+    "sha256": "2b61598d2654e2251c8d5b1a33f1ac71f3527a99d5c06d8c2af7dc241ad8e411",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-dark-source.png"
+  },
+  {
+    "file": "chromium-375-light-body.png",
+    "bytes": 50125,
+    "sha256": "e2451c4ba7feb5a6e5f398f253b826e5df48dbad3328029dd78ee74ff593f85c",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-light-body.png"
+  },
+  {
+    "file": "chromium-375-light-ledger.png",
+    "bytes": 68250,
+    "sha256": "ec8658de5314d97ba3f5e4314e7c5fd2f90dc03a855356c3c1780edbbb39e91a",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-light-ledger.png"
+  },
+  {
+    "file": "chromium-375-light-portable.png",
+    "bytes": 46802,
+    "sha256": "6dec8aa7155d0b44fb39f133b848712d8bf39a9d35ea91fac01dc797c5b3f2d1",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-light-portable.png"
+  },
+  {
+    "file": "chromium-375-light-source.png",
+    "bytes": 173115,
+    "sha256": "5bee76fb8a2f18d35bcf13efadc070fc56fc2b6c7c3b3314fe574dac62d161e5",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/chromium-375-light-source.png"
+  },
+  {
+    "file": "dipteral-17-reading.html.gz",
+    "bytes": 3021244,
+    "sha256": "1a420cb4e22bb600d837260f6f468c84cdd2230f8b7d4ae7c502078f4967d7e0",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/dipteral-17-reading.html.gz"
+  },
+  {
+    "file": "dipteral-17-reading.pdf",
+    "bytes": 3034434,
+    "sha256": "e5649824b08a8c51413b734c20a444eead98f8332914c8b27204fe69f239d31c",
+    "identicalToLocal": false,
+    "retained": "docs/review/plan-audit/public/dipteral-17-reading.pdf"
+  },
+  {
+    "file": "dipteral-17.svg",
+    "bytes": 8944,
+    "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/dipteral-17.svg"
+  },
+  {
+    "file": "dipteral-entry.png",
+    "bytes": 133852,
+    "sha256": "b61fa5063270061379376e8ef0f1d984934cc418fd564c6dc8dfb61a85b009fa",
+    "identicalToLocal": false,
+    "retained": "docs/review/plan-audit/public/dipteral-entry.png"
+  },
+  {
+    "file": "firefox-1440-dark-body.png",
+    "bytes": 149782,
+    "sha256": "40697795531544040f5ac082d4d6235da3f27d3fe59898b8b0ce1f11988d5b32",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-1440-dark-body.png"
+  },
+  {
+    "file": "firefox-1440-dark-ledger.png",
+    "bytes": 196074,
+    "sha256": "f2e5f9d11dbe1543e100c872b9d7a6261d43ba38f9de71be893f91cb5122d82f",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-1440-dark-ledger.png"
+  },
+  {
+    "file": "firefox-1440-dark-portable.png",
+    "bytes": 97398,
+    "sha256": "4ead0773d170c30c2eb1f36710ed21e7aaea47c05abb20ddc33f494648a767a3",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-1440-dark-portable.png"
+  },
+  {
+    "file": "firefox-1440-dark-source.png",
+    "bytes": 460201,
+    "sha256": "3dda2d65fd82a99aa427cebe0948cba4e2e6278ff8da6e0f5c288f44ca7da675",
+    "identicalToLocal": false,
+    "retained": "docs/review/plan-audit/public/firefox-1440-dark-source.png"
+  },
+  {
+    "file": "firefox-1440-light-body.png",
+    "bytes": 150665,
+    "sha256": "f5ce9578c3f5f4d4a39b5a6e67e80666a4d54c1a921f25ffe872edda382e8a72",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-1440-light-body.png"
+  },
+  {
+    "file": "firefox-1440-light-ledger.png",
+    "bytes": 196411,
+    "sha256": "1548944985085c1c89900007e7fad11b8619d48169a2a2c352199ba1ffb41d43",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-1440-light-ledger.png"
+  },
+  {
+    "file": "firefox-1440-light-portable.png",
+    "bytes": 97398,
+    "sha256": "4ead0773d170c30c2eb1f36710ed21e7aaea47c05abb20ddc33f494648a767a3",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-1440-light-portable.png"
+  },
+  {
+    "file": "firefox-1440-light-source.png",
+    "bytes": 460716,
+    "sha256": "1d9c684b2a3a234a305c4956ac2de5962ffbb168283a7ea3ec0b9f87d4134f21",
+    "identicalToLocal": false,
+    "retained": "docs/review/plan-audit/public/firefox-1440-light-source.png"
+  },
+  {
+    "file": "firefox-375-dark-body.png",
+    "bytes": 75385,
+    "sha256": "b88135f076228a2e479ac44db07bfea2cf88f4c7d53dd05400f89e5ec9b08a13",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-375-dark-body.png"
+  },
+  {
+    "file": "firefox-375-dark-ledger.png",
+    "bytes": 111834,
+    "sha256": "84baaddae4c01cde99380716d7d4882ef59059ee7fdc9f591cf3a854730d3576",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-375-dark-ledger.png"
+  },
+  {
+    "file": "firefox-375-dark-portable.png",
+    "bytes": 72075,
+    "sha256": "1317039dad74b5cc90fef2476069b4eced56174881708922b932bcdaa6eedc35",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-375-dark-portable.png"
+  },
+  {
+    "file": "firefox-375-dark-source.png",
+    "bytes": 232085,
+    "sha256": "cbc37a3e9b10c7c04355d3eb2dafdc2f112692fc4ba199b40b8083d4e3fa0cf4",
+    "identicalToLocal": false,
+    "retained": "docs/review/plan-audit/public/firefox-375-dark-source.png"
+  },
+  {
+    "file": "firefox-375-light-body.png",
+    "bytes": 75684,
+    "sha256": "7478d750873b79e6195011ab0182791a4dbefb1faa8ff9821da7d1eea4c8be20",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-375-light-body.png"
+  },
+  {
+    "file": "firefox-375-light-ledger.png",
+    "bytes": 111680,
+    "sha256": "f14c818dfdacfb109d079d4753d58533ec5cea39b69c764cfd22bf2437758458",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-375-light-ledger.png"
+  },
+  {
+    "file": "firefox-375-light-portable.png",
+    "bytes": 72075,
+    "sha256": "1317039dad74b5cc90fef2476069b4eced56174881708922b932bcdaa6eedc35",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-375-light-portable.png"
+  },
+  {
+    "file": "firefox-375-light-source.png",
+    "bytes": 232066,
+    "sha256": "82d9caf24fd3f9cb9fc19105b71bbf1af4bc06ea8d41a2d35ec816fc4aca356e",
+    "identicalToLocal": true,
+    "retained": "docs/review/plan-audit/local/firefox-375-light-source.png"
+  }
+]

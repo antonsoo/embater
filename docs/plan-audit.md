@@ -163,4 +163,37 @@ Generated review artifacts are excluded from source formatting so their download
 bytes remain intact. Browser assertions inspect their actual accessible titles,
 embedded assets and standalone behavior.
 
-Publication evidence is recorded separately below when the reviewed build is served.
+## Public review, 29 October 2026
+
+Runtime source `2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8` was installed in a
+fresh archive with Node 24.22.1. All checks and the retained-data regeneration
+passed; its 43 build files were identical to the working build. All 43 canonical
+public files and the directory index matched before and after the public replay.
+
+All eight public browser contexts passed the same 27 model operations, source-image
+hashes, keyboard/source navigation, shared-state/Back, accessibility, native downloads,
+standalone no-script opening and identical offline export. Both public fault reviews
+passed. The illustrated HTML has 4,048,024 bytes, SHA-256 `d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b`; it matches the
+retained local reading. Seven pinned public source/artifact files matched their
+Git blobs, including the compressed reading, SVG and PDF.
+
+| Evidence | Record |
+|---|---|
+| Fresh source archive and complete build inventory | [clean-build.json](review/plan-audit/clean-build.json) |
+| Canonical public files before operation | [public-bytes-before.json](review/plan-audit/public-bytes-before.json) |
+| Eight public browser journeys and two fault reviews | [public/review.json](review/plan-audit/public/review.json) |
+| Canonical public files after operation | [public-bytes-after.json](review/plan-audit/public-bytes-after.json) |
+| Seven pinned public source/artifact files | [public-source.json](review/plan-audit/public-source.json) |
+| Captures and actual download identities | [public/artifact-identities.json](review/plan-audit/public/artifact-identities.json) |
+| Observed workflow and Pages state | [publication-state.json](review/plan-audit/publication-state.json) |
+
+Exact duplicate public captures/downloads refer to the retained local files in the
+identity record. Six distinct public captures, including the dipteral entry used
+by Officina, were retained and visually inspected. Public and local screenshots
+are only called identical where their bytes matched.
+
+The generated Pages deployment `18afee434372635256ff88d1df1bc9b496207204`
+completed successfully in [run 40994486524](https://github.com/antonsoo/embater/actions/runs/40994486524).
+The separate source [CI run 40994429823](https://github.com/antonsoo/embater/actions/runs/40994429823)
+reported failure with zero executed steps. That is not a passing remote CI result;
+clean-build checks, hosted identity and observed browser behavior are separate evidence.

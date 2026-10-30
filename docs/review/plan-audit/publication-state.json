@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-10-30T03:00:30.249176+00:00",
+  "buildSource": "2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8",
+  "deployment": "18afee434372635256ff88d1df1bc9b496207204",
+  "sourceHead": "192666577de7517f7b6921aedcc4a42509a95660",
+  "pages": {
+    "status": "built",
+    "build_type": "legacy",
+    "source": {
+      "branch": "gh-pages",
+      "path": "/"
+    },
+    "html_url": "https://antonsoo.github.io/embater/"
+  },
+  "runs": [
+    {
+      "id": 40994486524,
+      "name": "pages build and deployment",
+      "headSha": "18afee434372635256ff88d1df1bc9b496207204",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success",
+          "executedSteps": 5
+        },
+        {
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "success",
+          "executedSteps": 3
+        },
+        {
+          "name": "report-build-status",
+          "status": "completed",
+          "conclusion": "success",
+          "executedSteps": 3
+        }
+      ]
+    },
+    {
+      "id": 40994429912,
+      "name": "Pages",
+      "headSha": "192666577de7517f7b6921aedcc4a42509a95660",
+      "status": "completed",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "failure",
+          "executedSteps": 0
+        }
+      ]
+    },
+    {
+      "id": 40994429823,
+      "name": "CI",
+      "headSha": "192666577de7517f7b6921aedcc4a42509a95660",
+      "status": "completed",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "check",
+          "status": "completed",
+          "conclusion": "failure",
+          "executedSteps": 0
+        }
+      ]
+    }
+  ]
+}

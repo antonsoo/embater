@@ -1,0 +1,54 @@
+{
+  "source": "2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8",
+  "files": [
+    {
+      "path": "docs/plan-audit.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8/docs/plan-audit.md",
+      "bytes": 10152,
+      "sha256": "057a4c3f0eaa90253a05513023466b3a90e4c408a84dfb4d2bf60cd28327a418",
+      "matchesGitBlob": true
+    },
+    {
+      "path": "src/core/plan.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8/src/core/plan.ts",
+      "bytes": 9035,
+      "sha256": "be8622ac8b94833d6bb8c3e723a23337c82b49f01b3cab51add003d41cf5e07e",
+      "matchesGitBlob": true
+    },
+    {
+      "path": "src/content/plan-reading.ts",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8/src/content/plan-reading.ts",
+      "bytes": 5748,
+      "sha256": "3ad2c93829330d9ef1e8b6380576eea6f23737b838076488222f59af2c353221",
+      "matchesGitBlob": true
+    },
+    {
+      "path": "public/sources/krohn-1912/manifest.json",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8/public/sources/krohn-1912/manifest.json",
+      "bytes": 1659,
+      "sha256": "35097a67f070ce6fbaddb6f79ce8953a518939e7c94e59c5a0d17deb00730250",
+      "matchesGitBlob": true
+    },
+    {
+      "path": "docs/review/plan-audit/local/dipteral-17-reading.html.gz",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8/docs/review/plan-audit/local/dipteral-17-reading.html.gz",
+      "bytes": 3021244,
+      "sha256": "1a420cb4e22bb600d837260f6f468c84cdd2230f8b7d4ae7c502078f4967d7e0",
+      "matchesGitBlob": true
+    },
+    {
+      "path": "docs/review/plan-audit/local/dipteral-17.svg",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8/docs/review/plan-audit/local/dipteral-17.svg",
+      "bytes": 8944,
+      "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e",
+      "matchesGitBlob": true
+    },
+    {
+      "path": "docs/review/plan-audit/local/dipteral-17-reading.pdf",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8/docs/review/plan-audit/local/dipteral-17-reading.pdf",
+      "bytes": 3034434,
+      "sha256": "9f5d1e1ffa5ca850c78703455f57bf24c9a1470dbbed41b2a6350354d5135dd5",
+      "matchesGitBlob": true
+    }
+  ]
+}

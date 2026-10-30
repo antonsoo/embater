@@ -1,0 +1,461 @@
+{
+  "checkedAt": "2026-10-30T03:00:18.472783+00:00",
+  "scope": "Every canonical current-build URL, without query suffixes; root before and after. Unlisted historical files are outside this inventory.",
+  "base": "https://antonsoo.github.io/embater/",
+  "source": "2c49ccf3ccc80dc08e53cd38e9858bc11f6433e8",
+  "deployment": "18afee434372635256ff88d1df1bc9b496207204",
+  "rootBefore": {
+    "path": "",
+    "url": "https://antonsoo.github.io/embater/",
+    "status": 200,
+    "bytes": 1393,
+    "sha256": "4ba350f60877efc457c394610519f0e6687cc2a5e5cd04fa4fb12d9ea397be56",
+    "actualBytes": 1393,
+    "actualSha256": "4ba350f60877efc457c394610519f0e6687cc2a5e5cd04fa4fb12d9ea397be56",
+    "matches": true
+  },
+  "rootAfter": {
+    "path": "",
+    "url": "https://antonsoo.github.io/embater/",
+    "status": 200,
+    "bytes": 1393,
+    "sha256": "4ba350f60877efc457c394610519f0e6687cc2a5e5cd04fa4fb12d9ea397be56",
+    "actualBytes": 1393,
+    "actualSha256": "4ba350f60877efc457c394610519f0e6687cc2a5e5cd04fa4fb12d9ea397be56",
+    "matches": true
+  },
+  "files": [
+    {
+      "path": "FONT-LICENSE.txt",
+      "url": "https://antonsoo.github.io/embater/FONT-LICENSE.txt",
+      "status": 200,
+      "bytes": 9519,
+      "sha256": "da7e59f7ecc5b53057ca9c667cf4cfd585fdf4e521187ec7f1d5c0a8f7dc99bf",
+      "actualBytes": 9519,
+      "actualSha256": "da7e59f7ecc5b53057ca9c667cf4cfd585fdf4e521187ec7f1d5c0a8f7dc99bf",
+      "matches": true
+    },
+    {
+      "path": "LICENSE.txt",
+      "url": "https://antonsoo.github.io/embater/LICENSE.txt",
+      "status": 200,
+      "bytes": 1071,
+      "sha256": "f4cec46403514e2601f3b917ad36bfc8cd9a6d97359ac2f9bb554d2062a251eb",
+      "actualBytes": 1071,
+      "actualSha256": "f4cec46403514e2601f3b917ad36bfc8cd9a6d97359ac2f9bb554d2062a251eb",
+      "matches": true
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "url": "https://antonsoo.github.io/embater/THIRD_PARTY_NOTICES.txt",
+      "status": 200,
+      "bytes": 2548,
+      "sha256": "051f0cba9c16be508b2e57c6ac2cb89f741b697b2293d1759c13cbb944d7957c",
+      "actualBytes": 2548,
+      "actualSha256": "051f0cba9c16be508b2e57c6ac2cb89f741b697b2293d1759c13cbb944d7957c",
+      "matches": true
+    },
+    {
+      "path": "assets/card-AhBbB0TM.js",
+      "url": "https://antonsoo.github.io/embater/assets/card-AhBbB0TM.js",
+      "status": 200,
+      "bytes": 5368,
+      "sha256": "2805c0f9da4edc9bc957d55c6b7f4b100624f006c8a36819464dc768185fdb4a",
+      "actualBytes": 5368,
+      "actualSha256": "2805c0f9da4edc9bc957d55c6b7f4b100624f006c8a36819464dc768185fdb4a",
+      "matches": true
+    },
+    {
+      "path": "assets/compare-cacIIeM9.css",
+      "url": "https://antonsoo.github.io/embater/assets/compare-cacIIeM9.css",
+      "status": 200,
+      "bytes": 3694,
+      "sha256": "36ebad08ffac8380567c63318a48fd1f88da420aa648f49f4b1eae6be9212b87",
+      "actualBytes": 3694,
+      "actualSha256": "36ebad08ffac8380567c63318a48fd1f88da420aa648f49f4b1eae6be9212b87",
+      "matches": true
+    },
+    {
+      "path": "assets/compare-qAOCAYcY.js",
+      "url": "https://antonsoo.github.io/embater/assets/compare-qAOCAYcY.js",
+      "status": 200,
+      "bytes": 12785,
+      "sha256": "f0d03254a0c844b9f8919bf7a768962f798395b00b81e887222287d1b0464dd3",
+      "actualBytes": 12785,
+      "actualSha256": "f0d03254a0c844b9f8919bf7a768962f798395b00b81e887222287d1b0464dd3",
+      "matches": true
+    },
+    {
+      "path": "assets/drill-raBnz6Pc.js",
+      "url": "https://antonsoo.github.io/embater/assets/drill-raBnz6Pc.js",
+      "status": 200,
+      "bytes": 6519,
+      "sha256": "a4643b6b1b85f6d894ecb97577c644490fc8969b8734348e8fea445b31f502d8",
+      "actualBytes": 6519,
+      "actualSha256": "a4643b6b1b85f6d894ecb97577c644490fc8969b8734348e8fea445b31f502d8",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-greek-DCPER7xl.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-greek-DCPER7xl.woff2",
+      "status": 200,
+      "bytes": 19868,
+      "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+      "actualBytes": 19868,
+      "actualSha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-greek-ext-CW-BywWH.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-greek-ext-CW-BywWH.woff2",
+      "status": 200,
+      "bytes": 11484,
+      "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511",
+      "actualBytes": 11484,
+      "actualSha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-italic-greek-Dc0bJcw6.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-italic-greek-Dc0bJcw6.woff2",
+      "status": 200,
+      "bytes": 19588,
+      "sha256": "288deb73f6a27a306138997d310e4efbfba9bb623eca0829be0e4475ff164b71",
+      "actualBytes": 19588,
+      "actualSha256": "288deb73f6a27a306138997d310e4efbfba9bb623eca0829be0e4475ff164b71",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-italic-greek-ext-nvsmRjVx.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-italic-greek-ext-nvsmRjVx.woff2",
+      "status": 200,
+      "bytes": 11956,
+      "sha256": "4caf65dfd9a97861e20565bcec00273c1e157af7eb4f6af7bd61f3462feb7e09",
+      "actualBytes": 11956,
+      "actualSha256": "4caf65dfd9a97861e20565bcec00273c1e157af7eb4f6af7bd61f3462feb7e09",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-italic-latin-AvGrCMCN.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-italic-latin-AvGrCMCN.woff2",
+      "status": 200,
+      "bytes": 47940,
+      "sha256": "c664773f7e1d42d36326aa457becf7674236168c74cf7d74e87e5778ef7640f9",
+      "actualBytes": 47940,
+      "actualSha256": "c664773f7e1d42d36326aa457becf7674236168c74cf7d74e87e5778ef7640f9",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-italic-latin-ext-CYvIfuu9.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-italic-latin-ext-CYvIfuu9.woff2",
+      "status": 200,
+      "bytes": 88576,
+      "sha256": "fa866520f8b7fb646ebc730fd0d3cbf8945db74d92f25fdd6fee486808652fdf",
+      "actualBytes": 88576,
+      "actualSha256": "fa866520f8b7fb646ebc730fd0d3cbf8945db74d92f25fdd6fee486808652fdf",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-latin-CRpggXlh.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-latin-CRpggXlh.woff2",
+      "status": 200,
+      "bytes": 44336,
+      "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+      "actualBytes": 44336,
+      "actualSha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+      "matches": true
+    },
+    {
+      "path": "assets/eb-garamond-latin-ext-B6IpcvL2.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/eb-garamond-latin-ext-B6IpcvL2.woff2",
+      "status": 200,
+      "bytes": 113928,
+      "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+      "actualBytes": 113928,
+      "actualSha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+      "matches": true
+    },
+    {
+      "path": "assets/gfs-didot-greek-DZxOyfIP.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/gfs-didot-greek-DZxOyfIP.woff2",
+      "status": 200,
+      "bytes": 7192,
+      "sha256": "edd09b417c95a4d765076f3c52e2625bc1807e150dbcb1b2819f6734c3299f98",
+      "actualBytes": 7192,
+      "actualSha256": "edd09b417c95a4d765076f3c52e2625bc1807e150dbcb1b2819f6734c3299f98",
+      "matches": true
+    },
+    {
+      "path": "assets/gfs-didot-greek-ext-BVzEyZiZ.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/gfs-didot-greek-ext-BVzEyZiZ.woff2",
+      "status": 200,
+      "bytes": 8968,
+      "sha256": "847f8505aa2ccc19d28b1b2681bb0b8ded127541084c54ad197968ed226e6238",
+      "actualBytes": 8968,
+      "actualSha256": "847f8505aa2ccc19d28b1b2681bb0b8ded127541084c54ad197968ed226e6238",
+      "matches": true
+    },
+    {
+      "path": "assets/gfs-didot-latin-BRiTEmo6.woff2",
+      "url": "https://antonsoo.github.io/embater/assets/gfs-didot-latin-BRiTEmo6.woff2",
+      "status": 200,
+      "bytes": 14540,
+      "sha256": "f1748a5240008ec0964d1b001b64bc81b9abb171311110d558ef4b7acf508823",
+      "actualBytes": 14540,
+      "actualSha256": "f1748a5240008ec0964d1b001b64bc81b9abb171311110d558ef4b7acf508823",
+      "matches": true
+    },
+    {
+      "path": "assets/index-Cpb9qN88.js",
+      "url": "https://antonsoo.github.io/embater/assets/index-Cpb9qN88.js",
+      "status": 200,
+      "bytes": 15676,
+      "sha256": "750697df09afd333d50542113d74c70a029db8f3577f51e703bbc139841fe621",
+      "actualBytes": 15676,
+      "actualSha256": "750697df09afd333d50542113d74c70a029db8f3577f51e703bbc139841fe621",
+      "matches": true
+    },
+    {
+      "path": "assets/ionic-DCURDrIt.js",
+      "url": "https://antonsoo.github.io/embater/assets/ionic-DCURDrIt.js",
+      "status": 200,
+      "bytes": 12724,
+      "sha256": "7fb7ef329b0ec70ac2ca595183c0119d1469c0dab364a8bc3d2119c29b4f641c",
+      "actualBytes": 12724,
+      "actualSha256": "7fb7ef329b0ec70ac2ca595183c0119d1469c0dab364a8bc3d2119c29b4f641c",
+      "matches": true
+    },
+    {
+      "path": "assets/plan-DSKecGut.js",
+      "url": "https://antonsoo.github.io/embater/assets/plan-DSKecGut.js",
+      "status": 200,
+      "bytes": 3229,
+      "sha256": "d75d16ec6504c91ae47c691ab959ceb46e59c37641d1465c7b57914263e2ef92",
+      "actualBytes": 3229,
+      "actualSha256": "d75d16ec6504c91ae47c691ab959ceb46e59c37641d1465c7b57914263e2ef92",
+      "matches": true
+    },
+    {
+      "path": "assets/plans-2mp09t-V.js",
+      "url": "https://antonsoo.github.io/embater/assets/plans-2mp09t-V.js",
+      "status": 200,
+      "bytes": 34646,
+      "sha256": "f58f5cfb8bc4f3b6801d493be96c1acea7cb131a829742d5d1f4104753695f04",
+      "actualBytes": 34646,
+      "actualSha256": "f58f5cfb8bc4f3b6801d493be96c1acea7cb131a829742d5d1f4104753695f04",
+      "matches": true
+    },
+    {
+      "path": "assets/rules-C13TbV_N.js",
+      "url": "https://antonsoo.github.io/embater/assets/rules-C13TbV_N.js",
+      "status": 200,
+      "bytes": 34031,
+      "sha256": "cb15bfd3e0c4bf20466d003c08efc0faefdbd4edcb20eaa94d8c0cf9ef859c92",
+      "actualBytes": 34031,
+      "actualSha256": "cb15bfd3e0c4bf20466d003c08efc0faefdbd4edcb20eaa94d8c0cf9ef859c92",
+      "matches": true
+    },
+    {
+      "path": "assets/rules-Dxmx3o-A.css",
+      "url": "https://antonsoo.github.io/embater/assets/rules-Dxmx3o-A.css",
+      "status": 200,
+      "bytes": 18898,
+      "sha256": "11b157f729def42d6e572977499e95c4cca5c8673ba14a10246b30a5950403b0",
+      "actualBytes": 18898,
+      "actualSha256": "11b157f729def42d6e572977499e95c4cca5c8673ba14a10246b30a5950403b0",
+      "matches": true
+    },
+    {
+      "path": "assets/temples-BnZVv20C.js",
+      "url": "https://antonsoo.github.io/embater/assets/temples-BnZVv20C.js",
+      "status": 200,
+      "bytes": 15754,
+      "sha256": "65416c8d640d8676bb044b41ff129e7326212397e85f5587f4abedb8c7d11075",
+      "actualBytes": 15754,
+      "actualSha256": "65416c8d640d8676bb044b41ff129e7326212397e85f5587f4abedb8c7d11075",
+      "matches": true
+    },
+    {
+      "path": "assets/terms-CgokMeVg.js",
+      "url": "https://antonsoo.github.io/embater/assets/terms-CgokMeVg.js",
+      "status": 200,
+      "bytes": 31902,
+      "sha256": "4e938d10973887d88a3cc414928c2f6def8a264aea3c5eb5b6275a329a8a642d",
+      "actualBytes": 31902,
+      "actualSha256": "4e938d10973887d88a3cc414928c2f6def8a264aea3c5eb5b6275a329a8a642d",
+      "matches": true
+    },
+    {
+      "path": "assets/world-B5lBJhAC.js",
+      "url": "https://antonsoo.github.io/embater/assets/world-B5lBJhAC.js",
+      "status": 200,
+      "bytes": 37860,
+      "sha256": "8d450036cabc98690eb9e7095bb7a39861db10c2360f548cf12e931843043d8e",
+      "actualBytes": 37860,
+      "actualSha256": "8d450036cabc98690eb9e7095bb7a39861db10c2360f548cf12e931843043d8e",
+      "matches": true
+    },
+    {
+      "path": "assets/world-BL8CSbs1.js",
+      "url": "https://antonsoo.github.io/embater/assets/world-BL8CSbs1.js",
+      "status": 200,
+      "bytes": 3963,
+      "sha256": "618956a45e59fafb40e503d11d64a81de12c3f7f30026bd0fa817432d2046099",
+      "actualBytes": 3963,
+      "actualSha256": "618956a45e59fafb40e503d11d64a81de12c3f7f30026bd0fa817432d2046099",
+      "matches": true
+    },
+    {
+      "path": "compare.html",
+      "url": "https://antonsoo.github.io/embater/compare.html",
+      "status": 200,
+      "bytes": 1215,
+      "sha256": "3b4899e18d8844f67bb1214562c85500d2054aa8c11344d0be9de83089de6f0e",
+      "actualBytes": 1215,
+      "actualSha256": "3b4899e18d8844f67bb1214562c85500d2054aa8c11344d0be9de83089de6f0e",
+      "matches": true
+    },
+    {
+      "path": "drill.html",
+      "url": "https://antonsoo.github.io/embater/drill.html",
+      "status": 200,
+      "bytes": 1466,
+      "sha256": "d04e204ba1b8b04fe9cbbab5be590399c015e227b8c2850c0d0b120a6499d7cf",
+      "actualBytes": 1466,
+      "actualSha256": "d04e204ba1b8b04fe9cbbab5be590399c015e227b8c2850c0d0b120a6499d7cf",
+      "matches": true
+    },
+    {
+      "path": "favicon.svg",
+      "url": "https://antonsoo.github.io/embater/favicon.svg",
+      "status": 200,
+      "bytes": 469,
+      "sha256": "15dc22d4ec9c8afa39f62deec9863d203a6959ee230331740ee9723877de4257",
+      "actualBytes": 469,
+      "actualSha256": "15dc22d4ec9c8afa39f62deec9863d203a6959ee230331740ee9723877de4257",
+      "matches": true
+    },
+    {
+      "path": "index.html",
+      "url": "https://antonsoo.github.io/embater/index.html",
+      "status": 200,
+      "bytes": 1393,
+      "sha256": "4ba350f60877efc457c394610519f0e6687cc2a5e5cd04fa4fb12d9ea397be56",
+      "actualBytes": 1393,
+      "actualSha256": "4ba350f60877efc457c394610519f0e6687cc2a5e5cd04fa4fb12d9ea397be56",
+      "matches": true
+    },
+    {
+      "path": "plans.html",
+      "url": "https://antonsoo.github.io/embater/plans.html",
+      "status": 200,
+      "bytes": 1414,
+      "sha256": "73e833849887fc6be9c9c070bcbacdb0cd0b3b980a967ad667ec6e90c4e163a0",
+      "actualBytes": 1414,
+      "actualSha256": "73e833849887fc6be9c9c070bcbacdb0cd0b3b980a967ad667ec6e90c4e163a0",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/manifest.json",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/manifest.json",
+      "status": 200,
+      "bytes": 1659,
+      "sha256": "35097a67f070ce6fbaddb6f79ce8953a518939e7c94e59c5a0d17deb00730250",
+      "actualBytes": 1659,
+      "actualSha256": "35097a67f070ce6fbaddb6f79ce8953a518939e7c94e59c5a0d17deb00730250",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/p62.jpg",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/p62.jpg",
+      "status": 200,
+      "bytes": 657077,
+      "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327",
+      "actualBytes": 657077,
+      "actualSha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/p63.jpg",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/p63.jpg",
+      "status": 200,
+      "bytes": 707592,
+      "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+      "actualBytes": 707592,
+      "actualSha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/p64.jpg",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/p64.jpg",
+      "status": 200,
+      "bytes": 682881,
+      "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+      "actualBytes": 682881,
+      "actualSha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/p66.jpg",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/p66.jpg",
+      "status": 200,
+      "bytes": 724523,
+      "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+      "actualBytes": 724523,
+      "actualSha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/p69.jpg",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/p69.jpg",
+      "status": 200,
+      "bytes": 708563,
+      "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "actualBytes": 708563,
+      "actualSha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/p85.jpg",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/p85.jpg",
+      "status": 200,
+      "bytes": 673920,
+      "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1",
+      "actualBytes": 673920,
+      "actualSha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1",
+      "matches": true
+    },
+    {
+      "path": "sources/krohn-1912/p86.jpg",
+      "url": "https://antonsoo.github.io/embater/sources/krohn-1912/p86.jpg",
+      "status": 200,
+      "bytes": 672397,
+      "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc",
+      "actualBytes": 672397,
+      "actualSha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc",
+      "matches": true
+    },
+    {
+      "path": "sw.js",
+      "url": "https://antonsoo.github.io/embater/sw.js",
+      "status": 200,
+      "bytes": 8335,
+      "sha256": "15ef9d0c044e67599bba9a814eba3a6d1f84372cd1707a394d92a9558ea54ae3",
+      "actualBytes": 8335,
+      "actualSha256": "15ef9d0c044e67599bba9a814eba3a6d1f84372cd1707a394d92a9558ea54ae3",
+      "matches": true
+    },
+    {
+      "path": "world.html",
+      "url": "https://antonsoo.github.io/embater/world.html",
+      "status": 200,
+      "bytes": 1269,
+      "sha256": "1a29efb1b0b7778bd02dbe1ab7389e80f0cbabc3cfb6a0e10163a59c7a9f8ae8",
+      "actualBytes": 1269,
+      "actualSha256": "1a29efb1b0b7778bd02dbe1ab7389e80f0cbabc3cfb6a0e10163a59c7a9f8ae8",
+      "matches": true
+    }
+  ],
+  "matched": 43,
+  "total": 43
+}
