@@ -17,6 +17,16 @@ EB Garamond (Georg Duffner and Octavio Pardo) and GFS Didot (Greek Font Society)
 served from `src/fonts/`, under the SIL Open Font License 1.1. The full license and
 copyright notices are in `src/fonts/LICENSE.txt`.
 
+## Retained Vitruvius pages
+
+`public/sources/krohn-1912/` contains complete printed pages 62–64, 66, 69, 85–86
+of F. Krohn's 1912 Teubner edition, from the Internet Archive item
+`vitruviidearchit00vitr_1`. The text and images are public domain. `manifest.json`
+records each original image URL, image index, byte size and SHA-256. Printed page
+numbers and the passages used by the plan lesson were visually checked. The
+standalone plan reading embeds only the pages cited for its selected plan, with
+source attribution; its fonts carry the included OFL notices.
+
 ## Quoted texts
 
 - Vitruvius, *De architectura*, ed. F. Krohn (Leipzig: Teubner, 1912). Public domain.
