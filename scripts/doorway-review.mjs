@@ -14,6 +14,7 @@ await mkdir(output, { recursive: true });
 await mkdir(temp, { recursive: true });
 const hash = (b) => createHash("sha256").update(b).digest("hex");
 const source = JSON.parse(await readFile("public/sources/doorways/manifest.json", "utf8"));
+const survey = JSON.parse(await readFile("public/sources/erechtheion/manifest.json", "utf8"));
 const fonts = await Promise.all(
   ["latin", "latin-ext", "greek", "greek-ext"].map(async (p) =>
     hash(await readFile(`src/fonts/eb-garamond-${p}.woff2`)),
@@ -62,7 +63,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         await page.locator('input[value="unsupplied"]').focus();
         await page.keyboard.press("Space");
         assert.match(await text(page, "#door-height-rule"), /= 16 ft opening/);
-        await page.locator('input[value="doric"]').check();
+        await page.locator('input[name="kind"][value="doric"]').check();
         assert.match(await text(page, "#door-jamb-basis"), /drawing choice.*gap/);
         await page.locator("#door-trial").focus();
         await page.keyboard.press("ArrowRight");
@@ -96,12 +97,54 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           );
           await page.locator("#door-word-source").click();
         }
-        await page.locator('input[value="ionic"]').check();
+        await page.locator('input[name="kind"][value="ionic"]').check();
         await page.locator('input[value="supplied"]').check();
         await page.locator("#door-ceiling").fill("28");
         await page.locator("#door-ceiling").press("Tab");
         await page.locator("#door-parallel").click();
         await page.locator('[data-term="opening"]').click();
+        // The survey data resist all three relations; compare the unaligned dimension.
+        let measuredFits = 0;
+        for (const [rule, fit, residual] of [
+          ["ionic", "height", "474.2 mm narrower"],
+          ["ionic", "width", "1185.5 mm taller"],
+          ["doric", "height", "189.4167 mm narrower"],
+          ["doric", "width", "413.2727 mm taller"],
+          ["square", "height", "14 mm wider"],
+          ["square", "width", "28 mm shorter"],
+        ]) {
+          await page.locator(`input[name="measure-rule"][value="${rule}"]`).check();
+          await page.locator(`input[name="measure-fit"][value="${fit}"]`).check();
+          assert.ok((await text(page, "#measure-result")).includes(residual));
+          measuredFits++;
+        }
+        // A semantic anchor must not reset the working model or comparison.
+        await page.evaluate(() => {
+          location.hash = "measured-doorway";
+        });
+        assert.equal(
+          await page.locator('input[name="measure-fit"][value="width"]').isChecked(),
+          true,
+        );
+        await page.locator("#measure-source-page").selectOption("99");
+        await page
+          .locator("#measure-source-status")
+          .filter({ hasText: "Complete printed page 99." })
+          .waitFor();
+        const surveyHash = await page
+          .locator("#measure-source-image")
+          .evaluate(async (img) =>
+            Array.from(
+              new Uint8Array(
+                await crypto.subtle.digest("SHA-256", await (await fetch(img.src)).arrayBuffer()),
+              ),
+              (b) => b.toString(16).padStart(2, "0"),
+            ).join(""),
+          );
+        assert.equal(surveyHash, survey.plates[1].sha256);
+        await page
+          .locator("#measured-doorway")
+          .screenshot({ path: resolve(output, `${id}-measured.png`) });
         const shared = await page.locator("#door-link").inputValue();
         await page.locator("#door-copy").click();
         await page
@@ -119,12 +162,13 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           .locator("#door-height-rule")
           .filter({ hasText: "= 20 ft opening" })
           .waitFor();
-        assert.equal(await reopened.locator('input[value="doric"]').isChecked(), true);
+        assert.equal(await reopened.locator('input[name="kind"][value="doric"]').isChecked(), true);
         await reopened.goBack();
         await reopened.locator("#door-result").filter({ hasText: "0.3571 ft wider" }).waitFor();
         await reopened.close();
         const json = await download(page, "#door-save-json", `${id}.json`);
         const csv = await download(page, "#door-save-csv", `${id}.csv`);
+        const metric = await download(page, "#measure-save-csv", `${id}-metric.csv`);
         const svg = await download(page, "#door-save-svg", `${id}.svg`);
         const html = await download(page, "#door-save-reading", `${id}.html`);
         await page
@@ -134,10 +178,33 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         assert.equal(JSON.parse(json.bytes).choices.ceiling, 28);
         assert.match(svg.bytes.toString(), /shared endpoints assigned to lower band/);
         assert.match(csv.bytes.toString(), /"Opening height","20"/);
-        await page.locator('input[value="doric"]').check();
+        await page.locator('input[name="kind"][value="doric"]').check();
         await page.locator("#door-open").setInputFiles(json.file);
         await page.locator("#door-save-status").filter({ hasText: "Drawing opened." }).waitFor();
-        assert.equal(await page.locator('input[value="ionic"]').isChecked(), true);
+        assert.equal(await page.locator('input[name="kind"][value="ionic"]').isChecked(), true);
+        assert.equal(
+          await page.locator('input[name="measure-fit"][value="width"]').isChecked(),
+          true,
+        );
+        // Version 1 files predate the survey desk and receive its documented default.
+        await page.locator("#door-open").setInputFiles({
+          name: "v1.json",
+          mimeType: "application/json",
+          buffer: Buffer.from(
+            JSON.stringify({
+              format: "embater-doorway",
+              version: 1,
+              choices: { ceiling: 28, kind: "ionic", reading: "supplied", trial: 0 },
+            }),
+          ),
+        });
+        await page.locator("#door-save-status").filter({ hasText: "Drawing opened." }).waitFor();
+        assert.equal(
+          await page.locator('input[name="measure-rule"][value="ionic"]').isChecked(),
+          true,
+        );
+        await page.locator("#door-open").setInputFiles(json.file);
+        await page.locator("#door-save-status").filter({ hasText: "Drawing opened." }).waitFor();
         await page.locator("#door-open").setInputFiles({
           name: "bad.json",
           mimeType: "application/json",
@@ -152,7 +219,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         );
         assert.deepEqual(
           images.map(hash),
-          source.plates.map((p) => p.sha256),
+          [...source.plates, ...survey.plates].map((p) => p.sha256),
         );
         const fontData = [...htmlText.matchAll(/url\(data:font\/woff2;base64,([^)]+)\)/g)].map(
           (m) => Buffer.from(m[1], "base64"),
@@ -194,11 +261,30 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         assert.deepEqual(nativeCsv.bytes, csv.bytes);
         const nativeSvg = await download(portable, 'a[download="doorway.svg"]', `${id}-native.svg`);
         assert.deepEqual(nativeSvg.bytes, svg.bytes);
+        const nativeMetric = await download(
+          portable,
+          'a[download="erechtheion.csv"]',
+          `${id}-native-metric.csv`,
+        );
+        assert.deepEqual(nativeMetric.bytes, metric.bytes);
+        const nativeSources = await download(
+          portable,
+          'a[download="doorway-sources.json"]',
+          `${id}-native-sources.json`,
+        );
+        const identities = JSON.parse(nativeSources.bytes);
+        assert.equal(identities.originalPdf.sha256, source.originalSha256);
+        assert.equal(identities.measuredSurvey.originalPdf.sha256, survey.originalSha256);
+        assert.deepEqual(
+          identities.measuredSurvey.pages.map((p) => p.sha256),
+          survey.plates.map((p) => p.sha256),
+        );
         assert.deepEqual(requests, []);
         if (engine === "chromium" && width === 1440 && colorScheme === "light") {
           await writeFile("examples/doorways/drawing.json", json.bytes);
           await writeFile("examples/doorways/measurements.csv", csv.bytes);
           await writeFile("examples/doorways/drawing.svg", svg.bytes);
+          await writeFile("examples/doorways/metric.csv", metric.bytes);
           await writeFile("examples/doorways/reading.html.gz", gzipSync(html.bytes));
           await portable.pdf({
             path: "examples/doorways/reading.pdf",
@@ -250,11 +336,15 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           discovery: "Orders -> Doorways via keyboard",
           boundaries,
           languageNotes: 7,
+          measuredFits,
+          surveyHash,
+          versionOneUpgrade: true,
+          semanticAnchorPreserved: true,
           editableRoundTrip: true,
           explicitLink: true,
           sourceImageHashes: images.map(hash),
           fontHashes: fontData.map(hash),
-          portable: { scripts: 0, networkRequests: requests.length, nativeDownloads: 3 },
+          portable: { scripts: 0, networkRequests: requests.length, nativeDownloads: 5 },
           axeViolations: 0,
           pageErrors: errors,
         });
@@ -296,7 +386,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
       engine,
       offline: {
         coldDoorway: true,
-        sourcePages: 2,
+        sourcePages: 4,
         htmlDownloadBytes: saved.bytes.length,
         rooms: 6,
       },

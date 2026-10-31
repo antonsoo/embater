@@ -49,10 +49,27 @@ for row in rows:
     error = abs(float(row['Roman feet'])-float(exact))
     assert error < 1e-12, (row, str(exact), error)
     errors.append(error)
+# Independent Fraction oracle for all six metric fits, without importing model code.
+metric_cases=[]
+for rule,ratio in [('ionic',F(2,5)),('doric',F(11,24)),('square',F(1,2))]:
+    for fit in ['height','width']:
+        h,b=F(4882,1000),F(2427,1000)
+        ph,pb=(h,h*ratio) if fit=='height' else (b/ratio,b)
+        metric_cases.append({'rule':rule,'fit':fit,'height':str(ph),'width':str(pb),'heightError':str(ph-h),'widthError':str(pb-b)})
+chosen=next(c for c in metric_cases if c['rule']==state['comparison']['rule'] and c['fit']==state['comparison']['fit'])
+metric_expected=[F(4882,1000),F(2427,1000),F(44,1000),F(2339,1000),F(chosen['height']),F(chosen['width']),F(chosen['heightError']),F(chosen['widthError'])]
+with (p/'metric.csv').open(newline='') as f: metric_rows=list(csv.DictReader(f))
+assert len(metric_rows)==8
+for row,exact in zip(metric_rows,metric_expected):
+    assert abs(float(row['Metres'])-float(exact))<1e-12,(row,exact)
+assert F(4882,1000)*F(1,2)-F(2427,1000)==F(14,1000)
+assert F(2427,1000)*2-F(4882,1000)==-F(28,1000)
 reading = gzip.decompress((p/'reading.html.gz').read_bytes()).decode()
 assert not re.search(r'<script\b', reading, re.I)
 images = [base64.b64decode(b) for b in re.findall(r'src="data:image/jpeg;base64,([^"]+)"', reading)]
 manifest = json.loads((ROOT/'public/sources/doorways/manifest.json').read_text())
+survey = json.loads((ROOT/'public/sources/erechtheion/manifest.json').read_text())
+manifest['plates'] += survey['plates']
 assert [sha(b) for b in images] == [row['sha256'] for row in manifest['plates']]
 for image, plate in zip(images, manifest['plates']):
     assert image == (ROOT/'public'/plate['path']).read_bytes()
@@ -62,10 +79,14 @@ for data, subset in zip(font_data, ['latin','latin-ext','greek','greek-ext']):
     assert data == (ROOT/f'src/fonts/eb-garamond-{subset}.woff2').read_bytes()
 for license in ['LICENSE.txt','FONT-LICENSE.txt']:
     assert (ROOT/'public'/license).read_bytes().decode() in html.unescape(reading)
-for name, filename in [('doorway.json','drawing.json'),('doorway.csv','measurements.csv'),('doorway.svg','drawing.svg')]:
+for name, filename in [('doorway.json','drawing.json'),('doorway.csv','measurements.csv'),('doorway.svg','drawing.svg'),('erechtheion.csv','metric.csv')]:
     m = re.search(r'download="'+re.escape(name)+r'" href="data:[^;]+;base64,([^"]+)"', reading)
     assert m, name
     assert base64.b64decode(m[1]) == (p/filename).read_bytes()
+identity_data=re.search(r'download="doorway-sources.json" href="data:[^;]+;base64,([^"]+)"',reading)
+identities=json.loads(base64.b64decode(identity_data[1]))
+assert identities['measuredSurvey']['originalPdf']['sha256']==survey['originalSha256']
+assert [v['sha256'] for v in identities['measuredSurvey']['pages']]==[v['sha256'] for v in survey['plates']]
 for phrase in ['supplied semis','The Ionic jamb is H/14','shared endpoints 16']:
     assert phrase in reading, phrase
 svg = ET.fromstring((p/'drawing.svg').read_bytes())
@@ -90,9 +111,9 @@ with tempfile.TemporaryDirectory(prefix='embater-pdf-images-') as tmp:
     pdf_images = [f.read_bytes() for f in sorted(Path(tmp).glob('source-*.jpg'))]
     assert [sha(b) for b in pdf_images] == [row['sha256'] for row in manifest['plates']]
 report = {'boundary':'Actual native browser downloads; no hosted-publication claim',
-          'choices':state, 'fractionOracle':{k:str(v) for k,v in expected.items()},
+          'choices':state, 'metricFractionOracle':metric_cases, 'fractionOracle':{k:str(v) for k,v in expected.items()},
           'maximumNumericError':max(errors), 'imageHashes':[sha(b) for b in images],
-          'fontHashes':[sha(b) for b in font_data], 'nativeFilesByteMatch':3,
+          'fontHashes':[sha(b) for b in font_data], 'nativeFilesByteMatch':4,
           'pdfPages':len(pages), 'pdfWordsInside15PointMargins':True,
           'pdfSourceImagesByteMatch':len(pdf_images),
           'artifacts':[{ 'file':f.name, 'bytes':f.stat().st_size, 'sha256':sha(f.read_bytes())}
