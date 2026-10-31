@@ -29,6 +29,16 @@ source attribution; its fonts carry the included OFL notices.
 
 ## Quoted texts
 
+The doorway room additionally retains complete printed pages 88–89 of the same
+1912 Krohn edition in `public/sources/doorways/`. They were rendered from the
+Internet Archive PDF, public domain. Its identity and the rendering command are
+in `public/sources/doorways/manifest.json`; `scripts/doorway-sources.py` reproduces
+and compares the retained bytes. Doorway Latin preserves the marked supplements
+and lacuna, with normalized case, punctuation and line-break hyphenation.
+English translations and contextual word notes are new; dictionary links point
+to Lewis and Short and LSJ through Logeion. No modern English translation or
+reconstructed ancient drawing is reproduced in the doorway lesson.
+
 - Vitruvius, *De architectura*, ed. F. Krohn (Leipzig: Teubner, 1912). Public domain.
   Consulted as the Internet Archive scan `vitruviidearchit00vitr_1`
   (https://archive.org/details/vitruviidearchit00vitr_1); the PDF had SHA-256
@@ -46,3 +56,16 @@ Lexicon* (9th ed.) and Lewis and Short, *A Latin Dictionary*, both through Logei
 through the Cologne Digital Sanskrit Dictionaries; the Online Nahuatl Dictionary
 (University of Oregon); and Wiktionary entries, whose own citations are named
 where used.
+
+## Retained Erechtheion survey pages
+
+`public/sources/erechtheion/` retains complete unmodified printed pages 98–99
+(PDF pages 128–129) of *The Erechtheum*, edited by James Morton Paton, measured,
+drawn and restored by Gorham Phillips Stevens (Harvard University Press,
+Cambridge, Massachusetts, 1927). This 1927 US publication is public domain in the
+United States. Source: Internet Archive item `erechtheummeasur1192unse`. The
+manifest records original PDF identity, page hashes and the rendering command;
+`scripts/measured-sources.py` independently reproduces these pages. The lesson
+compares reported dimensions of the survey's interpreted original opening,
+explicitly omitting later inner linings. It does not reproduce a modern survey
+or claim these are measurements of today's clear opening.
