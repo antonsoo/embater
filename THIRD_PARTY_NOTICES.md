@@ -29,6 +29,16 @@ source attribution; its fonts carry the included OFL notices.
 
 ## Quoted texts
 
+The doorway room additionally retains complete printed pages 88–89 of the same
+1912 Krohn edition in `public/sources/doorways/`. They were rendered from the
+Internet Archive PDF, public domain. Its identity and the rendering command are
+in `public/sources/doorways/manifest.json`; `scripts/doorway-sources.py` reproduces
+and compares the retained bytes. Doorway Latin preserves the marked supplements
+and lacuna, with normalized case, punctuation and line-break hyphenation.
+English translations and contextual word notes are new; dictionary links point
+to Lewis and Short and LSJ through Logeion. No modern English translation or
+reconstructed ancient drawing is reproduced in the doorway lesson.
+
 - Vitruvius, *De architectura*, ed. F. Krohn (Leipzig: Teubner, 1912). Public domain.
   Consulted as the Internet Archive scan `vitruviidearchit00vitr_1`
   (https://archive.org/details/vitruviidearchit00vitr_1); the PDF had SHA-256

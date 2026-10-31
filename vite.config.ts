@@ -6,6 +6,7 @@ export default defineConfig(async () => {
     "index.html",
     "plans.html",
     "compare.html",
+    "doorways.html",
     "world.html",
     "drill.html",
   ]);
@@ -15,7 +16,14 @@ export default defineConfig(async () => {
     plugins: [offline.plugin],
     build: {
       rollupOptions: {
-        input: ["index.html", "plans.html", "compare.html", "world.html", "drill.html"],
+        input: [
+          "index.html",
+          "plans.html",
+          "compare.html",
+          "doorways.html",
+          "world.html",
+          "drill.html",
+        ],
       },
     },
   };

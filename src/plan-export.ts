@@ -1,3 +1,4 @@
+import { dataUrl, verified } from "./assets";
 import { CODE_LICENSE_HASH, FONT_LICENSE_HASH, PLAN_FONTS } from "./content/plan-fonts";
 import { PLAN_PLATES } from "./content/plan-plates";
 import { planPages } from "./content/plan-reading";
@@ -7,25 +8,7 @@ import { renderElevation } from "./draw/render";
 import { esc } from "./ui/dom";
 import { claimsTable, planPassages } from "./ui/plan-reading";
 
-export async function verified(url: string, hash: string): Promise<Uint8Array<ArrayBuffer>> {
-  const response = await fetch(url);
-  if (!response.ok)
-    throw new Error("A source page or font could not be loaded. Reconnect and try again.");
-  const bytes = new Uint8Array(await response.arrayBuffer());
-  const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
-  if (Array.from(digest, (b) => b.toString(16).padStart(2, "0")).join("") !== hash)
-    throw new Error(
-      "A source page or font differs from the reviewed edition. Reload online before saving.",
-    );
-  return bytes;
-}
-
-export function dataUrl(bytes: Uint8Array, mime: string): string {
-  let binary = "";
-  for (let i = 0; i < bytes.length; i += 8192)
-    binary += String.fromCharCode(...bytes.subarray(i, i + 8192));
-  return `data:${mime};base64,${btoa(binary)}`;
-}
+export { verified } from "./assets";
 
 export const PLAN_SVG_STYLE = `.plate-svg{display:block;width:100%;height:auto}.pc{vector-effect:non-scaling-stroke;stroke-linejoin:round}.solid{fill:#f8f9f5;stroke:#1f2328;stroke-width:.9px}.solid.chosen{stroke:#8b9199}.groove{fill:#2a2f36;stroke:none}.groove.chosen{fill:#8b9199}.shade{fill:var(--hatch);stroke:none}.hatch-line{stroke:#1f2328;opacity:.38}`;
 

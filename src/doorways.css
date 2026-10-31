@@ -1,0 +1,516 @@
+.door-lede {
+  max-width: 65rem;
+}
+.door-lede p {
+  max-width: 68ch;
+}
+#door-notice:empty {
+  display: none;
+}
+.door-desk {
+  display: grid;
+  grid-template-columns: minmax(17rem, 22rem) minmax(0, 1fr);
+  gap: 2.3rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+.door-controls form {
+  display: grid;
+  gap: 1rem;
+}
+.door-controls .seg-row {
+  margin-top: 0.3rem;
+}
+.door-controls label:not(.seg label) {
+  display: grid;
+  gap: 0.3rem;
+}
+.door-height span {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+.door-desk input[type="number"] {
+  width: 7rem;
+}
+.door-controls input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--caeruleum);
+}
+.door-controls output {
+  color: var(--caeruleum);
+}
+.door-small {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.door-controls .door-small {
+  margin: 0;
+}
+.door-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.door-actions button,
+.door-file,
+.door-share button,
+.door-reading button,
+.door-word-note button,
+.door-boundaries button {
+  font: inherit;
+  background: var(--sheet);
+  color: var(--caeruleum);
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.door-controls button {
+  font-size: 1rem;
+}
+.door-actions button:hover,
+.door-file:hover,
+.door-share button:hover,
+.door-word-note button:hover,
+.door-boundaries button:hover {
+  border-color: var(--caeruleum);
+}
+.door-actions button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.door-desk input[type="number"],
+.door-share input,
+.door-reading select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  padding: 0.35rem 0.5rem;
+  max-width: 100%;
+}
+.door-result {
+  margin: 1.3rem 0 0.8rem;
+  padding: 1rem 0;
+  border-top: 3px solid var(--caeruleum);
+  border-bottom: 1px solid var(--rule);
+}
+.door-result p {
+  margin: 0 0 0.6rem;
+}
+.door-result p:last-child {
+  margin: 0;
+}
+.door-band {
+  color: var(--minium);
+  font-size: 1.15rem;
+}
+.door-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  padding: 1rem;
+}
+.door-pair figure {
+  min-width: 0;
+  margin: 0;
+}
+.door-pair figcaption {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.door-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--ink);
+  font-family: var(--text);
+}
+.door-svg text {
+  fill: currentColor;
+  font-size: 17px;
+}
+.door-svg .stone {
+  fill: color-mix(in srgb, var(--ink) 8%, var(--sheet));
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+.door-svg .opening {
+  fill: color-mix(in srgb, var(--caeruleum) 6%, var(--sheet));
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+.door-svg .reference {
+  fill: none;
+  stroke: var(--chosen);
+  stroke-width: 1;
+}
+.door-svg .rule-line {
+  fill: none;
+  stroke: var(--minium);
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+  pointer-events: none;
+}
+.door-svg .trial-line {
+  fill: none;
+  stroke: var(--caeruleum);
+  stroke-width: 2.5;
+  pointer-events: none;
+}
+.door-svg .measure {
+  fill: none;
+  stroke: var(--minium);
+  stroke-width: 1;
+}
+.door-svg .measure-text {
+  fill: var(--minium);
+  font-size: 17px;
+}
+.door-svg .part {
+  cursor: pointer;
+}
+.door-svg .part.selected {
+  fill: color-mix(in srgb, var(--caeruleum) 17%, var(--sheet));
+  stroke: var(--caeruleum);
+  stroke-width: 2.5;
+}
+.door-svg .ruler-fill {
+  fill: color-mix(in srgb, var(--caeruleum) 15%, var(--sheet));
+  stroke: none;
+}
+.door-svg .small {
+  font-size: 14px;
+}
+.door-legend {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin: 0.8rem 0;
+  max-width: 75ch;
+}
+.door-blue {
+  color: var(--caeruleum);
+}
+.door-red {
+  color: var(--minium);
+}
+.door-words {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-block: 1px solid var(--rule);
+  align-items: start;
+}
+.door-words h2,
+.door-words h3,
+.door-bands h2,
+.door-keep h2,
+.door-reading h2 {
+  margin: 0 0 1rem;
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.door-words h2 {
+  font-size: 1.4rem;
+}
+.door-words h3 {
+  font-size: 1.6rem;
+}
+.door-word-list {
+  display: grid;
+  gap: 0.2rem;
+}
+.door-word-list button {
+  font: inherit;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  text-align: left;
+  gap: 1rem;
+  background: none;
+  border: 0;
+  border-left: 3px solid transparent;
+  color: var(--ink);
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+.door-word-list button[aria-pressed="true"] {
+  border-color: var(--caeruleum);
+  color: var(--caeruleum);
+  background: var(--sheet);
+}
+.door-word-list small {
+  color: var(--ink-soft);
+  text-align: right;
+  line-height: 1.2;
+  font-size: 0.85rem;
+}
+.door-word-note p {
+  margin: 0.6rem 0;
+}
+.door-word-form {
+  font-style: italic;
+  color: var(--minium);
+}
+#door-corner {
+  margin: 0;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+}
+.door-bands,
+.door-keep,
+.door-reading {
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+.door-bands > p,
+.door-reading > p {
+  max-width: 72ch;
+}
+.door-boundaries {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.door-boundaries > div {
+  border-left: 2px solid var(--rule);
+  padding-left: 1rem;
+}
+.door-boundaries h3 {
+  margin: 0.5rem 0;
+  font-weight: 400;
+}
+.door-boundaries button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0.4rem 0;
+}
+.door-keep details {
+  margin: 1.25rem 0;
+}
+.door-keep summary {
+  cursor: pointer;
+}
+.door-share {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+.door-share input {
+  flex: 1;
+  min-width: 0;
+}
+.door-file {
+  position: relative;
+}
+.door-file input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  cursor: pointer;
+}
+.door-file:focus-within {
+  outline: 2px solid var(--caeruleum);
+  outline-offset: 3px;
+}
+.door-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 1rem;
+}
+.door-table th,
+.door-table td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+.door-table td:nth-child(2) {
+  color: var(--minium);
+  font-variant-numeric: tabular-nums;
+}
+.door-table th {
+  font-weight: 400;
+}
+.door-table caption {
+  text-align: left;
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+.door-table-wrap {
+  overflow: auto;
+}
+.door-passage {
+  max-width: 72ch;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+  scroll-margin-top: 1rem;
+}
+.door-passage h3 {
+  font-weight: 400;
+  font-size: 1.35rem;
+  margin: 0;
+}
+.door-passage [lang="la"] {
+  color: var(--minium);
+}
+.door-cite {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.door-source {
+  display: grid;
+  grid-template-columns: minmax(14rem, 1fr) 2fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.door-source label,
+.door-source select,
+.door-source button {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+#door-source-frame {
+  height: 38rem;
+  overflow: auto;
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  scrollbar-gutter: stable;
+}
+#door-source-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+#door-source-image[hidden] {
+  display: none;
+}
+#door-source-frame.enlarged #door-source-image {
+  width: 1260px;
+  max-width: none;
+}
+.pages {
+  flex-wrap: wrap;
+}
+.door-desk button:focus-visible,
+.door-words button:focus-visible,
+.door-bands button:focus-visible,
+.door-keep button:focus-visible,
+.door-reading button:focus-visible,
+#door-source-frame:focus-visible {
+  outline: 2px solid var(--caeruleum);
+  outline-offset: 3px;
+}
+@media (max-width: 72rem) {
+  .door-desk {
+    grid-template-columns: minmax(15rem, 20rem) minmax(0, 1fr);
+    gap: 1.2rem;
+  }
+  .door-pair {
+    grid-template-columns: 1fr;
+    max-width: 28rem;
+    margin: auto;
+  }
+  .door-words {
+    grid-template-columns: 1fr 1.4fr;
+  }
+  #door-corner {
+    grid-column: 2;
+    max-width: 22rem;
+  }
+}
+@media (max-width: 48rem) {
+  .door-desk {
+    grid-template-columns: 1fr;
+  }
+  .door-controls {
+    max-width: 34rem;
+  }
+  .door-pair {
+    max-width: 25rem;
+    padding: 0.6rem;
+  }
+  .door-words {
+    grid-template-columns: 1fr;
+  }
+  #door-corner {
+    grid-column: auto;
+    width: 100%;
+    max-width: 25rem;
+  }
+  .door-boundaries {
+    grid-template-columns: 1fr;
+  }
+  .door-boundaries > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .door-boundaries h3 {
+    width: 100%;
+  }
+  .door-boundaries button {
+    width: auto;
+    margin: 0;
+    font-size: 1rem;
+  }
+  .door-source {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  #door-source-frame {
+    height: 30rem;
+  }
+  .door-share {
+    flex-wrap: wrap;
+  }
+  .door-share input {
+    flex-basis: 100%;
+  }
+  .door-table th,
+  .door-table td {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.9rem;
+  }
+}
+@media print {
+  .mast,
+  .foot,
+  .door-controls form,
+  .door-actions,
+  .door-share,
+  .door-source button,
+  .door-word-list {
+    display: none;
+  }
+  .door-desk {
+    display: block;
+  }
+  .door-pair {
+    grid-template-columns: 1fr 1fr;
+    max-width: 160mm;
+    border: 0;
+  }
+  .door-svg {
+    color: #1f2328;
+  }
+  #door-source-frame {
+    height: auto;
+    overflow: visible;
+  }
+  #door-source-frame.enlarged #door-source-image {
+    width: 100%;
+  }
+}

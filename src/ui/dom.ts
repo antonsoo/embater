@@ -14,12 +14,13 @@ export function $(selector: string, root: ParentNode = document): HTMLElement {
   return el;
 }
 
-export type Page = "orders" | "plans" | "compare" | "world" | "drill";
+export type Page = "orders" | "plans" | "compare" | "doorways" | "world" | "drill";
 
 const PAGES: [Page, string, string][] = [
   ["orders", "./", "Orders"],
   ["plans", "./plans.html", "Plans"],
   ["compare", "./compare.html", "Count"],
+  ["doorways", "./doorways.html", "Doorways"],
   ["world", "./world.html", "World"],
   ["drill", "./drill.html", "Drill"],
 ];
