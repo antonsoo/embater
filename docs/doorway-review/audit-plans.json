@@ -1,0 +1,535 @@
+{
+  "base": "http://127.0.0.1:4493/embater/",
+  "receipts": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "colorScheme": "light",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "colorScheme": "dark",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "colorScheme": "light",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "colorScheme": "dark",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "colorScheme": "light",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "colorScheme": "dark",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "colorScheme": "light",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "colorScheme": "dark",
+      "models": 27,
+      "prostyleCellaPreserved": true,
+      "hypaethralTwoDoors": true,
+      "sourceHashes": [
+        {
+          "page": 62,
+          "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+        },
+        {
+          "page": 63,
+          "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+        },
+        {
+          "page": 64,
+          "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+        },
+        {
+          "page": 66,
+          "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+        },
+        {
+          "page": 69,
+          "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        },
+        {
+          "page": 85,
+          "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+        },
+        {
+          "page": 86,
+          "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+        }
+      ],
+      "sourceFitAndKeyboardPan": true,
+      "explicitShareReopened": true,
+      "html": {
+        "bytes": 4048024,
+        "sha256": "d5bd6b1006ff79ad419989c5b3e34fbb8df76decbc804cc433b2d3e8898aef4b",
+        "images": [
+          "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941",
+          "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5",
+          "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060",
+          "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+        ],
+        "fonts": [
+          "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+          "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+          "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+          "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+        ]
+      },
+      "svg": {
+        "bytes": 8944,
+        "sha256": "3b178b0f4a1d35e1132303ae85aa8aa8a747e230a86ff716452100e1d139d08e"
+      },
+      "offlineExportIdentical": true,
+      "portableNetworkRequests": 0,
+      "a11y": [],
+      "errors": []
+    }
+  ],
+  "faults": [
+    {
+      "engine": "chromium",
+      "lateSourceCannotReplaceNewer": true,
+      "corruptSourceHidden": true,
+      "corruptExportRefused": true,
+      "exportSelectionFrozen": true,
+      "cancellationNoDownload": true
+    },
+    {
+      "engine": "firefox",
+      "lateSourceCannotReplaceNewer": true,
+      "corruptSourceHidden": true,
+      "corruptExportRefused": true,
+      "exportSelectionFrozen": true,
+      "cancellationNoDownload": true
+    }
+  ]
+}

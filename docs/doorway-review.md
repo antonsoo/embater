@@ -214,20 +214,37 @@ Recorded results:
 
 | Check | Local result | Receipt |
 | --- | --- | --- |
-| Fresh Node 24.22.1 install and full check | Passed; 44 unit tests; 12 pre-existing lint warnings | [Clean build](doorway-review/clean-build.json) |
-| Production identity | All 51 files match the reviewed build | [File inventory](doorway-review/clean-build.json) |
-| Doorway journeys | Eight browser/width/theme combinations; 72 boundary operations; two cold offline openings | [Browser receipt](doorway-review/local/receipt.json), [fresh-install replay](doorway-review/clean-browser.json) |
-| Source failure and recovery | Both engines; two tabs; rejected replacement, repair, eviction, races, cancellation, deadline and late-file protection | [Recovery](doorway-review/recovery.json) |
-| Original plan room | Both engines, both widths/themes; 27 model operations per combination and export/source failure checks | [Plan regression](doorway-review/plans-regression.json) |
-| Original offline failure cases | Both engines; 503, 404, stalled body, eviction and corrupt install | [Offline regression](doorway-review/offline-regression.json) |
+| Fresh Node 24.22.1 install and full check | Passed; 46 unit tests; 12 pre-existing lint warnings | [Clean build](doorway-review/audit-clean-build.json) |
+| Production identity | All 54 files match the reviewed build | [File inventory](doorway-review/audit-clean-build.json) |
+| Doorway journeys | Eight browser/width/theme combinations; 72 boundary operations; two cold offline openings | [Browser receipt](doorway-review/audit-browser.json) |
+| Source failure and recovery | Both engines; three tabs; rejected replacement, repair, eviction, races, cancellation, deadline and late-file protection | [Recovery](doorway-review/audit-recovery.json) |
+| Original plan room | Both engines, both widths/themes; 27 model operations per combination and export/source failure checks | [Plan regression](doorway-review/audit-plans.json) |
+| Original offline failure cases | Both engines; 503, 404, stalled body, eviction and corrupt install | [Offline regression](doorway-review/audit-offline.json) |
 | Actual retained reading | 16 PDF pages; four byte-identical PDF source images; four embedded HTML font subsets; four matching native files | [Artifact audit](doorway-review/artifacts.json) |
+
+The [edition-upgrade review](doorway-review/edition-upgrade.json) serves the
+previously published `gh-pages` build, installs the reviewed edition, requires
+its actual controlling-worker identity and complete cache, and waits for the
+retired cache to disappear. Both engines preserve the selected plan and then
+open the previously unvisited survey page offline. The driver polls awaited
+`page.evaluate` results in the host; an asynchronous `waitForFunction` predicate
+in the installed Playwright could resolve false without waiting and is not used
+for this handover claim. These timings are fixture observations, not performance
+benchmarks.
+
+The 54-file final build comes from source `a5b2ccba9cb7881a4970e9fa8631ba48782a66a9`.
+The full eight-combination local browser matrix used the earlier source
+`28702f4aa42814e2444b3362c2f8853f2855ee03`; subsequent app changes clarify the
+edition-mismatch message and prevent a wrapped metric print heading. The final
+build's recovery, edition-upgrade and actual print artifacts were checked
+separately. Generated review JSON is preserved as machine output, consistent
+with the existing `docs/review` formatting exclusion.
 
 ## Design and publication handoff
 
 The [design note](doorway-design.md) records the architectural plate, two-pigment
 trial/rule distinction and restrained extension of the existing identity.
-The actual screenshot is [desktop](assets/doorways-desktop.png); a narrow
-[drawing view](assets/doorways-phone.png) is retained too.
+Actual screenshots: [doorway desk](assets/doorways-desktop.png), [narrow drawing](assets/doorways-phone.png), [survey desk](assets/erechtheion-desktop.png) and [narrow dark survey](assets/erechtheion-phone.png).
 
 Build command: `npm run build`. Static output: `dist/`, with base `/embater/`.
 All six HTML entries, source images, fonts and notices are included in the

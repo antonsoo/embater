@@ -1,0 +1,33 @@
+{
+  "newEdition": "de6cc0d9e2271f30eeca41cfc766857fbc322bbf3d1b44e1fcd2d9fa076f756a",
+  "rows": [
+    {
+      "engine": "chromium",
+      "oldCaches": [
+        "embater-04f8b4228ab2f6a512d3ead4b686aceb47c9281d521c302d8d2875c4719e320b"
+      ],
+      "newCaches": [
+        "embater-de6cc0d9e2271f30eeca41cfc766857fbc322bbf3d1b44e1fcd2d9fa076f756a"
+      ],
+      "retirementMs": 206,
+      "oldPageInvalidated": true,
+      "drawingPreserved": true,
+      "reloadedEdition": "de6cc0d9e2271f30eeca41cfc766857fbc322bbf3d1b44e1fcd2d9fa076f756a",
+      "coldOfflineSurvey": true
+    },
+    {
+      "engine": "firefox",
+      "oldCaches": [
+        "embater-04f8b4228ab2f6a512d3ead4b686aceb47c9281d521c302d8d2875c4719e320b"
+      ],
+      "newCaches": [
+        "embater-de6cc0d9e2271f30eeca41cfc766857fbc322bbf3d1b44e1fcd2d9fa076f756a"
+      ],
+      "retirementMs": 209,
+      "oldPageInvalidated": true,
+      "drawingPreserved": true,
+      "reloadedEdition": "de6cc0d9e2271f30eeca41cfc766857fbc322bbf3d1b44e1fcd2d9fa076f756a",
+      "coldOfflineSurvey": true
+    }
+  ]
+}

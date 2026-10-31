@@ -1,0 +1,51 @@
+{
+  "base": "http://127.0.0.1:4492/embater/",
+  "results": [
+    {
+      "engine": "chromium",
+      "tabs": 3,
+      "newTabByteAudit": true,
+      "broadcastChannelUnavailable": true,
+      "genericFontAndLicenseRepair": true,
+      "falseRepairRejected": true,
+      "repairedOfflineReload": true,
+      "workerRestart": true,
+      "corruptionDetected": true,
+      "statusPropagated": true,
+      "unverifiedNetworkRejected": true,
+      "cacheRepaired": true,
+      "evictionRecovered": true,
+      "staleSourceRejected": true,
+      "cancelledSave": true,
+      "snapshotPreserved": true,
+      "failedSaveRetried": true,
+      "lateFilePreserved": true,
+      "deadlineRecovered": true,
+      "sourceHash": "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+      "snapshotHash": "a90309da12a8cd85663acbfee77c88730add7bdff8d7af1ca144129bb8082433"
+    },
+    {
+      "engine": "firefox",
+      "tabs": 3,
+      "newTabByteAudit": true,
+      "broadcastChannelUnavailable": true,
+      "genericFontAndLicenseRepair": true,
+      "falseRepairRejected": true,
+      "repairedOfflineReload": true,
+      "workerRestart": "not exercised in this browser",
+      "corruptionDetected": true,
+      "statusPropagated": true,
+      "unverifiedNetworkRejected": true,
+      "cacheRepaired": true,
+      "evictionRecovered": true,
+      "staleSourceRejected": true,
+      "cancelledSave": true,
+      "snapshotPreserved": true,
+      "failedSaveRetried": true,
+      "lateFilePreserved": true,
+      "deadlineRecovered": true,
+      "sourceHash": "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+      "snapshotHash": "a90309da12a8cd85663acbfee77c88730add7bdff8d7af1ca144129bb8082433"
+    }
+  ]
+}
