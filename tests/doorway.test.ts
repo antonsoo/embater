@@ -61,7 +61,7 @@ describe("a doorway read with and without the supplied half", () => {
     for (const kind of ["doric", "ionic"] as const)
       for (const reading of ["supplied", "unsupplied"] as const)
         for (const trial of [0, 0.271, "rule"] as const) {
-          const state = { ceiling: 43.7675, kind, reading, trial };
+          const state = { ...DEFAULT_DOOR, ceiling: 43.7675, kind, reading, trial };
           assert.deepEqual(parseDoorJson(doorJson(state)), state);
           assert.deepEqual(doorFromHash(doorHash(state)), state);
         }

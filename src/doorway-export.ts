@@ -1,6 +1,7 @@
 import { dataUrl, verified } from "./assets";
 import { DOOR_PLATES } from "./content/doorway-plates";
 import { DOOR_PASSAGES, DOOR_TERMS } from "./content/doorway-reading";
+import { MEASURED_PLATES } from "./content/measured-plates";
 import { CODE_LICENSE_HASH, FONT_LICENSE_HASH, PLAN_FONTS } from "./content/plan-fonts";
 import {
   type DoorState,
@@ -11,8 +12,11 @@ import {
   doorway,
   otherReading,
 } from "./core/doorway";
+import { measureCsv } from "./core/measured-doorway";
 import { DOOR_SVG_STYLE, doorCorner, doorNumber, doorPlate, savedDoorSvg } from "./draw/doorway";
+import { MEASURE_SVG_STYLE } from "./draw/measured-doorway";
 import { esc } from "./ui/dom";
+import { measureReading } from "./ui/measured-reading";
 
 export const DOOR_ASSUMPTIONS = [
   "A reading of Vitruvius IV.6.1–3, not a reconstruction of a particular ancient doorway.",
@@ -61,7 +65,7 @@ export async function doorwayReading(
 ): Promise<string> {
   const [plates, fonts, code, fontLicense] = await Promise.all([
     Promise.all(
-      DOOR_PLATES.map(async (p) => ({
+      [...DOOR_PLATES, ...MEASURED_PLATES].map(async (p) => ({
         ...p,
         data: dataUrl(
           await verified(`${import.meta.env.BASE_URL}${p.path}`, p.sha256, signal),
@@ -83,6 +87,7 @@ export async function doorwayReading(
   const files = [
     ["Editable drawing (JSON)", "doorway.json", encode(doorJson(s), "application/json")],
     ["Measurements (CSV)", "doorway.csv", encode(doorCsv(s), "text/csv")],
+    ["Metric comparison (CSV)", "erechtheion.csv", encode(measureCsv(s.comparison), "text/csv")],
     ["Selected drawing (SVG)", "doorway.svg", encode(savedDoorSvg(s), "image/svg+xml")],
     [
       "Source and font identities (JSON)",
@@ -96,6 +101,15 @@ export async function doorwayReading(
               bytes: 16915191,
             },
             pages: DOOR_PLATES,
+            measuredSurvey: {
+              title: "The Erechtheum (1927)",
+              originalPdf: {
+                url: "https://archive.org/download/erechtheummeasur1192unse/erechtheummeasur1192unse.pdf",
+                sha256: "0746b45d82dd5e0a067c35207e96a5f08e785cc52ae05c39c42a2da0f642321d",
+                bytes: 70645621,
+              },
+              pages: MEASURED_PLATES,
+            },
             fonts: PLAN_FONTS.map((f) => ({ sha256: f.hash, range: f.range })),
             licenses: { code: CODE_LICENSE_HASH, fonts: FONT_LICENSE_HASH },
           },
@@ -109,15 +123,16 @@ export async function doorwayReading(
   const m = doorway(s);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A half changes the doorway · Embater</title><style>
 ${fonts.map((f) => `@font-face{font-family:Reading;src:url(${f.data}) format('woff2');font-weight:400 700;unicode-range:${f.range}}`).join("")}
-body{font:20px/1.5 Reading,Georgia,serif;max-width:62rem;margin:2rem auto;padding:0 1rem;color:#1f2328;background:#f8f9f5;overflow-wrap:anywhere}h1,h2,h3{font-weight:400;line-height:1.2}h1{font-size:2.1em}p,li{max-width:76ch}a{color:#1f4e9c}figure{margin:1rem 0}.pair{display:grid;grid-template-columns:1fr 1fr;max-width:45rem;margin:auto;gap:1rem}.corner{max-width:22rem}table{border-collapse:collapse;width:100%;font-size:.9em}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #c9cdc6;padding:.6rem}caption{text-align:left;font-size:1.3em;margin:1rem 0}.door-passage{margin:1.5rem 0;border-top:1px solid #c9cdc6}.door-passage [lang=la]{color:#b3321f}.muted{color:#4a5058}img{display:block;max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px Reading,serif}.source{break-before:page}.source figcaption{margin:1rem 0}details{margin:1rem 0}${DOOR_SVG_STYLE}
+body{font:20px/1.5 Reading,Georgia,serif;max-width:62rem;margin:2rem auto;padding:0 1rem;color:#1f2328;background:#f8f9f5;overflow-wrap:anywhere}h1,h2,h3{font-weight:400;line-height:1.2}h1{font-size:2.1em}p,li{max-width:76ch}a{color:#1f4e9c}figure{margin:1rem 0}.pair{display:grid;grid-template-columns:1fr 1fr;max-width:45rem;margin:auto;gap:1rem}.corner{max-width:22rem}table{border-collapse:collapse;width:100%;font-size:.9em}th,td{text-align:left;vertical-align:top;border-bottom:1px solid #c9cdc6;padding:.6rem}caption{text-align:left;font-size:1.3em;margin:1rem 0}.door-passage{margin:1.5rem 0;border-top:1px solid #c9cdc6}.door-passage [lang=la]{color:#b3321f}.muted{color:#4a5058}img{display:block;max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px Reading,serif}.source{break-before:page}.source figcaption{margin:1rem 0}details{margin:1rem 0}${DOOR_SVG_STYLE}${MEASURE_SVG_STYLE}.metric-drawing{max-width:25rem;margin:1rem auto}.measured-reading{break-before:page}
 @media(max-width:600px){body{font-size:18px}.pair{grid-template-columns:1fr;max-width:24rem}th,td{padding:.3rem;font-size:.9em}}
-@media print{h1,h2,h3{break-after:avoid}p{orphans:3;widows:3}.door-passage{break-inside:avoid}body{font-size:11pt;background:white;margin:0}.pair{grid-template-columns:1fr 1fr;max-width:145mm}.corner{max-width:65mm}tr{break-inside:avoid}img{max-height:233mm;width:auto;margin:auto}.source{break-inside:avoid}details>*{display:block}summary{display:none}a{overflow-wrap:anywhere}.files{display:none}@page{size:A4;margin:14mm}}
+@media print{.measured-reading .metric-drawing{float:right;width:65mm;margin:0 0 4mm 5mm}.measured-reading table{clear:both;break-inside:avoid}h1,h2,h3{break-after:avoid}p{orphans:3;widows:3}.door-passage{break-inside:avoid}body{font-size:11pt;background:white;margin:0}.pair{grid-template-columns:1fr 1fr;max-width:145mm}.corner{max-width:65mm}tr{break-inside:avoid}img{max-height:233mm;width:auto;margin:auto}.source{break-inside:avoid}details>*{display:block}summary{display:none}a{overflow-wrap:anywhere}.files{display:none}@page{size:A4;margin:14mm}}
 </style></head><body><h1>A half changes the doorway</h1><p>Vitruvius’s doorway proportions, read with and without the supplied half. Ceiling ${doorNumber(s.ceiling)} Roman feet; ${s.kind === "doric" ? "Doric" : "Ionic"}; selected reading ${s.reading === "supplied" ? "with ⟨semis⟩ (5/7)" : "without ⟨semis⟩ (4/7)"}. Selected opening height ${doorNumber(m.height)} ft. ${esc(m.band)}.</p>
 <div class="pair"><figure>${doorPlate(s, true)}<figcaption>Selected reading. Solid blue: your trial. Dashed red: computed rule.</figcaption></figure><figure>${doorPlate(otherReading(s), false)}<figcaption>The other height reading, with its own contraction band.</figcaption></figure></div><figure class="corner">${doorCorner(s)}</figure>
 ${doorTable(s)}<h2>Choices and limits</h2><ul>${DOOR_ASSUMPTIONS.map((a) => `<li>${esc(a)}</li>`).join("")}</ul>
 <h2>Words in the drawing</h2>${DOOR_TERMS.map((t) => `<p><b lang="${t.id === "greek" ? "grc" : "la"}">${esc(t.id === "greek" ? "θύρωμα" : t.latin)}</b> · ${esc(t.title)}. ${esc(t.form)}. ${esc(t.text)} (${esc(t.cite)})</p>`).join("")}
 <h2>Read the instructions</h2>${doorPassages()}
-<h2>Keep working with the drawing</h2><p>This file includes both diagrams, the corner, measurements, Latin, new English translations, complete source pages, four font subsets and licenses. It uses no scripts and opens offline. External links need a connection.</p><p><a href="${esc(reopen.split("#")[0] + doorHash(s))}">Reopen these choices in Embater</a>.</p><ul class="files">${files.map(([label, name, url]) => `<li><a download="${name}" href="${url}">${label}</a></li>`).join("")}</ul>
-${plates.map((p) => `<figure class="source"><figcaption>Vitruvius, <i>De architectura</i>, ed. F. Krohn (Teubner, 1912), complete printed p. ${p.page}, PDF page ${p.pdfPage}. Public domain. <a href="${p.url}">Original scan</a>. SHA-256 ${p.sha256}.</figcaption><img src="${p.data}" alt="Complete printed page ${p.page}, including the critical apparatus"></figure>`).join("")}
-<h2>Credits and licenses</h2><p>Latin and source pages: F. Krohn’s 1912 Teubner edition, public domain; scans from Internet Archive item vitruviidearchit00vitr_1. Line-break hyphenation, capitalization and punctuation normalized. Angle brackets retain supplements; stars retain the marked lacuna. English translations and teaching model: © 2026 Anthony Mercer, MIT. These translations have not had independent philological review. Fonts: EB Garamond, SIL Open Font License.</p><section class="door-license"><h3>Code and teaching material license</h3><pre>${esc(new TextDecoder().decode(code))}</pre></section><section class="door-license"><h3>Complete font notices and license</h3><pre>${esc(new TextDecoder().decode(fontLicense))}</pre></section></body></html>`;
+${measureReading(s.comparison)}
+<h2>Keep working with the drawing</h2><p>This file includes both experiments, the corner, measurements in separate Roman-foot and metric tables, Latin, new English translations, four complete source pages, four font subsets and licenses. It uses no scripts and opens offline. External links need a connection.</p><p><a href="${esc(reopen.split("#")[0] + doorHash(s))}">Reopen these choices in Embater</a>.</p><ul class="files">${files.map(([label, name, url]) => `<li><a download="${name}" href="${url}">${label}</a></li>`).join("")}</ul>
+${plates.map((p) => `<figure class="source"><figcaption>${p.path.includes("erechtheion") ? "<i>The Erechtheum</i>, ed. J. M. Paton; survey G. P. Stevens (Harvard University Press, 1927), complete printed p." : "Vitruvius, <i>De architectura</i>, ed. F. Krohn (Teubner, 1912), complete printed p."} ${p.page}, PDF page ${p.pdfPage}. Public domain. <a href="${p.url}">Original scan</a>. SHA-256 ${p.sha256}.</figcaption><img src="${p.data}" alt="Complete printed page ${p.page}, ${p.path.includes("erechtheion") ? "of The Erechtheum (1927)" : "including the critical apparatus"}"></figure>`).join("")}
+<h2>Credits and licenses</h2><p>Latin and source pages: F. Krohn’s 1912 Teubner edition, public domain; scans from Internet Archive item vitruviidearchit00vitr_1. Line-break hyphenation, capitalization and punctuation normalized. Angle brackets retain supplements; stars retain the marked lacuna. Measured opening: <i>The Erechtheum</i> (1927), edited by J. M. Paton; measured, drawn and restored by G. P. Stevens. Complete pp. 98–99, Internet Archive item erechtheummeasur1192unse; public domain in the United States. The drawing compares the survey’s interpreted original opening and leaves its later linings aside. English translations and teaching model: © 2026 Anthony Mercer, MIT. These translations have not had independent philological review. Fonts: EB Garamond, SIL Open Font License.</p><section class="door-license"><h3>Code and teaching material license</h3><pre>${esc(new TextDecoder().decode(code))}</pre></section><section class="door-license"><h3>Complete font notices and license</h3><pre>${esc(new TextDecoder().decode(fontLicense))}</pre></section></body></html>`;
 }

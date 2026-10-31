@@ -1,3 +1,5 @@
+import { DEFAULT_MEASURE, type MeasureChoice, validateMeasure } from "./measured-doorway";
+
 /** A reading of Vitruvius IV.6.1-3, not a reconstruction of a particular building. */
 export type DoorKind = "doric" | "ionic";
 export type HeightReading = "supplied" | "unsupplied";
@@ -7,12 +9,14 @@ export interface DoorState {
   reading: HeightReading;
   /** Each upper corner's inward movement as a fraction of the lower jamb width. */
   trial: number | "rule";
+  comparison: MeasureChoice;
 }
 export const DEFAULT_DOOR: DoorState = {
   ceiling: 28,
   kind: "ionic",
   reading: "supplied",
   trial: 0,
+  comparison: { ...DEFAULT_MEASURE },
 };
 
 export interface DoorModel {
@@ -59,7 +63,13 @@ export function validateDoor(value: unknown): DoorState {
     (typeof s.trial !== "number" || !Number.isFinite(s.trial) || s.trial < 0 || s.trial > 0.5)
   )
     throw new Error("Move each upper corner between zero and half a jamb width inward.");
-  return { ceiling: s.ceiling, kind: s.kind, reading: s.reading, trial: s.trial };
+  return {
+    ceiling: s.ceiling,
+    kind: s.kind,
+    reading: s.reading,
+    trial: s.trial,
+    comparison: s.comparison === undefined ? { ...DEFAULT_MEASURE } : validateMeasure(s.comparison),
+  };
 }
 
 export function doorway(input: DoorState): DoorModel {
@@ -106,12 +116,14 @@ export function otherReading(s: DoorState): DoorState {
 }
 
 export function doorHash(s: DoorState): string {
-  return `#${new URLSearchParams({ ceiling: String(s.ceiling), kind: s.kind, reading: s.reading, trial: String(s.trial) })}`;
+  return `#${new URLSearchParams({ ceiling: String(s.ceiling), kind: s.kind, reading: s.reading, trial: String(s.trial), measureRule: s.comparison.rule, measureFit: s.comparison.fit })}`;
 }
 
 export function doorFromHash(hash: string): DoorState {
   const q = new URLSearchParams(hash.replace(/^#/, ""));
-  if (!["ceiling", "kind", "reading", "trial"].some((key) => q.has(key)))
+  if (
+    !["ceiling", "kind", "reading", "trial", "measureRule", "measureFit"].some((key) => q.has(key))
+  )
     return { ...DEFAULT_DOOR };
   const ceiling = q.get("ceiling");
   const trial = q.get("trial");
@@ -120,11 +132,15 @@ export function doorFromHash(hash: string): DoorState {
     kind: q.get("kind") ?? DEFAULT_DOOR.kind,
     reading: q.get("reading") ?? DEFAULT_DOOR.reading,
     trial: trial === null ? DEFAULT_DOOR.trial : trial === "rule" ? "rule" : Number(trial),
+    comparison: {
+      rule: q.get("measureRule") ?? DEFAULT_MEASURE.rule,
+      fit: q.get("measureFit") ?? DEFAULT_MEASURE.fit,
+    },
   });
 }
 
 export function doorJson(s: DoorState): string {
-  return `${JSON.stringify({ format: "embater-doorway", version: 1, choices: validateDoor(s) }, null, 2)}\n`;
+  return `${JSON.stringify({ format: "embater-doorway", version: 2, choices: validateDoor(s) }, null, 2)}\n`;
 }
 
 export function parseDoorJson(text: string): DoorState {
@@ -143,10 +159,15 @@ export function parseDoorJson(text: string): DoorState {
     !("format" in file) ||
     file.format !== "embater-doorway" ||
     !("version" in file) ||
-    file.version !== 1 ||
+    (file.version !== 1 && file.version !== 2) ||
     !("choices" in file)
   )
-    throw new Error("Choose an Embater doorway drawing, version 1.");
+    throw new Error("Choose an Embater doorway drawing, version 1 or 2.");
+  if (
+    file.version === 2 &&
+    (!file.choices || typeof file.choices !== "object" || !("comparison" in file.choices))
+  )
+    throw new Error("This version 2 drawing is missing its survey comparison choices.");
   return validateDoor(file.choices);
 }
 

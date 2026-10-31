@@ -1,0 +1,19 @@
+/** Complete 1927 survey pages; reproduced by scripts/measured-sources.py. */
+export const MEASURED_PLATES = [
+  {
+    page: 98,
+    pdfPage: 128,
+    path: "sources/erechtheion/p98.jpg",
+    sha256: "c3927e320fdc5005877d76fbd140c6a0c1a7c2a9e84bfa1db25241892cfdd761",
+    bytes: 445339,
+    url: "https://archive.org/download/erechtheummeasur1192unse/erechtheummeasur1192unse.pdf#page=128",
+  },
+  {
+    page: 99,
+    pdfPage: 129,
+    path: "sources/erechtheion/p99.jpg",
+    sha256: "c1cdb9daaa68cfd3f877c031adc34230015b9acaeac76c89431aeba2a60fa5ae",
+    bytes: 579632,
+    url: "https://archive.org/download/erechtheummeasur1192unse/erechtheummeasur1192unse.pdf#page=129",
+  },
+] as const;

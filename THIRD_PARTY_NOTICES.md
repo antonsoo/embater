@@ -56,3 +56,16 @@ Lexicon* (9th ed.) and Lewis and Short, *A Latin Dictionary*, both through Logei
 through the Cologne Digital Sanskrit Dictionaries; the Online Nahuatl Dictionary
 (University of Oregon); and Wiktionary entries, whose own citations are named
 where used.
+
+## Retained Erechtheion survey pages
+
+`public/sources/erechtheion/` retains complete unmodified printed pages 98–99
+(PDF pages 128–129) of *The Erechtheum*, edited by James Morton Paton, measured,
+drawn and restored by Gorham Phillips Stevens (Harvard University Press,
+Cambridge, Massachusetts, 1927). This 1927 US publication is public domain in the
+United States. Source: Internet Archive item `erechtheummeasur1192unse`. The
+manifest records original PDF identity, page hashes and the rendering command;
+`scripts/measured-sources.py` independently reproduces these pages. The lesson
+compares reported dimensions of the survey's interpreted original opening,
+explicitly omitting later inner linings. It does not reproduce a modern survey
+or claim these are measurements of today's clear opening.

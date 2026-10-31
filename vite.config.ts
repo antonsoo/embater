@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { offlineBuild } from "./scripts/offline-build";
+import { offlineBuild } from "./scripts/offline-build.ts";
 
 export default defineConfig(async () => {
   const offline = await offlineBuild("embater", [

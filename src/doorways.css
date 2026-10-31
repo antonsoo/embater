@@ -381,23 +381,24 @@
   display: block;
   margin-bottom: 0.6rem;
 }
-#door-source-frame {
+:is(#door-source-frame, #measure-source-frame) {
   height: 38rem;
   overflow: auto;
   background: var(--sheet);
   border: 1px solid var(--rule);
   scrollbar-gutter: stable;
 }
-#door-source-image {
+:is(#door-source-image, #measure-source-image) {
   display: block;
   width: 100%;
   height: auto;
   margin: 0 auto;
 }
-#door-source-image[hidden] {
+:is(#door-source-image, #measure-source-image)[hidden] {
   display: none;
 }
-#door-source-frame.enlarged #door-source-image {
+:is(#door-source-frame, #measure-source-frame).enlarged
+  :is(#door-source-image, #measure-source-image) {
   width: 1260px;
   max-width: none;
 }
@@ -409,7 +410,7 @@
 .door-bands button:focus-visible,
 .door-keep button:focus-visible,
 .door-reading button:focus-visible,
-#door-source-frame:focus-visible {
+:is(#door-source-frame, #measure-source-frame):focus-visible {
   outline: 2px solid var(--caeruleum);
   outline-offset: 3px;
 }
@@ -470,7 +471,7 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  #door-source-frame {
+  :is(#door-source-frame, #measure-source-frame) {
     height: 30rem;
   }
   .door-share {
@@ -506,11 +507,87 @@
   .door-svg {
     color: #1f2328;
   }
-  #door-source-frame {
+  :is(#door-source-frame, #measure-source-frame) {
     height: auto;
     overflow: visible;
   }
-  #door-source-frame.enlarged #door-source-image {
+  :is(#door-source-frame, #measure-source-frame).enlarged
+    :is(#door-source-image, #measure-source-image) {
     width: 100%;
   }
+}
+
+.measure-desk {
+  margin-block: 3.5rem;
+  padding-block: 2rem;
+  border-block: 2px solid var(--ink);
+  scroll-margin-top: 1rem;
+}
+.measure-intro {
+  max-width: 48rem;
+}
+.measure-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.metric-drawing {
+  max-width: 25rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.measured-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--text);
+  color: var(--ink);
+}
+.measured-svg text {
+  fill: currentColor;
+  font-size: 16px;
+}
+.measured-svg .recorded {
+  fill: var(--sheet);
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+.measured-svg .reference {
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 1;
+}
+.measured-svg .prediction {
+  fill: none;
+  stroke: var(--minium);
+  stroke-width: 2;
+}
+.measured-svg .predicted-label {
+  fill: var(--minium);
+}
+.measured-svg .small {
+  font-size: 13px;
+}
+.measure-desk details {
+  margin-block: 1rem;
+}
+@media (max-width: 700px) {
+  .measure-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+#measure-form {
+  display: grid;
+  gap: 1rem;
+}
+.measure-desk button {
+  font: inherit;
+  padding: 0.4rem 0.7rem;
+  background: var(--sheet);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  cursor: pointer;
 }

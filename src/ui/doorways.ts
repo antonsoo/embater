@@ -1,6 +1,6 @@
-import { verified } from "../assets";
 import { DOOR_PLATES } from "../content/doorway-plates";
 import { DOOR_TERMS, type DoorTerm } from "../content/doorway-reading";
+import { MEASURED_PLATES } from "../content/measured-plates";
 import {
   DEFAULT_DOOR,
   type DoorState,
@@ -12,6 +12,7 @@ import {
   otherReading,
   parseDoorJson,
 } from "../core/doorway";
+import { measureCsv, validateMeasure } from "../core/measured-doorway";
 import {
   DOOR_ASSUMPTIONS,
   doorPassages,
@@ -20,7 +21,10 @@ import {
   saveDoorFile,
 } from "../doorway-export";
 import { doorCorner, doorNumber, doorPlate, savedDoorSvg } from "../draw/doorway";
+import { measuredSvg } from "../draw/measured-doorway";
 import { $, esc } from "./dom";
+import { MEASURE_LIMITS, measureControls, measureResult, measureTable } from "./measured-reading";
+import { mountSourceReader } from "./source-reader";
 
 export function mountDoorways(root: HTMLElement): void {
   let state: DoorState = { ...DEFAULT_DOOR };
@@ -34,7 +38,7 @@ export function mountDoorways(root: HTMLElement): void {
     version = 0,
     importVersion = 0;
   let saving: AbortController | null = null;
-  root.innerHTML = `<section class="lede door-lede"><h1>A half changes the doorway</h1><p>Vitruvius divides a temple’s height into three and a half parts. How many belong to its doorway? A supplied <span lang="la">semis</span>, “half”, changes the answer. Draw both readings under one ceiling, then try the top corners yourself.</p></section>
+  root.innerHTML = `<section class="lede door-lede"><h1>A half changes the doorway</h1><p>Vitruvius divides a temple’s height into three and a half parts. How many belong to its doorway? A supplied <span lang="la">semis</span>, “half”, changes the answer. Draw both readings under one ceiling, then try the top corners yourself.</p><p><a href="#measured-doorway">Compare a measured opening: the Erechtheion’s North Door ↓</a></p></section>
 <p id="door-notice" role="status">${esc(notice)}</p>
 <section class="door-desk" id="door-desk" aria-label="Doorway drawing desk">
 <div class="door-controls"><form id="door-form" aria-label="Drawing choices">
@@ -52,7 +56,8 @@ export function mountDoorways(root: HTMLElement): void {
 </section>
 <section class="door-words" aria-label="Parts and language"><div><h2>What are you measuring?</h2><div id="door-words" class="door-word-list">${DOOR_TERMS.map((t) => `<button type="button" data-term="${t.id}" aria-pressed="false"><span lang="la">${esc(t.latin)}</span><small>${esc(t.title)}</small></button>`).join("")}</div></div><article class="door-word-note" id="door-word-note"></article><figure id="door-corner"></figure></section>
 <section class="door-bands" id="door-bands"><h2>A taller opening narrows less</h2><p>The fraction of a jamb decreases in bands. It changes abruptly at the boundaries: the text gives no smooth interpolation. These buttons set the <em>selected opening height</em>; the ceiling adjusts to your height reading.</p><div class="door-boundaries">${[16, 25, 30].map((h) => `<div><h3>${h} Roman feet</h3>${[h - 0.01, h, h + 0.01].map((v) => `<button type="button" data-height="${v}">${v === h ? `At ${v}` : v < h ? `Just below: ${v}` : `Just above: ${v}`}</button>`).join("")}</div>`).join("")}</div><p id="door-band-result" aria-live="polite"></p><p class="door-small">The desk assigns exactly 16, 25 and 30 feet to the lower band. The Latin ranges overlap there. That assignment is a convention; compare both sides before drawing a conclusion.</p></section>
-<section class="door-keep" id="door-keep"><h2>Keep this experiment</h2><div class="door-actions"><button id="door-save-json" type="button">Save editable drawing</button><label class="door-file" for="door-open">Open drawing<input type="file" id="door-open" accept=".json,application/json"></label><button type="button" id="door-save-csv">Save measurements (CSV)</button><button type="button" id="door-save-svg">Save diagram (SVG)</button><button type="button" id="door-save-reading">Save illustrated reading</button><button type="button" id="door-cancel" hidden>Cancel save</button></div><p id="door-save-status" role="status">The illustrated HTML includes both drawings, Latin, English, complete source pages and fonts. It opens offline.</p><label for="door-link">Link to these choices</label><div class="door-share"><input type="text" id="door-link" readonly><button id="door-copy" type="button">Copy drawing link</button></div><p id="door-copy-status" role="status"></p><details><summary>Measurements and their basis</summary><div id="door-measurements" class="door-table-wrap"></div></details><details><summary>Drawing choices and limits</summary><ul>${DOOR_ASSUMPTIONS.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></details></section>
+<section class="measure-desk" id="measured-doorway" aria-labelledby="measure-heading"><div class="measure-intro"><p class="door-band">From a rule to a reported building</p><h2 id="measure-heading">Almost a double square</h2><p>The 1927 survey of the Erechtheion calls its North Door “essentially a double square”. Its printed dimensions are 4.882 m high and 2.427 m wide below. Keep those numbers: what difference remains when you match one dimension?</p><p class="door-small">The report identifies an original opening and omits later inner linings. This is a comparison with that historical survey’s interpretation, not a measurement of today’s clear opening.</p></div><div class="measure-grid"><div><form id="measure-form" aria-label="Measured doorway comparison">${measureControls(state.comparison)}</form><div id="measure-result" class="door-result" aria-live="polite" aria-atomic="true"></div><p class="door-small">Ink: reported opening, straight lines between endpoints. Red: one dimension from your selected relation. No rule for the upper profile is drawn.</p><button type="button" id="measure-save-csv">Save metric comparison (CSV)</button><p id="measure-save-status" role="status"></p></div><figure id="measure-drawing" class="metric-drawing"></figure></div><details><summary>Metric values and their basis</summary><div id="measure-table" class="door-table-wrap"></div></details><details><summary>What this comparison assumes</summary><ul>${MEASURE_LIMITS.map((l) => `<li>${esc(l)}</li>`).join("")}</ul></details><h3>Read the survey’s own account</h3><p><i>The Erechtheum</i> (1927), edited by J. M. Paton; measured, drawn and restored by G. P. Stevens. Page 98 explains the later linings; page 99 gives the opening’s dimensions and the inward movement of each jamb.</p><div class="door-source"><div><label for="measure-source-page">Complete printed page</label><select id="measure-source-page"><option value="98">98 · later inner linings left aside</option><option value="99">99 · dimensions and “essentially”</option></select><button id="measure-source-zoom" type="button" aria-pressed="false">Enlarge page</button><button id="measure-source-retry" type="button">Reload source page</button><p id="measure-source-status" role="status"></p><p><a id="measure-source-original" href="${MEASURED_PLATES[0].url}">Original scan at Internet Archive</a></p><p><a href="./sources/erechtheion/manifest.json">Source identities and rendering recipe</a></p></div><div id="measure-source-frame" tabindex="0" role="region" aria-label="Complete printed survey page; use arrow keys to pan the enlarged page"><img id="measure-source-image" alt="" hidden></div></div></section>
+<section class="door-keep" id="door-keep"><h2>Keep this experiment</h2><div class="door-actions"><button id="door-save-json" type="button">Save editable drawing</button><label class="door-file" for="door-open">Open drawing<input type="file" id="door-open" accept=".json,application/json"></label><button type="button" id="door-save-csv">Save measurements (CSV)</button><button type="button" id="door-save-svg">Save diagram (SVG)</button><button type="button" id="door-save-reading">Save illustrated reading</button><button type="button" id="door-cancel" hidden>Cancel save</button></div><p id="door-save-status" role="status">The illustrated HTML includes both experiments, Latin, English, four complete source pages and fonts. It opens offline.</p><label for="door-link">Link to these choices</label><div class="door-share"><input type="text" id="door-link" readonly><button id="door-copy" type="button">Copy drawing link</button></div><p id="door-copy-status" role="status"></p><details><summary>Measurements and their basis</summary><div id="door-measurements" class="door-table-wrap"></div></details><details><summary>Drawing choices and limits</summary><ul>${DOOR_ASSUMPTIONS.map((a) => `<li>${esc(a)}</li>`).join("")}</ul></details></section>
 <section class="door-reading" id="door-reading"><h2>Read the instructions</h2><p>F. Krohn’s Teubner edition (1912), IV.6.1–3. New English translations accompany the Latin. Angle brackets mark supplied words; the stars mark the editor’s lacuna. Capitalization and line-break hyphenation are normalized.</p><div class="door-source"><div><label for="door-source-page">Complete printed page</label><select id="door-source-page"><option value="88">88 · height, width and contractions</option><option value="89">89 · Ionic opening and casing</option></select><button id="door-source-zoom" type="button" aria-pressed="false">Enlarge page</button><button id="door-source-retry" type="button">Reload source page</button><p id="door-source-status" role="status"></p><p><a id="door-source-original" href="${DOOR_PLATES[0].url}">Original scan at Internet Archive</a></p><p><a href="./sources/doorways/manifest.json">Source identities and rendering recipe</a></p></div><div id="door-source-frame" tabindex="0" role="region" aria-label="Complete printed source page; use arrow keys to pan the enlarged page"><img id="door-source-image" alt="" hidden></div></div><div id="door-passages">${doorPassages()}</div><p class="door-small">Latin and scans are public domain. The English translations have not had independent philological review. <a href="https://github.com/antonsoo/embater">Source repository</a>.</p></section>`;
 
   const control = <T extends HTMLInputElement | HTMLSelectElement>(id: string) =>
@@ -103,6 +108,13 @@ export function mountDoorways(root: HTMLElement): void {
     $("#door-band-result", root).textContent =
       `Selected opening ${doorNumber(m.height)} ft. ${m.divisor ? `Whole width loses 1/${m.divisor} of a jamb, or ${doorNumber((100 * m.contraction) / m.bottom)}% of its lower opening.` : "No opening contraction; the jamb itself still tapers."}`;
     $("#door-measurements", root).innerHTML = doorTable(state);
+    for (const input of root.querySelectorAll<HTMLInputElement>('input[name="measure-rule"]'))
+      input.checked = input.value === state.comparison.rule;
+    for (const input of root.querySelectorAll<HTMLInputElement>('input[name="measure-fit"]'))
+      input.checked = input.value === state.comparison.fit;
+    $("#measure-drawing", root).innerHTML = measuredSvg(state.comparison);
+    $("#measure-result", root).innerHTML = measureResult(state.comparison);
+    $("#measure-table", root).innerHTML = measureTable(state.comparison);
     link.value = new URL(`doorways.html${doorHash(state)}`, location.href).href;
     showTerm();
   }
@@ -114,6 +126,20 @@ export function mountDoorways(root: HTMLElement): void {
     $("#door-copy-status", root).textContent = "";
   }
   render();
+  $("#measure-form", root).addEventListener("input", (e) => {
+    const input = e.target as HTMLInputElement;
+    const comparison = validateMeasure({
+      ...state.comparison,
+      [input.name === "measure-rule" ? "rule" : "fit"]: input.value,
+    });
+    change({ ...state, comparison });
+  });
+  $("#measure-form", root).addEventListener("submit", (e) => e.preventDefault());
+  $("#measure-save-csv", root).addEventListener("click", () => {
+    saveDoorFile(measureCsv(state.comparison), "embater-erechtheion.csv", "text/csv;charset=utf-8");
+    $("#measure-save-status", root).textContent =
+      "Metric comparison saved. These values are in metres; no Roman foot conversion is used.";
+  });
   $("#door-form", root).addEventListener("input", (e) => {
     const input = e.target as HTMLInputElement;
     if (input === ceilingRange) change({ ...state, ceiling: Number(input.value) });
@@ -161,6 +187,7 @@ export function mountDoorways(root: HTMLElement): void {
     }
   });
   window.addEventListener("hashchange", () => {
+    if (!/\b(ceiling|kind|reading|trial|measureRule|measureFit)=/.test(location.hash)) return;
     try {
       change(doorFromHash(location.hash));
       $("#door-notice", root).textContent = "Drawing opened from this link.";
@@ -276,69 +303,11 @@ export function mountDoorways(root: HTMLElement): void {
   });
   $("#door-cancel", root).addEventListener("click", () => saving?.abort());
 
-  const pageSelect = control<HTMLSelectElement>("#door-source-page");
-  const image = root.querySelector<HTMLImageElement>("#door-source-image") as HTMLImageElement;
-  let pageRequest = 0,
-    sourceAbort: AbortController | null = null,
-    currentUrl: string | null = null,
-    enlarged = false;
-  async function source(refresh = false): Promise<void> {
-    const plate = DOOR_PLATES.find((p) => p.page === Number(pageSelect.value));
-    if (!plate) return;
-    sourceAbort?.abort();
-    const abort = new AbortController();
-    sourceAbort = abort;
-    const request = ++pageRequest,
-      timer = setTimeout(() => abort.abort(), 12000);
-    image.hidden = true;
-    image.removeAttribute("src");
-    if (currentUrl) {
-      URL.revokeObjectURL(currentUrl);
-      currentUrl = null;
-    }
-    const sourceStatus = $("#door-source-status", root);
-    sourceStatus.textContent = `Loading complete printed page ${plate.page}…`;
-    $("#door-source-original", root).setAttribute("href", plate.url);
-    let url: string | null = null;
-    try {
-      const bytes = await verified(
-        `${import.meta.env.BASE_URL}${plate.path}`,
-        plate.sha256,
-        abort.signal,
-        refresh,
-      );
-      url = URL.createObjectURL(new Blob([bytes], { type: "image/jpeg" }));
-      const candidate = new Image();
-      candidate.src = url;
-      await candidate.decode();
-      abort.signal.throwIfAborted();
-      if (request !== pageRequest) return;
-      image.src = url;
-      image.alt = `Complete printed page ${plate.page} of Krohn’s 1912 Vitruvius, including the critical apparatus`;
-      image.hidden = false;
-      currentUrl = url;
-      url = null;
-      sourceStatus.textContent = `Complete printed page ${plate.page}. Source image checked against the retained edition.`;
-    } catch (e) {
-      if (request === pageRequest)
-        sourceStatus.textContent = abort.signal.aborted
-          ? "Source loading did not finish. Reconnect and reload the source page."
-          : e instanceof Error
-            ? e.message
-            : "This source page could not be opened. Reload it to try again.";
-    } finally {
-      clearTimeout(timer);
-      if (url) URL.revokeObjectURL(url);
-    }
-  }
-  pageSelect.addEventListener("change", () => void source());
-  $("#door-source-retry", root).addEventListener("click", () => void source(true));
-  $("#door-source-zoom", root).addEventListener("click", () => {
-    enlarged = !enlarged;
-    $("#door-source-frame", root).classList.toggle("enlarged", enlarged);
-    $("#door-source-zoom", root).setAttribute("aria-pressed", String(enlarged));
-    $("#door-source-zoom", root).textContent = enlarged ? "Fit whole page" : "Enlarge page";
-    $("#door-source-frame", root).focus({ preventScroll: true });
-  });
-  void source();
+  mountSourceReader(
+    root,
+    "door",
+    DOOR_PLATES,
+    "Krohn’s 1912 Vitruvius, including the critical apparatus",
+  );
+  mountSourceReader(root, "measure", MEASURED_PLATES, "The Erechtheum (1927)");
 }
