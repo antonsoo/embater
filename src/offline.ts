@@ -31,7 +31,7 @@ export function setupOffline(): void {
     lastSequence = result.sequence;
     if (result.edition !== __OFFLINE_EDITION__) {
       status.textContent =
-        "A newer edition controls this page. Save editable work or copy its link, then reload online.";
+        "This page and its saved edition differ. Save editable work or copy its link, then reload online.";
       repair.hidden = true;
       return;
     }
