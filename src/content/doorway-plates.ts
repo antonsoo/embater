@@ -1,0 +1,19 @@
+/** Complete pages reproduced by scripts/doorway-sources.py; see source manifest. */
+export const DOOR_PLATES = [
+  {
+    page: 88,
+    pdfPage: 106,
+    path: "sources/doorways/krohn-88.jpg",
+    url: "https://archive.org/details/vitruviidearchit00vitr_1/page/n105/mode/1up",
+    bytes: 591681,
+    sha256: "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+  },
+  {
+    page: 89,
+    pdfPage: 107,
+    path: "sources/doorways/krohn-89.jpg",
+    url: "https://archive.org/details/vitruviidearchit00vitr_1/page/n106/mode/1up",
+    bytes: 616874,
+    sha256: "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b",
+  },
+] as const;

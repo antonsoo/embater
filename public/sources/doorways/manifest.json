@@ -1,0 +1,40 @@
+{
+  "title": "Vitruvii De architectura libri decem",
+  "editor": "F. Krohn",
+  "year": 1912,
+  "originalUrl": "https://archive.org/download/vitruviidearchit00vitr_1/vitruviidearchit00vitr_1.pdf",
+  "originalBytes": 16915191,
+  "originalSha256": "b13a68789a8a1dc567b6f9b47eabe6a37a306329fbfc2c1a027a6c30a90d5139",
+  "render": [
+    "pdftoppm",
+    "-f",
+    "106",
+    "-l",
+    "107",
+    "-scale-to",
+    "2100",
+    "-jpeg",
+    "-jpegopt",
+    "quality=90",
+    "<pdf>",
+    "<prefix>"
+  ],
+  "plates": [
+    {
+      "page": 88,
+      "pdfPage": 106,
+      "path": "sources/doorways/krohn-88.jpg",
+      "url": "https://archive.org/details/vitruviidearchit00vitr_1/page/n105/mode/1up",
+      "bytes": 591681,
+      "sha256": "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd"
+    },
+    {
+      "page": 89,
+      "pdfPage": 107,
+      "path": "sources/doorways/krohn-89.jpg",
+      "url": "https://archive.org/details/vitruviidearchit00vitr_1/page/n106/mode/1up",
+      "bytes": 616874,
+      "sha256": "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+    }
+  ]
+}
