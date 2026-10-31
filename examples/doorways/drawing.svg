@@ -13,7 +13,7 @@
 .door-svg .part.selected{fill:#c8daf2;stroke:#1f4e9c;stroke-width:2.5}
 .door-svg .ruler-fill{fill:#d5dfeb;stroke:none}
 .door-svg .small{font-size:14px}
-</style><metadata>{&quot;model&quot;:&quot;Vitruvius IV.6.1–3 reading; not a historical reconstruction&quot;,&quot;choices&quot;:{&quot;ceiling&quot;:28,&quot;kind&quot;:&quot;ionic&quot;,&quot;reading&quot;:&quot;supplied&quot;,&quot;trial&quot;:0},&quot;unit&quot;:&quot;Roman foot&quot;,&quot;assumptions&quot;:[&quot;Ionic H/14 jamb extended to Doric by choice&quot;,&quot;contraction removed from whole width, symmetrically&quot;,&quot;shared endpoints assigned to lower band&quot;,&quot;mouldings and door leaves omitted&quot;]}</metadata>
+</style><metadata>{&quot;model&quot;:&quot;Vitruvius IV.6.1–3 reading; not a historical reconstruction&quot;,&quot;choices&quot;:{&quot;ceiling&quot;:28,&quot;kind&quot;:&quot;ionic&quot;,&quot;reading&quot;:&quot;supplied&quot;,&quot;trial&quot;:0,&quot;comparison&quot;:{&quot;rule&quot;:&quot;square&quot;,&quot;fit&quot;:&quot;width&quot;}},&quot;unit&quot;:&quot;Roman foot&quot;,&quot;assumptions&quot;:[&quot;Ionic H/14 jamb extended to Doric by choice&quot;,&quot;contraction removed from whole width, symmetrically&quot;,&quot;shared endpoints assigned to lower band&quot;,&quot;mouldings and door leaves omitted&quot;]}</metadata>
 <text x="180" y="25" text-anchor="middle">With ⟨semis⟩</text>
 <text x="180" y="50" text-anchor="middle" class="small">Krohn’s supplied half: 5/7</text>
 <rect class="ruler-fill" x="39" y="205.7143" width="14" height="314.2857"/>

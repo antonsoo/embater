@@ -4,38 +4,25 @@
   "source": "fresh git archive; newly installed node_modules",
   "commands": [
     {
-      "command": [
-        "node",
-        "--version"
-      ],
+      "command": ["node", "--version"],
       "exitCode": 0,
       "seconds": 0.049,
       "output": "v24.22.1\n"
     },
     {
-      "command": [
-        "npm",
-        "--version"
-      ],
+      "command": ["npm", "--version"],
       "exitCode": 0,
       "seconds": 0.153,
       "output": "11.19.1\n"
     },
     {
-      "command": [
-        "npm",
-        "ci"
-      ],
+      "command": ["npm", "ci"],
       "exitCode": 0,
       "seconds": 2.381,
       "output": null
     },
     {
-      "command": [
-        "npm",
-        "run",
-        "check"
-      ],
+      "command": ["npm", "run", "check"],
       "exitCode": 0,
       "seconds": 1.849,
       "output": null

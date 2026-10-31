@@ -31,7 +31,7 @@ also `doorways.html`. Keep the 28-foot ceiling and Ionic doorway:
    reading. Open the reading with scripts and networking disabled, then use its
    own native file downloads.
 
-The explicit **Copy drawing link** action preserves all four drawing choices.
+The explicit **Copy drawing link** action preserves the drawing and survey-comparison choices.
 Operating the controls does not silently rewrite the current URL. A bad link or
 file reports its problem; opening a file recomputes measurements. A late file
 read cannot overwrite newer drawing choices. An in-progress illustrated save
@@ -66,6 +66,55 @@ trial can enter the stone: the casing continues to follow the computed rule.
 The selected opening stays empty; the leaf construction later in IV.6 is not
 silently invented. Mouldings, consoles, frieze, wall depth, optical perception
 and structural performance are outside this model.
+
+## Almost a double square
+
+The same room has a second desk at `doorways.html#measured-doorway`. It compares
+the North Door reported in *The Erechtheum* (1927), edited by James Morton Paton,
+measured, drawn and restored by Gorham Phillips Stevens. This is a comparison
+with that report's interpreted original opening, not a new measurement or a
+claim about today's clear opening. Pages 98–99 explicitly omit later inner
+linings; their original-opening interpretation remains attached to the numbers.
+
+| Reported quantity | Metres | Source |
+| --- | --- | --- |
+| Opening height | 4.882 | Printed p. 99, PDF p. 129 |
+| Lower opening width | 2.427 | Same paragraph |
+| Inward movement of each jamb | 0.044 | Same paragraph; rounded reported value |
+| Upper opening width | 2.339 | Derived: 2.427 − 2 × 0.044 |
+
+Choose Ionic 2/5, Doric 11/24 or the exact double square 1/2. Match either the
+reported height or lower width; inspect the difference left in the other
+dimension. Only that single predicted dimension is red. No ancient casing,
+upper profile, Roman-foot length, ceiling height or doorway date is inferred.
+The contraction bands from the Roman-foot desk are not applied to these data.
+
+| Comparison | Height matched: rule width minus report | Lower width matched: rule height minus report |
+| --- | --- | --- |
+| Ionic 2/5 | −474.2 mm | +1185.5 mm |
+| Doric 11/24 | −189.4167 mm | +413.2727 mm |
+| Exact double square 1/2 | +14 mm | −28 mm |
+
+The report says “essentially a double square”. Its figures are retained rather
+than rounded into exact agreement. Calculated decimals do not add measurement
+precision. The metric CSV is separate from the Roman-foot CSV. Editable JSON
+version 2 and drawing links retain both desks; version 1 files and earlier
+four-choice links open with the survey desk's Ionic/height default. The
+illustrated reading includes this comparison and all four source pages.
+
+The original survey PDF is 70,645,621 bytes, SHA-256
+`0746b45d82dd5e0a067c35207e96a5f08e785cc52ae05c39c42a2da0f642321d`.
+Both complete pages were visually inspected and freshly reproduced with:
+
+```sh
+python3 scripts/measured-sources.py /path/to/erechtheummeasur1192unse.pdf
+```
+
+[Retained manifest](../public/sources/erechtheion/manifest.json) and
+[reproduction receipt](doorway-review/measured-source-check.json). This 1927 US
+publication is public domain in the United States. Its text, including the
+omitted linings and the qualification “essentially”, remains available beside
+the working comparison and in the offline reading.
 
 ## Primary pages and language
 
@@ -104,6 +153,29 @@ lintel, ceiling, contraction, leaves and the Greek word *thyromaton*.
 and Short/LSJ senses through the University of Chicago’s Logeion. The accented
 Greek dictionary headword is distinguished from Krohn’s Latin lettering.
 
+## Fault found by the audit
+
+The original doorway implementation remembered source failures in open pages
+and sent them over a BroadcastChannel. A newly opened tab missed those events:
+it could say Ready offline while a retained source in CacheStorage was damaged.
+The [reproduced baseline](doorway-review/audit-before.json) records this in both
+Chromium and Firefox. Counting cache keys did not establish that the bytes were
+usable.
+
+The worker now hashes every canonical cached file against the build inventory
+before reporting readiness. **Repair offline copy** replaces missing or damaged
+files with SRI-verified network bytes, then performs another full audit. A false
+network replacement leaves readiness failed. The operation has a deadline,
+coalesces across tabs and leaves the drawing usable. Status messages carry both
+a worker-instance identity and a sequence, so a restarted worker can report a
+new failure without having its lower sequence discarded.
+
+The recovery review damages a source, font and license, opens a third tab with
+BroadcastChannel unavailable, rejects wrong repair bytes, repairs all failures,
+then reloads offline. Chromium additionally stops and restarts the worker using
+its debugging protocol. Firefox covers the other recovery cases; no forced
+worker-stop result is claimed for it.
+
 ## Verification boundary
 
 With a production preview running:
@@ -117,16 +189,16 @@ npm run verify:doorway-artifacts
 
 The browser review covers Chromium and Firefox, 1440 and 375 px, light and dark:
 Orders → keyboard navigation → operated doorway → source reader → real native
-downloads. It checks every boundary preset, seven language notes, shared links,
+downloads. It checks every boundary preset, all six measured fits, seven language notes, shared links,
 JSON reopening, a rejected file, source/font/license bytes inside actual HTML,
-and native JSON/CSV/SVG extracted from that file without scripts or networking.
+and native JSON, both CSV files and SVG extracted from that file without scripts or networking.
 A fresh context saves the edition from Orders, opens the previously unvisited
 doorway offline, exports its reading and opens all six rooms.
 
 Recovery uses a controlled HTTP fixture serving the production build with
 uncacheable network responses, so HTTP cache cannot conceal a missing worker
 entry. It corrupts and evicts a source, rejects a wrong network replacement,
-repairs it with SRI-verified bytes, and checks status propagation across two tabs.
+repairs it with SRI-verified bytes, and checks status propagation across three tabs.
 Separate delayed requests check source races, cancellation and save snapshots.
 The original offline regression also checks 503, 404, stalled navigation bodies,
 cache eviction and a corrupt installation. The build’s byte inventory and the
@@ -135,7 +207,7 @@ actual local receipts are retained separately from this narrative.
 The Python artifact audit uses exact `Fraction` values independently of the
 TypeScript model, inspects actual browser CSV and native downloads, compares
 every retained source/font byte, checks complete licenses, and checks PDF text
-bounds. Both JPEGs extracted from the PDF also byte-match the retained scans.
+bounds. All four JPEGs extracted from the PDF also byte-match the retained scans.
 The PDF is untagged; physical printing is not verified.
 
 Recorded results:
@@ -148,7 +220,7 @@ Recorded results:
 | Source failure and recovery | Both engines; two tabs; rejected replacement, repair, eviction, races, cancellation, deadline and late-file protection | [Recovery](doorway-review/recovery.json) |
 | Original plan room | Both engines, both widths/themes; 27 model operations per combination and export/source failure checks | [Plan regression](doorway-review/plans-regression.json) |
 | Original offline failure cases | Both engines; 503, 404, stalled body, eviction and corrupt install | [Offline regression](doorway-review/offline-regression.json) |
-| Actual retained reading | 12 PDF pages; two byte-identical PDF source images; four embedded HTML font subsets; three matching native files | [Artifact audit](doorway-review/artifacts.json) |
+| Actual retained reading | 16 PDF pages; four byte-identical PDF source images; four embedded HTML font subsets; four matching native files | [Artifact audit](doorway-review/artifacts.json) |
 
 ## Design and publication handoff
 
@@ -159,8 +231,9 @@ The actual screenshot is [desktop](assets/doorways-desktop.png); a narrow
 
 Build command: `npm run build`. Static output: `dist/`, with base `/embater/`.
 All six HTML entries, source images, fonts and notices are included in the
-integrity-indexed worker edition. Source-failure signals invalidate stale ready
-messages across already open tabs. **Reload source page** requests a repair;
+integrity-indexed worker edition. Readiness audits saved bytes on page entry, return to a visible tab, controller
+change and explicit source-check failure. New tabs do not depend on earlier
+failure messages. **Reload source page** requests a repair;
 the worker only replaces that cache entry after integrity verification.
 
 No push, tag, deployment, remote CI success or hosted-byte equality is claimed.

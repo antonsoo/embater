@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Compare the 1927 Erechtheion North Door report with Ionic, Doric and exact
+  double-square width relations; match height or lower width, keep the residual,
+  and inspect the report's omitted later linings on complete retained pages.
+- Audit actual offline file bytes in new and existing tabs; repair damaged or
+  missing sources, fonts and licenses, with verified replacements and a deadline.
+- Keep both comparison choices in version 2 drawings, while opening older files
+  and links with a documented default; include both desks and four source pages
+  in the standalone reading.
+
 - Add a doorway reading desk for Vitruvius IV.6.1–3: compare a supplied half,
   operate the upper corners, distinguish opening/casing tapers, and inspect
   all three contraction boundaries with Latin/Greek word notes.

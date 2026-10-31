@@ -39,11 +39,18 @@ the Doric lacuna, and the **XIIII** casing divisor actually printed for Ionic.
 The Doric casing width is explicitly borrowed from Ionic; symmetric contraction
 and the shared endpoints are drawing conventions.
 
+The same room asks whether the Erechtheion's North Door is “essentially a double
+square”, as its 1927 survey says. Match its reported height or lower width,
+compare three proportional rules, and inspect the difference that remains.
+The exact double square misses by 14 mm in width or 28 mm in height. The
+survey's omitted later lining stays explicit; no Roman foot is converted.
+Keep the separate [metric comparison](examples/doorways/metric.csv).
+
 Keep editable [JSON](examples/doorways/drawing.json), full-precision
 [CSV](examples/doorways/measurements.csv), an independent [SVG](examples/doorways/drawing.svg),
 or the [illustrated PDF](examples/doorways/reading.pdf).
 The [compressed HTML reading](examples/doorways/reading.html.gz) embeds both
-drawings, the corner, source pages, fonts, licenses and native JSON/CSV/SVG downloads.
+experiments, the corner, four source pages, fonts, licenses and native JSON/CSV/SVG downloads.
 It opens without scripts or a connection after decompression:
 
 ```sh

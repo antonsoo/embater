@@ -1,0 +1,24 @@
+[
+  {
+    "engine": "chromium",
+    "afterFailedImage": {
+      "existingTab": "Offline source checks failed. Reconnect and reload the source page before saving a reading.",
+      "newTab": "Ready offline: pages, diagrams and fonts saved. External source links need a connection."
+    },
+    "pendingEmptyHeight": {
+      "shared": "http://127.0.0.1:4492/embater/doorways.html#ceiling=28&kind=ionic&reading=supplied&trial=0",
+      "valueAfterAnotherControl": "28"
+    }
+  },
+  {
+    "engine": "firefox",
+    "afterFailedImage": {
+      "existingTab": "Offline source checks failed. Reconnect and reload the source page before saving a reading.",
+      "newTab": "Ready offline: pages, diagrams and fonts saved. External source links need a connection."
+    },
+    "pendingEmptyHeight": {
+      "shared": "http://127.0.0.1:4492/embater/doorways.html#ceiling=28&kind=ionic&reading=supplied&trial=0",
+      "valueAfterAnotherControl": "28"
+    }
+  }
+]

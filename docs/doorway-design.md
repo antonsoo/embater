@@ -43,3 +43,27 @@ for Doric is an explicit drawing assumption. The drawn lintel has a text-based
 height; overdoor mouldings, consoles and door leaves are omitted. No optical
 perception or structural performance is claimed. The two height readings are
 not attributed to two uniform manuscript families.
+
+## Survey comparison added after the audit
+
+A second desk keeps the same graphite/blue/red palette and type. Its subject is
+one reported opening: Stevens's Erechtheion survey, published in Paton's 1927
+volume, pp. 98-99. The reported dimensions remain black; red measures a selected
+proportional rule. A height/width alignment changes only the compared dimension.
+The other dimension must retain its mismatch. The survey's "essentially" is
+kept visible: 4.882 m is not exactly twice 2.427 m.
+
+```
+Almost a double square
+---------------------------------------------------------
+width rule / match height or lower width
+[reported opening + one red dimension] | [remaining error]
+                                       | [reported / derived table]
+---------------------------------------------------------
+complete p. 98 / p. 99, including the omitted later lining
+```
+
+The two sources remain distinct. The survey supplies metric dimensions of its
+reported original opening; Vitruvius supplies dimensionless width relations.
+There is no conversion of Roman feet and no inferred ancient ceiling height.
+The ratio comparison does not predict the casing or upper opening width.
