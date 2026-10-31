@@ -22,6 +22,38 @@ measurements of real temples.
 [World](https://antonsoo.github.io/embater/world.html) ·
 [Drill](https://antonsoo.github.io/embater/drill.html)
 
+## A half changes the doorway
+
+![Two Ionic doorways under a 28-foot ceiling, with a movable blue trial and the source’s two opening-height readings](docs/assets/doorways-desktop.png)
+
+The new `doorways.html` room draws IV.6.1–3 with and without Krohn’s supplied
+*semis*, “half”. Under one 28-foot ceiling, the opening becomes either 20 or
+16 feet high. Its width changes too, and the two heights fall in different
+contraction bands. Move the upper corners yourself, inspect the enlarged corner,
+then distinguish the opening’s contraction from the jamb’s own taper.
+
+Choose Doric or Ionic, compare both sides of the 16-, 25- and 30-foot boundaries,
+and select seven Latin/Greek word notes. Six short Latin readings, new English
+translations and two complete printed pages expose the editor’s supplement,
+the Doric lacuna, and the **XIIII** casing divisor actually printed for Ionic.
+The Doric casing width is explicitly borrowed from Ionic; symmetric contraction
+and the shared endpoints are drawing conventions.
+
+Keep editable [JSON](examples/doorways/drawing.json), full-precision
+[CSV](examples/doorways/measurements.csv), an independent [SVG](examples/doorways/drawing.svg),
+or the [illustrated PDF](examples/doorways/reading.pdf).
+The [compressed HTML reading](examples/doorways/reading.html.gz) embeds both
+drawings, the corner, source pages, fonts, licenses and native JSON/CSV/SVG downloads.
+It opens without scripts or a connection after decompression:
+
+```sh
+gzip -dc examples/doorways/reading.html.gz > /tmp/embater-doorway-reading.html
+```
+
+The room is **local and awaiting publication**. The existing public site is an
+earlier edition. [Source, model and review](docs/doorway-review.md) separate the
+local implementation from the public observation.
+
 ## A description is not a complete plan
 
 [What do the words actually fix?](https://antonsoo.github.io/embater/plans.html#type=dipteral&clear=2&flank=17)
@@ -50,7 +82,7 @@ These counts do not establish measured plan proportions or historical influence.
 
 Save the current comparison as a standalone illustrated HTML reading or SVG.
 The CSV contains the selected population, source quotations, URLs, uncertainties
-and computed counts. The reading opens offline and can be printed. All five app
+and computed counts. The reading opens offline and can be printed. All six app
 pages also work offline once the footer reports the complete edition saved;
 external source links still need a connection.
 
@@ -187,10 +219,10 @@ flowchart LR
   guttae under a regula, the acroteria and the leaves of a Corinthian capital to the
   draughtsman. All of these are drawn grey, and so is the horizontal placement of the
   volute's eye, a disputed reading.
-- **No framework.** Vite, TypeScript and hand-written SVG. Five pages, self-hosted fonts (EB Garamond, GFS Didot), complete
+- **No framework.** Vite, TypeScript and hand-written SVG. Six pages, self-hosted fonts (EB Garamond, GFS Didot), complete
   offline editions and no tracking.
 
-Tests (`npm test`, 39 of them) check the claims above, not just that things render:
+Tests (`npm test`, 44 of them) check the claims above, not just that things render:
 
 - the reachable front widths;
 - square metopes and the half-metopes;

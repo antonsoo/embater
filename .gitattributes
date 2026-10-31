@@ -5,3 +5,6 @@ public/FONT-LICENSE.txt -whitespace
 # Actual browser downloads retained as evidence, without text normalization.
 docs/review/selinus-reading.html -whitespace
 docs/review/temple-counts.csv -whitespace
+
+# Native doorway CSV retains RFC 4180 line endings.
+examples/doorways/*.csv -text whitespace=cr-at-eol

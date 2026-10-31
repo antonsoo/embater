@@ -1,0 +1,68 @@
+{
+  "boundary": "Actual native browser downloads; no hosted-publication claim",
+  "choices": {
+    "ceiling": 28,
+    "kind": "ionic",
+    "reading": "supplied",
+    "trial": 0
+  },
+  "fractionOracle": {
+    "Ceiling height": "28",
+    "Opening height": "20",
+    "Opening width at foot": "8",
+    "Jamb width at foot": "10/7",
+    "Jamb width at head": "65/49",
+    "Whole opening contraction": "5/14",
+    "Opening width at head": "107/14",
+    "Each upper corner inset": "5/28",
+    "Lintel height": "65/49",
+    "Trial upper width": "8",
+    "Trial upper width minus rule": "5/14"
+  },
+  "maximumNumericError": 3.885780586188048e-16,
+  "imageHashes": [
+    "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+    "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+  ],
+  "fontHashes": [
+    "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+    "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+    "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+    "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+  ],
+  "nativeFilesByteMatch": 3,
+  "pdfPages": 12,
+  "pdfWordsInside15PointMargins": true,
+  "artifacts": [
+    {
+      "file": "README.md",
+      "bytes": 1482,
+      "sha256": "1f4bddb2d8952c5737c3c50c8a1d8143a5bc4ec9f5e2b0d1b4f99e1bdd0ddf7d"
+    },
+    {
+      "file": "drawing.json",
+      "bytes": 152,
+      "sha256": "b6569cef4671e36166d36c6860b07e0fe07179db794d579b00249015ffcf559e"
+    },
+    {
+      "file": "drawing.svg",
+      "bytes": 4313,
+      "sha256": "bb5a742f8d213a96f9c70e2a382a8165763f8e583f25f85fdd974f2966439c2d"
+    },
+    {
+      "file": "measurements.csv",
+      "bytes": 797,
+      "sha256": "1076d4b436b7c4e6846bf7d84bc3bba29d6c3670bb0a0f6956e77f0f4425a1e1"
+    },
+    {
+      "file": "reading.html.gz",
+      "bytes": 1409929,
+      "sha256": "698ff26a05e7635542cf9772d5033bcc461e57300deeb0687ab3a9cd873d84ec"
+    },
+    {
+      "file": "reading.pdf",
+      "bytes": 1443861,
+      "sha256": "56d1d17bff321dd7facdae95d1a546a9d4b9fc2d30110d015cf2c6b86f937afc"
+    }
+  ]
+}

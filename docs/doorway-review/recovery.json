@@ -1,0 +1,39 @@
+{
+  "base": "http://127.0.0.1:4492/embater/",
+  "results": [
+    {
+      "engine": "chromium",
+      "tabs": 2,
+      "corruptionDetected": true,
+      "statusPropagated": true,
+      "unverifiedNetworkRejected": true,
+      "cacheRepaired": true,
+      "evictionRecovered": true,
+      "staleSourceRejected": true,
+      "cancelledSave": true,
+      "snapshotPreserved": true,
+      "failedSaveRetried": true,
+      "lateFilePreserved": true,
+      "deadlineRecovered": true,
+      "sourceHash": "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+      "snapshotHash": "6b25c6544cdc691acdaa4cd7ca15530922bdd94b2bbe1131e63f811e3f407721"
+    },
+    {
+      "engine": "firefox",
+      "tabs": 2,
+      "corruptionDetected": true,
+      "statusPropagated": true,
+      "unverifiedNetworkRejected": true,
+      "cacheRepaired": true,
+      "evictionRecovered": true,
+      "staleSourceRejected": true,
+      "cancelledSave": true,
+      "snapshotPreserved": true,
+      "failedSaveRetried": true,
+      "lateFilePreserved": true,
+      "deadlineRecovered": true,
+      "sourceHash": "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+      "snapshotHash": "6b25c6544cdc691acdaa4cd7ca15530922bdd94b2bbe1131e63f811e3f407721"
+    }
+  ]
+}

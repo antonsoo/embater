@@ -1,0 +1,10 @@
+{
+  "format": "embater-doorway",
+  "version": 1,
+  "choices": {
+    "ceiling": 28,
+    "kind": "ionic",
+    "reading": "supplied",
+    "trial": 0
+  }
+}

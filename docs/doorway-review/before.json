@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-10-31T21:58:30.460519+00:00",
+  "baselineHead": "79aff48f1bd92e584dd043b5903a1af01490d485",
+  "boundary": "Read-only observation before local doorway publication; no push or deployment performed.",
+  "responses": [
+    {
+      "url": "https://antonsoo.github.io/embater/",
+      "status": 200,
+      "bytes": 1393,
+      "sha256": "4ba350f60877efc457c394610519f0e6687cc2a5e5cd04fa4fb12d9ea397be56"
+    },
+    {
+      "url": "https://antonsoo.github.io/embater/doorways.html",
+      "status": 404,
+      "bytes": 9379,
+      "sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368"
+    }
+  ]
+}

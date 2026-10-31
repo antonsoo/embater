@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="door-svg" viewBox="0 0 360 610" role="img" aria-labelledby="chosen-title" aria-describedby="chosen-desc">
+<title id="chosen-title">Ionic opening with the supplied half</title>
+<desc id="chosen-desc">Ceiling 28 Roman feet. Opening 20 high, 8 wide below and 7.6429 wide above. Each lower jamb 1.4286 wide. Over 16 through 25 ft: one quarter of a jamb. Blue trial upper width 8; dashed red marks the computed opening. Both diagrams share a scale.</desc><style>
+.door-svg{display:block;width:100%;height:auto;font-family:Georgia,serif;color:#1f2328}
+.door-svg text{fill:currentColor;font-size:17px}
+.door-svg .stone{fill:#e0e4df;stroke:currentColor;stroke-width:1.2}
+.door-svg .opening{fill:#e8eef3;stroke:currentColor;stroke-width:1.2}
+.door-svg .reference{fill:none;stroke:#8b9199;stroke-width:1}
+.door-svg .rule-line{fill:none;stroke:#b3321f;stroke-width:2;stroke-dasharray:5 4}
+.door-svg .trial-line{fill:none;stroke:#1f4e9c;stroke-width:2.5}
+.door-svg .measure{fill:none;stroke:#b3321f;stroke-width:1}
+.door-svg .measure-text{fill:#b3321f;font-size:17px}
+.door-svg .part.selected{fill:#c8daf2;stroke:#1f4e9c;stroke-width:2.5}
+.door-svg .ruler-fill{fill:#d5dfeb;stroke:none}
+.door-svg .small{font-size:14px}
+</style><metadata>{&quot;model&quot;:&quot;Vitruvius IV.6.1–3 reading; not a historical reconstruction&quot;,&quot;choices&quot;:{&quot;ceiling&quot;:28,&quot;kind&quot;:&quot;ionic&quot;,&quot;reading&quot;:&quot;supplied&quot;,&quot;trial&quot;:0},&quot;unit&quot;:&quot;Roman foot&quot;,&quot;assumptions&quot;:[&quot;Ionic H/14 jamb extended to Doric by choice&quot;,&quot;contraction removed from whole width, symmetrically&quot;,&quot;shared endpoints assigned to lower band&quot;,&quot;mouldings and door leaves omitted&quot;]}</metadata>
+<text x="180" y="25" text-anchor="middle">With ⟨semis⟩</text>
+<text x="180" y="50" text-anchor="middle" class="small">Krohn’s supplied half: 5/7</text>
+<rect class="ruler-fill" x="39" y="205.7143" width="14" height="314.2857"/>
+<path class="reference" d="M39 80H53V520H39Z M75 80H340 M75 520H340"/>
+<path class="reference" d="M35 80H57"/><text class="small" x="24" y="85" text-anchor="end">7</text><path class="reference" d="M35 142.8571H57"/><text class="small" x="24" y="147.8571" text-anchor="end">6</text><path class="reference" d="M35 205.7143H57"/><text class="small" x="24" y="210.7143" text-anchor="end">5</text><path class="reference" d="M35 268.5714H57"/><text class="small" x="24" y="273.5714" text-anchor="end">4</text><path class="reference" d="M35 331.4286H57"/><text class="small" x="24" y="336.4286" text-anchor="end">3</text><path class="reference" d="M35 394.2857H57"/><text class="small" x="24" y="399.2857" text-anchor="end">2</text><path class="reference" d="M35 457.1429H57"/><text class="small" x="24" y="462.1429" text-anchor="end">1</text><path class="reference" d="M35 520H57"/><text class="small" x="24" y="525" text-anchor="end">0</text>
+<text data-door-part="ceiling" class="part" x="205" y="72" text-anchor="middle">Ceiling 28 ft</text>
+<polygon data-door-part="opening" class="part opening" points="152.1429,520 277.8571,520 275.051,205.7143 154.949,205.7143"/><polygon data-door-part="jamb" class="part stone" points="152.1429,520 129.6939,520 134.1035,205.7143 154.949,205.7143"/><polygon data-door-part="jamb" class="part stone" points="277.8571,520 300.3061,520 295.8965,205.7143 275.051,205.7143"/><polygon data-door-part="lintel" class="part stone" points="134.1035,205.7143 295.8965,205.7143 295.8965,184.8688 134.1035,184.8688"/>
+<path class="measure" d="M305.0204 520h10 M310.0204 520V205.7143 M305.0204 205.7143h10"/>
+<text x="323.0204" y="362.8571" transform="rotate(-90 323.0204 362.8571)" text-anchor="middle" class="measure-text">H = 20 ft</text>
+<text x="215" y="362.85720000000003" text-anchor="middle" class="small">Ionic</text>
+<path class="rule-line" d="M152.1429 520L154.949 205.7143H275.051L277.8571 520"/>
+<path class="trial-line" d="M152.1429 520L152.1429 205.7143H277.8571L277.8571 520"/>
+<path class="measure" d="M152.1429 535V550 M152.1429 543H277.8571 M277.8571 535V550"/>
+<text class="measure-text" x="215" y="570" text-anchor="middle">Foot 8 ft</text>
+<text class="measure-text" x="215" y="595" text-anchor="middle">Head 7.6429 ft</text>
+</svg>

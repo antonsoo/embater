@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Add a doorway reading desk for Vitruvius IV.6.1–3: compare a supplied half,
+  operate the upper corners, distinguish opening/casing tapers, and inspect
+  all three contraction boundaries with Latin/Greek word notes.
+- Keep complete source pages, editable JSON, measurements, SVG and a script-free
+  illustrated reading with fonts, licenses and native downloads.
+- Invalidate offline readiness across open tabs after a failed source check;
+  an explicit source reload repairs its cached entry only after SRI verification.
 - Preserve the prostyle cella when rear columns are added for an amphiprostyle;
   draw the hypaethral rear entrance specified in III.2.8.
 - Expose spacing and optional flank counts, with a live table separating source
