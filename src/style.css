@@ -1359,3 +1359,15 @@ code {
     display: block;
   }
 }
+
+.offline-repair {
+  font: inherit;
+  color: var(--caeruleum);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+}
+.offline-repair:disabled {
+  cursor: wait;
+}

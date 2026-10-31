@@ -24,7 +24,7 @@ export async function verified(
         "A source page or font differs from the reviewed edition. Reconnect and reload the source page.",
       );
     signal?.throwIfAborted();
-    report(true);
+    if (refresh) report(true);
     return bytes;
   } catch (error) {
     // Cancellation says nothing about the saved edition's integrity.

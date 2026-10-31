@@ -25,6 +25,7 @@ export async function offlineBuild(
     ...(await filesIn("public")),
     ...pages,
     "scripts/offline-build.ts",
+    "scripts/offline-worker.js",
     "vite.config.ts",
     "package.json",
     "package-lock.json",
@@ -63,64 +64,7 @@ const EDITION = ${JSON.stringify(edition)};
 const BASE = ${JSON.stringify(base)};
 const FILES = ${JSON.stringify(urls)};
 const INTEGRITY = ${JSON.stringify(integrity)};
-self.addEventListener("install", event => {
-  const requests = FILES.map(url => new Request(url, { cache: "reload", integrity: INTEGRITY[url] }));
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(requests)).then(() => self.skipWaiting()));
-});
-self.addEventListener("activate", event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith(PREFIX) && key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
-});
-self.addEventListener("message", event => {
-  if (event.data?.type !== "INSPECT_EDITION" || !event.ports[0]) return;
-  event.waitUntil(caches.open(CACHE).then(cache => cache.keys()).then(keys => {
-    const saved = new Set(keys.map(request => new URL(request.url).pathname));
-    event.ports[0].postMessage({ edition: EDITION, complete: FILES.every(file => saved.has(file)) });
-  }).catch(() => event.ports[0].postMessage({ edition: EDITION, complete: false })));
-});
-self.addEventListener("fetch", event => {
-  const url = new URL(event.request.url);
-  if (event.request.method !== "GET" || url.origin !== self.location.origin) return;
-  const page = url.pathname === BASE ? BASE + "index.html" : url.pathname;
-  if (!FILES.includes(page)) return;
-  if (event.request.mode !== "navigate") {
-    if (event.request.cache === "reload") {
-      // An explicit source reload repairs this exact entry only after SRI verification.
-      event.respondWith((async () => {
-        const cache = await caches.open(CACHE);
-        try {
-          const fresh = await fetch(new Request(page, { cache: "reload", integrity: INTEGRITY[page] }));
-          if (!fresh.ok) throw new Error("Source reload failed");
-          await cache.put(page, fresh.clone());
-          return fresh;
-        } catch {
-          return (await cache.match(page)) || Response.error();
-        }
-      })());
-      return;
-    }
-    event.respondWith(caches.open(CACHE).then(cache => cache.match(page)).then(saved => saved || fetch(event.request)));
-    return;
-  }
-  event.respondWith((async () => {
-    let timer;
-    // Buffer the complete HTML, since headers can arrive before a stalled body.
-    const network = fetch(event.request).then(async response => {
-      const body = await response.arrayBuffer();
-      return new Response(body, { status: response.status, statusText: response.statusText, headers: response.headers });
-    });
-    const outcome = await Promise.race([
-      network.then(response => ({ response }), () => ({})),
-      new Promise(resolve => { timer = setTimeout(() => resolve({}), 2000); })
-    ]);
-    clearTimeout(timer);
-    if (outcome.response && outcome.response.status < 500) return outcome.response;
-    // Read the exact edition cache at fallback time. An evicted page stays absent.
-    const saved = await caches.open(CACHE).then(cache => cache.match(page));
-    if (saved) return saved;
-    if (outcome.response) return outcome.response;
-    return network.catch(() => Response.error());
-  })());
-});
+${await readFile("scripts/offline-worker.js", "utf8")}
 `,
         );
       },

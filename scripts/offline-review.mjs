@@ -105,7 +105,7 @@ try {
       mode = "normal";
       await page.goto(base + entry);
       await page.waitForFunction(() =>
-        document.getElementById("offline-status")?.textContent.includes("not fully saved"),
+        document.getElementById("offline-status")?.textContent.includes("Offline copy needs repair"),
       );
       await context.close();
       mode = "corrupt";
