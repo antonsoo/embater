@@ -10,7 +10,8 @@
       "!.cache",
       "!data",
       "!**/*.md",
-      "!docs/review"
+      "!docs/review",
+      "!docs/doorway-review"
     ]
   },
   "formatter": {
