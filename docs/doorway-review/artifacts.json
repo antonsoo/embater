@@ -119,12 +119,12 @@
     {
       "file": "reading.html.gz",
       "bytes": 2421095,
-      "sha256": "f8c7f30230e14ae728f7263f09ae88ff970c7736f754b8812f4e5d1977b5d5e8"
+      "sha256": "66abe2594e72d6cad4136c7f9b4b3bcad2f8622554bfa58ae9b5211691b4391a"
     },
     {
       "file": "reading.pdf",
-      "bytes": 2489006,
-      "sha256": "20fa114e52319fe496516ab0fac9a68a0b6cfa671439f41805d10138abb2cf64"
+      "bytes": 2489011,
+      "sha256": "24890edc96b78466796b152469f2d33ce274b920307ea958a5fd0705e42c7451"
     }
   ]
 }

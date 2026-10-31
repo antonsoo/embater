@@ -19,6 +19,7 @@ measurements of real temples.
 **[Open the site](https://antonsoo.github.io/embater/)**: [Orders](https://antonsoo.github.io/embater/) ·
 [Plans and evidence](https://antonsoo.github.io/embater/plans.html) ·
 [Count the spaces](https://antonsoo.github.io/embater/compare.html) ·
+[Doorways](https://antonsoo.github.io/embater/doorways.html) ·
 [World](https://antonsoo.github.io/embater/world.html) ·
 [Drill](https://antonsoo.github.io/embater/drill.html)
 
@@ -57,9 +58,10 @@ It opens without scripts or a connection after decompression:
 gzip -dc examples/doorways/reading.html.gz > /tmp/embater-doorway-reading.html
 ```
 
-The room is **local and awaiting publication**. The existing public site is an
-earlier edition. [Source, model and review](docs/doorway-review.md) separate the
-local implementation from the public observation.
+**[Try the doorway desk](https://antonsoo.github.io/embater/doorways.html)** or
+**[compare the measured opening](https://antonsoo.github.io/embater/doorways.html#measured-doorway)**.
+[Source, model and public review](docs/doorway-review.md) records the original
+pages, modelling choices, operated browser journeys and hosted-byte checks.
 
 ## A description is not a complete plan
 

@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-10-31T22:50:57.181035+00:00",
+  "reviewedBuildSource": "a5b2ccba9cb7881a4970e9fa8631ba48782a66a9",
+  "sourcePublication": "de85d41bd727ad363e3c4dacbf3a718a33b5be3f",
+  "previousPagesHead": "18afee434372635256ff88d1df1bc9b496207204",
+  "pagesHead": "97a496148c139df15de041409fefa3a479a6831c",
+  "pagesHistory": "fast-forward; no force push",
+  "edition": "de6cc0d9e2271f30eeca41cfc766857fbc322bbf3d1b44e1fcd2d9fa076f756a",
+  "pagesDeployment": {
+    "url": "https://github.com/antonsoo/embater/actions/runs/41249731591",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "sourceCI": {
+    "url": "https://github.com/antonsoo/embater/actions/runs/41249715503",
+    "jobs": [
+      {
+        "name": "check",
+        "conclusion": "failure",
+        "stepCount": 0
+      }
+    ]
+  },
+  "boundaries": {
+    "canonicalFiles": 54,
+    "browserCombinations": 8,
+    "coldOfflineEngines": 2,
+    "registryRelease": false,
+    "tag": false
+  }
+}

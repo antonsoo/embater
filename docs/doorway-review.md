@@ -1,9 +1,10 @@
 # A half changes the doorway
 
-This room is implemented and reviewed locally. It has not been pushed or
-deployed. The [read-only public observation](doorway-review/before.json)
-records the existing root response and the absent doorway route before this
-work. A local build and browser run do not establish hosted publication.
+The [doorway room](https://antonsoo.github.io/embater/doorways.html) and its
+[measured-opening desk](https://antonsoo.github.io/embater/doorways.html#measured-doorway)
+are published. Source, local build, hosted file identity and operated public
+browser behavior are recorded separately below. The [baseline observation](doorway-review/before.json)
+records the absent doorway route before this work.
 
 ## Try the actual work
 
@@ -240,7 +241,7 @@ build's recovery, edition-upgrade and actual print artifacts were checked
 separately. Generated review JSON is preserved as machine output, consistent
 with the existing `docs/review` formatting exclusion.
 
-## Design and publication handoff
+## Design and publication evidence
 
 The [design note](doorway-design.md) records the architectural plate, two-pigment
 trial/rule distinction and restrained extension of the existing identity.
@@ -253,9 +254,26 @@ change and explicit source-check failure. New tabs do not depend on earlier
 failure messages. **Reload source page** requests a repair;
 the worker only replaces that cache entry after integrity verification.
 
-No push, tag, deployment, remote CI success or hosted-byte equality is claimed.
-Existing public Officina discovery remains on the previously published rooms;
-it should gain this doorway route only when the room and its review are public.
+The reviewed application source is included in main commit
+`de85d41bd727ad363e3c4dacbf3a718a33b5be3f`. The Pages build commit
+`97a496148c139df15de041409fefa3a479a6831c` is a fast-forward descendant of the
+previously published branch, built from the independently installed source.
+No branch history was rewritten.
+
+| Public boundary | Result | Receipt |
+| --- | --- | --- |
+| Canonical files before browser review | All 54 expected files, plus canonical root, match the reviewed build | [Before](doorway-review/public-bytes-before.json) |
+| Operated public browser journeys | Both engines, both widths/themes; all six measured fits, 72 boundary operations, five actual native downloads per portable reading, zero axe violations or page errors | [Public browser](doorway-review/public-browser.json) |
+| Cold offline public opening | Both engines save from Orders, open the unvisited doorway, inspect four source pages, export the reading and visit all six rooms offline | Same browser receipt |
+| Canonical files after browser review | All 54 expected files and root still match | [After](doorway-review/public-bytes-after.json) |
+| Actual public reading | 16 PDF pages; all four extracted original JPEGs match; separate foot/metric CSVs and editable drawing match native downloads | [Artifact oracle](doorway-review/artifacts.json) |
+| Pages deployment | Build and deployment jobs completed successfully | [Publication receipt](doorway-review/publication.json) |
+| Source CI | Failed before any job steps ran; no CI-test success is claimed | Same publication receipt |
+
+The retained examples are actual public-browser downloads. Officina discovery
+is maintained in that repository with pinned reviews; its catalogue publication
+is a separate boundary from the Embater publication recorded here. No tag or
+registry release is claimed.
 
 Suggested repository description: “Draw ancient temple proportions from Latin,
 compare uncertain readings, and keep source-backed architectural experiments.”
