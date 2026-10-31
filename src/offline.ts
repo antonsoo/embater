@@ -5,13 +5,42 @@ export function setupOffline(): void {
   const status = document.querySelector<HTMLElement>("#offline-status");
   if (!status || !import.meta.env.PROD || !("serviceWorker" in navigator)) return;
   let generation = 0;
+  const failedAssets = new Set<string>();
+  const checks =
+    typeof BroadcastChannel === "function" ? new BroadcastChannel("embater-asset-checks") : null;
+  function assetCheck(detail: unknown): void {
+    if (
+      !detail ||
+      typeof detail !== "object" ||
+      !("url" in detail) ||
+      typeof detail.url !== "string" ||
+      !("valid" in detail) ||
+      typeof detail.valid !== "boolean"
+    )
+      return;
+    if (detail.valid) {
+      if (failedAssets.delete(detail.url) && failedAssets.size === 0) void inspect();
+    } else {
+      failedAssets.add(detail.url);
+      ++generation;
+      if (status)
+        status.textContent =
+          "Offline source checks failed. Reconnect and reload the source page before saving a reading.";
+    }
+  }
+  window.addEventListener("embater-asset-check", (event) => {
+    const detail = (event as CustomEvent<unknown>).detail;
+    assetCheck(detail);
+    checks?.postMessage(detail);
+  });
+  if (checks) checks.onmessage = (event: MessageEvent<unknown>) => assetCheck(event.data);
   const initialDeadline = setTimeout(() => {
     if (!navigator.serviceWorker.controller)
       status.textContent = "Offline saving did not finish. Reload online to try again.";
   }, 12000);
   async function inspect(): Promise<void> {
     const worker = navigator.serviceWorker.controller;
-    if (!worker || !status) return;
+    if (!worker || !status || failedAssets.size) return;
     clearTimeout(initialDeadline);
     const request = ++generation;
     const channel = new MessageChannel();

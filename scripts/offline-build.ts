@@ -83,6 +83,21 @@ self.addEventListener("fetch", event => {
   const page = url.pathname === BASE ? BASE + "index.html" : url.pathname;
   if (!FILES.includes(page)) return;
   if (event.request.mode !== "navigate") {
+    if (event.request.cache === "reload") {
+      // An explicit source reload repairs this exact entry only after SRI verification.
+      event.respondWith((async () => {
+        const cache = await caches.open(CACHE);
+        try {
+          const fresh = await fetch(new Request(page, { cache: "reload", integrity: INTEGRITY[page] }));
+          if (!fresh.ok) throw new Error("Source reload failed");
+          await cache.put(page, fresh.clone());
+          return fresh;
+        } catch {
+          return (await cache.match(page)) || Response.error();
+        }
+      })());
+      return;
+    }
     event.respondWith(caches.open(CACHE).then(cache => cache.match(page)).then(saved => saved || fetch(event.request)));
     return;
   }
