@@ -135,7 +135,20 @@ actual local receipts are retained separately from this narrative.
 The Python artifact audit uses exact `Fraction` values independently of the
 TypeScript model, inspects actual browser CSV and native downloads, compares
 every retained source/font byte, checks complete licenses, and checks PDF text
-bounds. The PDF is untagged; physical printing is not verified.
+bounds. Both JPEGs extracted from the PDF also byte-match the retained scans.
+The PDF is untagged; physical printing is not verified.
+
+Recorded results:
+
+| Check | Local result | Receipt |
+| --- | --- | --- |
+| Fresh Node 24.22.1 install and full check | Passed; 44 unit tests; 12 pre-existing lint warnings | [Clean build](doorway-review/clean-build.json) |
+| Production identity | All 51 files match the reviewed build | [File inventory](doorway-review/clean-build.json) |
+| Doorway journeys | Eight browser/width/theme combinations; 72 boundary operations; two cold offline openings | [Browser receipt](doorway-review/local/receipt.json), [fresh-install replay](doorway-review/clean-browser.json) |
+| Source failure and recovery | Both engines; two tabs; rejected replacement, repair, eviction, races, cancellation, deadline and late-file protection | [Recovery](doorway-review/recovery.json) |
+| Original plan room | Both engines, both widths/themes; 27 model operations per combination and export/source failure checks | [Plan regression](doorway-review/plans-regression.json) |
+| Original offline failure cases | Both engines; 503, 404, stalled body, eviction and corrupt install | [Offline regression](doorway-review/offline-regression.json) |
+| Actual retained reading | 12 PDF pages; two byte-identical PDF source images; four embedded HTML font subsets; three matching native files | [Artifact audit](doorway-review/artifacts.json) |
 
 ## Design and publication handoff
 

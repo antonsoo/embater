@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 import re
 import subprocess
+import tempfile
 import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,11 +85,16 @@ for number, page in enumerate(pages,1):
 text = subprocess.check_output(['pdftotext',str(p/'reading.pdf'),'-']).decode()
 for phrase in ['A half changes the doorway','The casing’s own taper','The Ionic opening and casing','Complete font notices']:
     assert phrase.casefold() in text.casefold(), phrase
+with tempfile.TemporaryDirectory(prefix='embater-pdf-images-') as tmp:
+    subprocess.run(['pdfimages','-j',str(p/'reading.pdf'),str(Path(tmp)/'source')], check=True)
+    pdf_images = [f.read_bytes() for f in sorted(Path(tmp).glob('source-*.jpg'))]
+    assert [sha(b) for b in pdf_images] == [row['sha256'] for row in manifest['plates']]
 report = {'boundary':'Actual native browser downloads; no hosted-publication claim',
           'choices':state, 'fractionOracle':{k:str(v) for k,v in expected.items()},
           'maximumNumericError':max(errors), 'imageHashes':[sha(b) for b in images],
           'fontHashes':[sha(b) for b in font_data], 'nativeFilesByteMatch':3,
           'pdfPages':len(pages), 'pdfWordsInside15PointMargins':True,
+          'pdfSourceImagesByteMatch':len(pdf_images),
           'artifacts':[{ 'file':f.name, 'bytes':f.stat().st_size, 'sha256':sha(f.read_bytes())}
                        for f in sorted(p.iterdir()) if f.is_file()]}
 args.output.parent.mkdir(parents=True,exist_ok=True)

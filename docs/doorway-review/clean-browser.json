@@ -1,0 +1,242 @@
+{
+  "node": "v24.22.1",
+  "sourceHead": "33a12250602cbce232ea58c6a41020bff8dd57fd",
+  "reviewedProductionByteMatch": true,
+  "base": "http://127.0.0.1:4492/embater/",
+  "receipts": [
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "colorScheme": "light",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1440,
+      "colorScheme": "dark",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "colorScheme": "light",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 375,
+      "colorScheme": "dark",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "offline": {
+        "coldDoorway": true,
+        "sourcePages": 2,
+        "htmlDownloadBytes": 1906475,
+        "rooms": 6
+      }
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "colorScheme": "light",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1440,
+      "colorScheme": "dark",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "colorScheme": "light",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 375,
+      "colorScheme": "dark",
+      "discovery": "Orders -> Doorways via keyboard",
+      "boundaries": 9,
+      "languageNotes": 7,
+      "editableRoundTrip": true,
+      "explicitLink": true,
+      "sourceImageHashes": [
+        "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd",
+        "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+      ],
+      "fontHashes": [
+        "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+      ],
+      "portable": {
+        "scripts": 0,
+        "networkRequests": 0,
+        "nativeDownloads": 3
+      },
+      "axeViolations": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "offline": {
+        "coldDoorway": true,
+        "sourcePages": 2,
+        "htmlDownloadBytes": 1906475,
+        "rooms": 6
+      }
+    }
+  ]
+}

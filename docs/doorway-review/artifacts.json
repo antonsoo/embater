@@ -33,6 +33,7 @@
   "nativeFilesByteMatch": 3,
   "pdfPages": 12,
   "pdfWordsInside15PointMargins": true,
+  "pdfSourceImagesByteMatch": 2,
   "artifacts": [
     {
       "file": "README.md",
