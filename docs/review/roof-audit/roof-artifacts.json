@@ -1,0 +1,82 @@
+[
+  {
+    "svg": "chromium-1440-middle.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  },
+  {
+    "svg": "chromium-1440.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  },
+  {
+    "svg": "chromium-375-middle.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  },
+  {
+    "svg": "chromium-375.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  },
+  {
+    "svg": "firefox-1440-middle.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  },
+  {
+    "svg": "firefox-1440.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  },
+  {
+    "svg": "firefox-375-middle.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  },
+  {
+    "svg": "firefox-375.svg",
+    "drawnOrnamentHeights": [
+      1.3749999999999982,
+      1.5460000000000012,
+      1.3749999999999982
+    ],
+    "csvH": 1.3742857142857143,
+    "maxAllowedRounding": 0.002
+  }
+]

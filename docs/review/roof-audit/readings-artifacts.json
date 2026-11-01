@@ -1,0 +1,500 @@
+[
+  {
+    "file": "chromium-1440-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "b8b903243c1bb4ef449847e761defe1728d3a62903fb25f91c2456eff97ae086",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12–30-foot range. Its height and dependent roof projection continue the model’s pattern; the text does not give this numeric extension.",
+      "The Ionic volute joins prescribed quarter-turn radii with a modern linear interpolation and a chosen fillet."
+    ]
+  },
+  {
+    "file": "chromium-1440-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-1440.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-375-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "b8b903243c1bb4ef449847e761defe1728d3a62903fb25f91c2456eff97ae086",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12–30-foot range. Its height and dependent roof projection continue the model’s pattern; the text does not give this numeric extension.",
+      "The Ionic volute joins prescribed quarter-turn radii with a modern linear interpolation and a chosen fillet."
+    ]
+  },
+  {
+    "file": "chromium-375-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-375.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-after-timeout.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "8bdc2776c46e4522f590cfffd898593349ced8f0a426c8757c15f50d968c52f1",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-fraction-eighths.html",
+    "order": "ionic",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "0cea396bad6a6612611766bd167e53bb32977159bae79648d4b54d695b3ef83a",
+    "independentH": 1.007936507936508,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The Ionic volute joins prescribed quarter-turn radii with a modern linear interpolation and a chosen fillet."
+    ]
+  },
+  {
+    "file": "chromium-fraction-thirds.html",
+    "order": "corinthian",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "52873ec65d3e322c6b9aa67d835a8572ed938297acee275d33f8cb2c3a96f8b2",
+    "independentH": 1.0573192239858906,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length."
+    ]
+  },
+  {
+    "file": "chromium-recovered.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "8bdc2776c46e4522f590cfffd898593349ced8f0a426c8757c15f50d968c52f1",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-1440-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "b8b903243c1bb4ef449847e761defe1728d3a62903fb25f91c2456eff97ae086",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12–30-foot range. Its height and dependent roof projection continue the model’s pattern; the text does not give this numeric extension.",
+      "The Ionic volute joins prescribed quarter-turn radii with a modern linear interpolation and a chosen fillet."
+    ]
+  },
+  {
+    "file": "firefox-1440-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-1440.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-375-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "b8b903243c1bb4ef449847e761defe1728d3a62903fb25f91c2456eff97ae086",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12–30-foot range. Its height and dependent roof projection continue the model’s pattern; the text does not give this numeric extension.",
+      "The Ionic volute joins prescribed quarter-turn radii with a modern linear interpolation and a chosen fillet."
+    ]
+  },
+  {
+    "file": "firefox-375-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-375.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "f13e10ffd564c3fd412102943a45f3817951b66e4ed11f7d9f654545a943e581",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-after-timeout.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "8bdc2776c46e4522f590cfffd898593349ced8f0a426c8757c15f50d968c52f1",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-fraction-eighths.html",
+    "order": "ionic",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "0cea396bad6a6612611766bd167e53bb32977159bae79648d4b54d695b3ef83a",
+    "independentH": 1.007936507936508,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The Ionic volute joins prescribed quarter-turn radii with a modern linear interpolation and a chosen fillet."
+    ]
+  },
+  {
+    "file": "firefox-fraction-thirds.html",
+    "order": "corinthian",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "52873ec65d3e322c6b9aa67d835a8572ed938297acee275d33f8cb2c3a96f8b2",
+    "independentH": 1.0573192239858906,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column’s own lower diameter; their tops stay level by adjusting shaft length."
+    ]
+  },
+  {
+    "file": "firefox-recovered.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "8bdc2776c46e4522f590cfffd898593349ced8f0a426c8757c15f50d968c52f1",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  }
+]

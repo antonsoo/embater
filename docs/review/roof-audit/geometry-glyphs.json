@@ -1,0 +1,42 @@
+{
+  "formatterValues": [
+    "0",
+    "0.04",
+    "0.08",
+    "⅛",
+    "⅙",
+    "0.21",
+    "¼",
+    "0.29",
+    "⅓",
+    "⅜",
+    "0.42",
+    "0.46",
+    "½",
+    "0.54",
+    "0.58",
+    "⅝",
+    "⅔",
+    "0.71",
+    "¾",
+    "0.79",
+    "⅚",
+    "⅞",
+    "0.92",
+    "0.96",
+    "1"
+  ],
+  "missing": [],
+  "fontFiles": [
+    "eb-garamond-greek-ext.woff2",
+    "eb-garamond-greek.woff2",
+    "eb-garamond-latin-ext.woff2",
+    "eb-garamond-latin.woff2",
+    "vocabulary-cjk.woff2",
+    "vocabulary-devanagari.woff2",
+    "vocabulary-latin-extra.woff2",
+    "vocabulary-math.woff2",
+    "vocabulary-old-persian.woff2"
+  ],
+  "drawingFractionsCovered": true
+}

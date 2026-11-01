@@ -33,11 +33,12 @@ the prescribed 9h/8. Change the column count, spacing or scale and measure again
 The corrected shared roof geometry now honors the ornaments' total drawn
 heights and supports their plinths on the slope. Enlarge the roof by keyboard,
 inspect complete printed page 74, and keep the current SVG or full-precision CSV.
-Palmettes and mounting details remain explicit modern choices.
+**Save illustrated reading** keeps both drawings, exact settings, Latin, complete
+source pages, fonts and licenses in one script-free HTML file. It opens directly
+from disk. Palmettes and mounting details remain explicit modern choices.
 
-This revision is local. After the quickstart, open
-`http://127.0.0.1:4412/embater/#order=doric&columns=6&view=roof`.
-[Reading, geometry and operated-browser review](docs/roof-reading.md).
+[Open the roof workshop](https://antonsoo.github.io/embater/#order=doric&columns=6&view=roof).
+[Audit findings, source boundaries and operated evidence](docs/roof-audit.md).
 
 ![An Ionic roof with the movable blue height envelope and Latin proportion reading](docs/assets/roof-desktop.png)
 
@@ -194,10 +195,10 @@ shape, and a reveal lets you inspect the sources without grading. Each language
 and direction keeps separate practice boxes; save and restore all of them as a
 validated JSON file. An explicit link shares the exercise settings.
 
-This vocabulary revision is available locally after the quickstart at
-`http://127.0.0.1:4412/embater/drill.html#deck=doric&lang=la&mode=study`.
+[Open the Doric vocabulary](https://antonsoo.github.io/embater/drill.html#deck=doric&lang=la&mode=study).
 [Use cases, original grading failure and verification](docs/drill-review.md)
-separate this local work from the published edition. The selection weights favor
+record the earlier local review; [the source-reading audit](docs/vocabulary-audit.md)
+records the later retained-source workflow. The selection weights favor
 box 1 over box 5 by sixteen to one before excluding the preceding question; they
 are practice scheduling, not a fluency measurement.
 

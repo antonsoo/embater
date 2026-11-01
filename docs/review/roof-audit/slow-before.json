@@ -1,0 +1,32 @@
+{
+  "build": "dist",
+  "networkModel": "JPEG bodies share one 4096-byte chunk every 32 ms, nominally 128000 bytes/s; headers and other resources unthrottled. Registration is gated until the initial plate is ready.",
+  "rows": [
+    {
+      "engine": "chromium",
+      "case": "foreground-during-install",
+      "firstStatus": "The source page did not finish loading. Reconnect and reload it.",
+      "foregroundElapsedMs": 16801,
+      "offlineDuringPartial": "Offline edition is still saving. Keep this tab online; the workshop remains usable.",
+      "peakImageStreams": 4,
+      "throttledBytesSent": 2149275,
+      "queuedImages": 3,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    },
+    {
+      "engine": "firefox",
+      "case": "foreground-during-install",
+      "firstStatus": "The source page did not finish loading. Reconnect and reload it.",
+      "foregroundElapsedMs": 15533,
+      "offlineDuringPartial": "Offline edition is still saving. Keep this tab online; the workshop remains usable.",
+      "peakImageStreams": 4,
+      "throttledBytesSent": 1960859,
+      "queuedImages": 3,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    }
+  ]
+}

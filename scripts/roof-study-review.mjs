@@ -129,6 +129,7 @@ for (const [engine, driver] of [
       assert.ok(embeddedSvg.bytes.toString().includes("embater-settings"));
       assert.ok(embeddedCsv.bytes.toString().includes("Reopen experiment"));
       assert.deepEqual(unexpected, []);
+      await saved.evaluate(() => window.scrollTo(0, 0));
       await saved.screenshot({ path: resolve(output, `${engine}-${width}-saved.png`) });
       if (engine === "chromium" && width === 1440)
         await saved.pdf({

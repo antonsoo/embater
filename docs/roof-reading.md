@@ -4,8 +4,10 @@ The Orders workshop now lets a reader operate the height words in Vitruvius
 III.5.12. A blue envelope can measure a corner or the middle ornament. Try a
 middle ornament only h/8 tall, then match the reading: its height is h + h/8.
 
-This revision is local and has not been pushed or deployed. The existing public
-site is a separate edition.
+This document records the first local implementation. The subsequent
+[audit](roof-audit.md) corrects and extends it with complete portable readings,
+member geometry, focus handling, fraction fonts and edition reuse. Its later
+publication receipts supersede the local-only boundary below.
 
 ## Try the actual work
 

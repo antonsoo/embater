@@ -1,0 +1,1733 @@
+{
+  "edition": "5ac35cdc1da858114a0a1d1f2b2cabc35b6528cb9facd869d445ce525a63ea70",
+  "rows": [
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "previousFailureKeptActiveWorker": true,
+      "oldTabsKeepStateAndReportMismatch": true,
+      "missingAndDamagedPagesRefetched": true,
+      "sourceImages": 37,
+      "sourceImagesFetched": 2,
+      "verifiedImagesReused": 35,
+      "networkBytes": 1593772,
+      "newEditionBytes": 23898239,
+      "fullCacheHashesMatch": true,
+      "currentCacheEvictionAndCorruptionDetected": true,
+      "explicitRepairRestoresReadiness": true,
+      "offlineSourceRecovered": true,
+      "requests": [
+        {
+          "phase": "old",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1748
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-chqQSxjo.css",
+          "status": 200,
+          "bytes": 1763
+        },
+        {
+          "phase": "old",
+          "path": "assets/index-DsP1_0ht.js",
+          "status": 200,
+          "bytes": 16012
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-DbRTFuQS.css",
+          "status": 200,
+          "bytes": 33151
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-lXlPL-pw.js",
+          "status": 200,
+          "bytes": 6324
+        },
+        {
+          "phase": "old",
+          "path": "assets/rules-DIQFR6H9.js",
+          "status": 200,
+          "bytes": 30446
+        },
+        {
+          "phase": "old",
+          "path": "assets/terms-prhyGa2f.js",
+          "status": 200,
+          "bytes": 32523
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-BbdIJSl2.js",
+          "status": 200,
+          "bytes": 10829
+        },
+        {
+          "phase": "old",
+          "path": "assets/assets-DxPVpQhG.js",
+          "status": 200,
+          "bytes": 939
+        },
+        {
+          "phase": "old",
+          "path": "assets/card-DFvgB0pT.js",
+          "status": 200,
+          "bytes": 7635
+        },
+        {
+          "phase": "old",
+          "path": "assets/ionic-D4heJhJs.js",
+          "status": 200,
+          "bytes": 12734
+        },
+        {
+          "phase": "old",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 19524
+        },
+        {
+          "phase": "old",
+          "path": "FONT-LICENSE.txt",
+          "status": 200,
+          "bytes": 9519
+        },
+        {
+          "phase": "old",
+          "path": "LICENSE.txt",
+          "status": 200,
+          "bytes": 1071
+        },
+        {
+          "phase": "old",
+          "path": "THIRD_PARTY_NOTICES.txt",
+          "status": 200,
+          "bytes": 5800
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-ext-CW-BywWH.woff2",
+          "status": 200,
+          "bytes": 11484
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-latin-AvGrCMCN.woff2",
+          "status": 200,
+          "bytes": 47940
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-latin-CRpggXlh.woff2",
+          "status": 200,
+          "bytes": 44336
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-latin-BRiTEmo6.woff2",
+          "status": 200,
+          "bytes": 14540
+        },
+        {
+          "phase": "old",
+          "path": "assets/assets-DxPVpQhG.js",
+          "status": 200,
+          "bytes": 939
+        },
+        {
+          "phase": "old",
+          "path": "assets/card-DFvgB0pT.js",
+          "status": 200,
+          "bytes": 7635
+        },
+        {
+          "phase": "old",
+          "path": "assets/compare-9AgF54mW.js",
+          "status": 200,
+          "bytes": 12811
+        },
+        {
+          "phase": "old",
+          "path": "assets/compare-cacIIeM9.css",
+          "status": 200,
+          "bytes": 3694
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-DbRTFuQS.css",
+          "status": 200,
+          "bytes": 33151
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-lXlPL-pw.js",
+          "status": 200,
+          "bytes": 6324
+        },
+        {
+          "phase": "old",
+          "path": "assets/doorways-BvaIAwWY.css",
+          "status": 200,
+          "bytes": 8830
+        },
+        {
+          "phase": "old",
+          "path": "assets/doorways-DuaKfNwH.js",
+          "status": 200,
+          "bytes": 53098
+        },
+        {
+          "phase": "old",
+          "path": "assets/drill-C8uOCXLh.css",
+          "status": 200,
+          "bytes": 4257
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-DCPER7xl.woff2",
+          "status": 200,
+          "bytes": 19868
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-DCPER7xl.woff2",
+          "status": 200,
+          "bytes": 19868
+        },
+        {
+          "phase": "old",
+          "path": "assets/drill-Cnp10n9Q.js",
+          "status": 200,
+          "bytes": 45591
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-ext-CW-BywWH.woff2",
+          "status": 200,
+          "bytes": 11484
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-greek-Dc0bJcw6.woff2",
+          "status": 200,
+          "bytes": 19588
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-greek-ext-nvsmRjVx.woff2",
+          "status": 200,
+          "bytes": 11956
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-latin-AvGrCMCN.woff2",
+          "status": 200,
+          "bytes": 47940
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-latin-ext-CYvIfuu9.woff2",
+          "status": 200,
+          "bytes": 88576
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-latin-CRpggXlh.woff2",
+          "status": 200,
+          "bytes": 44336
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-latin-ext-B6IpcvL2.woff2",
+          "status": 200,
+          "bytes": 113928
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-greek-DZxOyfIP.woff2",
+          "status": 200,
+          "bytes": 7192
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-latin-BRiTEmo6.woff2",
+          "status": 200,
+          "bytes": 14540
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-greek-ext-BVzEyZiZ.woff2",
+          "status": 200,
+          "bytes": 8968
+        },
+        {
+          "phase": "old",
+          "path": "assets/index-DsP1_0ht.js",
+          "status": 200,
+          "bytes": 16012
+        },
+        {
+          "phase": "old",
+          "path": "assets/ionic-D4heJhJs.js",
+          "status": 200,
+          "bytes": 12734
+        },
+        {
+          "phase": "old",
+          "path": "assets/plan-DTTtYZle.js",
+          "status": 200,
+          "bytes": 3229
+        },
+        {
+          "phase": "old",
+          "path": "assets/plan-fonts-dQ3CYwSZ.js",
+          "status": 200,
+          "bytes": 831
+        },
+        {
+          "phase": "old",
+          "path": "assets/plans-Y7TE5zHI.js",
+          "status": 200,
+          "bytes": 33429
+        },
+        {
+          "phase": "old",
+          "path": "assets/temples-BnZVv20C.js",
+          "status": 200,
+          "bytes": 15754
+        },
+        {
+          "phase": "old",
+          "path": "assets/rules-DIQFR6H9.js",
+          "status": 200,
+          "bytes": 30446
+        },
+        {
+          "phase": "old",
+          "path": "assets/terms-prhyGa2f.js",
+          "status": 200,
+          "bytes": 32523
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-cjk-DcC6CKPN.woff2",
+          "status": 200,
+          "bytes": 10580
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-devanagari-B3SMEurw.woff2",
+          "status": 200,
+          "bytes": 20164
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-chqQSxjo.css",
+          "status": 200,
+          "bytes": 1763
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-BbdIJSl2.js",
+          "status": 200,
+          "bytes": 10829
+        },
+        {
+          "phase": "old",
+          "path": "assets/world-QakBFums.js",
+          "status": 200,
+          "bytes": 4190
+        },
+        {
+          "phase": "old",
+          "path": "assets/world-o_LPqIuT.js",
+          "status": 200,
+          "bytes": 37862
+        },
+        {
+          "phase": "old",
+          "path": "compare.html",
+          "status": 200,
+          "bytes": 1295
+        },
+        {
+          "phase": "old",
+          "path": "doorways.html",
+          "status": 200,
+          "bytes": 1389
+        },
+        {
+          "phase": "old",
+          "path": "drill.html",
+          "status": 200,
+          "bytes": 1992
+        },
+        {
+          "phase": "old",
+          "path": "favicon.svg",
+          "status": 200,
+          "bytes": 469
+        },
+        {
+          "phase": "old",
+          "path": "fonts/VOCABULARY-OFL.txt",
+          "status": 200,
+          "bytes": 5651
+        },
+        {
+          "phase": "old",
+          "path": "fonts/vocabulary-manifest.json",
+          "status": 200,
+          "bytes": 4008
+        },
+        {
+          "phase": "old",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1748
+        },
+        {
+          "phase": "old",
+          "path": "plans.html",
+          "status": 200,
+          "bytes": 1668
+        },
+        {
+          "phase": "old",
+          "path": "sources/doorways/krohn-88.jpg",
+          "status": 200,
+          "bytes": 591681
+        },
+        {
+          "phase": "old",
+          "path": "sources/doorways/manifest.json",
+          "status": 200,
+          "bytes": 1101
+        },
+        {
+          "phase": "old",
+          "path": "sources/erechtheion/manifest.json",
+          "status": 200,
+          "bytes": 1369
+        },
+        {
+          "phase": "old",
+          "path": "sources/doorways/krohn-89.jpg",
+          "status": 200,
+          "bytes": 616874
+        },
+        {
+          "phase": "old",
+          "path": "sources/erechtheion/p98.jpg",
+          "status": 200,
+          "bytes": 445339
+        },
+        {
+          "phase": "old",
+          "path": "sources/erechtheion/p99.jpg",
+          "status": 200,
+          "bytes": 579632
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/manifest.json",
+          "status": 200,
+          "bytes": 1659
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p62.jpg",
+          "status": 200,
+          "bytes": 657077
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p63.jpg",
+          "status": 200,
+          "bytes": 707592
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p64.jpg",
+          "status": 200,
+          "bytes": 682881
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p66.jpg",
+          "status": 200,
+          "bytes": 724523
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p69.jpg",
+          "status": 200,
+          "bytes": 708563
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/manifest.json",
+          "status": 200,
+          "bytes": 8088
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p85.jpg",
+          "status": 200,
+          "bytes": 673920
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p86.jpg",
+          "status": 200,
+          "bytes": 672397
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p62.jpg",
+          "status": 200,
+          "bytes": 601341
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p63.jpg",
+          "status": 200,
+          "bytes": 640019
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p64.jpg",
+          "status": 200,
+          "bytes": 635569
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p66.jpg",
+          "status": 200,
+          "bytes": 624874
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p67.jpg",
+          "status": 200,
+          "bytes": 614606
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p65.jpg",
+          "status": 200,
+          "bytes": 610983
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p68.jpg",
+          "status": 200,
+          "bytes": 632365
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p69.jpg",
+          "status": 200,
+          "bytes": 625229
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p70.jpg",
+          "status": 200,
+          "bytes": 625326
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p72.jpg",
+          "status": 200,
+          "bytes": 621845
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p73.jpg",
+          "status": 200,
+          "bytes": 626435
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p74.jpg",
+          "status": 200,
+          "bytes": 622397
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p75.jpg",
+          "status": 200,
+          "bytes": 546715
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p77.jpg",
+          "status": 200,
+          "bytes": 607602
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p80.jpg",
+          "status": 200,
+          "bytes": 624970
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p79.jpg",
+          "status": 200,
+          "bytes": 626325
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p78.jpg",
+          "status": 200,
+          "bytes": 591085
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p81.jpg",
+          "status": 200,
+          "bytes": 594908
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p83.jpg",
+          "status": 200,
+          "bytes": 611469
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p84.jpg",
+          "status": 200,
+          "bytes": 627825
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p85.jpg",
+          "status": 200,
+          "bytes": 622185
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p86.jpg",
+          "status": 200,
+          "bytes": 608837
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p90.jpg",
+          "status": 200,
+          "bytes": 619889
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p91.jpg",
+          "status": 200,
+          "bytes": 605929
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p92.jpg",
+          "status": 200,
+          "bytes": 609590
+        },
+        {
+          "phase": "old",
+          "path": "world.html",
+          "status": 200,
+          "bytes": 1624
+        },
+        {
+          "phase": "old",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1748
+        },
+        {
+          "phase": "fail",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 20695
+        },
+        {
+          "phase": "fail",
+          "path": "assets/card-D_qQcwEx.js",
+          "status": 200,
+          "bytes": 8213
+        },
+        {
+          "phase": "fail",
+          "path": "assets/compare-BtK7llSk.js",
+          "status": 200,
+          "bytes": 12811
+        },
+        {
+          "phase": "fail",
+          "path": "assets/dom-DcvqeKGr.js",
+          "status": 200,
+          "bytes": 6324
+        },
+        {
+          "phase": "fail",
+          "path": "assets/dom-RXX621yo.css",
+          "status": 200,
+          "bytes": 29962
+        },
+        {
+          "phase": "fail",
+          "path": "assets/doorways-B-HkQ7SZ.js",
+          "status": 200,
+          "bytes": 53098
+        },
+        {
+          "phase": "fail",
+          "path": "assets/drill-CevYhWIV.js",
+          "status": 200,
+          "bytes": 32255
+        },
+        {
+          "phase": "fail",
+          "path": "assets/index-wKvWp04p.js",
+          "status": 503,
+          "bytes": 0
+        },
+        {
+          "phase": "new",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 20695
+        },
+        {
+          "phase": "new",
+          "path": "assets/index-wKvWp04p.js",
+          "status": 200,
+          "bytes": 38570
+        },
+        {
+          "phase": "new",
+          "path": "assets/plan-4DdXbvmP.js",
+          "status": 200,
+          "bytes": 3229
+        },
+        {
+          "phase": "new",
+          "path": "assets/plans-BByIEQ9z.js",
+          "status": 200,
+          "bytes": 33429
+        },
+        {
+          "phase": "new",
+          "path": "assets/rules-DlUlnL5w.js",
+          "status": 200,
+          "bytes": 30719
+        },
+        {
+          "phase": "new",
+          "path": "assets/terms-DOQnjini.js",
+          "status": 200,
+          "bytes": 32715
+        },
+        {
+          "phase": "new",
+          "path": "assets/vocabulary-fonts-Imt2SwRN.js",
+          "status": 200,
+          "bytes": 21867
+        },
+        {
+          "phase": "new",
+          "path": "assets/vocabulary-latin-extra-D78IlaSS.woff2",
+          "status": 200,
+          "bytes": 4292
+        },
+        {
+          "phase": "new",
+          "path": "assets/vocabulary-source-Dopalvw6.js",
+          "status": 200,
+          "bytes": 11126
+        },
+        {
+          "phase": "new",
+          "path": "assets/world-BHoP0tYz.js",
+          "status": 200,
+          "bytes": 4190
+        },
+        {
+          "phase": "new",
+          "path": "assets/world-DtdVMAdS.js",
+          "status": 200,
+          "bytes": 37862
+        },
+        {
+          "phase": "new",
+          "path": "compare.html",
+          "status": 200,
+          "bytes": 1295
+        },
+        {
+          "phase": "new",
+          "path": "doorways.html",
+          "status": 200,
+          "bytes": 1389
+        },
+        {
+          "phase": "new",
+          "path": "drill.html",
+          "status": 200,
+          "bytes": 2003
+        },
+        {
+          "phase": "new",
+          "path": "fonts/vocabulary-manifest.json",
+          "status": 200,
+          "bytes": 4166
+        },
+        {
+          "phase": "new",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1848
+        },
+        {
+          "phase": "new",
+          "path": "plans.html",
+          "status": 200,
+          "bytes": 1668
+        },
+        {
+          "phase": "new",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        },
+        {
+          "phase": "new",
+          "path": "sources/vocabulary/p74.jpg",
+          "status": 200,
+          "bytes": 622397
+        },
+        {
+          "phase": "new",
+          "path": "world.html",
+          "status": 200,
+          "bytes": 1624
+        },
+        {
+          "phase": "new",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1848
+        },
+        {
+          "phase": "repair",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        },
+        {
+          "phase": "repair",
+          "path": "sources/vocabulary/p74.jpg",
+          "status": 200,
+          "bytes": 622397
+        },
+        {
+          "phase": "repair",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 20695
+        },
+        {
+          "phase": "repair",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        }
+      ]
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "previousFailureKeptActiveWorker": true,
+      "oldTabsKeepStateAndReportMismatch": true,
+      "missingAndDamagedPagesRefetched": true,
+      "sourceImages": 37,
+      "sourceImagesFetched": 2,
+      "verifiedImagesReused": 35,
+      "networkBytes": 1593772,
+      "newEditionBytes": 23898239,
+      "fullCacheHashesMatch": true,
+      "currentCacheEvictionAndCorruptionDetected": true,
+      "explicitRepairRestoresReadiness": true,
+      "offlineSourceRecovered": true,
+      "requests": [
+        {
+          "phase": "old",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1748
+        },
+        {
+          "phase": "old",
+          "path": "assets/index-DsP1_0ht.js",
+          "status": 200,
+          "bytes": 16012
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-lXlPL-pw.js",
+          "status": 200,
+          "bytes": 6324
+        },
+        {
+          "phase": "old",
+          "path": "assets/rules-DIQFR6H9.js",
+          "status": 200,
+          "bytes": 30446
+        },
+        {
+          "phase": "old",
+          "path": "assets/assets-DxPVpQhG.js",
+          "status": 200,
+          "bytes": 939
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-BbdIJSl2.js",
+          "status": 200,
+          "bytes": 10829
+        },
+        {
+          "phase": "old",
+          "path": "assets/terms-prhyGa2f.js",
+          "status": 200,
+          "bytes": 32523
+        },
+        {
+          "phase": "old",
+          "path": "assets/card-DFvgB0pT.js",
+          "status": 200,
+          "bytes": 7635
+        },
+        {
+          "phase": "old",
+          "path": "assets/ionic-D4heJhJs.js",
+          "status": 200,
+          "bytes": 12734
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-DbRTFuQS.css",
+          "status": 200,
+          "bytes": 33151
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-chqQSxjo.css",
+          "status": 200,
+          "bytes": 1763
+        },
+        {
+          "phase": "old",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 19524
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-latin-CRpggXlh.woff2",
+          "status": 200,
+          "bytes": 44336
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-latin-BRiTEmo6.woff2",
+          "status": 200,
+          "bytes": 14540
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-ext-CW-BywWH.woff2",
+          "status": 200,
+          "bytes": 11484
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-DCPER7xl.woff2",
+          "status": 200,
+          "bytes": 19868
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-latin-AvGrCMCN.woff2",
+          "status": 200,
+          "bytes": 47940
+        },
+        {
+          "phase": "old",
+          "path": "FONT-LICENSE.txt",
+          "status": 200,
+          "bytes": 9519
+        },
+        {
+          "phase": "old",
+          "path": "LICENSE.txt",
+          "status": 200,
+          "bytes": 1071
+        },
+        {
+          "phase": "old",
+          "path": "favicon.svg",
+          "status": 200,
+          "bytes": 469
+        },
+        {
+          "phase": "old",
+          "path": "THIRD_PARTY_NOTICES.txt",
+          "status": 200,
+          "bytes": 5800
+        },
+        {
+          "phase": "old",
+          "path": "assets/assets-DxPVpQhG.js",
+          "status": 200,
+          "bytes": 939
+        },
+        {
+          "phase": "old",
+          "path": "assets/card-DFvgB0pT.js",
+          "status": 200,
+          "bytes": 7635
+        },
+        {
+          "phase": "old",
+          "path": "assets/compare-9AgF54mW.js",
+          "status": 200,
+          "bytes": 12811
+        },
+        {
+          "phase": "old",
+          "path": "assets/compare-cacIIeM9.css",
+          "status": 200,
+          "bytes": 3694
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-DbRTFuQS.css",
+          "status": 200,
+          "bytes": 33151
+        },
+        {
+          "phase": "old",
+          "path": "assets/dom-lXlPL-pw.js",
+          "status": 200,
+          "bytes": 6324
+        },
+        {
+          "phase": "old",
+          "path": "assets/doorways-BvaIAwWY.css",
+          "status": 200,
+          "bytes": 8830
+        },
+        {
+          "phase": "old",
+          "path": "assets/doorways-DuaKfNwH.js",
+          "status": 200,
+          "bytes": 53098
+        },
+        {
+          "phase": "old",
+          "path": "assets/drill-C8uOCXLh.css",
+          "status": 200,
+          "bytes": 4257
+        },
+        {
+          "phase": "old",
+          "path": "assets/drill-Cnp10n9Q.js",
+          "status": 200,
+          "bytes": 45591
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-DCPER7xl.woff2",
+          "status": 200,
+          "bytes": 19868
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-greek-ext-CW-BywWH.woff2",
+          "status": 200,
+          "bytes": 11484
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-greek-Dc0bJcw6.woff2",
+          "status": 200,
+          "bytes": 19588
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-latin-AvGrCMCN.woff2",
+          "status": 200,
+          "bytes": 47940
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-greek-ext-nvsmRjVx.woff2",
+          "status": 200,
+          "bytes": 11956
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-italic-latin-ext-CYvIfuu9.woff2",
+          "status": 200,
+          "bytes": 88576
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-latin-CRpggXlh.woff2",
+          "status": 200,
+          "bytes": 44336
+        },
+        {
+          "phase": "old",
+          "path": "assets/eb-garamond-latin-ext-B6IpcvL2.woff2",
+          "status": 200,
+          "bytes": 113928
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-greek-DZxOyfIP.woff2",
+          "status": 200,
+          "bytes": 7192
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-greek-ext-BVzEyZiZ.woff2",
+          "status": 200,
+          "bytes": 8968
+        },
+        {
+          "phase": "old",
+          "path": "assets/gfs-didot-latin-BRiTEmo6.woff2",
+          "status": 200,
+          "bytes": 14540
+        },
+        {
+          "phase": "old",
+          "path": "assets/index-DsP1_0ht.js",
+          "status": 200,
+          "bytes": 16012
+        },
+        {
+          "phase": "old",
+          "path": "assets/ionic-D4heJhJs.js",
+          "status": 200,
+          "bytes": 12734
+        },
+        {
+          "phase": "old",
+          "path": "assets/plan-DTTtYZle.js",
+          "status": 200,
+          "bytes": 3229
+        },
+        {
+          "phase": "old",
+          "path": "assets/plan-fonts-dQ3CYwSZ.js",
+          "status": 200,
+          "bytes": 831
+        },
+        {
+          "phase": "old",
+          "path": "assets/plans-Y7TE5zHI.js",
+          "status": 200,
+          "bytes": 33429
+        },
+        {
+          "phase": "old",
+          "path": "assets/rules-DIQFR6H9.js",
+          "status": 200,
+          "bytes": 30446
+        },
+        {
+          "phase": "old",
+          "path": "assets/temples-BnZVv20C.js",
+          "status": 200,
+          "bytes": 15754
+        },
+        {
+          "phase": "old",
+          "path": "assets/terms-prhyGa2f.js",
+          "status": 200,
+          "bytes": 32523
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-cjk-DcC6CKPN.woff2",
+          "status": 200,
+          "bytes": 10580
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-devanagari-B3SMEurw.woff2",
+          "status": 200,
+          "bytes": 20164
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-BbdIJSl2.js",
+          "status": 200,
+          "bytes": 10829
+        },
+        {
+          "phase": "old",
+          "path": "assets/vocabulary-source-chqQSxjo.css",
+          "status": 200,
+          "bytes": 1763
+        },
+        {
+          "phase": "old",
+          "path": "assets/world-QakBFums.js",
+          "status": 200,
+          "bytes": 4190
+        },
+        {
+          "phase": "old",
+          "path": "assets/world-o_LPqIuT.js",
+          "status": 200,
+          "bytes": 37862
+        },
+        {
+          "phase": "old",
+          "path": "compare.html",
+          "status": 200,
+          "bytes": 1295
+        },
+        {
+          "phase": "old",
+          "path": "doorways.html",
+          "status": 200,
+          "bytes": 1389
+        },
+        {
+          "phase": "old",
+          "path": "drill.html",
+          "status": 200,
+          "bytes": 1992
+        },
+        {
+          "phase": "old",
+          "path": "favicon.svg",
+          "status": 200,
+          "bytes": 469
+        },
+        {
+          "phase": "old",
+          "path": "fonts/VOCABULARY-OFL.txt",
+          "status": 200,
+          "bytes": 5651
+        },
+        {
+          "phase": "old",
+          "path": "fonts/vocabulary-manifest.json",
+          "status": 200,
+          "bytes": 4008
+        },
+        {
+          "phase": "old",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1748
+        },
+        {
+          "phase": "old",
+          "path": "plans.html",
+          "status": 200,
+          "bytes": 1668
+        },
+        {
+          "phase": "old",
+          "path": "sources/doorways/krohn-88.jpg",
+          "status": 200,
+          "bytes": 591681
+        },
+        {
+          "phase": "old",
+          "path": "sources/doorways/krohn-89.jpg",
+          "status": 200,
+          "bytes": 616874
+        },
+        {
+          "phase": "old",
+          "path": "sources/doorways/manifest.json",
+          "status": 200,
+          "bytes": 1101
+        },
+        {
+          "phase": "old",
+          "path": "sources/erechtheion/manifest.json",
+          "status": 200,
+          "bytes": 1369
+        },
+        {
+          "phase": "old",
+          "path": "sources/erechtheion/p98.jpg",
+          "status": 200,
+          "bytes": 445339
+        },
+        {
+          "phase": "old",
+          "path": "sources/erechtheion/p99.jpg",
+          "status": 200,
+          "bytes": 579632
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/manifest.json",
+          "status": 200,
+          "bytes": 1659
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p62.jpg",
+          "status": 200,
+          "bytes": 657077
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p63.jpg",
+          "status": 200,
+          "bytes": 707592
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p64.jpg",
+          "status": 200,
+          "bytes": 682881
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p66.jpg",
+          "status": 200,
+          "bytes": 724523
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p69.jpg",
+          "status": 200,
+          "bytes": 708563
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p85.jpg",
+          "status": 200,
+          "bytes": 673920
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/manifest.json",
+          "status": 200,
+          "bytes": 8088
+        },
+        {
+          "phase": "old",
+          "path": "sources/krohn-1912/p86.jpg",
+          "status": 200,
+          "bytes": 672397
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p62.jpg",
+          "status": 200,
+          "bytes": 601341
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p63.jpg",
+          "status": 200,
+          "bytes": 640019
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p64.jpg",
+          "status": 200,
+          "bytes": 635569
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p65.jpg",
+          "status": 200,
+          "bytes": 610983
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p66.jpg",
+          "status": 200,
+          "bytes": 624874
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p67.jpg",
+          "status": 200,
+          "bytes": 614606
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p68.jpg",
+          "status": 200,
+          "bytes": 632365
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p69.jpg",
+          "status": 200,
+          "bytes": 625229
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p70.jpg",
+          "status": 200,
+          "bytes": 625326
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p72.jpg",
+          "status": 200,
+          "bytes": 621845
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p73.jpg",
+          "status": 200,
+          "bytes": 626435
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p74.jpg",
+          "status": 200,
+          "bytes": 622397
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p75.jpg",
+          "status": 200,
+          "bytes": 546715
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p77.jpg",
+          "status": 200,
+          "bytes": 607602
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p78.jpg",
+          "status": 200,
+          "bytes": 591085
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p79.jpg",
+          "status": 200,
+          "bytes": 626325
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p80.jpg",
+          "status": 200,
+          "bytes": 624970
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p81.jpg",
+          "status": 200,
+          "bytes": 594908
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p83.jpg",
+          "status": 200,
+          "bytes": 611469
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p84.jpg",
+          "status": 200,
+          "bytes": 627825
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p85.jpg",
+          "status": 200,
+          "bytes": 622185
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p86.jpg",
+          "status": 200,
+          "bytes": 608837
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p90.jpg",
+          "status": 200,
+          "bytes": 619889
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p91.jpg",
+          "status": 200,
+          "bytes": 605929
+        },
+        {
+          "phase": "old",
+          "path": "world.html",
+          "status": 200,
+          "bytes": 1624
+        },
+        {
+          "phase": "old",
+          "path": "sources/vocabulary/p92.jpg",
+          "status": 200,
+          "bytes": 609590
+        },
+        {
+          "phase": "old",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1748
+        },
+        {
+          "phase": "fail",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 20695
+        },
+        {
+          "phase": "fail",
+          "path": "assets/card-D_qQcwEx.js",
+          "status": 200,
+          "bytes": 8213
+        },
+        {
+          "phase": "fail",
+          "path": "assets/compare-BtK7llSk.js",
+          "status": 200,
+          "bytes": 12811
+        },
+        {
+          "phase": "fail",
+          "path": "assets/dom-DcvqeKGr.js",
+          "status": 200,
+          "bytes": 6324
+        },
+        {
+          "phase": "fail",
+          "path": "assets/dom-RXX621yo.css",
+          "status": 200,
+          "bytes": 29962
+        },
+        {
+          "phase": "fail",
+          "path": "assets/doorways-B-HkQ7SZ.js",
+          "status": 200,
+          "bytes": 53098
+        },
+        {
+          "phase": "fail",
+          "path": "assets/drill-CevYhWIV.js",
+          "status": 200,
+          "bytes": 32255
+        },
+        {
+          "phase": "fail",
+          "path": "assets/index-wKvWp04p.js",
+          "status": 503,
+          "bytes": 0
+        },
+        {
+          "phase": "fail",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 20695
+        },
+        {
+          "phase": "fail",
+          "path": "assets/index-wKvWp04p.js",
+          "status": 503,
+          "bytes": 0
+        },
+        {
+          "phase": "new",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 20695
+        },
+        {
+          "phase": "new",
+          "path": "assets/index-wKvWp04p.js",
+          "status": 200,
+          "bytes": 38570
+        },
+        {
+          "phase": "new",
+          "path": "assets/plan-4DdXbvmP.js",
+          "status": 200,
+          "bytes": 3229
+        },
+        {
+          "phase": "new",
+          "path": "assets/plans-BByIEQ9z.js",
+          "status": 200,
+          "bytes": 33429
+        },
+        {
+          "phase": "new",
+          "path": "assets/rules-DlUlnL5w.js",
+          "status": 200,
+          "bytes": 30719
+        },
+        {
+          "phase": "new",
+          "path": "assets/terms-DOQnjini.js",
+          "status": 200,
+          "bytes": 32715
+        },
+        {
+          "phase": "new",
+          "path": "assets/vocabulary-fonts-Imt2SwRN.js",
+          "status": 200,
+          "bytes": 21867
+        },
+        {
+          "phase": "new",
+          "path": "assets/vocabulary-latin-extra-D78IlaSS.woff2",
+          "status": 200,
+          "bytes": 4292
+        },
+        {
+          "phase": "new",
+          "path": "assets/vocabulary-source-Dopalvw6.js",
+          "status": 200,
+          "bytes": 11126
+        },
+        {
+          "phase": "new",
+          "path": "assets/world-BHoP0tYz.js",
+          "status": 200,
+          "bytes": 4190
+        },
+        {
+          "phase": "new",
+          "path": "assets/world-DtdVMAdS.js",
+          "status": 200,
+          "bytes": 37862
+        },
+        {
+          "phase": "new",
+          "path": "compare.html",
+          "status": 200,
+          "bytes": 1295
+        },
+        {
+          "phase": "new",
+          "path": "doorways.html",
+          "status": 200,
+          "bytes": 1389
+        },
+        {
+          "phase": "new",
+          "path": "drill.html",
+          "status": 200,
+          "bytes": 2003
+        },
+        {
+          "phase": "new",
+          "path": "fonts/vocabulary-manifest.json",
+          "status": 200,
+          "bytes": 4166
+        },
+        {
+          "phase": "new",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1848
+        },
+        {
+          "phase": "new",
+          "path": "plans.html",
+          "status": 200,
+          "bytes": 1668
+        },
+        {
+          "phase": "new",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        },
+        {
+          "phase": "new",
+          "path": "sources/vocabulary/p74.jpg",
+          "status": 200,
+          "bytes": 622397
+        },
+        {
+          "phase": "new",
+          "path": "world.html",
+          "status": 200,
+          "bytes": 1624
+        },
+        {
+          "phase": "new",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1848
+        },
+        {
+          "phase": "repair",
+          "path": "sw.js",
+          "status": 200,
+          "bytes": 20695
+        },
+        {
+          "phase": "repair",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        },
+        {
+          "phase": "repair",
+          "path": "sources/vocabulary/p74.jpg",
+          "status": 200,
+          "bytes": 622397
+        },
+        {
+          "phase": "repair",
+          "path": "sources/vocabulary/p71.jpg",
+          "status": 200,
+          "bytes": 594872
+        },
+        {
+          "phase": "repair",
+          "path": "index.html",
+          "status": 200,
+          "bytes": 1848
+        }
+      ]
+    }
+  ]
+}

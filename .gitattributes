@@ -10,3 +10,6 @@ docs/review/temple-counts.csv -whitespace
 examples/doorways/*.csv -text whitespace=cr-at-eol
 
 examples/vocabulary/*.csv -text whitespace=cr-at-eol
+
+# Native roof CSV retains RFC 4180 line endings.
+examples/roof/*.csv -text whitespace=cr-at-eol

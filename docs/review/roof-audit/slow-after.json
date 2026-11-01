@@ -1,0 +1,58 @@
+{
+  "build": "dist",
+  "networkModel": "JPEG bodies share one 4096-byte chunk every 32 ms, nominally 128000 bytes/s; headers and other resources unthrottled. Registration is gated until the initial plate is ready.",
+  "rows": [
+    {
+      "engine": "chromium",
+      "case": "foreground-during-install",
+      "firstStatus": "Complete printed page 71. The image matches the retained edition.",
+      "foregroundElapsedMs": 12152,
+      "offlineDuringPartial": "Offline edition is still saving. Keep this tab online; the workshop remains usable.",
+      "peakImageStreams": 2,
+      "throttledBytesSent": 1600249,
+      "queuedImages": 1,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    },
+    {
+      "engine": "chromium",
+      "case": "failed-install-retry",
+      "firstStatus": "Complete printed page 71. The image matches the retained edition.",
+      "foregroundElapsedMs": 154,
+      "offlineDuringPartial": "Saving these pages for offline reading…",
+      "peakImageStreams": 0,
+      "throttledBytesSent": 0,
+      "queuedImages": 0,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    },
+    {
+      "engine": "firefox",
+      "case": "foreground-during-install",
+      "firstStatus": "Complete printed page 71. The image matches the retained edition.",
+      "foregroundElapsedMs": 9494,
+      "offlineDuringPartial": "Offline edition is still saving. Keep this tab online; the workshop remains usable.",
+      "peakImageStreams": 2,
+      "throttledBytesSent": 1633017,
+      "queuedImages": 1,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    },
+    {
+      "engine": "firefox",
+      "case": "failed-install-retry",
+      "firstStatus": "Complete printed page 71. The image matches the retained edition.",
+      "foregroundElapsedMs": 256,
+      "offlineDuringPartial": "Saving these pages for offline reading…",
+      "peakImageStreams": 0,
+      "throttledBytesSent": 0,
+      "queuedImages": 0,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    }
+  ]
+}
