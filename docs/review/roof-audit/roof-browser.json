@@ -10,8 +10,8 @@
     "downloads": {
       "svg": {
         "filename": "chromium-1440.svg",
-        "bytes": 18337,
-        "sha256": "b017561342204efccecb0531af9e9a75b2a2f1f40262826ebc84e1615df74b29"
+        "bytes": 18345,
+        "sha256": "c2a08771376bb33cfacbe4cfb71d356ff257e16028b33427dd494d686a0ee6bb"
       },
       "csv": {
         "filename": "chromium-1440.csv",
@@ -38,8 +38,8 @@
     "downloads": {
       "svg": {
         "filename": "chromium-375.svg",
-        "bytes": 18337,
-        "sha256": "b017561342204efccecb0531af9e9a75b2a2f1f40262826ebc84e1615df74b29"
+        "bytes": 18345,
+        "sha256": "c2a08771376bb33cfacbe4cfb71d356ff257e16028b33427dd494d686a0ee6bb"
       },
       "csv": {
         "filename": "chromium-375.csv",
@@ -66,8 +66,8 @@
     "downloads": {
       "svg": {
         "filename": "firefox-1440.svg",
-        "bytes": 18337,
-        "sha256": "b017561342204efccecb0531af9e9a75b2a2f1f40262826ebc84e1615df74b29"
+        "bytes": 18345,
+        "sha256": "c2a08771376bb33cfacbe4cfb71d356ff257e16028b33427dd494d686a0ee6bb"
       },
       "csv": {
         "filename": "firefox-1440.csv",
@@ -94,8 +94,8 @@
     "downloads": {
       "svg": {
         "filename": "firefox-375.svg",
-        "bytes": 18337,
-        "sha256": "b017561342204efccecb0531af9e9a75b2a2f1f40262826ebc84e1615df74b29"
+        "bytes": 18345,
+        "sha256": "c2a08771376bb33cfacbe4cfb71d356ff257e16028b33427dd494d686a0ee6bb"
       },
       "csv": {
         "filename": "firefox-375.csv",

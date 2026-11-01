@@ -1,0 +1,371 @@
+{
+  "sourceRevision": "5b89066d9fe4480ccf469181376f7743e9e4b850",
+  "freshInstall": true,
+  "checksPassed": true,
+  "tests": 69,
+  "existingBiomeWarnings": 12,
+  "existingBiomeInfos": 3,
+  "reviewedBuildMatchesCleanBuild": true,
+  "files": {
+    "FONT-LICENSE.txt": {
+      "bytes": 9519,
+      "sha256": "da7e59f7ecc5b53057ca9c667cf4cfd585fdf4e521187ec7f1d5c0a8f7dc99bf"
+    },
+    "LICENSE.txt": {
+      "bytes": 1071,
+      "sha256": "f4cec46403514e2601f3b917ad36bfc8cd9a6d97359ac2f9bb554d2062a251eb"
+    },
+    "THIRD_PARTY_NOTICES.txt": {
+      "bytes": 5800,
+      "sha256": "4e70dbcb40aa2aafee80e9f109f434106608632a2b95e1314e6f22544ec04037"
+    },
+    "assets/assets-DxPVpQhG.js": {
+      "bytes": 939,
+      "sha256": "40abc0e3a259bcdb093d9936bf867e9e09946ce777aa5d8b4e7cb5b299eef983"
+    },
+    "assets/card-CgKqglHh.js": {
+      "bytes": 8213,
+      "sha256": "4c0f426e47092997040c15bf87ceac96f059665ac8ce1f171ba65862abc48c6e"
+    },
+    "assets/compare-COX4HLmF.js": {
+      "bytes": 12811,
+      "sha256": "880df856137b765c288b0348ae8474d5fceb4445f7de18e7fbea7be48d3d19b1"
+    },
+    "assets/compare-cacIIeM9.css": {
+      "bytes": 3694,
+      "sha256": "36ebad08ffac8380567c63318a48fd1f88da420aa648f49f4b1eae6be9212b87"
+    },
+    "assets/dom-B5dDpOm6.js": {
+      "bytes": 6324,
+      "sha256": "56b71ecd564b96eb8bbafde5f03b6af9d7fb8c54f81aaca8d40e6fed148bbf6c"
+    },
+    "assets/dom-RXX621yo.css": {
+      "bytes": 29962,
+      "sha256": "2eb3adf6188e75fdb837e0ef20b864f6fc1c46771c6710cb54af6aebdfd20d47"
+    },
+    "assets/doorways-BvaIAwWY.css": {
+      "bytes": 8830,
+      "sha256": "d2370c2b4fa19166c7a34b5eef64db0c30718bcfd440b8130dacfec3c2856634"
+    },
+    "assets/doorways-DmbuVnB-.js": {
+      "bytes": 53098,
+      "sha256": "678d928b9812f44ffda4b0827624f9686b0e1566cac7e0cc9e704f94086f6bdd"
+    },
+    "assets/drill-C8uOCXLh.css": {
+      "bytes": 4257,
+      "sha256": "81d3cb23a1d7fc2e7cc77dfc94611c84c7799c5d882691d617ea1241df7c9a54"
+    },
+    "assets/drill-CDoimyE0.js": {
+      "bytes": 32255,
+      "sha256": "e268c910aad4e6a0a3955d84181513bfc441ea2d119f921d2cdfc9e18d420af5"
+    },
+    "assets/eb-garamond-greek-DCPER7xl.woff2": {
+      "bytes": 19868,
+      "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56"
+    },
+    "assets/eb-garamond-greek-ext-CW-BywWH.woff2": {
+      "bytes": 11484,
+      "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+    },
+    "assets/eb-garamond-italic-greek-Dc0bJcw6.woff2": {
+      "bytes": 19588,
+      "sha256": "288deb73f6a27a306138997d310e4efbfba9bb623eca0829be0e4475ff164b71"
+    },
+    "assets/eb-garamond-italic-greek-ext-nvsmRjVx.woff2": {
+      "bytes": 11956,
+      "sha256": "4caf65dfd9a97861e20565bcec00273c1e157af7eb4f6af7bd61f3462feb7e09"
+    },
+    "assets/eb-garamond-italic-latin-AvGrCMCN.woff2": {
+      "bytes": 47940,
+      "sha256": "c664773f7e1d42d36326aa457becf7674236168c74cf7d74e87e5778ef7640f9"
+    },
+    "assets/eb-garamond-italic-latin-ext-CYvIfuu9.woff2": {
+      "bytes": 88576,
+      "sha256": "fa866520f8b7fb646ebc730fd0d3cbf8945db74d92f25fdd6fee486808652fdf"
+    },
+    "assets/eb-garamond-latin-CRpggXlh.woff2": {
+      "bytes": 44336,
+      "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b"
+    },
+    "assets/eb-garamond-latin-ext-B6IpcvL2.woff2": {
+      "bytes": 113928,
+      "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901"
+    },
+    "assets/gfs-didot-greek-DZxOyfIP.woff2": {
+      "bytes": 7192,
+      "sha256": "edd09b417c95a4d765076f3c52e2625bc1807e150dbcb1b2819f6734c3299f98"
+    },
+    "assets/gfs-didot-greek-ext-BVzEyZiZ.woff2": {
+      "bytes": 8968,
+      "sha256": "847f8505aa2ccc19d28b1b2681bb0b8ded127541084c54ad197968ed226e6238"
+    },
+    "assets/gfs-didot-latin-BRiTEmo6.woff2": {
+      "bytes": 14540,
+      "sha256": "f1748a5240008ec0964d1b001b64bc81b9abb171311110d558ef4b7acf508823"
+    },
+    "assets/index-41fBLli2.js": {
+      "bytes": 38578,
+      "sha256": "0d79b4b430d4d68c52c28677671fa682932dcea8247dee18a7a8d305d2e30c9c"
+    },
+    "assets/plan-C4DCb49_.js": {
+      "bytes": 3229,
+      "sha256": "62ad20651adf4a1d027bb7748bf35d0b414c4ed5825beab4225ba8136d30e278"
+    },
+    "assets/plan-fonts-dQ3CYwSZ.js": {
+      "bytes": 831,
+      "sha256": "4c5d6e1061050abb57e87f8e1cd5853f18592526d9c6f325c062010edc162c1e"
+    },
+    "assets/plans-B21yDGiV.js": {
+      "bytes": 33429,
+      "sha256": "94e1f67b4b118ad49e9e79f052be359bac0676b69b35b4908d19a069f2f69c4c"
+    },
+    "assets/rules-DlUlnL5w.js": {
+      "bytes": 30719,
+      "sha256": "e6cf8d8e8c32ffa3992eae39699d16ec9f734253402bdc9b87a1f0a0d6e4cf25"
+    },
+    "assets/temples-BnZVv20C.js": {
+      "bytes": 15754,
+      "sha256": "65416c8d640d8676bb044b41ff129e7326212397e85f5587f4abedb8c7d11075"
+    },
+    "assets/terms-DOQnjini.js": {
+      "bytes": 32715,
+      "sha256": "98c8d2ca808385833f38f755924379b730a7a73dd54066d89e2b0aab96656350"
+    },
+    "assets/vocabulary-cjk-DcC6CKPN.woff2": {
+      "bytes": 10580,
+      "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362"
+    },
+    "assets/vocabulary-devanagari-B3SMEurw.woff2": {
+      "bytes": 20164,
+      "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1"
+    },
+    "assets/vocabulary-fonts-B5oeLF81.js": {
+      "bytes": 21867,
+      "sha256": "7bdb9c2bc48e8e4bfeee503baf96353657ea42d8e5c6b6026e7f3c3105585ccd"
+    },
+    "assets/vocabulary-latin-extra-D78IlaSS.woff2": {
+      "bytes": 4292,
+      "sha256": "6b57b71e1fcf495d212d082991d4680863e68f14b20a21eff72fb71aaad5e36e"
+    },
+    "assets/vocabulary-source-Dkmc-qvi.js": {
+      "bytes": 11126,
+      "sha256": "3569799467cc651694051dbc4876d71e72ee9a1b9e1610ace9bca4dec5ddffd9"
+    },
+    "assets/vocabulary-source-chqQSxjo.css": {
+      "bytes": 1763,
+      "sha256": "4444ff9141a2a5ac636ddd8fd1a74bb77c64efbd9aaaab11e36f98fa20f6b43b"
+    },
+    "assets/world-BEJUu9Xw.js": {
+      "bytes": 37862,
+      "sha256": "a915d1ddfb2d8f40537642b3b30502ed28d72d6126d817d7c2c28fa20886ecd1"
+    },
+    "assets/world-CBf7W6hw.js": {
+      "bytes": 4190,
+      "sha256": "bef06355e84b5a39da52177368e93627e5205386552bde360687a9e57c0177a0"
+    },
+    "compare.html": {
+      "bytes": 1295,
+      "sha256": "63d24d27720de788482fce52f71ab0a464722e1a28a0fe1b5cf18ef0b790c7cd"
+    },
+    "doorways.html": {
+      "bytes": 1389,
+      "sha256": "8fdc0fa9c5902f8c9c39ecad8ff1ea88394b780e4231f62ed7cda5a4b2530177"
+    },
+    "drill.html": {
+      "bytes": 2003,
+      "sha256": "b744eef447a8a8c6024775643e55f095fd76bc9031a1b71a42db4b97e3f9d560"
+    },
+    "favicon.svg": {
+      "bytes": 469,
+      "sha256": "15dc22d4ec9c8afa39f62deec9863d203a6959ee230331740ee9723877de4257"
+    },
+    "fonts/VOCABULARY-OFL.txt": {
+      "bytes": 5651,
+      "sha256": "010df7c205260119ed1725777402451ca9adda45f4962202bbc95319033245d8"
+    },
+    "fonts/vocabulary-manifest.json": {
+      "bytes": 4166,
+      "sha256": "bf591bd585950bf5fd5d84a6af5902a1e7c5124448b76cb7ad147df30af8bd77"
+    },
+    "index.html": {
+      "bytes": 1848,
+      "sha256": "9f08794a42ed7d5308cb6799a715e26e5c501e0dfb9d24b97ed20a98e2e2ebcf"
+    },
+    "plans.html": {
+      "bytes": 1668,
+      "sha256": "9046438b09467a850bf3e6708d33747795368d19e2d3c58814e2d25d3208a106"
+    },
+    "sources/doorways/krohn-88.jpg": {
+      "bytes": 591681,
+      "sha256": "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd"
+    },
+    "sources/doorways/krohn-89.jpg": {
+      "bytes": 616874,
+      "sha256": "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+    },
+    "sources/doorways/manifest.json": {
+      "bytes": 1101,
+      "sha256": "719354930e4b0b810c899984cb152d8119ddcd21b689f7d488edd1c469553f9b"
+    },
+    "sources/erechtheion/manifest.json": {
+      "bytes": 1369,
+      "sha256": "9a3889663cd801f81852d6952bd27c2eb2dfafa1ea7effab1afc6d906aa73745"
+    },
+    "sources/erechtheion/p98.jpg": {
+      "bytes": 445339,
+      "sha256": "c3927e320fdc5005877d76fbd140c6a0c1a7c2a9e84bfa1db25241892cfdd761"
+    },
+    "sources/erechtheion/p99.jpg": {
+      "bytes": 579632,
+      "sha256": "c1cdb9daaa68cfd3f877c031adc34230015b9acaeac76c89431aeba2a60fa5ae"
+    },
+    "sources/krohn-1912/manifest.json": {
+      "bytes": 1659,
+      "sha256": "35097a67f070ce6fbaddb6f79ce8953a518939e7c94e59c5a0d17deb00730250"
+    },
+    "sources/krohn-1912/p62.jpg": {
+      "bytes": 657077,
+      "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+    },
+    "sources/krohn-1912/p63.jpg": {
+      "bytes": 707592,
+      "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+    },
+    "sources/krohn-1912/p64.jpg": {
+      "bytes": 682881,
+      "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+    },
+    "sources/krohn-1912/p66.jpg": {
+      "bytes": 724523,
+      "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+    },
+    "sources/krohn-1912/p69.jpg": {
+      "bytes": 708563,
+      "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+    },
+    "sources/krohn-1912/p85.jpg": {
+      "bytes": 673920,
+      "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+    },
+    "sources/krohn-1912/p86.jpg": {
+      "bytes": 672397,
+      "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+    },
+    "sources/vocabulary/manifest.json": {
+      "bytes": 8088,
+      "sha256": "ec96f51b21a917bc9bfd22c4faa54cb2bd90f7e3fb2758945acc0f442a254c5d"
+    },
+    "sources/vocabulary/p62.jpg": {
+      "bytes": 601341,
+      "sha256": "c1125f64a73fa1ffe221801568e821541388138d9a28714c02138af833542fe1"
+    },
+    "sources/vocabulary/p63.jpg": {
+      "bytes": 640019,
+      "sha256": "0888ee3b81bbff29021eeb0ed0b651da2b62640dce2e3116cb8d54d20f99144b"
+    },
+    "sources/vocabulary/p64.jpg": {
+      "bytes": 635569,
+      "sha256": "37fed6fab142ec0e4b02c7d2b63a3549c8eade5b1f892be36850cab38d7b4f74"
+    },
+    "sources/vocabulary/p65.jpg": {
+      "bytes": 610983,
+      "sha256": "287cd00d599c2a7ebb1477f9b978c4b6b05a403e735cc973ce2542a1ce6eabbd"
+    },
+    "sources/vocabulary/p66.jpg": {
+      "bytes": 624874,
+      "sha256": "099d7b607c1bef734f02b7984dbc90d6ded4c486816e4c171ac89b8321c23a21"
+    },
+    "sources/vocabulary/p67.jpg": {
+      "bytes": 614606,
+      "sha256": "bc0a61f83c671d2b52996d3ab92ba6e3a6b21d560db3d3403c9c2cf3c87c30ef"
+    },
+    "sources/vocabulary/p68.jpg": {
+      "bytes": 632365,
+      "sha256": "d8b30e90b524b0f33f59b895c5c71b28f6f0a41a03e5a2c6a200e483a3db885a"
+    },
+    "sources/vocabulary/p69.jpg": {
+      "bytes": 625229,
+      "sha256": "29eb1a487e566f3ea1397f96412aeb7d51504f80c01741c81325f8eab77ec3fd"
+    },
+    "sources/vocabulary/p70.jpg": {
+      "bytes": 625326,
+      "sha256": "2921d20b0d70835a5c4af700cc878f1808f0a1d4028b0c99d2c1e61baaec640a"
+    },
+    "sources/vocabulary/p71.jpg": {
+      "bytes": 594872,
+      "sha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569"
+    },
+    "sources/vocabulary/p72.jpg": {
+      "bytes": 621845,
+      "sha256": "6772f0d40cd53998ac21cf94ff14b0a915b95e33536528430975c195a94d49f8"
+    },
+    "sources/vocabulary/p73.jpg": {
+      "bytes": 626435,
+      "sha256": "b15ee14ae1955dc4cf4a510970301727bc7d2c2ff8049480ebfb21380c205aef"
+    },
+    "sources/vocabulary/p74.jpg": {
+      "bytes": 622397,
+      "sha256": "e0d002b98c95e98774b8e4051e47b0de235a161aced5928c55e839cba6ca13bd"
+    },
+    "sources/vocabulary/p75.jpg": {
+      "bytes": 546715,
+      "sha256": "59919f3bb3c5e2c3f2a09a0876a27af4c4ee1a131f83000bcc659fcaff75b2e7"
+    },
+    "sources/vocabulary/p77.jpg": {
+      "bytes": 607602,
+      "sha256": "b8167f04f3bb1e3b560f512d687daf2f694de5c9caeed62f547d2d6b929adedd"
+    },
+    "sources/vocabulary/p78.jpg": {
+      "bytes": 591085,
+      "sha256": "abc994d97fbb4341557565e12d610193bed0173d1bd115af7c454f06c7570d9e"
+    },
+    "sources/vocabulary/p79.jpg": {
+      "bytes": 626325,
+      "sha256": "6122b4d6775a175f647bd4a06b544bcfa98f1d56b87983796e3a995df464f1f9"
+    },
+    "sources/vocabulary/p80.jpg": {
+      "bytes": 624970,
+      "sha256": "394b92e67c7205834219d6b16a8947989cbd765d7b804f5b6dab80238a944ccb"
+    },
+    "sources/vocabulary/p81.jpg": {
+      "bytes": 594908,
+      "sha256": "598fb89a2df6780a325c5a6bddc274fe48cf6c6a734a180dcbbd4fdddfbe24f3"
+    },
+    "sources/vocabulary/p83.jpg": {
+      "bytes": 611469,
+      "sha256": "45c6b0d8eba0a585f9d21622ce4902a07898d1cd42f500296e1e505ed01304e5"
+    },
+    "sources/vocabulary/p84.jpg": {
+      "bytes": 627825,
+      "sha256": "81f7036a74620b90057609192051252fa713345536cc66b0e718ebb4857952a6"
+    },
+    "sources/vocabulary/p85.jpg": {
+      "bytes": 622185,
+      "sha256": "290c4da2d9187bcba32ee0b110169ff4c03f3ebfc85515cf4eb56da612549867"
+    },
+    "sources/vocabulary/p86.jpg": {
+      "bytes": 608837,
+      "sha256": "743329d758810af2163a31845966b323106b9bb14733b032c40454fbca446658"
+    },
+    "sources/vocabulary/p90.jpg": {
+      "bytes": 619889,
+      "sha256": "b46964877d37e719fd5fc4f846cf67496822bb1e4a7e6fce20be008c282df17b"
+    },
+    "sources/vocabulary/p91.jpg": {
+      "bytes": 605929,
+      "sha256": "0dc5a1bd452488b78cfcddbb90f145695e5fc833ad0bcef2d059825aebaa8df1"
+    },
+    "sources/vocabulary/p92.jpg": {
+      "bytes": 609590,
+      "sha256": "1263282daecb47d3ea1af27ef108f8970085e140556313e8a79c1d1931e90dab"
+    },
+    "sw.js": {
+      "bytes": 20695,
+      "sha256": "0a06177b525bd479cac16a3fc3f2da4f26e79c81b60f9ca398ab71f0a329263e"
+    },
+    "world.html": {
+      "bytes": 1624,
+      "sha256": "d842d67b2a44a3832cf79d742ff06c62e5e1dec986066dfb2384d9f4f90acda7"
+    }
+  }
+}
