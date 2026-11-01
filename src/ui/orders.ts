@@ -1,5 +1,5 @@
 import { TERMS, term } from "../content/terms";
-import { fmtModules, STEPS } from "../core/common";
+import { fmtModules, type Pediment, STEPS } from "../core/common";
 import { DORIC_LEVELS, type DoricSpacing, doricElevation } from "../core/doric";
 import {
   type BaseKind,
@@ -13,6 +13,7 @@ import { RULES } from "../core/rules";
 import { tuscanElevation } from "../core/tuscan";
 import type { Bounds, Elevation } from "../core/types";
 import { renderElevation } from "../draw/render";
+import { roofCsv, roofDrawing, roofSvg } from "../draw/roof";
 import { termCard } from "./card";
 import { $, esc } from "./dom";
 import { connectSourceCards, VocabularySource } from "./vocabulary-source";
@@ -28,7 +29,9 @@ interface State {
   carved: boolean;
   /** Doric module, Ionic/Corinthian lower diameter, or Tuscan temple width, in Roman feet. */
   feet: Record<"doric" | "ionic" | "tuscan", number>;
-  view: "front" | "detail";
+  view: "front" | "detail" | "roof";
+  trial: number;
+  trialTarget: "corner" | "middle";
   dims: boolean;
   part: string | null;
 }
@@ -42,6 +45,8 @@ const DEFAULTS: State = {
   carved: false,
   feet: { doric: 1.5, ionic: 2.5, tuscan: 60 },
   view: "front",
+  trial: 0.5,
+  trialTarget: "corner",
   dims: true,
   part: null,
 };
@@ -66,7 +71,7 @@ function readHash(): State {
   if (cols === 4 || cols === 6 || cols === 8) s.columns = cols;
   const spacing = params.get("spacing");
   if (spacing === "diastyle" || spacing === "systyle") s.doricSpacing = spacing;
-  if (spacing && spacing in CLEAR) s.ionicSpacing = spacing as IonicSpacing;
+  if (spacing && Object.hasOwn(CLEAR, spacing)) s.ionicSpacing = spacing as IonicSpacing;
   const base = params.get("base");
   if (base === "attic" || base === "ionic") s.base = base;
   s.carved = params.get("frieze") === "carved";
@@ -74,7 +79,13 @@ function readHash(): State {
   const key = feetKey(s.order);
   const range = FEET_RANGE[key];
   if (feet >= range.min && feet <= range.max) s.feet[key] = feet;
-  s.view = params.get("view") === "detail" ? "detail" : "front";
+  const view = params.get("view");
+  s.view =
+    view === "roof" && s.order !== "tuscan" ? "roof" : view === "detail" ? "detail" : "front";
+  const trial = Number(params.get("trial"));
+  if (params.has("trial") && Number.isFinite(trial) && trial >= 0.125 && trial <= 1.5)
+    s.trial = Math.round(trial * 40) / 40;
+  s.trialTarget = params.get("target") === "middle" ? "middle" : "corner";
   s.dims = params.get("dims") !== "off";
   const part = params.get("part");
   s.part = part && TERMS.has(part) ? part : null;
@@ -92,13 +103,18 @@ function writeHash(s: State): void {
     if (s.carved) p.set("frieze", "carved");
   }
   p.set("feet", String(s.feet[feetKey(s.order)]));
-  if (s.view === "detail") p.set("view", "detail");
+  if (s.view !== "front") p.set("view", s.view);
+  if (s.view === "roof") {
+    p.set("trial", String(s.trial));
+    if (s.trialTarget === "middle") p.set("target", "middle");
+  }
   if (!s.dims) p.set("dims", "off");
   if (s.part) p.set("part", s.part);
   history.replaceState(null, "", `#${p.toString()}`);
 }
 
 interface Built {
+  roof: Pediment | null;
   elevation: Elevation;
   detail: Bounds;
   baseDetail: Bounds | null;
@@ -145,6 +161,7 @@ ${vitruvianTotal ? readingTable(rule) : `<p class="reading-note">Vitruvius gives
     ];
     const a1 = e.axes[1] ?? 8;
     return {
+      roof: e.roof,
       elevation: e,
       detail: { x0: -1.5, x1: a1 + 1.4, y0: 10.6, y1: DORIC_LEVELS.coronaTop + 2.2 },
       baseDetail: null,
@@ -165,6 +182,7 @@ ${vitruvianTotal ? readingTable(rule) : `<p class="reading-note">Vitruvius gives
     ];
     const a1 = e.axes[1] ?? 6;
     return {
+      roof: null,
       elevation: e,
       detail: { x0: -2.2, x1: a1 + 1, y0: 4.6, y1: e.roofBase + 2.6 },
       baseDetail: { x0: -1.2, x1: 1.2, y0: -0.5, y1: 1.4 },
@@ -214,6 +232,7 @@ ${vitruvian ? readingTable("eustyle") : ""}
   ];
   const a0 = e.axes[0] ?? 0.5;
   return {
+    roof: e.roof,
     elevation: e,
     detail: { x0: -1.3, x1: a0 + 1.5, y0: e.shaftTop - 1.1, y1: e.entablatureTop + 0.5 },
     baseDetail: { x0: a0 - 1.1, x1: a0 + 1.1, y0: -0.45, y1: 1.1 },
@@ -244,6 +263,7 @@ function segment(name: string, legend: string, options: [string, string][], valu
 
 export function mountOrders(root: HTMLElement): void {
   let s = readHash();
+  let roofEnlarged = false;
   root.innerHTML = `
 <section class="lede">
   <h1>Build the temple from one measure</h1>
@@ -253,8 +273,25 @@ export function mountOrders(root: HTMLElement): void {
   <form class="controls" aria-label="Drawing controls"></form>
   <div class="plate-wrap">
     <figure class="plate" id="plate"></figure>
+    <p id="roof-view-actions" class="roof-view-actions" hidden><button type="button" id="roof-enlarge" aria-pressed="false">Enlarge roof</button> <span>Dashed blue: your trial height. Red h: the triangular field’s height.</span></p>
     <p class="readout" id="readout" aria-hidden="true">Point at a part to see its name; select it to read about it.</p>
     <p class="legend"><span class="ink-text">Black</span>: features with cited dimensions in this drawing model. <span class="ink-chosen">Grey</span>: illustrative profiles and geometry. <span class="ink-dim">Red</span>: measurements in modules. A prescribed height does not determine every contour or width.</p>
+<section class="roof-reading" id="roof-reading" hidden aria-labelledby="roof-heading">
+  <div><h2 id="roof-heading">How tall is the ornament?</h2>
+  <p>Vitruvius gives a precise rule: the corner ornaments equal the triangular field’s height, <i>h</i>; the middle one is 9<i>h</i>/8. Move the envelope, then match the rule.</p>
+  <fieldset class="seg"><legend>Measure an ornament</legend><div class="seg-row"><label><input type="radio" name="roof-target" value="corner" checked><span>Corner</span></label><label><input type="radio" name="roof-target" value="middle"><span>Middle</span></label></div></fieldset>
+  <label class="slider"><span>Blue <b id="roof-trial-target">corner</b> trial: <output id="roof-trial-out">0.5</output> × h</span><input type="range" name="roof-trial" min="0.125" max="1.5" step="0.025" value="0.5" aria-label="Blue trial height"></label>
+  <button type="button" id="roof-match">Match Vitruvius’s corner height</button>
+  <button type="button" id="roof-eighth">Try a middle ornament only h/8 tall</button>
+  <p id="roof-result" role="status"></p>
+  <p><span lang="la">tam alta, quantum</span>: “as high as”. <span lang="la">altiora octava parte quam</span>: “higher by an eighth than”. The eighth is the increase, so the middle height is h + h/8.</p>
+  <p>The grey palmette outline is invented. Its total height, including its plinth, follows the rule. Grey levelling wedges, corner insets and the cornice’s normal thickness are modern drawing choices. This is a proportional reading, not a surveyed temple.</p></div>
+  <div><div id="roof-measures"></div>
+  <blockquote><p lang="la">acroteria angularia tam alta, quantum est tympanum medium, mediana altiora octava parte quam angularia.</p><p>“The corner ornaments as high as the middle of the tympanum; the middle ornaments an eighth higher than the corner ones.”</p><cite>Vitruvius III.5.12, Krohn 1912, p. 74. English is modern.</cite></blockquote>
+  <button type="button" data-source-rule="sima-acroteria">Read complete printed page 74</button>
+  <p class="roof-actions"><button type="button" id="roof-svg">Save roof SVG</button> <button type="button" id="roof-csv">Save measurements CSV</button> <button type="button" id="roof-link">Copy roof link</button></p>
+  <p id="roof-file-status" role="status"></p></div>
+</section>
   </div>
   <aside class="side">
     <div class="card" id="card"></div>
@@ -271,6 +308,8 @@ export function mountOrders(root: HTMLElement): void {
   const card = $("#card", root);
   const source = new VocabularySource($("#drill-source", root));
   connectSourceCards(card, source);
+  const roofReading = $("#roof-reading", root);
+  connectSourceCards(roofReading, source);
   const key = $("#key", root);
   const readout = $("#readout", root);
   let current: Built | null = null;
@@ -363,6 +402,7 @@ export function mountOrders(root: HTMLElement): void {
       [
         ["front", "Front"],
         ["detail", "Detail"],
+        ...(s.order !== "tuscan" ? ([["roof", "Roof proportions"]] as [string, string][]) : []),
       ],
       s.view,
     );
@@ -370,8 +410,8 @@ export function mountOrders(root: HTMLElement): void {
     return order + columns + spacing + base + feet + view + dims;
   }
 
-  function select(part: string | null): void {
-    source.close(false);
+  function select(part: string | null, closeSource = true): void {
+    if (closeSource) source.close(false);
     s.part = part;
     for (const el of plate.querySelectorAll(".sel")) el.classList.remove("sel");
     for (const el of key.querySelectorAll("[aria-pressed]"))
@@ -383,7 +423,7 @@ export function mountOrders(root: HTMLElement): void {
       const t = term(part);
       card.innerHTML = t ? termCard(t, { sourceActions: true }) : "";
     } else {
-      const intro = term("embater");
+      const intro = term(s.view === "roof" ? "acroterion" : "embater");
       card.innerHTML = intro
         ? `<p class="card-hint">Select a part of the drawing, or a name below.</p>${termCard(intro, { sourceActions: true })}`
         : "";
@@ -392,10 +432,50 @@ export function mountOrders(root: HTMLElement): void {
   }
 
   function draw(): void {
+    $("#roof-file-status", root).textContent = "";
     current = build(s);
     const e = current.elevation;
     const title = `${s.order} ${s.order === "tuscan" ? "temple" : ORDINAL[s.columns]} front`;
-    if (s.view === "front") {
+    const roofVisible = s.view === "roof" && current.roof !== null;
+    roofReading.hidden = !roofVisible;
+    $("#roof-view-actions", root).hidden = !roofVisible;
+    plate.classList.toggle("roof-enlarged", roofVisible && roofEnlarged);
+    plate.tabIndex = roofVisible && roofEnlarged ? 0 : -1;
+    const enlargeButton = $("#roof-enlarge", root);
+    enlargeButton.textContent = roofEnlarged ? "Fit roof" : "Enlarge roof";
+    enlargeButton.setAttribute("aria-pressed", String(roofEnlarged));
+    if (s.view === "roof" && current.roof) {
+      const roof = current.roof;
+      plate.innerHTML = roofDrawing(roof, s.trial, s.dims, s.trialTarget);
+      plate.classList.add("is-detail");
+      const trialInput = root.querySelector<HTMLInputElement>('[name="roof-trial"]');
+      if (trialInput) trialInput.value = String(s.trial);
+      $("#roof-trial-out", root).textContent = String(s.trial);
+      $("#roof-trial-target", root).textContent = s.trialTarget;
+      $("#roof-match", root).textContent = `Match Vitruvius’s ${s.trialTarget} height`;
+      for (const input of root.querySelectorAll<HTMLInputElement>('[name="roof-target"]'))
+        input.checked = input.value === s.trialTarget;
+      const prescribedRatio = s.trialTarget === "middle" ? 9 / 8 : 1;
+      const difference = (s.trial / prescribedRatio - 1) * 100;
+      $("#roof-result", root).textContent =
+        difference === 0
+          ? `The blue envelope now matches the ${s.trialTarget} rule: ${s.trialTarget === "middle" ? "h + h/8 = 9h/8" : "h"}.`
+          : `Your trial is ${fmt(Math.abs(difference))}% ${difference < 0 ? "shorter" : "taller"} than the ${s.trialTarget} rule. Change the columns or spacing to see h change with the front.`;
+      const unitFeet = s.feet[feetKey(s.order)];
+      $("#roof-measures", root).innerHTML =
+        `<table class="readings"><caption>Current roof in Roman feet</caption><thead><tr><th scope="col">Part</th><th scope="col">Rule</th><th scope="col">Feet</th></tr></thead><tbody>${[
+          ["Corona front", "9h", roof.tympanum * 9],
+          ["Triangular field", "h", roof.tympanum],
+          ["Corner ornament", "h", roof.tympanum],
+          ["Middle ornament", "9h/8", (roof.tympanum * 9) / 8],
+          [`Blue ${s.trialTarget} trial`, `${s.trial}h`, roof.tympanum * s.trial],
+        ]
+          .map(
+            ([name, rule, value]) =>
+              `<tr><th scope="row">${name}</th><td>${rule}</td><td>${fmt(Number(value) * unitFeet)}</td></tr>`,
+          )
+          .join("")}</tbody></table>`;
+    } else if (s.view === "front") {
       plate.innerHTML = renderElevation(e, { id: "front", title, dims: s.dims });
       plate.classList.remove("is-detail");
     } else {
@@ -412,7 +492,9 @@ export function mountOrders(root: HTMLElement): void {
       plate.innerHTML = `<div class="detail-grid${base ? "" : " single"}"><div class="detail-upper">${upper}</div>${base}</div>`;
       plate.classList.add("is-detail");
     }
-    const parts = partsOf(e);
+    const parts = partsOf(
+      s.view === "roof" && current.roof ? { ...e, pieces: current.roof.pieces } : e,
+    );
     key.innerHTML = parts
       .map((id) => {
         const t = term(id);
@@ -427,7 +509,7 @@ export function mountOrders(root: HTMLElement): void {
     $("#facts", root).innerHTML = current.facts
       .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
       .join("");
-    select(s.part && parts.includes(s.part) ? s.part : null);
+    select(s.part && parts.includes(s.part) ? s.part : null, false);
   }
 
   form.innerHTML = controls();
@@ -439,6 +521,7 @@ export function mountOrders(root: HTMLElement): void {
     switch (target.name) {
       case "order":
         s.order = target.value as Order;
+        if (s.order === "tuscan" && s.view === "roof") s.view = "front";
         break;
       case "columns":
         s.columns = Number(target.value) as 4 | 6 | 8;
@@ -458,7 +541,7 @@ export function mountOrders(root: HTMLElement): void {
         $("#feet-out", root).textContent = target.value;
         break;
       case "view":
-        s.view = target.value === "detail" ? "detail" : "front";
+        s.view = target.value === "roof" ? "roof" : target.value === "detail" ? "detail" : "front";
         break;
       case "dims":
         s.dims = target.checked;
@@ -466,6 +549,61 @@ export function mountOrders(root: HTMLElement): void {
     }
     if (target.name === "order") form.innerHTML = controls();
     draw();
+  });
+
+  $("#roof-enlarge", root).addEventListener("click", () => {
+    roofEnlarged = !roofEnlarged;
+    draw();
+    if (roofEnlarged) plate.focus({ preventScroll: true });
+  });
+  roofReading.addEventListener("input", (event) => {
+    const input = event.target as HTMLInputElement;
+    if (input.name === "roof-trial") s.trial = Number(input.value);
+    else if (input.name === "roof-target")
+      s.trialTarget = input.value === "middle" ? "middle" : "corner";
+    else return;
+    $("#roof-file-status", root).textContent = "";
+    draw();
+  });
+  function saveRoof(contents: string, mime: string, extension: string): void {
+    const url = URL.createObjectURL(new Blob([contents], { type: mime }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `embater-${s.order}-roof.${extension}`;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 15000);
+    $("#roof-file-status", root).textContent =
+      `Roof ${extension.toUpperCase()} prepared from the current drawing.`;
+  }
+  roofReading.addEventListener("click", async (event) => {
+    const id = (event.target as Element).closest("button")?.id;
+    const roof = current?.roof;
+    if (!roof) return;
+    if (id === "roof-match") {
+      s.trial = s.trialTarget === "middle" ? 9 / 8 : 1;
+      draw();
+    } else if (id === "roof-eighth") {
+      s.trialTarget = "middle";
+      s.trial = 1 / 8;
+      draw();
+    } else if (id === "roof-svg")
+      saveRoof(roofSvg(roof, s.trial, s.dims, s.trialTarget), "image/svg+xml", "svg");
+    else if (id === "roof-csv")
+      saveRoof(
+        roofCsv(roof, s.feet[feetKey(s.order)], s.trial, s.trialTarget),
+        "text/csv;charset=utf-8",
+        "csv",
+      );
+    else if (id === "roof-link") {
+      try {
+        await navigator.clipboard.writeText(location.href);
+        $("#roof-file-status", root).textContent =
+          "Roof link copied, including the blue trial and selected part.";
+      } catch {
+        $("#roof-file-status", root).textContent =
+          "Copy the current address from your browser to share this roof.";
+      }
+    }
   });
 
   plate.addEventListener("click", (event) => {

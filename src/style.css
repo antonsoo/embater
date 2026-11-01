@@ -1370,3 +1370,93 @@ code {
 .offline-repair:disabled {
   cursor: wait;
 }
+
+/* The roof reading stays on the existing drawing desk, with its own measuring trial. */
+.roof-reading:not([hidden]) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+.roof-reading .slider {
+  max-width: 30rem;
+  margin-bottom: 1rem;
+}
+.roof-reading p {
+  max-width: 65ch;
+}
+.roof-reading blockquote {
+  margin-inline: 0;
+}
+.roof-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.plate-svg .pc.line[data-part="roof-trial"] {
+  stroke: var(--caeruleum);
+  stroke-width: 1.8px;
+  stroke-dasharray: 5 4;
+  opacity: 1;
+  fill: none;
+  pointer-events: none;
+}
+@media (max-width: 700px) {
+  .roof-reading:not([hidden]) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .roof-reading .readings th {
+    white-space: normal;
+  }
+}
+.roof-reading button,
+.roof-view-actions button {
+  font: inherit;
+  line-height: 1.25;
+  color: var(--ink);
+  background: var(--sheet);
+  border: 1px solid var(--rule);
+  padding: 0.45rem 0.65rem;
+  min-height: 2.5rem;
+  cursor: pointer;
+}
+.roof-reading button:hover,
+.roof-view-actions button:hover {
+  border-color: var(--caeruleum);
+}
+.roof-reading button:focus-visible,
+.roof-view-actions button:focus-visible {
+  outline: 2px solid var(--caeruleum);
+  outline-offset: 3px;
+}
+.roof-reading .readings {
+  width: 100%;
+}
+.roof-reading .readings th {
+  white-space: normal;
+}
+.roof-reading .readings td:last-child {
+  font-variant-numeric: tabular-nums;
+}
+
+.plate.roof-enlarged {
+  overflow: auto;
+}
+.plate.roof-enlarged .plate-svg {
+  width: 160%;
+  min-width: 760px;
+}
+.roof-view-actions:not([hidden]) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+.roof-reading .slider b {
+  font-weight: 400;
+}
