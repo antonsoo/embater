@@ -1,0 +1,191 @@
+{
+  "base": "http://127.0.0.1:4492/embater/",
+  "receipts": [
+    {
+      "id": "chromium-1440-light",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "chromium-1440-dark",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "chromium-375-light",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "chromium-375-dark",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-1440-light",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-1440-dark",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-375-light",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-375-dark",
+      "studyParts": 124,
+      "languageExercises": 19,
+      "singleNameCases": 2,
+      "papyrusEitherFormAccepted": true,
+      "uniqueNameOptions": true,
+      "focusDoesNotGrade": true,
+      "realProgressDownload": {
+        "bytes": 1301,
+        "sha256": "05e7a4678a4ded11323448273a2f47384c1a1596aaf0d6d03b9b5200b6042fde"
+      },
+      "invalidRestorePreservesProgress": true,
+      "validRestoreAndReload": true,
+      "explicitShareReopened": true,
+      "offlineController": true,
+      "offlineFiles": 88,
+      "offlineStudyAnswerAndDownload": true,
+      "a11y": [],
+      "errors": []
+    }
+  ],
+  "storageReceipts": [
+    {
+      "fixture": "blocked",
+      "answeredCorrectly": true,
+      "legacyRecordPreserved": false
+    },
+    {
+      "fixture": "corrupt",
+      "answeredCorrectly": true,
+      "legacyRecordPreserved": false
+    },
+    {
+      "fixture": "legacy",
+      "answeredCorrectly": true,
+      "legacyRecordPreserved": true
+    }
+  ],
+  "wrongAnswerAndBothCorrectShapesVerified": true
+}

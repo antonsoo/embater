@@ -1,0 +1,86 @@
+[
+  {
+    "engine": "chromium",
+    "trial": 0,
+    "status": "Ready offline: pages, diagrams and fonts saved. External source links need a connection.",
+    "controller": "http://127.0.0.1:4492/embater/sw.js",
+    "registrations": [
+      {
+        "active": "activated"
+      }
+    ],
+    "caches": [
+      "embater-d7b906c473fd4e1a4a6e22dd9be8503ea4d79e17058be930aa45b4cad079072d"
+    ]
+  },
+  {
+    "engine": "chromium",
+    "trial": 1,
+    "status": "Ready offline: pages, diagrams and fonts saved. External source links need a connection.",
+    "controller": "http://127.0.0.1:4492/embater/sw.js",
+    "registrations": [
+      {
+        "active": "activated"
+      }
+    ],
+    "caches": [
+      "embater-d7b906c473fd4e1a4a6e22dd9be8503ea4d79e17058be930aa45b4cad079072d"
+    ]
+  },
+  {
+    "engine": "chromium",
+    "trial": 2,
+    "status": "Ready offline: pages, diagrams and fonts saved. External source links need a connection.",
+    "controller": "http://127.0.0.1:4492/embater/sw.js",
+    "registrations": [
+      {
+        "active": "activated"
+      }
+    ],
+    "caches": [
+      "embater-d7b906c473fd4e1a4a6e22dd9be8503ea4d79e17058be930aa45b4cad079072d"
+    ]
+  },
+  {
+    "engine": "firefox",
+    "trial": 0,
+    "status": "Offline saving did not finish. Reload online to try again.",
+    "controller": null,
+    "registrations": [
+      {
+        "active": "activated"
+      }
+    ],
+    "caches": [
+      "embater-d7b906c473fd4e1a4a6e22dd9be8503ea4d79e17058be930aa45b4cad079072d"
+    ]
+  },
+  {
+    "engine": "firefox",
+    "trial": 1,
+    "status": "Ready offline: pages, diagrams and fonts saved. External source links need a connection.",
+    "controller": "http://127.0.0.1:4492/embater/sw.js",
+    "registrations": [
+      {
+        "active": "activated"
+      }
+    ],
+    "caches": [
+      "embater-d7b906c473fd4e1a4a6e22dd9be8503ea4d79e17058be930aa45b4cad079072d"
+    ]
+  },
+  {
+    "engine": "firefox",
+    "trial": 2,
+    "status": "Ready offline: pages, diagrams and fonts saved. External source links need a connection.",
+    "controller": "http://127.0.0.1:4492/embater/sw.js",
+    "registrations": [
+      {
+        "active": "activated"
+      }
+    ],
+    "caches": [
+      "embater-d7b906c473fd4e1a4a6e22dd9be8503ea4d79e17058be930aa45b4cad079072d"
+    ]
+  }
+]

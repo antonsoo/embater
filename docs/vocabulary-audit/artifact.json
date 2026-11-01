@@ -1,0 +1,59 @@
+{
+  "htmlBytes": 1481949,
+  "htmlSha256": "af4d6217f2c78c5db337f3f62393c289d76c05bac16fa8bf36e3bcfcf70b1e4e",
+  "fonts": [
+    {
+      "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+      "bytes": 44336,
+      "codepoints": 236
+    },
+    {
+      "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+      "bytes": 113928,
+      "codepoints": 799
+    },
+    {
+      "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+      "bytes": 19868,
+      "codepoints": 101
+    },
+    {
+      "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511",
+      "bytes": 11484,
+      "codepoints": 240
+    },
+    {
+      "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362",
+      "bytes": 10580,
+      "codepoints": 13
+    },
+    {
+      "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1",
+      "bytes": 20164,
+      "codepoints": 23
+    },
+    {
+      "sha256": "6a2b4b985273c74a62f32e4d94cd4e3af20f9572b16671176b203aba4f6c8d3e",
+      "bytes": 1784,
+      "codepoints": 9
+    },
+    {
+      "sha256": "cbc02128c87e63009a2288490bf842d489f339ad40990ef608b1ea945d15fb93",
+      "bytes": 2800,
+      "codepoints": 2
+    },
+    {
+      "sha256": "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
+      "bytes": 3560,
+      "codepoints": 4
+    }
+  ],
+  "allTextGlyphsRetained": true,
+  "sourcePages": [
+    71
+  ],
+  "csvRows": 11,
+  "scripts": 0,
+  "automaticRemoteResources": [],
+  "licenseTextsMatch": true
+}

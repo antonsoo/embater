@@ -1,0 +1,12 @@
+{
+  "status": "Offline saving did not finish. Reload online to try again.",
+  "registrations": [
+    {
+      "scope": "http://127.0.0.1:4492/embater/",
+      "active": "activated"
+    }
+  ],
+  "caches": [
+    "embater-d7b906c473fd4e1a4a6e22dd9be8503ea4d79e17058be930aa45b4cad079072d"
+  ]
+}

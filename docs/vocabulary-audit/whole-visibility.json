@@ -1,0 +1,2494 @@
+[
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "shaft",
+    "name": "1440-doric-shaft",
+    "changedPixels": 56428,
+    "changedBox": [
+      245,
+      200,
+      720,
+      578
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "flute",
+    "name": "1440-doric-flute",
+    "changedPixels": 24807,
+    "changedBox": [
+      245,
+      84,
+      716,
+      578
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "hypotrachelion",
+    "name": "1440-doric-hypotrachelion",
+    "changedPixels": 1400,
+    "changedBox": [
+      246,
+      171,
+      720,
+      231
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "echinus",
+    "name": "1440-doric-echinus",
+    "changedPixels": 1284,
+    "changedBox": [
+      244,
+      181,
+      720,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "abacus",
+    "name": "1440-doric-abacus",
+    "changedPixels": 1711,
+    "changedBox": [
+      243,
+      171,
+      720,
+      182
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "triglyph",
+    "name": "1440-doric-triglyph",
+    "changedPixels": 4725,
+    "changedBox": [
+      260,
+      99,
+      720,
+      144
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "glyph",
+    "name": "1440-doric-glyph",
+    "changedPixels": 5263,
+    "changedBox": [
+      260,
+      104,
+      719,
+      144
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "meros",
+    "name": "1440-doric-meros",
+    "changedPixels": 4094,
+    "changedBox": [
+      262,
+      103,
+      720,
+      144
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "metope",
+    "name": "1440-doric-metope",
+    "changedPixels": 11606,
+    "changedBox": [
+      275,
+      99,
+      697,
+      152
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "acroterion",
+    "name": "1440-doric-acroterion",
+    "changedPixels": 2249,
+    "changedBox": [
+      214,
+      15,
+      378,
+      84
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "annuli",
+    "name": "1440-doric-annuli",
+    "changedPixels": 580,
+    "changedBox": [
+      247,
+      171,
+      720,
+      192
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "regula",
+    "name": "1440-doric-regula",
+    "changedPixels": 501,
+    "changedBox": [
+      246,
+      146,
+      720,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "guttae",
+    "name": "1440-doric-guttae",
+    "changedPixels": 897,
+    "changedBox": [
+      246,
+      147,
+      720,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "triglyph-capital",
+    "name": "1440-doric-triglyph-capital",
+    "changedPixels": 879,
+    "changedBox": [
+      246,
+      84,
+      720,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "hemimetope",
+    "name": "1440-doric-hemimetope",
+    "changedPixels": 703,
+    "changedBox": [
+      246,
+      99,
+      469,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "mutule",
+    "name": "1440-doric-mutule",
+    "changedPixels": 1317,
+    "changedBox": [
+      246,
+      96,
+      720,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "mutule-guttae",
+    "name": "1440-doric-mutule-guttae",
+    "changedPixels": 1250,
+    "changedBox": [
+      246,
+      98,
+      720,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "doric",
+    "lang": "la",
+    "part": "via",
+    "name": "1440-doric-via",
+    "changedPixels": 410,
+    "changedBox": [
+      246,
+      96,
+      718,
+      202
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "plinth",
+    "name": "1440-ionic-plinth",
+    "changedPixels": 1985,
+    "changedBox": [
+      328,
+      588,
+      710,
+      598
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "torus",
+    "name": "1440-ionic-torus",
+    "changedPixels": 2367,
+    "changedBox": [
+      328,
+      572,
+      709,
+      590
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "scotia",
+    "name": "1440-ionic-scotia",
+    "changedPixels": 1163,
+    "changedBox": [
+      335,
+      577,
+      702,
+      584
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "shaft",
+    "name": "1440-ionic-shaft",
+    "changedPixels": 56242,
+    "changedBox": [
+      339,
+      163,
+      698,
+      574
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "flute",
+    "name": "1440-ionic-flute",
+    "changedPixels": 41709,
+    "changedBox": [
+      340,
+      169,
+      697,
+      568
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "astragal",
+    "name": "1440-ionic-astragal",
+    "changedPixels": 162,
+    "changedBox": [
+      340,
+      151,
+      696,
+      171
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "echinus",
+    "name": "1440-ionic-echinus",
+    "changedPixels": 782,
+    "changedBox": [
+      339,
+      152,
+      698,
+      164
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "volute",
+    "name": "1440-ionic-volute",
+    "changedPixels": 1934,
+    "changedBox": [
+      336,
+      150,
+      701,
+      172
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "oculus",
+    "name": "1440-ionic-oculus",
+    "changedPixels": 78,
+    "changedBox": [
+      340,
+      151,
+      696,
+      171
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "abacus",
+    "name": "1440-ionic-abacus",
+    "changedPixels": 787,
+    "changedBox": [
+      337,
+      145,
+      700,
+      151
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "metoche",
+    "name": "1440-ionic-metoche",
+    "changedPixels": 1662,
+    "changedBox": [
+      324,
+      27,
+      720,
+      84
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "la",
+    "part": "canalis",
+    "name": "1440-ionic-canalis",
+    "changedPixels": 555,
+    "changedBox": [
+      336,
+      149,
+      701,
+      171
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "ionic",
+    "lang": "la",
+    "part": "denticulus",
+    "name": "1440-ionic-denticulus",
+    "changedPixels": 2709,
+    "changedBox": [
+      324,
+      27,
+      720,
+      84
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "plinth",
+    "name": "1440-corinthian-plinth",
+    "changedPixels": 1668,
+    "changedBox": [
+      330,
+      591,
+      688,
+      600
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "torus",
+    "name": "1440-corinthian-torus",
+    "changedPixels": 2042,
+    "changedBox": [
+      330,
+      576,
+      688,
+      593
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "scotia",
+    "name": "1440-corinthian-scotia",
+    "changedPixels": 935,
+    "changedBox": [
+      337,
+      580,
+      682,
+      587
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "shaft",
+    "name": "1440-corinthian-shaft",
+    "changedPixels": 50226,
+    "changedBox": [
+      341,
+      153,
+      677,
+      578
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "flute",
+    "name": "1440-corinthian-flute",
+    "changedPixels": 38739,
+    "changedBox": [
+      341,
+      196,
+      677,
+      572
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "calathus",
+    "name": "1440-corinthian-calathus",
+    "changedPixels": 2569,
+    "changedBox": [
+      341,
+      153,
+      677,
+      200
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "helix",
+    "name": "1440-corinthian-helix",
+    "changedPixels": 623,
+    "changedBox": [
+      335,
+      153,
+      684,
+      164
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "acanthus",
+    "name": "1440-corinthian-acanthus",
+    "changedPixels": 3039,
+    "changedBox": [
+      339,
+      159,
+      679,
+      193
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "abacus",
+    "name": "1440-corinthian-abacus",
+    "changedPixels": 1325,
+    "changedBox": [
+      332,
+      109,
+      699,
+      155
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "metoche",
+    "name": "1440-corinthian-metoche",
+    "changedPixels": 1810,
+    "changedBox": [
+      341,
+      72,
+      720,
+      82
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "la",
+    "part": "cauliculus",
+    "name": "1440-corinthian-cauliculus",
+    "changedPixels": 144,
+    "changedBox": [
+      341,
+      153,
+      677,
+      200
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "la",
+    "part": "flos",
+    "name": "1440-corinthian-flos",
+    "changedPixels": 119,
+    "changedBox": [
+      342,
+      147,
+      683,
+      157
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "corinthian",
+    "lang": "la",
+    "part": "denticulus",
+    "name": "1440-corinthian-denticulus",
+    "changedPixels": 2972,
+    "changedBox": [
+      331,
+      72,
+      720,
+      157
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "stylobate",
+    "name": "1440-plan-stylobate",
+    "changedPixels": 110171,
+    "changedBox": [
+      201,
+      21,
+      533,
+      629
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "pteroma",
+    "name": "1440-plan-pteroma",
+    "changedPixels": 75867,
+    "changedBox": [
+      220,
+      40,
+      514,
+      610
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "column",
+    "name": "1440-plan-column",
+    "changedPixels": 10398,
+    "changedBox": [
+      219,
+      40,
+      515,
+      610
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "naos",
+    "name": "1440-plan-naos",
+    "changedPixels": 68553,
+    "changedBox": [
+      274,
+      95,
+      460,
+      555
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "pronaos",
+    "name": "1440-plan-pronaos",
+    "changedPixels": 11753,
+    "changedBox": [
+      293,
+      471,
+      441,
+      555
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "opisthodomos",
+    "name": "1440-plan-opisthodomos",
+    "changedPixels": 11714,
+    "changedBox": [
+      293,
+      95,
+      441,
+      179
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "anta",
+    "name": "1440-plan-anta",
+    "changedPixels": 18822,
+    "changedBox": [
+      274,
+      95,
+      460,
+      555
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "papyriform-closed",
+    "name": "1440-egypt-papyriform-closed",
+    "changedPixels": 8887,
+    "changedBox": [
+      60,
+      46,
+      119,
+      256
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "papyriform-open",
+    "name": "1440-egypt-papyriform-open",
+    "changedPixels": 15629,
+    "changedBox": [
+      31,
+      45,
+      658,
+      264
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "lotiform",
+    "name": "1440-egypt-lotiform",
+    "changedPixels": 8694,
+    "changedBox": [
+      282,
+      46,
+      341,
+      256
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "palmiform",
+    "name": "1440-egypt-palmiform",
+    "changedPixels": 8552,
+    "changedBox": [
+      381,
+      46,
+      463,
+      256
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "hathoric",
+    "name": "1440-egypt-hathoric",
+    "changedPixels": 9549,
+    "changedBox": [
+      503,
+      38,
+      563,
+      256
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "egypt",
+    "lang": "grc",
+    "part": "protodoric",
+    "name": "1440-egypt-protodoric",
+    "changedPixels": 8553,
+    "changedBox": [
+      614,
+      41,
+      674,
+      256
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "egypt",
+    "lang": "grc",
+    "part": "egypt-abacus",
+    "name": "1440-egypt-egypt-abacus",
+    "changedPixels": 2727,
+    "changedBox": [
+      69,
+      32,
+      669,
+      56
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "mesopotamia",
+    "lang": "akk",
+    "part": "ziqqurratu",
+    "name": "1440-mesopotamia-ziqqurratu",
+    "changedPixels": 37976,
+    "changedBox": [
+      23,
+      67,
+      711,
+      277
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "mesopotamia",
+    "lang": "akk",
+    "part": "libittu",
+    "name": "1440-mesopotamia-libittu",
+    "changedPixels": 6410,
+    "changedBox": [
+      568,
+      190,
+      681,
+      272
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "mesopotamia",
+    "lang": "sux",
+    "part": "shrine",
+    "name": "1440-mesopotamia-shrine",
+    "changedPixels": 6014,
+    "changedBox": [
+      300,
+      23,
+      434,
+      162
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "rome",
+    "lang": "la",
+    "part": "tholus",
+    "name": "1440-rome-tholus",
+    "changedPixels": 17682,
+    "changedBox": [
+      177,
+      30,
+      690,
+      235
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "rome",
+    "lang": "la",
+    "part": "oculus-dome",
+    "name": "1440-rome-oculus-dome",
+    "changedPixels": 1264,
+    "changedBox": [
+      386,
+      25,
+      480,
+      43
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "rome",
+    "lang": "la",
+    "part": "lacunaria",
+    "name": "1440-rome-lacunaria",
+    "changedPixels": 2664,
+    "changedBox": [
+      222,
+      30,
+      644,
+      214
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "rome",
+    "lang": "la",
+    "part": "rotunda",
+    "name": "1440-rome-rotunda",
+    "changedPixels": 28488,
+    "changedBox": [
+      49,
+      92,
+      690,
+      438
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "rome",
+    "lang": "la",
+    "part": "porticus",
+    "name": "1440-rome-porticus",
+    "changedPixels": 12042,
+    "changedBox": [
+      24,
+      221,
+      182,
+      433
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "persia",
+    "lang": "peo",
+    "part": "apadana",
+    "name": "1440-persia-apadana",
+    "changedPixels": 5288,
+    "changedBox": [
+      272,
+      29,
+      461,
+      624
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "persia",
+    "lang": "peo",
+    "part": "stuna",
+    "name": "1440-persia-stuna",
+    "changedPixels": 10976,
+    "changedBox": [
+      342,
+      146,
+      392,
+      561
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "persia",
+    "lang": "grc",
+    "part": "protome",
+    "name": "1440-persia-protome",
+    "changedPixels": 4967,
+    "changedBox": [
+      298,
+      46,
+      435,
+      99
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "anda",
+    "name": "1440-india-anda",
+    "changedPixels": 48124,
+    "changedBox": [
+      156,
+      106,
+      578,
+      261
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "medhi",
+    "name": "1440-india-medhi",
+    "changedPixels": 16369,
+    "changedBox": [
+      121,
+      141,
+      604,
+      317
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "harmika",
+    "name": "1440-india-harmika",
+    "changedPixels": 1986,
+    "changedBox": [
+      332,
+      78,
+      401,
+      107
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "yashti",
+    "name": "1440-india-yashti",
+    "changedPixels": 262,
+    "changedBox": [
+      353,
+      22,
+      381,
+      80
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "chattra",
+    "name": "1440-india-chattra",
+    "changedPixels": 813,
+    "changedBox": [
+      336,
+      28,
+      397,
+      67
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "vedika",
+    "name": "1440-india-vedika",
+    "changedPixels": 23496,
+    "changedBox": [
+      53,
+      264,
+      681,
+      317
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "torana",
+    "name": "1440-india-torana",
+    "changedPixels": 11626,
+    "changedBox": [
+      47,
+      112,
+      463,
+      317
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "india",
+    "lang": "sa",
+    "part": "pradakshina",
+    "name": "1440-india-pradakshina",
+    "changedPixels": 3934,
+    "changedBox": [
+      19,
+      122,
+      715,
+      322
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "tai",
+    "name": "1440-china-tai",
+    "changedPixels": 27050,
+    "changedBox": [
+      70,
+      333,
+      664,
+      379
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "chu",
+    "name": "1440-china-chu",
+    "changedPixels": 1003,
+    "changedBox": [
+      175,
+      325,
+      559,
+      335
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "zhu",
+    "name": "1440-china-zhu",
+    "changedPixels": 11245,
+    "changedBox": [
+      165,
+      201,
+      569,
+      327
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "dou",
+    "name": "1440-china-dou",
+    "changedPixels": 1389,
+    "changedBox": [
+      149,
+      181,
+      565,
+      203
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "gong",
+    "name": "1440-china-gong",
+    "changedPixels": 4604,
+    "changedBox": [
+      147,
+      174,
+      587,
+      201
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "dougong",
+    "name": "1440-china-dougong",
+    "changedPixels": 1774,
+    "changedBox": [
+      146,
+      166,
+      588,
+      182
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "yan",
+    "name": "1440-china-yan",
+    "changedPixels": 4715,
+    "changedBox": [
+      35,
+      155,
+      699,
+      168
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "wa",
+    "name": "1440-china-wa",
+    "changedPixels": 43263,
+    "changedBox": [
+      45,
+      32,
+      689,
+      156
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "china",
+    "lang": "zh",
+    "part": "wadang",
+    "name": "1440-china-wadang",
+    "changedPixels": 4358,
+    "changedBox": [
+      41,
+      140,
+      683,
+      168
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "mexico",
+    "lang": "nah",
+    "part": "teocalli",
+    "name": "1440-mexico-teocalli",
+    "changedPixels": 42068,
+    "changedBox": [
+      20,
+      90,
+      720,
+      290
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "mexico",
+    "lang": "nah",
+    "part": "tlaloc",
+    "name": "1440-mexico-tlaloc",
+    "changedPixels": 6429,
+    "changedBox": [
+      180,
+      33,
+      289,
+      92
+    ]
+  },
+  {
+    "width": 1440,
+    "deck": "mexico",
+    "lang": "nah",
+    "part": "huitzilopochtli",
+    "name": "1440-mexico-huitzilopochtli",
+    "changedPixels": 7094,
+    "changedBox": [
+      314,
+      24,
+      423,
+      92
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "shaft",
+    "name": "375-doric-shaft",
+    "changedPixels": 32306,
+    "changedBox": [
+      65,
+      171,
+      308,
+      501
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "flute",
+    "name": "375-doric-flute",
+    "changedPixels": 16207,
+    "changedBox": [
+      65,
+      70,
+      308,
+      500
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "hypotrachelion",
+    "name": "375-doric-hypotrachelion",
+    "changedPixels": 900,
+    "changedBox": [
+      66,
+      155,
+      304,
+      198
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "echinus",
+    "name": "375-doric-echinus",
+    "changedPixels": 731,
+    "changedBox": [
+      65,
+      154,
+      309,
+      173
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "abacus",
+    "name": "375-doric-abacus",
+    "changedPixels": 1018,
+    "changedBox": [
+      64,
+      145,
+      310,
+      156
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "triglyph",
+    "name": "375-doric-triglyph",
+    "changedPixels": 2156,
+    "changedBox": [
+      78,
+      83,
+      334,
+      198
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "glyph",
+    "name": "375-doric-glyph",
+    "changedPixels": 2464,
+    "changedBox": [
+      78,
+      88,
+      334,
+      198
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "meros",
+    "name": "375-doric-meros",
+    "changedPixels": 2130,
+    "changedBox": [
+      80,
+      87,
+      334,
+      198
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "metope",
+    "name": "375-doric-metope",
+    "changedPixels": 5933,
+    "changedBox": [
+      91,
+      83,
+      333,
+      198
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "grc",
+    "part": "acroterion",
+    "name": "375-doric-acroterion",
+    "changedPixels": 1825,
+    "changedBox": [
+      39,
+      10,
+      185,
+      67
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "annuli",
+    "name": "375-doric-annuli",
+    "changedPixels": 286,
+    "changedBox": [
+      67,
+      160,
+      306,
+      164
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "regula",
+    "name": "375-doric-regula",
+    "changedPixels": 252,
+    "changedBox": [
+      66,
+      124,
+      334,
+      173
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "guttae",
+    "name": "375-doric-guttae",
+    "changedPixels": 476,
+    "changedBox": [
+      66,
+      125,
+      334,
+      173
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "triglyph-capital",
+    "name": "375-doric-triglyph-capital",
+    "changedPixels": 335,
+    "changedBox": [
+      66,
+      70,
+      334,
+      88
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "hemimetope",
+    "name": "375-doric-hemimetope",
+    "changedPixels": 545,
+    "changedBox": [
+      66,
+      83,
+      93,
+      129
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "mutule",
+    "name": "375-doric-mutule",
+    "changedPixels": 741,
+    "changedBox": [
+      78,
+      80,
+      334,
+      129
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "mutule-guttae",
+    "name": "375-doric-mutule-guttae",
+    "changedPixels": 673,
+    "changedBox": [
+      79,
+      82,
+      334,
+      129
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "doric",
+    "lang": "la",
+    "part": "via",
+    "name": "375-doric-via",
+    "changedPixels": 248,
+    "changedBox": [
+      91,
+      80,
+      333,
+      129
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "plinth",
+    "name": "375-ionic-plinth",
+    "changedPixels": 1009,
+    "changedBox": [
+      137,
+      509,
+      334,
+      518
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "torus",
+    "name": "375-ionic-torus",
+    "changedPixels": 1248,
+    "changedBox": [
+      137,
+      495,
+      334,
+      511
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "scotia",
+    "name": "375-ionic-scotia",
+    "changedPixels": 586,
+    "changedBox": [
+      144,
+      499,
+      330,
+      508
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "shaft",
+    "name": "375-ionic-shaft",
+    "changedPixels": 28702,
+    "changedBox": [
+      147,
+      139,
+      325,
+      508
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "flute",
+    "name": "375-ionic-flute",
+    "changedPixels": 23033,
+    "changedBox": [
+      148,
+      144,
+      325,
+      492
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "astragal",
+    "name": "375-ionic-astragal",
+    "changedPixels": 62,
+    "changedBox": [
+      148,
+      129,
+      324,
+      146
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "echinus",
+    "name": "375-ionic-echinus",
+    "changedPixels": 411,
+    "changedBox": [
+      147,
+      130,
+      326,
+      140
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "volute",
+    "name": "375-ionic-volute",
+    "changedPixels": 1002,
+    "changedBox": [
+      145,
+      127,
+      329,
+      147
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "oculus",
+    "name": "375-ionic-oculus",
+    "changedPixels": 46,
+    "changedBox": [
+      148,
+      129,
+      324,
+      146
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "abacus",
+    "name": "375-ionic-abacus",
+    "changedPixels": 455,
+    "changedBox": [
+      146,
+      123,
+      327,
+      129
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "grc",
+    "part": "metoche",
+    "name": "375-ionic-metoche",
+    "changedPixels": 741,
+    "changedBox": [
+      130,
+      20,
+      333,
+      70
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "la",
+    "part": "canalis",
+    "name": "375-ionic-canalis",
+    "changedPixels": 246,
+    "changedBox": [
+      145,
+      127,
+      329,
+      146
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "ionic",
+    "lang": "la",
+    "part": "denticulus",
+    "name": "375-ionic-denticulus",
+    "changedPixels": 1242,
+    "changedBox": [
+      130,
+      20,
+      334,
+      146
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "plinth",
+    "name": "375-corinthian-plinth",
+    "changedPixels": 854,
+    "changedBox": [
+      139,
+      512,
+      326,
+      520
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "torus",
+    "name": "375-corinthian-torus",
+    "changedPixels": 990,
+    "changedBox": [
+      140,
+      499,
+      325,
+      514
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "scotia",
+    "name": "375-corinthian-scotia",
+    "changedPixels": 549,
+    "changedBox": [
+      145,
+      502,
+      320,
+      509
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "shaft",
+    "name": "375-corinthian-shaft",
+    "changedPixels": 25615,
+    "changedBox": [
+      149,
+      130,
+      316,
+      501
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "flute",
+    "name": "375-corinthian-flute",
+    "changedPixels": 21119,
+    "changedBox": [
+      149,
+      168,
+      316,
+      495
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "calathus",
+    "name": "375-corinthian-calathus",
+    "changedPixels": 1307,
+    "changedBox": [
+      149,
+      130,
+      316,
+      171
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "helix",
+    "name": "375-corinthian-helix",
+    "changedPixels": 328,
+    "changedBox": [
+      143,
+      130,
+      322,
+      140
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "acanthus",
+    "name": "375-corinthian-acanthus",
+    "changedPixels": 1578,
+    "changedBox": [
+      147,
+      135,
+      318,
+      165
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "abacus",
+    "name": "375-corinthian-abacus",
+    "changedPixels": 664,
+    "changedBox": [
+      141,
+      92,
+      324,
+      132
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "grc",
+    "part": "metoche",
+    "name": "375-corinthian-metoche",
+    "changedPixels": 742,
+    "changedBox": [
+      149,
+      59,
+      333,
+      68
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "la",
+    "part": "cauliculus",
+    "name": "375-corinthian-cauliculus",
+    "changedPixels": 84,
+    "changedBox": [
+      149,
+      130,
+      316,
+      171
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "la",
+    "part": "flos",
+    "name": "375-corinthian-flos",
+    "changedPixels": 62,
+    "changedBox": [
+      149,
+      125,
+      316,
+      133
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "corinthian",
+    "lang": "la",
+    "part": "denticulus",
+    "name": "375-corinthian-denticulus",
+    "changedPixels": 1233,
+    "changedBox": [
+      140,
+      59,
+      334,
+      171
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "stylobate",
+    "name": "375-plan-stylobate",
+    "changedPixels": 83589,
+    "changedBox": [
+      27,
+      15,
+      316,
+      545
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "pteroma",
+    "name": "375-plan-pteroma",
+    "changedPixels": 58439,
+    "changedBox": [
+      43,
+      32,
+      300,
+      528
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "column",
+    "name": "375-plan-column",
+    "changedPixels": 8029,
+    "changedBox": [
+      43,
+      31,
+      300,
+      529
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "naos",
+    "name": "375-plan-naos",
+    "changedPixels": 52014,
+    "changedBox": [
+      91,
+      79,
+      252,
+      481
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "pronaos",
+    "name": "375-plan-pronaos",
+    "changedPixels": 8944,
+    "changedBox": [
+      107,
+      407,
+      236,
+      480
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "opisthodomos",
+    "name": "375-plan-opisthodomos",
+    "changedPixels": 8906,
+    "changedBox": [
+      107,
+      80,
+      236,
+      153
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "plan",
+    "lang": "grc",
+    "part": "anta",
+    "name": "375-plan-anta",
+    "changedPixels": 14398,
+    "changedBox": [
+      91,
+      79,
+      252,
+      481
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "papyriform-closed",
+    "name": "375-egypt-papyriform-closed",
+    "changedPixels": 1984,
+    "changedBox": [
+      29,
+      24,
+      58,
+      121
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "papyriform-open",
+    "name": "375-egypt-papyriform-open",
+    "changedPixels": 3607,
+    "changedBox": [
+      17,
+      23,
+      306,
+      125
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "lotiform",
+    "name": "375-egypt-lotiform",
+    "changedPixels": 1945,
+    "changedBox": [
+      132,
+      24,
+      160,
+      121
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "palmiform",
+    "name": "375-egypt-palmiform",
+    "changedPixels": 1950,
+    "changedBox": [
+      178,
+      24,
+      216,
+      121
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "egypt",
+    "lang": "egy",
+    "part": "hathoric",
+    "name": "375-egypt-hathoric",
+    "changedPixels": 2120,
+    "changedBox": [
+      234,
+      20,
+      262,
+      121
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "egypt",
+    "lang": "grc",
+    "part": "protodoric",
+    "name": "375-egypt-protodoric",
+    "changedPixels": 1955,
+    "changedBox": [
+      285,
+      22,
+      314,
+      121
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "egypt",
+    "lang": "grc",
+    "part": "egypt-abacus",
+    "name": "375-egypt-egypt-abacus",
+    "changedPixels": 723,
+    "changedBox": [
+      36,
+      17,
+      311,
+      29
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "mesopotamia",
+    "lang": "akk",
+    "part": "ziqqurratu",
+    "name": "375-mesopotamia-ziqqurratu",
+    "changedPixels": 8466,
+    "changedBox": [
+      13,
+      33,
+      330,
+      131
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "mesopotamia",
+    "lang": "akk",
+    "part": "libittu",
+    "name": "375-mesopotamia-libittu",
+    "changedPixels": 1397,
+    "changedBox": [
+      264,
+      90,
+      317,
+      129
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "mesopotamia",
+    "lang": "sux",
+    "part": "shrine",
+    "name": "375-mesopotamia-shrine",
+    "changedPixels": 1413,
+    "changedBox": [
+      140,
+      13,
+      203,
+      78
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "rome",
+    "lang": "la",
+    "part": "tholus",
+    "name": "375-rome-tholus",
+    "changedPixels": 4020,
+    "changedBox": [
+      84,
+      16,
+      321,
+      112
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "rome",
+    "lang": "la",
+    "part": "oculus-dome",
+    "name": "375-rome-oculus-dome",
+    "changedPixels": 274,
+    "changedBox": [
+      180,
+      15,
+      224,
+      23
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "rome",
+    "lang": "la",
+    "part": "lacunaria",
+    "name": "375-rome-lacunaria",
+    "changedPixels": 711,
+    "changedBox": [
+      69,
+      17,
+      297,
+      133
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "rome",
+    "lang": "la",
+    "part": "rotunda",
+    "name": "375-rome-rotunda",
+    "changedPixels": 6382,
+    "changedBox": [
+      25,
+      85,
+      321,
+      205
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "rome",
+    "lang": "la",
+    "part": "porticus",
+    "name": "375-rome-porticus",
+    "changedPixels": 2768,
+    "changedBox": [
+      13,
+      104,
+      87,
+      203
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "persia",
+    "lang": "peo",
+    "part": "apadana",
+    "name": "375-persia-apadana",
+    "changedPixels": 4281,
+    "changedBox": [
+      89,
+      22,
+      254,
+      541
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "persia",
+    "lang": "peo",
+    "part": "stuna",
+    "name": "375-persia-stuna",
+    "changedPixels": 8426,
+    "changedBox": [
+      150,
+      124,
+      193,
+      486
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "persia",
+    "lang": "grc",
+    "part": "protome",
+    "name": "375-persia-protome",
+    "changedPixels": 3779,
+    "changedBox": [
+      112,
+      37,
+      231,
+      83
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "anda",
+    "name": "375-india-anda",
+    "changedPixels": 10248,
+    "changedBox": [
+      74,
+      52,
+      269,
+      124
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "medhi",
+    "name": "375-india-medhi",
+    "changedPixels": 4143,
+    "changedBox": [
+      62,
+      52,
+      281,
+      150
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "harmika",
+    "name": "375-india-harmika",
+    "changedPixels": 459,
+    "changedBox": [
+      155,
+      39,
+      188,
+      53
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "yashti",
+    "name": "375-india-yashti",
+    "changedPixels": 63,
+    "changedBox": [
+      165,
+      13,
+      178,
+      43
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "chattra",
+    "name": "375-india-chattra",
+    "changedPixels": 244,
+    "changedBox": [
+      157,
+      16,
+      186,
+      43
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "vedika",
+    "name": "375-india-vedika",
+    "changedPixels": 5951,
+    "changedBox": [
+      26,
+      126,
+      317,
+      150
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "torana",
+    "name": "375-india-torana",
+    "changedPixels": 2884,
+    "changedBox": [
+      24,
+      40,
+      189,
+      150
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "india",
+    "lang": "sa",
+    "part": "pradakshina",
+    "name": "375-india-pradakshina",
+    "changedPixels": 1033,
+    "changedBox": [
+      11,
+      148,
+      332,
+      152
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "tai",
+    "name": "375-china-tai",
+    "changedPixels": 5994,
+    "changedBox": [
+      34,
+      156,
+      309,
+      178
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "chu",
+    "name": "375-china-chu",
+    "changedPixels": 261,
+    "changedBox": [
+      82,
+      152,
+      261,
+      158
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "zhu",
+    "name": "375-china-zhu",
+    "changedPixels": 2919,
+    "changedBox": [
+      78,
+      95,
+      265,
+      154
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "dou",
+    "name": "375-china-dou",
+    "changedPixels": 384,
+    "changedBox": [
+      71,
+      86,
+      272,
+      97
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "gong",
+    "name": "375-china-gong",
+    "changedPixels": 1054,
+    "changedBox": [
+      70,
+      83,
+      273,
+      96
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "dougong",
+    "name": "375-china-dougong",
+    "changedPixels": 411,
+    "changedBox": [
+      69,
+      79,
+      274,
+      87
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "yan",
+    "name": "375-china-yan",
+    "changedPixels": 1235,
+    "changedBox": [
+      18,
+      67,
+      325,
+      96
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "wa",
+    "name": "375-china-wa",
+    "changedPixels": 9445,
+    "changedBox": [
+      22,
+      18,
+      321,
+      96
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "china",
+    "lang": "zh",
+    "part": "wadang",
+    "name": "375-china-wadang",
+    "changedPixels": 1234,
+    "changedBox": [
+      21,
+      67,
+      318,
+      96
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "mexico",
+    "lang": "nah",
+    "part": "teocalli",
+    "name": "375-mexico-teocalli",
+    "changedPixels": 9360,
+    "changedBox": [
+      11,
+      44,
+      334,
+      137
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "mexico",
+    "lang": "nah",
+    "part": "tlaloc",
+    "name": "375-mexico-tlaloc",
+    "changedPixels": 1428,
+    "changedBox": [
+      85,
+      18,
+      136,
+      46
+    ]
+  },
+  {
+    "width": 375,
+    "deck": "mexico",
+    "lang": "nah",
+    "part": "huitzilopochtli",
+    "name": "375-mexico-huitzilopochtli",
+    "changedPixels": 1599,
+    "changedBox": [
+      147,
+      14,
+      198,
+      49
+    ]
+  }
+]

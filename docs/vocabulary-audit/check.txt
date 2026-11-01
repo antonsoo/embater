@@ -1,0 +1,530 @@
+npm notice run embater@0.1.0 check
+npm notice run npm run lint && npm run typecheck && npm test && npm run build
+npm notice run embater@0.1.0 lint
+npm notice run biome check .
+scripts/compare-browser.mjs:159:11 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    157 │         await writeFile(
+    158 │           `${output}/browser.json`,
+  > 159 │           JSON.stringify({ base, receipts }, null, 2) + "\n",
+        │           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    160 │         );
+    161 │       }
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    157 157 │           await writeFile(
+    158 158 │             `${output}/browser.json`,
+    159     │ - ··········JSON.stringify({·base,·receipts·},·null,·2)·+·"\n",
+        159 │ + ··········`${JSON.stringify({·base,·receipts·},·null,·2)}\n`,
+    160 160 │           );
+    161 161 │         }
+  
+
+scripts/offline-review.mjs:95:70 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    93 │       const removed = await page.evaluate(
+    94 │         async ({ name, destination }) => {
+  > 95 │           const key = (await caches.keys()).find((k) => k.startsWith(name + "-"));
+       │                                                                      ^^^^^^^^^^
+    96 │           return (await caches.open(key)).delete(`/${name}/${destination}`);
+    97 │         },
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     93  93 │         const removed = await page.evaluate(
+     94  94 │           async ({ name, destination }) => {
+     95     │ - ··········const·key·=·(await·caches.keys()).find((k)·=>·k.startsWith(name·+·"-"));
+         95 │ + ··········const·key·=·(await·caches.keys()).find((k)·=>·k.startsWith(`${name}-`));
+     96  96 │             return (await caches.open(key)).delete(`/${name}/${destination}`);
+     97  97 │           },
+  
+
+scripts/offline-review.mjs:144:27 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    142 │   }
+    143 │   await mkdir(resolve(output, ".."), { recursive: true });
+  > 144 │   await writeFile(output, JSON.stringify({ project: name, receipts }, null, 2) + "\n");
+        │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    145 │ } finally {
+    146 │   server.closeAllConnections();
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    142 142 │     }
+    143 143 │     await mkdir(resolve(output, ".."), { recursive: true });
+    144     │ - ··await·writeFile(output,·JSON.stringify({·project:·name,·receipts·},·null,·2)·+·"\n");
+        144 │ + ··await·writeFile(output,·`${JSON.stringify({·project:·name,·receipts·},·null,·2)}\n`);
+    145 145 │   } finally {
+    146 146 │     server.closeAllConnections();
+  
+
+scripts/compare-browser.mjs:34:61 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    32 │         assert.equal(await page.locator('[data-diagram="11"] circle').count(), 30);
+    33 │         assert.equal(await page.locator('[data-diagram="17"] circle').count(), 42);
+  > 34 │         const gapTally = await page.locator("#count-tally").innerText();
+       │                                                             ^^^^^^^^^
+    35 │         await page.locator("#count-zoom").click();
+    36 │         assert.equal(await page.locator("#count-zoom").getAttribute("aria-pressed"), "true");
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     32  32 │           assert.equal(await page.locator('[data-diagram="11"] circle').count(), 30);
+     33  33 │           assert.equal(await page.locator('[data-diagram="17"] circle').count(), 42);
+     34     │ - ········const·gapTally·=·await·page.locator("#count-tally").innerText();
+         34 │ + ········const·gapTally·=·await·page.locator("#count-tally").textContent();
+     35  35 │           await page.locator("#count-zoom").click();
+     36  36 │           assert.equal(await page.locator("#count-zoom").getAttribute("aria-pressed"), "true");
+  
+
+scripts/compare-browser.mjs:46:60 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    44 │         assert.equal(await frame.evaluate((e) => e.scrollWidth <= e.clientWidth), true);
+    45 │         await page.getByLabel("The columns · a trial reading", { exact: true }).check();
+  > 46 │         assert.match(await page.locator("#count-equation").innerText(), /12 columns → 11 spaces/);
+       │                                                            ^^^^^^^^^
+    47 │         assert.equal(await page.locator('[data-diagram="12"] circle').count(), 32);
+    48 │         await page.locator("#temple").selectOption("aegina-temple-of-aphaia");
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     44  44 │           assert.equal(await frame.evaluate((e) => e.scrollWidth <= e.clientWidth), true);
+     45  45 │           await page.getByLabel("The columns · a trial reading", { exact: true }).check();
+     46     │ - ········assert.match(await·page.locator("#count-equation").innerText(),·/12·columns·→·11·spaces/);
+         46 │ + ········assert.match(await·page.locator("#count-equation").textContent(),·/12·columns·→·11·spaces/);
+     47  47 │           assert.equal(await page.locator('[data-diagram="12"] circle').count(), 32);
+     48  48 │           await page.locator("#temple").selectOption("aegina-temple-of-aphaia");
+  
+
+scripts/compare-browser.mjs:49:58 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    47 │         assert.equal(await page.locator('[data-diagram="12"] circle').count(), 32);
+    48 │         await page.locator("#temple").selectOption("aegina-temple-of-aphaia");
+  > 49 │         assert.match(await page.locator("#count-result").innerText(), /counts agree: 12/);
+       │                                                          ^^^^^^^^^
+    50 │         const doubledTally = await page.locator("#count-tally").innerText();
+    51 │         await page.getByLabel("The spaces · Vitruvius", { exact: true }).check();
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     47  47 │           assert.equal(await page.locator('[data-diagram="12"] circle').count(), 32);
+     48  48 │           await page.locator("#temple").selectOption("aegina-temple-of-aphaia");
+     49     │ - ········assert.match(await·page.locator("#count-result").innerText(),·/counts·agree:·12/);
+         49 │ + ········assert.match(await·page.locator("#count-result").textContent(),·/counts·agree:·12/);
+     50  50 │           const doubledTally = await page.locator("#count-tally").innerText();
+     51  51 │           await page.getByLabel("The spaces · Vitruvius", { exact: true }).check();
+  
+
+scripts/compare-browser.mjs:50:65 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    48 │         await page.locator("#temple").selectOption("aegina-temple-of-aphaia");
+    49 │         assert.match(await page.locator("#count-result").innerText(), /counts agree: 12/);
+  > 50 │         const doubledTally = await page.locator("#count-tally").innerText();
+       │                                                                 ^^^^^^^^^
+    51 │         await page.getByLabel("The spaces · Vitruvius", { exact: true }).check();
+    52 │         assert.match(
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     48  48 │           await page.locator("#temple").selectOption("aegina-temple-of-aphaia");
+     49  49 │           assert.match(await page.locator("#count-result").innerText(), /counts agree: 12/);
+     50     │ - ········const·doubledTally·=·await·page.locator("#count-tally").innerText();
+         50 │ + ········const·doubledTally·=·await·page.locator("#count-tally").textContent();
+     51  51 │           await page.getByLabel("The spaces · Vitruvius", { exact: true }).check();
+     52  52 │           assert.match(
+  
+
+scripts/compare-browser.mjs:53:47 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    51 │         await page.getByLabel("The spaces · Vitruvius", { exact: true }).check();
+    52 │         assert.match(
+  > 53 │           await page.locator("#count-result").innerText(),
+       │                                               ^^^^^^^^^
+    54 │           /12 recorded, 11 predicted: 1 more/,
+    55 │         );
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     51  51 │           await page.getByLabel("The spaces · Vitruvius", { exact: true }).check();
+     52  52 │           assert.match(
+     53     │ - ··········await·page.locator("#count-result").innerText(),
+         53 │ + ··········await·page.locator("#count-result").textContent(),
+     54  54 │             /12 recorded, 11 predicted: 1 more/,
+     55  55 │           );
+  
+
+scripts/compare-browser.mjs:57:58 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    55 │         );
+    56 │         await page.locator("#temple").selectOption("priene-temple-of-athena");
+  > 57 │         assert.match(await page.locator("#count-result").innerText(), /counts agree: 11/);
+       │                                                          ^^^^^^^^^
+    58 │         const defaults = await page.locator("[data-temple]").count();
+    59 │         assert.equal(defaults, 29);
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     55  55 │           );
+     56  56 │           await page.locator("#temple").selectOption("priene-temple-of-athena");
+     57     │ - ········assert.match(await·page.locator("#count-result").innerText(),·/counts·agree:·11/);
+         57 │ + ········assert.match(await·page.locator("#count-result").textContent(),·/counts·agree:·11/);
+     58  58 │           const defaults = await page.locator("[data-temple]").count();
+     59  59 │           assert.equal(defaults, 29);
+  
+
+scripts/compare-browser.mjs:65:58 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    63 │         await uncertain.focus();
+    64 │         await page.keyboard.press("Enter");
+  > 65 │         assert.match(await page.locator("#count-result").innerText(), /uncertain/);
+       │                                                          ^^^^^^^^^
+    66 │         assert.equal(
+    67 │           await page.locator("#temple").evaluate((e) => e === document.activeElement),
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     63  63 │           await uncertain.focus();
+     64  64 │           await page.keyboard.press("Enter");
+     65     │ - ········assert.match(await·page.locator("#count-result").innerText(),·/uncertain/);
+         65 │ + ········assert.match(await·page.locator("#count-result").textContent(),·/uncertain/);
+     66  66 │           assert.equal(
+     67  67 │             await page.locator("#temple").evaluate((e) => e === document.activeElement),
+  
+
+scripts/compare-browser.mjs:124:58 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    122 │           );
+    123 │         }
+  > 124 │         assert.match(await page.locator("#count-result").innerText(), /counts agree: 11/);
+        │                                                          ^^^^^^^^^
+    125 │         const portable = await context.newPage();
+    126 │         const requests = [];
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+    122 122 │             );
+    123 123 │           }
+    124     │ - ········assert.match(await·page.locator("#count-result").innerText(),·/counts·agree:·11/);
+        124 │ + ········assert.match(await·page.locator("#count-result").textContent(),·/counts·agree:·11/);
+    125 125 │           const portable = await context.newPage();
+    126 126 │           const requests = [];
+  
+
+scripts/compare-browser.mjs:131:53 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    129 │         });
+    130 │         await portable.goto(pathToFileURL(downloads[0]).href);
+  > 131 │         assert.match(await portable.locator("body").innerText(), /17/);
+        │                                                     ^^^^^^^^^
+    132 │         assert.deepEqual(requests, []);
+    133 │         assert.equal(
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+    129 129 │           });
+    130 130 │           await portable.goto(pathToFileURL(downloads[0]).href);
+    131     │ - ········assert.match(await·portable.locator("body").innerText(),·/17/);
+        131 │ + ········assert.match(await·portable.locator("body").textContent(),·/17/);
+    132 132 │           assert.deepEqual(requests, []);
+    133 133 │           assert.equal(
+  
+
+scripts/offline-review.mjs:81:45 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    79 │       response = await page.goto(base + destination);
+    80 │       assert.equal(response.status(), 404);
+  > 81 │       assert.equal(await page.locator("h1").innerText(), "HTTP 404");
+       │                                             ^^^^^^^^^
+    82 │       mode = "normal";
+    83 │       await page.goto(base + entry);
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     79  79 │         response = await page.goto(base + destination);
+     80  80 │         assert.equal(response.status(), 404);
+     81     │ - ······assert.equal(await·page.locator("h1").innerText(),·"HTTP·404");
+         81 │ + ······assert.equal(await·page.locator("h1").textContent(),·"HTTP·404");
+     82  82 │         mode = "normal";
+     83  83 │         await page.goto(base + entry);
+  
+
+scripts/offline-review.mjs:104:45 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    102 │       response = await page.goto(base + destination);
+    103 │       assert.equal(response.status(), 503);
+  > 104 │       assert.equal(await page.locator("h1").innerText(), "HTTP 503");
+        │                                             ^^^^^^^^^
+    105 │       mode = "normal";
+    106 │       await page.goto(base + entry);
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+    102 102 │         response = await page.goto(base + destination);
+    103 103 │         assert.equal(response.status(), 503);
+    104     │ - ······assert.equal(await·page.locator("h1").innerText(),·"HTTP·503");
+        104 │ + ······assert.equal(await·page.locator("h1").textContent(),·"HTTP·503");
+    105 105 │         mode = "normal";
+    106 106 │         await page.goto(base + entry);
+  
+
+scripts/offline-review.mjs:126:61 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    124 │       );
+    125 │       assert.equal(await bp.evaluate(() => !!navigator.serviceWorker.controller), false);
+  > 126 │       const badStatus = await bp.locator("#offline-status").innerText();
+        │                                                             ^^^^^^^^^
+    127 │       await broken.close();
+    128 │       receipts.push({
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+    124 124 │         );
+    125 125 │         assert.equal(await bp.evaluate(() => !!navigator.serviceWorker.controller), false);
+    126     │ - ······const·badStatus·=·await·bp.locator("#offline-status").innerText();
+        126 │ + ······const·badStatus·=·await·bp.locator("#offline-status").textContent();
+    127 127 │         await broken.close();
+    128 128 │         receipts.push({
+  
+
+Checked 104 files in 39ms. No fixes applied.
+Found 12 warnings.
+Found 3 infos.
+npm notice run embater@0.1.0 typecheck
+npm notice run tsc --noEmit
+npm notice run embater@0.1.0 test
+npm notice run node --import tsx --test tests/*.test.ts
+▶ vocabulary
+  ✔ names every part drawn in the orders and plans (1.665384ms)
+  ✔ names every part drawn on the world plates (4.331419ms)
+  ✔ cites only rules that exist, with Krohn pages from Books III–IV (0.402657ms)
+  ✔ writes Greek words in Greek script, with a romanization (0.653953ms)
+  ✔ gives every word a literal meaning and a source (0.326961ms)
+✔ vocabulary (8.711234ms)
+▶ a doorway read with and without the supplied half
+  ✔ changes contraction bands under the same 28-foot ceiling (1.020164ms)
+  ✔ distinguishes the aperture, casing and an intentionally parallel trial (0.431864ms)
+  ✔ keeps exact boundaries on the lower band and switches just above (0.31086ms)
+  ✔ preserves every choice in both editable files and explicit links (2.945375ms)
+  ✔ rejects damaged drawings and nonfinite choices instead of inventing geometry (0.778693ms)
+✔ a doorway read with and without the supplied half (7.438406ms)
+▶ Doric front from the triglyph rhythm (IV.3.3–7)
+  ✔ gives Vitruvius's printed totals: 27 and 42 diastyle, 19½ and 29½ systyle (0.930496ms)
+  ✔ cannot produce the manuscripts' 28 or 32 with any whole number of triglyphs (0.331269ms)
+  ✔ puts a triglyph over every column axis and spaces them 2½ modules apart (0.339075ms)
+  ✔ draws square metopes and half-module half-metopes that end at the front's edges (3.615148ms)
+  ✔ makes the column seven lower diameters tall and the pediment a ninth of the corona (3.755043ms)
+✔ Doric front from the triglyph rhythm (IV.3.3–7) (10.264276ms)
+▶ taper (III.3.12)
+  ✔ follows the five stated bands (0.370204ms)
+  ✔ continues 'pro rata' by half a part per ten feet, and taller columns taper less (0.224734ms)
+✔ taper (III.3.12) (1.079729ms)
+▶ a detail of the actual architectural geometry
+  ✔ selects one repeated eye rather than centering the empty space between them (1.035189ms)
+  ✔ halves the crop width and height at each zoom while bounding the pan (0.266896ms)
+  ✔ retains equal axes and never changes the source coordinates for any existing part (31.889761ms)
+  ✔ reopens the selected study term without sharing a quiz target (0.474946ms)
+✔ a detail of the actual architectural geometry (34.576877ms)
+▶ complete printed source coverage
+  ✔ keeps both pages of the five audited spanning excerpts (0.155981ms)
+  ✔ has a retained image for every cited page, including every excerpt's continuation (0.433256ms)
+✔ complete printed source coverage (0.734137ms)
+▶ architecture vocabulary questions
+  ✔ accepts either Egyptian papyrus form when the displayed word cannot distinguish them (0.867795ms)
+  ✔ asks actual Latin entries instead of always taking a term's first word (0.21243ms)
+  ✔ never loses a visible word or includes a missing-language or undrawn entry (1.718657ms)
+  ✔ keeps language and direction progress independent (0.257116ms)
+  ✔ round trips every supported deck, language and exercise without inventing a translation (2.905909ms)
+✔ architecture vocabulary questions (7.51743ms)
+▶ portable vocabulary progress
+  ✔ round trips all known entries in one strictly validated backup (0.890322ms)
+  ✔ rejects damaged or unrelated files before they can replace current progress (1.204079ms)
+  ✔ never treats fractional or nonnumeric box values as learned words (0.279109ms)
+✔ portable vocabulary progress (2.753865ms)
+▶ Vitruvius against the Perseus temples
+  ✔ finds the flank count falling from 15 to 13 to Vitruvius's 11 (1.713983ms)
+  ✔ dates every unflagged 6 × 12 temple, the 'doubled' plan, to before 475 BCE (0.201829ms)
+  ✔ finds every Doric column stouter than even Vitruvius's 'first' Doric of 6 diameters (0.413483ms)
+  ✔ keeps a Perseus link and a quoted sentence on every row (0.759882ms)
+  ✔ takes the median of an even list as the mean of the middle pair (0.130392ms)
+✔ Vitruvius against the Perseus temples (4.52857ms)
+▶ Ionic fronts (III.3)
+  ✔ gives the corrected eustyle totals 11½, 18 and 24½, not the manuscripts' 19 and 25 (2.374042ms)
+  ✔ agrees with the systyle check of III.3.2: the gap between plinths equals a plinth (0.19161ms)
+  ✔ makes closer-spaced columns taller, and the Corinthian two thirds taller still (0.167894ms)
+✔ Ionic fronts (III.3) (3.841502ms)
+▶ Ionic entablature (III.5.8)
+  ✔ uses half a diameter up to fifteen feet, then a fraction of the column (0.494875ms)
+  ✔ jumps by about half when a eustyle column passes fifteen feet (0.147795ms)
+✔ Ionic entablature (III.5.8) (1.061499ms)
+▶ Ionic capital and volute (III.5.5–7)
+  ✔ divides half the abacus into 9½ parts of one eighteenth of a diameter (0.394952ms)
+  ✔ brings the spiral from 4½ parts to the eye in two turns (1.256084ms)
+✔ Ionic capital and volute (III.5.5–7) (1.977076ms)
+▶ bases (III.5.2–3)
+  ✔ makes both bases half a diameter high, the Ionic one 1⅜ wide (14.283128ms)
+✔ bases (III.5.2–3) (14.510897ms)
+▶ Corinthian capital (IV.1.11)
+  ✔ is one diameter high with an abacus whose diagonal is twice that (5.536221ms)
+✔ Corinthian capital (IV.1.11) (5.687303ms)
+▶ Leitner schedule
+  ✔ moves a right answer up a box and a wrong one back to the first (0.758895ms)
+  ✔ asks words in box 1 about sixteen times as often as words in box 5 (25.47084ms)
+  ✔ never repeats the word just asked when another is available (0.550492ms)
+  ✔ offers distinct distractors that never include the answer (0.956797ms)
+  ✔ counts words per box (1.187512ms)
+✔ Leitner schedule (30.173387ms)
+✔ compares reported dimensions without forcing the survey into a double square (4.251506ms)
+✔ opens old drawings and links, while rejecting damaged new comparisons (0.898535ms)
+▶ Vitruvius's plans (III.2, III.4.3, IV.4.1)
+  ✔ adds rear columns without stealing the cella allocation from IV.4.1 (2.31609ms)
+  ✔ makes 34 and 38 conditional on different inner rectangles, without rewriting the source claim (1.487821ms)
+  ✔ keeps a central doorway open in the hypaethral rear wall (0.522499ms)
+  ✔ keeps every offered drawing within its platform and retains all cited pages (5.399436ms)
+  ✔ rings a peripteral temple with 6 × 11 columns: twice the intercolumniations on the flanks (0.378521ms)
+  ✔ leaves 34 columns on a dipteral temple's inner ring: the number Krohn prints for Hermogenes (1.193324ms)
+  ✔ puts the pseudodipteral cella walls on the lines of the four middle columns (1.87767ms)
+  ✔ makes the temple in antis twice as long as it is wide (0.333383ms)
+✔ Vitruvius's plans (III.2, III.4.3, IV.4.1) (14.938442ms)
+ℹ tests 60
+ℹ suites 16
+ℹ pass 60
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 270.746794
+npm notice run embater@0.1.0 build
+npm notice run tsc --noEmit && vite build
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 78 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/compare.html                                          1.29 kB │ gzip:  0.54 kB
+dist/doorways.html                                         1.38 kB │ gzip:  0.59 kB
+dist/world.html                                            1.62 kB │ gzip:  0.56 kB
+dist/plans.html                                            1.66 kB │ gzip:  0.56 kB
+dist/index.html                                            1.74 kB │ gzip:  0.59 kB
+dist/drill.html                                            1.99 kB │ gzip:  0.60 kB
+dist/assets/gfs-didot-greek-DZxOyfIP.woff2                 7.19 kB
+dist/assets/gfs-didot-greek-ext-BVzEyZiZ.woff2             8.96 kB
+dist/assets/vocabulary-cjk-DcC6CKPN.woff2                 10.58 kB
+dist/assets/eb-garamond-greek-ext-CW-BywWH.woff2          11.48 kB
+dist/assets/eb-garamond-italic-greek-ext-nvsmRjVx.woff2   11.95 kB
+dist/assets/gfs-didot-latin-BRiTEmo6.woff2                14.54 kB
+dist/assets/eb-garamond-italic-greek-Dc0bJcw6.woff2       19.58 kB
+dist/assets/eb-garamond-greek-DCPER7xl.woff2              19.86 kB
+dist/assets/vocabulary-devanagari-B3SMEurw.woff2          20.16 kB
+dist/assets/eb-garamond-latin-CRpggXlh.woff2              44.33 kB
+dist/assets/eb-garamond-italic-latin-AvGrCMCN.woff2       47.94 kB
+dist/assets/eb-garamond-italic-latin-ext-CYvIfuu9.woff2   88.57 kB
+dist/assets/eb-garamond-latin-ext-B6IpcvL2.woff2         113.92 kB
+dist/assets/vocabulary-source-chqQSxjo.css                 1.76 kB │ gzip:  0.66 kB
+dist/assets/compare-cacIIeM9.css                           3.69 kB │ gzip:  1.19 kB
+dist/assets/drill-CyhKjZiu.css                             4.20 kB │ gzip:  1.19 kB
+dist/assets/doorways-BvaIAwWY.css                          8.83 kB │ gzip:  2.21 kB
+dist/assets/dom-DbRTFuQS.css                              33.15 kB │ gzip: 14.37 kB
+dist/assets/plan-fonts-dQ3CYwSZ.js                         0.83 kB │ gzip:  0.48 kB
+dist/assets/assets-DxPVpQhG.js                             0.93 kB │ gzip:  0.55 kB
+dist/assets/plan-BiAWTmds.js                               3.22 kB │ gzip:  1.47 kB
+dist/assets/world-BYQnFW7p.js                              4.19 kB │ gzip:  1.85 kB
+dist/assets/dom-B7zKbsfa.js                                6.18 kB │ gzip:  2.64 kB
+dist/assets/card-CYKZAPyD.js                               7.63 kB │ gzip:  3.30 kB
+dist/assets/vocabulary-source-G_SzXtWy.js                 10.82 kB │ gzip:  3.78 kB
+dist/assets/ionic-CASyRAzr.js                             12.73 kB │ gzip:  5.04 kB
+dist/assets/compare-Dj9sAhfO.js                           12.81 kB │ gzip:  5.19 kB
+dist/assets/temples-BnZVv20C.js                           15.75 kB │ gzip:  3.24 kB
+dist/assets/index-xGfIZjyM.js                             16.01 kB │ gzip:  6.38 kB
+dist/assets/rules-DIQFR6H9.js                             30.44 kB │ gzip: 10.55 kB
+dist/assets/terms-prhyGa2f.js                             32.52 kB │ gzip: 10.81 kB
+dist/assets/plans-uN3JjIUD.js                             33.42 kB │ gzip: 12.89 kB
+dist/assets/world-nZrXsqMh.js                             37.86 kB │ gzip: 14.15 kB
+dist/assets/drill-3V8pvufw.js                             43.93 kB │ gzip: 21.95 kB
+dist/assets/doorways-SNbveIUl.js                          53.09 kB │ gzip: 17.93 kB
+
+✓ built in 157ms

@@ -1,0 +1,234 @@
+[
+  {
+    "deck": "china",
+    "htmlBytes": 352393,
+    "htmlSha256": "4ade09e1daf261857125364379e10f4c3b89398d9a101a21dc765760eec27959",
+    "fonts": [
+      {
+        "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "bytes": 44336,
+        "codepoints": 236
+      },
+      {
+        "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "bytes": 113928,
+        "codepoints": 799
+      },
+      {
+        "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "bytes": 19868,
+        "codepoints": 101
+      },
+      {
+        "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511",
+        "bytes": 11484,
+        "codepoints": 240
+      },
+      {
+        "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362",
+        "bytes": 10580,
+        "codepoints": 13
+      },
+      {
+        "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1",
+        "bytes": 20164,
+        "codepoints": 23
+      },
+      {
+        "sha256": "6a2b4b985273c74a62f32e4d94cd4e3af20f9572b16671176b203aba4f6c8d3e",
+        "bytes": 1784,
+        "codepoints": 9
+      },
+      {
+        "sha256": "cbc02128c87e63009a2288490bf842d489f339ad40990ef608b1ea945d15fb93",
+        "bytes": 2800,
+        "codepoints": 2
+      },
+      {
+        "sha256": "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
+        "bytes": 3560,
+        "codepoints": 4
+      }
+    ],
+    "allTextGlyphsRetained": true,
+    "sourcePages": [],
+    "csvRows": 9,
+    "scripts": 0,
+    "automaticRemoteResources": [],
+    "licenseTextsMatch": true
+  },
+  {
+    "deck": "egypt",
+    "htmlBytes": 357025,
+    "htmlSha256": "262ebd42025714f2ee94ef6255c2da02ac8c88933e4e662eb2b2f9445b4a4172",
+    "fonts": [
+      {
+        "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "bytes": 44336,
+        "codepoints": 236
+      },
+      {
+        "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "bytes": 113928,
+        "codepoints": 799
+      },
+      {
+        "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "bytes": 19868,
+        "codepoints": 101
+      },
+      {
+        "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511",
+        "bytes": 11484,
+        "codepoints": 240
+      },
+      {
+        "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362",
+        "bytes": 10580,
+        "codepoints": 13
+      },
+      {
+        "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1",
+        "bytes": 20164,
+        "codepoints": 23
+      },
+      {
+        "sha256": "6a2b4b985273c74a62f32e4d94cd4e3af20f9572b16671176b203aba4f6c8d3e",
+        "bytes": 1784,
+        "codepoints": 9
+      },
+      {
+        "sha256": "cbc02128c87e63009a2288490bf842d489f339ad40990ef608b1ea945d15fb93",
+        "bytes": 2800,
+        "codepoints": 2
+      },
+      {
+        "sha256": "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
+        "bytes": 3560,
+        "codepoints": 4
+      }
+    ],
+    "allTextGlyphsRetained": true,
+    "sourcePages": [],
+    "csvRows": 5,
+    "scripts": 0,
+    "automaticRemoteResources": [],
+    "licenseTextsMatch": true
+  },
+  {
+    "deck": "india",
+    "htmlBytes": 362198,
+    "htmlSha256": "815090a9ab38a9ab519085a1fabc24193bd688ad8da01f0caec45bad47bdad78",
+    "fonts": [
+      {
+        "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "bytes": 44336,
+        "codepoints": 236
+      },
+      {
+        "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "bytes": 113928,
+        "codepoints": 799
+      },
+      {
+        "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "bytes": 19868,
+        "codepoints": 101
+      },
+      {
+        "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511",
+        "bytes": 11484,
+        "codepoints": 240
+      },
+      {
+        "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362",
+        "bytes": 10580,
+        "codepoints": 13
+      },
+      {
+        "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1",
+        "bytes": 20164,
+        "codepoints": 23
+      },
+      {
+        "sha256": "6a2b4b985273c74a62f32e4d94cd4e3af20f9572b16671176b203aba4f6c8d3e",
+        "bytes": 1784,
+        "codepoints": 9
+      },
+      {
+        "sha256": "cbc02128c87e63009a2288490bf842d489f339ad40990ef608b1ea945d15fb93",
+        "bytes": 2800,
+        "codepoints": 2
+      },
+      {
+        "sha256": "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
+        "bytes": 3560,
+        "codepoints": 4
+      }
+    ],
+    "allTextGlyphsRetained": true,
+    "sourcePages": [],
+    "csvRows": 8,
+    "scripts": 0,
+    "automaticRemoteResources": [],
+    "licenseTextsMatch": true
+  },
+  {
+    "deck": "persia",
+    "htmlBytes": 352365,
+    "htmlSha256": "cbcf3affd6d8dff0215315dc1ec1c11cd1c8ed8252fe9eeaff8eff0527adf29d",
+    "fonts": [
+      {
+        "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b",
+        "bytes": 44336,
+        "codepoints": 236
+      },
+      {
+        "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901",
+        "bytes": 113928,
+        "codepoints": 799
+      },
+      {
+        "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56",
+        "bytes": 19868,
+        "codepoints": 101
+      },
+      {
+        "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511",
+        "bytes": 11484,
+        "codepoints": 240
+      },
+      {
+        "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362",
+        "bytes": 10580,
+        "codepoints": 13
+      },
+      {
+        "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1",
+        "bytes": 20164,
+        "codepoints": 23
+      },
+      {
+        "sha256": "6a2b4b985273c74a62f32e4d94cd4e3af20f9572b16671176b203aba4f6c8d3e",
+        "bytes": 1784,
+        "codepoints": 9
+      },
+      {
+        "sha256": "cbc02128c87e63009a2288490bf842d489f339ad40990ef608b1ea945d15fb93",
+        "bytes": 2800,
+        "codepoints": 2
+      },
+      {
+        "sha256": "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
+        "bytes": 3560,
+        "codepoints": 4
+      }
+    ],
+    "allTextGlyphsRetained": true,
+    "sourcePages": [],
+    "csvRows": 2,
+    "scripts": 0,
+    "automaticRemoteResources": [],
+    "licenseTextsMatch": true
+  }
+]

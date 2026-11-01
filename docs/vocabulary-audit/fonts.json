@@ -1,0 +1,118 @@
+{
+  "fonts": [
+    {
+      "name": "cjk",
+      "path": "src/fonts/vocabulary-cjk.woff2",
+      "source": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Serif/OTF/TraditionalChinese/NotoSerifCJKtc-Regular.otf",
+      "sourceSha256": "234301038e76e7c35c43113785024700c4e4fe7bdce1d1fbbc42fca7e6683798",
+      "copyright": "© 2017-2024 Adobe (http://www.adobe.com/).",
+      "bytes": 10580,
+      "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362",
+      "codepoints": [
+        21488,
+        25329,
+        26007,
+        26515,
+        26609,
+        26673,
+        27280,
+        27368,
+        27394,
+        29926,
+        30070,
+        30990,
+        38357
+      ],
+      "range": "U+53F0,U+62F1,U+6597,U+6793,U+67F1,U+6831,U+6A90,U+6AE8,U+6B02,U+74E6,U+7576,U+790E,U+95D5"
+    },
+    {
+      "name": "devanagari",
+      "path": "src/fonts/vocabulary-devanagari.woff2",
+      "source": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSerifDevanagari/NotoSerifDevanagari-Regular.ttf",
+      "sourceSha256": "7d4e2b1a7712840218a2726d598490647959ed1104934f3d30a72e77b7c51dad",
+      "copyright": "Copyright 2019 Google Inc. All Rights Reserved.",
+      "bytes": 20164,
+      "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1",
+      "codepoints": [
+        2309,
+        2325,
+        2331,
+        2335,
+        2337,
+        2339,
+        2340,
+        2342,
+        2343,
+        2346,
+        2350,
+        2351,
+        2352,
+        2357,
+        2359,
+        2360,
+        2361,
+        2366,
+        2367,
+        2370,
+        2375,
+        2379,
+        2381
+      ],
+      "range": "U+0905,U+0915,U+091B,U+091F,U+0921,U+0923-0924,U+0926-0927,U+092A,U+092E-0930,U+0935,U+0937-0939,U+093E-093F,U+0942,U+0947,U+094B,U+094D"
+    },
+    {
+      "name": "old-persian",
+      "path": "src/fonts/vocabulary-old-persian.woff2",
+      "source": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansOldPersian/NotoSansOldPersian-Regular.ttf",
+      "sourceSha256": "d7fd6043405eed81e3238a2c42469562d57e2b384c071e491d8750cb5cad6438",
+      "copyright": "Copyright 2017 Google Inc. All Rights Reserved.",
+      "bytes": 1784,
+      "sha256": "6a2b4b985273c74a62f32e4d94cd4e3af20f9572b16671176b203aba4f6c8d3e",
+      "codepoints": [
+        66464,
+        66466,
+        66476,
+        66477,
+        66481,
+        66484,
+        66489,
+        66492,
+        66495
+      ],
+      "range": "U+103A0,U+103A2,U+103AC-103AD,U+103B1,U+103B4,U+103B9,U+103BC,U+103BF"
+    },
+    {
+      "name": "math",
+      "path": "src/fonts/vocabulary-math.woff2",
+      "source": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSansMath/NotoSansMath-Regular.ttf",
+      "sourceSha256": "80b61fd613d3519197e64fff6f7e71fdc7f3e6526440ea4115b554ef7fd59af7",
+      "copyright": "Copyright 2018 Google LLC. All Rights Reserved.",
+      "bytes": 2800,
+      "sha256": "cbc02128c87e63009a2288490bf842d489f339ad40990ef608b1ea945d15fb93",
+      "codepoints": [
+        10216,
+        10217
+      ],
+      "range": "U+27E8-27E9"
+    },
+    {
+      "name": "latin-extra",
+      "path": "src/fonts/vocabulary-latin-extra.woff2",
+      "source": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSerif/NotoSerif-Regular.ttf",
+      "sourceSha256": "c8f669ceb2c9c60ccf55198b305e08a997ffca79a38cc7eeb551e643cbe66505",
+      "copyright": "Copyright 2015-2021 Google LLC. All Rights Reserved.",
+      "bytes": 3560,
+      "sha256": "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
+      "codepoints": [
+        8324,
+        8326,
+        8537,
+        42787
+      ],
+      "range": "U+2084,U+2086,U+2159,U+A723"
+    }
+  ],
+  "allCurrentVocabularyGlyphsCovered": true,
+  "subsetBytes": 38888,
+  "licenseSha256": "010df7c205260119ed1725777402451ca9adda45f4962202bbc95319033245d8"
+}

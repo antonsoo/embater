@@ -23,6 +23,29 @@ measurements of real temples.
 [World](https://antonsoo.github.io/embater/world.html) ·
 [Drill](https://antonsoo.github.io/embater/drill.html)
 
+## Find a column's eye
+
+[Study the Ionic eye](https://antonsoo.github.io/embater/drill.html#deck=ionic&lang=la&mode=study&part=oculus):
+select **Local detail**, enlarge it, and read *centrum oculi*, “the centre of the
+eye”. The Latin ending connects the stored name *oculus* to its actual phrase.
+The crop uses the same drawing geometry; it adds no carving or historical detail.
+Whole plate, zoom, pan and recenter never change practice scores.
+
+Four phrase notes connect names to inflected forms. Open their complete printed
+pages, fit or enlarge them, and inspect Krohn's apparatus. The same reader is
+available beside cited passages on Orders and World. Five incomplete citations
+now include their continuation pages; the abacus note distinguishes the Ionic
+rule above 25 feet from the rule at and below that height.
+
+**Save illustrated study** keeps both drawings, word notes, the cited source
+pages, fonts and licenses in one script-free HTML file. Its vocabulary CSV link
+works offline. Additional licensed font subsets retain the lesson's Chinese,
+Devanagari, Old Persian and Egyptological characters without relying on installed
+fonts. Practice records remain separate; an unreadable record is preserved until
+an explicit valid restore, with a visible route to save the current visit.
+
+[Audit, source identities, limitations and operated browser evidence](docs/vocabulary-audit.md).
+
 ## A half changes the doorway
 
 ![Two Ionic doorways under a 28-foot ceiling, with a movable blue trial and the source’s two opening-height readings](docs/assets/doorways-desktop.png)

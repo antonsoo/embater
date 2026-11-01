@@ -1,0 +1,68 @@
+[
+  {
+    "deck": "egypt",
+    "language": "egy",
+    "part": "papyriform-open",
+    "fonts": [
+      {
+        "familyName": "Embater Latin Extra",
+        "postScriptName": "EmbaterLatinextra",
+        "isCustomFont": true,
+        "glyphCount": 1
+      },
+      {
+        "familyName": "EB Garamond",
+        "postScriptName": "EBGaramond-Regular",
+        "isCustomFont": true,
+        "glyphCount": 2
+      }
+    ],
+    "htmlBytes": 357025,
+    "automaticHttpRequests": []
+  },
+  {
+    "deck": "persia",
+    "language": "peo",
+    "part": "stuna",
+    "fonts": [
+      {
+        "familyName": "Embater Old Persian",
+        "postScriptName": "EmbaterOldpersian",
+        "isCustomFont": true,
+        "glyphCount": 5
+      }
+    ],
+    "htmlBytes": 352365,
+    "automaticHttpRequests": []
+  },
+  {
+    "deck": "india",
+    "language": "sa",
+    "part": "pradakshina",
+    "fonts": [
+      {
+        "familyName": "Embater Devanagari",
+        "postScriptName": "EmbaterDevanagari",
+        "isCustomFont": true,
+        "glyphCount": 5
+      }
+    ],
+    "htmlBytes": 362198,
+    "automaticHttpRequests": []
+  },
+  {
+    "deck": "china",
+    "language": "zh",
+    "part": "dougong",
+    "fonts": [
+      {
+        "familyName": "Embater Cjk",
+        "postScriptName": "EmbaterCjk",
+        "isCustomFont": true,
+        "glyphCount": 2
+      }
+    ],
+    "htmlBytes": 352393,
+    "automaticHttpRequests": []
+  }
+]
