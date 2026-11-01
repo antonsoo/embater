@@ -7,6 +7,8 @@ import { chromium, firefox } from "playwright";
 
 const build = resolve(process.argv[2] ?? "dist");
 const output = resolve(process.argv[3] ?? "/tmp/embater-source-priority");
+const tickMs = Number(process.env.EMBATER_SOURCE_TICK_MS ?? 8);
+assert(Number.isFinite(tickMs) && tickMs >= 1);
 const requireReady = process.env.REQUIRE_SOURCE_READY === "1";
 await mkdir(output, { recursive: true });
 const types = {
@@ -47,7 +49,7 @@ async function site(failInstall = false) {
       } else cursor++;
       break;
     }
-  }, 8);
+  }, tickMs);
   const server = createServer(async (req, res) => {
     try {
       const path =
@@ -186,7 +188,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         });
         await writeFile(
           resolve(output, "review.json"),
-          `${JSON.stringify({ build, networkModel: "JPEG bodies share one 4 KiB chunk every 8 ms, nominally 500 KiB/s; headers and other resources unthrottled. Registration is gated until the initial plate is ready.", rows }, null, 2)}\n`,
+          `${JSON.stringify({ build, networkModel: `JPEG bodies share one 4096-byte chunk every ${tickMs} ms, nominally ${4096000 / tickMs} bytes/s; headers and other resources unthrottled. Registration is gated until the initial plate is ready.`, rows }, null, 2)}\n`,
         );
         console.log(
           engine,

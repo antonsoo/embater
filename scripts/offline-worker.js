@@ -20,6 +20,40 @@ async function pool(items, action, concurrency = 3) {
   return results;
 }
 
+async function reviewedResponse(path, response) {
+  if (!response?.ok) return false;
+  try {
+    const bytes = await response.clone().arrayBuffer();
+    const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+    return `sha256-${btoa(String.fromCharCode(...digest))}` === INTEGRITY[path];
+  } catch {
+    return false;
+  }
+}
+
+async function installEdition() {
+  const target = await caches.open(CACHE);
+  const names = (await caches.keys()).filter((name) => name.startsWith(PREFIX) && name !== CACHE);
+  const sources = [target, ...(await Promise.all(names.map((name) => caches.open(name))))];
+  await pool(
+    FILES,
+    async (path) => {
+      const request = new Request(path, { cache: "reload", integrity: INTEGRITY[path] });
+      // Interrupted installs and preceding editions can supply identical retained
+      // pages. A matching URL is not proof: check the new build's byte identity.
+      for (const source of sources) {
+        const saved = await source.match(path);
+        if (await reviewedResponse(path, saved)) {
+          if (source !== target) await target.put(request, saved);
+          return;
+        }
+      }
+      await target.add(request);
+    },
+    1,
+  );
+}
+
 async function state() {
   if (inspection?.revision === revision) return inspection.promise;
   const snapshot = revision;
@@ -119,17 +153,9 @@ function repair() {
 }
 
 self.addEventListener("install", (event) => {
-  const requests = FILES.map(
-    (url) => new Request(url, { cache: "reload", integrity: INTEGRITY[url] }),
-  );
-  event.waitUntil(
-    caches
-      .open(CACHE)
-      // Limit background traffic so a first-visit source read can use a connection.
-      // A partial cache is never activated: every request must finish first.
-      .then((cache) => pool(requests, (request) => cache.add(request), 3))
-      .then(() => self.skipWaiting()),
-  );
+  // One background transfer leaves foreground source reading usable on a
+  // shared narrow link. Activation still requires the complete edition.
+  event.waitUntil(installEdition().then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", (event) => {
   event.waitUntil(
