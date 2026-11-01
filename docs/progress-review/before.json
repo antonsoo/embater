@@ -1,0 +1,40 @@
+[
+  {
+    "engine": "chromium",
+    "first": {
+      "schema": "embater-vocabulary",
+      "version": 1,
+      "boxes": {
+        "doric/la/find/shaft": 2
+      }
+    },
+    "afterStaleAnswer": {
+      "schema": "embater-vocabulary",
+      "version": 1,
+      "boxes": {
+        "ionic/la/find/plinth": 2
+      }
+    },
+    "staleTabWarned": false,
+    "firstAnswerLost": true
+  },
+  {
+    "engine": "firefox",
+    "first": {
+      "schema": "embater-vocabulary",
+      "version": 1,
+      "boxes": {
+        "doric/la/find/shaft": 2
+      }
+    },
+    "afterStaleAnswer": {
+      "schema": "embater-vocabulary",
+      "version": 1,
+      "boxes": {
+        "ionic/la/find/plinth": 2
+      }
+    },
+    "staleTabWarned": false,
+    "firstAnswerLost": true
+  }
+]

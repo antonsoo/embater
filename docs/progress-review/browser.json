@@ -1,0 +1,147 @@
+{
+  "base": "http://127.0.0.1:4492/embater/",
+  "rows": [
+    {
+      "engine": "chromium",
+      "case": "stale-tab",
+      "browserRecordPreserved": true,
+      "visitAnswerInNativeBackup": true,
+      "warningVisible": true
+    },
+    {
+      "engine": "chromium",
+      "case": "missed-event",
+      "browserRecordPreserved": true,
+      "visitAnswerInNativeBackup": true,
+      "warningVisible": true
+    },
+    {
+      "engine": "chromium",
+      "case": "simultaneous-answers",
+      "twoRequestsQueued": true,
+      "firstRecordPreserved": true,
+      "staleVisitWarned": true,
+      "bothNativeBackupsRetainAnswers": true,
+      "saved": {
+        "doric/la/find/shaft": 2
+      }
+    },
+    {
+      "engine": "chromium",
+      "case": "queued-visit-answers",
+      "threeSnapshotsSerialized": true,
+      "allAnswersRetained": true
+    },
+    {
+      "engine": "chromium",
+      "case": "restore-supersedes-queued-answer",
+      "olderSnapshotDiscarded": true,
+      "answerDuringRestoreRetained": true
+    },
+    {
+      "engine": "chromium",
+      "case": "acquisition-deadline",
+      "noPrematureWrite": true,
+      "nativeBackupWorks": true,
+      "laterAnswerSavesAllVisitAnswers": true
+    },
+    {
+      "engine": "chromium",
+      "case": "coordination-unavailable",
+      "existingRecordUntouched": true,
+      "answersAndRestoreWorkForVisit": true,
+      "nativeBackupWorks": true
+    },
+    {
+      "engine": "chromium",
+      "case": "late-native-event",
+      "explicitRestorePreserved": true,
+      "oldEventDoesNotInvalidateCurrentRecord": true,
+      "laterAnswerPersists": true
+    },
+    {
+      "engine": "chromium",
+      "case": "answer-during-stale-restore",
+      "explicitReplacementWorks": true,
+      "answerWhileReplacementWaitsRetained": true
+    },
+    {
+      "engine": "chromium",
+      "case": "write-failure-after-read",
+      "previousRecordPreserved": true,
+      "nativeBackupRetainsAnswer": true,
+      "laterWriteIncludesAllVisitAnswers": true
+    },
+    {
+      "engine": "firefox",
+      "case": "stale-tab",
+      "browserRecordPreserved": true,
+      "visitAnswerInNativeBackup": true,
+      "warningVisible": true
+    },
+    {
+      "engine": "firefox",
+      "case": "missed-event",
+      "browserRecordPreserved": true,
+      "visitAnswerInNativeBackup": true,
+      "warningVisible": true
+    },
+    {
+      "engine": "firefox",
+      "case": "simultaneous-answers",
+      "twoRequestsQueued": true,
+      "firstRecordPreserved": true,
+      "staleVisitWarned": true,
+      "bothNativeBackupsRetainAnswers": true,
+      "saved": {
+        "ionic/la/find/plinth": 2
+      }
+    },
+    {
+      "engine": "firefox",
+      "case": "queued-visit-answers",
+      "threeSnapshotsSerialized": true,
+      "allAnswersRetained": true
+    },
+    {
+      "engine": "firefox",
+      "case": "restore-supersedes-queued-answer",
+      "olderSnapshotDiscarded": true,
+      "answerDuringRestoreRetained": true
+    },
+    {
+      "engine": "firefox",
+      "case": "acquisition-deadline",
+      "noPrematureWrite": true,
+      "nativeBackupWorks": true,
+      "laterAnswerSavesAllVisitAnswers": true
+    },
+    {
+      "engine": "firefox",
+      "case": "coordination-unavailable",
+      "existingRecordUntouched": true,
+      "answersAndRestoreWorkForVisit": true,
+      "nativeBackupWorks": true
+    },
+    {
+      "engine": "firefox",
+      "case": "late-native-event",
+      "explicitRestorePreserved": true,
+      "oldEventDoesNotInvalidateCurrentRecord": true,
+      "laterAnswerPersists": true
+    },
+    {
+      "engine": "firefox",
+      "case": "answer-during-stale-restore",
+      "explicitReplacementWorks": true,
+      "answerWhileReplacementWaitsRetained": true
+    },
+    {
+      "engine": "firefox",
+      "case": "write-failure-after-read",
+      "previousRecordPreserved": true,
+      "nativeBackupRetainsAnswer": true,
+      "laterWriteIncludesAllVisitAnswers": true
+    }
+  ]
+}

@@ -12,7 +12,8 @@
       "!**/*.md",
       "!docs/review",
       "!docs/doorway-review",
-      "!docs/vocabulary-audit"
+      "!docs/vocabulary-audit",
+      "!docs/progress-review"
     ]
   },
   "formatter": {
