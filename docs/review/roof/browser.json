@@ -1,0 +1,114 @@
+[
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "source": {
+      "hash": "e0d002b98c95e98774b8e4051e47b0de235a161aced5928c55e839cba6ca13bd",
+      "width": 1350,
+      "height": 2100
+    },
+    "downloads": {
+      "svg": {
+        "filename": "chromium-1440.svg",
+        "bytes": 16760,
+        "sha256": "cb67846b3b0f36417c833ffc734c31fb663c440a8b82a6a76f762bcd51b19126"
+      },
+      "csv": {
+        "filename": "chromium-1440.csv",
+        "bytes": 648,
+        "sha256": "6fb74d4d2fc36ee4d386008d89b22575b503118dd8fdaa8fc1222ee6c2a0198d"
+      }
+    },
+    "keyboard": true,
+    "sharedLink": true,
+    "clipboardStatus": "Copy the current address from your browser to share this roof.",
+    "middleTargetLinkAndDownloads": true,
+    "offlineSourceAndDownload": true,
+    "seriousAccessibilityViolations": 0,
+    "pageErrors": []
+  },
+  {
+    "engine": "chromium",
+    "width": 375,
+    "source": {
+      "hash": "e0d002b98c95e98774b8e4051e47b0de235a161aced5928c55e839cba6ca13bd",
+      "width": 1350,
+      "height": 2100
+    },
+    "downloads": {
+      "svg": {
+        "filename": "chromium-375.svg",
+        "bytes": 16760,
+        "sha256": "cb67846b3b0f36417c833ffc734c31fb663c440a8b82a6a76f762bcd51b19126"
+      },
+      "csv": {
+        "filename": "chromium-375.csv",
+        "bytes": 648,
+        "sha256": "6fb74d4d2fc36ee4d386008d89b22575b503118dd8fdaa8fc1222ee6c2a0198d"
+      }
+    },
+    "keyboard": true,
+    "sharedLink": true,
+    "clipboardStatus": "Copy the current address from your browser to share this roof.",
+    "middleTargetLinkAndDownloads": true,
+    "offlineSourceAndDownload": true,
+    "seriousAccessibilityViolations": 0,
+    "pageErrors": []
+  },
+  {
+    "engine": "firefox",
+    "width": 1440,
+    "source": {
+      "hash": "e0d002b98c95e98774b8e4051e47b0de235a161aced5928c55e839cba6ca13bd",
+      "width": 1350,
+      "height": 2100
+    },
+    "downloads": {
+      "svg": {
+        "filename": "firefox-1440.svg",
+        "bytes": 16760,
+        "sha256": "cb67846b3b0f36417c833ffc734c31fb663c440a8b82a6a76f762bcd51b19126"
+      },
+      "csv": {
+        "filename": "firefox-1440.csv",
+        "bytes": 648,
+        "sha256": "6fb74d4d2fc36ee4d386008d89b22575b503118dd8fdaa8fc1222ee6c2a0198d"
+      }
+    },
+    "keyboard": true,
+    "sharedLink": true,
+    "clipboardStatus": "Roof link copied, including the blue trial and selected part.",
+    "middleTargetLinkAndDownloads": true,
+    "offlineSourceAndDownload": true,
+    "seriousAccessibilityViolations": 0,
+    "pageErrors": []
+  },
+  {
+    "engine": "firefox",
+    "width": 375,
+    "source": {
+      "hash": "e0d002b98c95e98774b8e4051e47b0de235a161aced5928c55e839cba6ca13bd",
+      "width": 1350,
+      "height": 2100
+    },
+    "downloads": {
+      "svg": {
+        "filename": "firefox-375.svg",
+        "bytes": 16760,
+        "sha256": "cb67846b3b0f36417c833ffc734c31fb663c440a8b82a6a76f762bcd51b19126"
+      },
+      "csv": {
+        "filename": "firefox-375.csv",
+        "bytes": 648,
+        "sha256": "6fb74d4d2fc36ee4d386008d89b22575b503118dd8fdaa8fc1222ee6c2a0198d"
+      }
+    },
+    "keyboard": true,
+    "sharedLink": true,
+    "clipboardStatus": "Roof link copied, including the blue trial and selected part.",
+    "middleTargetLinkAndDownloads": true,
+    "offlineSourceAndDownload": true,
+    "seriousAccessibilityViolations": 0,
+    "pageErrors": []
+  }
+]

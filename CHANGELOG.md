@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Operate Vitruvius's roof-height language in Orders: compare corner and middle
+  envelopes, distinguish h/8 from h + h/8, enlarge by keyboard and save SVG/CSV.
+- Correct total palmette height, plinth mounting, actual corona extremities and
+  saved SVG dimension strokes. Keep invented ornament and mounting explicit.
+
+
 - Bound background edition downloads so a cold foreground source read retains a
   connection; report healthy long installs as saving, while withholding readiness
   until the complete edition is checked.

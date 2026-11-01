@@ -23,6 +23,24 @@ measurements of real temples.
 [World](https://antonsoo.github.io/embater/world.html) ·
 [Drill](https://antonsoo.github.io/embater/drill.html)
 
+## How tall is the ornament?
+
+In Orders, choose **Roof proportions**. Move a blue envelope over a corner or the
+middle ornament, then read the Latin: *altiora octava parte* means higher **by**
+an eighth, giving h + h/8. Try a middle ornament only h/8 tall and compare it with
+the prescribed 9h/8. Change the column count, spacing or scale and measure again.
+
+The corrected shared roof geometry now honors the ornaments' total drawn
+heights and supports their plinths on the slope. Enlarge the roof by keyboard,
+inspect complete printed page 74, and keep the current SVG or full-precision CSV.
+Palmettes and mounting details remain explicit modern choices.
+
+This revision is local. After the quickstart, open
+`http://127.0.0.1:4412/embater/#order=doric&columns=6&view=roof`.
+[Reading, geometry and operated-browser review](docs/roof-reading.md).
+
+![An Ionic roof with the movable blue height envelope and Latin proportion reading](docs/assets/roof-desktop.png)
+
 ## Find a column's eye
 
 [Study the Ionic eye](https://antonsoo.github.io/embater/drill.html#deck=ionic&lang=la&mode=study&part=oculus):
@@ -267,7 +285,7 @@ flowchart LR
 - **No framework.** Vite, TypeScript and hand-written SVG. Six pages, self-hosted fonts (EB Garamond, GFS Didot), complete
   offline editions and no tracking.
 
-Tests (`npm test`, 44 of them) check the claims above, not just that things render:
+Tests (`npm test`) check the claims above, not just that things render:
 
 - the reachable front widths;
 - square metopes and the half-metopes;
