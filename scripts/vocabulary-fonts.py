@@ -39,7 +39,7 @@ license_bytes = a.license.read_bytes()
 if sha(license_bytes) != '6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2':
     raise SystemExit('The supplied SIL OFL differs from the identified source.')
 text = subprocess.check_output(['node','--import','tsx','--input-type=module','-e',
-    'import{GREEK_TERMS,PLAN_TERMS}from"./src/content/terms.ts";import{PLATES}from"./src/content/world.ts";import{RULES}from"./src/core/rules.ts";import{VOCABULARY_CONTEXTS}from"./src/content/vocabulary-contexts.ts";process.stdout.write(JSON.stringify([...GREEK_TERMS,...PLAN_TERMS,...PLATES,...RULES.values(),VOCABULARY_CONTEXTS]));'], cwd=ROOT).decode()
+    'import{GREEK_TERMS,PLAN_TERMS}from"./src/content/terms.ts";import{PLATES}from"./src/content/world.ts";import{RULES}from"./src/core/rules.ts";import{VOCABULARY_CONTEXTS}from"./src/content/vocabulary-contexts.ts";import{fmtModules}from"./src/core/common.ts";process.stdout.write(JSON.stringify([...GREEK_TERMS,...PLAN_TERMS,...PLATES,...RULES.values(),VOCABULARY_CONTEXTS,...Array.from({length:25},(_,index)=>fmtModules(index/24))]));'], cwd=ROOT).decode()
 def unicode_ranges(codepoints):
     ranges=[]
     for n in sorted(codepoints):
@@ -110,7 +110,7 @@ if missing:
 notice = ('Embater vocabulary font subsets\n\n'+'\n'.join(licenses)+'\n'+license_bytes.decode()).encode()
 outputs = {
     ROOT/'public/fonts/VOCABULARY-OFL.txt':notice,
-    ROOT/'public/fonts/vocabulary-manifest.json':(json.dumps({'fonts':plates,'allCurrentVocabularyGlyphsCovered':True},ensure_ascii=False,indent=2)+'\n').encode(),
+    ROOT/'public/fonts/vocabulary-manifest.json':(json.dumps({'fonts':plates,'allCurrentVocabularyGlyphsCovered':True,'allDrawingFractionGlyphsCovered':True},ensure_ascii=False,indent=2)+'\n').encode(),
     ROOT/'src/fonts/vocabulary.css':('/* Small subsets for the current source-language vocabulary; see public/fonts/VOCABULARY-OFL.txt. */\n'+'\n'.join(base_styles+styles)+'\n').encode(),
 }
 imports = '\n'.join(f'import font{i} from "../fonts/vocabulary-{item["name"]}.woff2?url";' for i,item in sorted(enumerate(plates),key=lambda item:item[1]['name']))
@@ -133,4 +133,4 @@ for dest,result in outputs.items():
         dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(result)
     elif dest.read_bytes() != result:
         raise SystemExit(f'{dest.name}: retained provenance differs from the reproduced output.')
-print(json.dumps({'fonts':plates,'allCurrentVocabularyGlyphsCovered':True,'subsetBytes':sum(x['bytes'] for x in plates),'licenseSha256':sha(notice)},ensure_ascii=False,indent=2))
+print(json.dumps({'fonts':plates,'allCurrentVocabularyGlyphsCovered':True,'allDrawingFractionGlyphsCovered':True,'subsetBytes':sum(x['bytes'] for x in plates),'licenseSha256':sha(notice)},ensure_ascii=False,indent=2))

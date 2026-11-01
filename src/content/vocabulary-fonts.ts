@@ -41,8 +41,8 @@ export const VOCABULARY_FONTS = [
   },
   {
     url: font4,
-    hash: "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
-    range: "U+2084,U+2086,U+2159,U+A723",
+    hash: "6b57b71e1fcf495d212d082991d4680863e68f14b20a21eff72fb71aaad5e36e",
+    range: "U+2084,U+2086,U+2153-2154,U+2159-215E,U+A723",
   },
 ] as const;
 export const VOCABULARY_FONT_LICENSE_HASH =
