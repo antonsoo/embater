@@ -168,11 +168,18 @@ for (const [engine, launch] of [
       await page
         .locator(".plate-wrap")
         .screenshot({ path: resolve(output, `${engine}-${width}-desk.png`) });
-      await page.evaluate(() => (document.documentElement.dataset.theme = "dark"));
+      await page.locator(".theme").click();
+      await page.waitForFunction(
+        () => getComputedStyle(document.querySelector("#plate .solid")).fill === "rgb(27, 33, 40)",
+      );
       await page
         .locator(".plate-wrap")
         .screenshot({ path: resolve(output, `${engine}-${width}-dark.png`) });
-      await page.evaluate(() => (document.documentElement.dataset.theme = "light"));
+      await page.locator(".theme").click();
+      await page.waitForFunction(
+        () =>
+          getComputedStyle(document.querySelector("#plate .solid")).fill === "rgb(248, 249, 245)",
+      );
       await page
         .locator("#offline-status")
         .filter({ hasText: "Ready offline:" })

@@ -1,6 +1,7 @@
 import { TERMS, term } from "../content/terms";
 import { fmtModules, type Pediment, STEPS } from "../core/common";
 import { DORIC_LEVELS, type DoricSpacing, doricElevation } from "../core/doric";
+import { shaftSpan } from "../core/geometry";
 import {
   type BaseKind,
   CLEAR,
@@ -9,108 +10,30 @@ import {
   ionicCapitalUnits,
   ionicElevation,
 } from "../core/ionic";
+import {
+  FEET_RANGE,
+  feetKey,
+  type Order,
+  type OrderState,
+  ordersHash,
+  ordersNotice,
+  readOrders,
+} from "../core/orders-state";
 import { RULES } from "../core/rules";
 import { tuscanElevation } from "../core/tuscan";
 import type { Bounds, Elevation } from "../core/types";
 import { renderElevation } from "../draw/render";
 import { roofCsv, roofDrawing, roofSvg } from "../draw/roof";
+import { roofStudy } from "../roof-study";
 import { termCard } from "./card";
 import { $, esc } from "./dom";
 import { connectSourceCards, VocabularySource } from "./vocabulary-source";
 
-type Order = "doric" | "ionic" | "corinthian" | "tuscan";
-
-interface State {
-  order: Order;
-  columns: 4 | 6 | 8;
-  doricSpacing: DoricSpacing;
-  ionicSpacing: IonicSpacing;
-  base: BaseKind;
-  carved: boolean;
-  /** Doric module, Ionic/Corinthian lower diameter, or Tuscan temple width, in Roman feet. */
-  feet: Record<"doric" | "ionic" | "tuscan", number>;
-  view: "front" | "detail" | "roof";
-  trial: number;
-  trialTarget: "corner" | "middle";
-  dims: boolean;
-  part: string | null;
+function readHash(): OrderState {
+  return readOrders(location.hash);
 }
-
-const DEFAULTS: State = {
-  order: "doric",
-  columns: 6,
-  doricSpacing: "diastyle",
-  ionicSpacing: "eustyle",
-  base: "attic",
-  carved: false,
-  feet: { doric: 1.5, ionic: 2.5, tuscan: 60 },
-  view: "front",
-  trial: 0.5,
-  trialTarget: "corner",
-  dims: true,
-  part: null,
-};
-
-const FEET_RANGE = {
-  doric: { min: 0.5, max: 4, step: 0.25, label: "One module" },
-  ionic: { min: 1, max: 6, step: 0.25, label: "Lower diameter" },
-  tuscan: { min: 20, max: 100, step: 5, label: "Temple width" },
-} as const;
-
-function feetKey(order: Order): "doric" | "ionic" | "tuscan" {
-  return order === "corinthian" ? "ionic" : order;
-}
-
-function readHash(): State {
-  const s: State = structuredClone(DEFAULTS);
-  const params = new URLSearchParams(location.hash.slice(1));
-  const order = params.get("order");
-  if (order === "doric" || order === "ionic" || order === "corinthian" || order === "tuscan")
-    s.order = order;
-  const cols = Number(params.get("columns"));
-  if (cols === 4 || cols === 6 || cols === 8) s.columns = cols;
-  const spacing = params.get("spacing");
-  if (spacing === "diastyle" || spacing === "systyle") s.doricSpacing = spacing;
-  if (spacing && Object.hasOwn(CLEAR, spacing)) s.ionicSpacing = spacing as IonicSpacing;
-  const base = params.get("base");
-  if (base === "attic" || base === "ionic") s.base = base;
-  s.carved = params.get("frieze") === "carved";
-  const feet = Number(params.get("feet"));
-  const key = feetKey(s.order);
-  const range = FEET_RANGE[key];
-  if (feet >= range.min && feet <= range.max) s.feet[key] = feet;
-  const view = params.get("view");
-  s.view =
-    view === "roof" && s.order !== "tuscan" ? "roof" : view === "detail" ? "detail" : "front";
-  const trial = Number(params.get("trial"));
-  if (params.has("trial") && Number.isFinite(trial) && trial >= 0.125 && trial <= 1.5)
-    s.trial = Math.round(trial * 40) / 40;
-  s.trialTarget = params.get("target") === "middle" ? "middle" : "corner";
-  s.dims = params.get("dims") !== "off";
-  const part = params.get("part");
-  s.part = part && TERMS.has(part) ? part : null;
-  return s;
-}
-
-function writeHash(s: State): void {
-  const p = new URLSearchParams();
-  p.set("order", s.order);
-  if (s.order !== "tuscan") p.set("columns", String(s.columns));
-  if (s.order === "doric") p.set("spacing", s.doricSpacing);
-  if (s.order === "ionic" || s.order === "corinthian") {
-    p.set("spacing", s.ionicSpacing);
-    p.set("base", s.base);
-    if (s.carved) p.set("frieze", "carved");
-  }
-  p.set("feet", String(s.feet[feetKey(s.order)]));
-  if (s.view !== "front") p.set("view", s.view);
-  if (s.view === "roof") {
-    p.set("trial", String(s.trial));
-    if (s.trialTarget === "middle") p.set("target", "middle");
-  }
-  if (!s.dims) p.set("dims", "off");
-  if (s.part) p.set("part", s.part);
-  history.replaceState(null, "", `#${p.toString()}`);
+function writeHash(state: OrderState): void {
+  history.replaceState(null, "", ordersHash(state));
 }
 
 interface Built {
@@ -133,13 +56,14 @@ function readingTable(ruleId: string): string {
 </table><p class="reading-note">${esc(r.reading.note)}</p>`;
 }
 
-function build(s: State): Built {
+function build(s: OrderState): Built {
   if (s.order === "doric") {
     const e = doricElevation({
       columns: s.columns,
       spacing: s.doricSpacing,
       moduleFeet: s.feet.doric,
     });
+    const physical = shaftSpan(e.pieces);
     const spans = e.layout.spans.map(fmtModules).join(" + ");
     const rule = s.doricSpacing === "diastyle" ? "doric-module" : "doric-systyle";
     const per = s.doricSpacing === "diastyle" ? "two triglyphs" : "one triglyph";
@@ -147,15 +71,24 @@ function build(s: State): Built {
     const derivation = `<h2>Why ${fmtModules(e.layout.width)} modules?</h2>
 <p>A triglyph is one module wide and each metope a module and a half, so triglyph centres repeat every <b>2½</b> modules. Put a triglyph over every column, ${per} between columns, and one more over the wider middle span. The column centres then sit</p>
 <p class="sum">${spans} = <b>${fmtModules(e.layout.width - 2)}</b></p>
-<p>modules apart from end to end. The front is measured at the column feet, so add half a column, one module, at each end: <b>${fmtModules(e.layout.width)}</b>.</p>
+<p>modules apart from end to end. For the nominal span, add half an ordinary column, one module, at each end: <b>${fmtModules(e.layout.width)}</b>.</p>
+<p>The corner shafts are then made a fiftieth thicker (III.3.11), while this model keeps their axes fixed. Their visible foot span is ${fmt(physical.width)} modules. The nominal rhythm and the enlarged shaft outlines are separate measurements; the passages do not uniquely settle how the two instructions should be joined.</p>
+<p><button type="button" class="read-source" data-source-rule="corner-columns">Read the corner addition on printed page 67</button></p>
 ${vitruvianTotal ? readingTable(rule) : `<p class="reading-note">Vitruvius gives totals only for four and six columns. Eight columns, as on the Parthenon, follow from the same rhythm.</p>`}`;
     const facts: [string, string][] = [
       [
-        "Front",
+        "Nominal front",
         `${fmtModules(e.layout.width)} modules = ${fmt(e.layout.width * s.feet.doric)} Roman feet`,
       ],
-      ["Column", `14 modules = ${fmt(e.taper.columnFeet)} ft, 7 diameters`],
-      ["Top of shaft", `${e.taper.parts[0]}/${e.taper.parts[1]} of the bottom (III.3.12)`],
+      [
+        "Visible shaft span",
+        `${fmt(physical.width)} modules = ${fmt(physical.width * s.feet.doric)} ft, including the corner addition`,
+      ],
+      ["Column", `14 modules = ${fmt(e.taper.columnFeet)} ft, 7 ordinary diameters`],
+      [
+        "Top of shaft",
+        `${e.taper.parts[0]}/${e.taper.parts[1]} of the bottom${e.taper.columnFeet > 50 ? "; modern stepped continuation above 50 feet" : ""} (III.3.12)`,
+      ],
       ["Tympanum", `${fmtModules(e.tympanum)} modules; roof pitch ${e.pitchDegrees.toFixed(1)}°`],
       ["Steps", `${STEPS}, each 9½ inches = ${fmtModules(9.5 / 12 / s.feet.doric)} module`],
     ];
@@ -198,6 +131,7 @@ ${vitruvianTotal ? readingTable(rule) : `<p class="reading-note">Vitruvius gives
     moduleFeet: s.feet.ionic,
     sculptedFrieze: s.carved,
   });
+  const physical = shaftSpan(e.pieces);
   const clear = CLEAR[s.ionicSpacing];
   const middle = s.ionicSpacing === "eustyle" ? 3 : clear;
   const n = s.columns;
@@ -207,25 +141,37 @@ ${vitruvianTotal ? readingTable(rule) : `<p class="reading-note">Vitruvius gives
       : `${n} × 1 + ${n - 1} × ${fmtModules(clear)}`;
   const vitruvian = s.ionicSpacing === "eustyle";
   const derivation = `<h2>Why ${fmtModules(e.front.width)} modules?</h2>
-<p>For the Ionic and Corinthian, Vitruvius's module is the column's lower diameter. In a <i>${s.ionicSpacing}</i> front each intercolumniation is ${fmtModules(clear)} diameters wide${middle !== clear ? ", the middle one 3" : ""}. Count the columns and the spaces between them:</p>
+<p>For the Ionic and Corinthian, Vitruvius's module is the column's lower diameter. Before the corner addition, a nominal <i>${s.ionicSpacing}</i> front gives each intercolumniation ${fmtModules(clear)} diameters wide${middle !== clear ? ", the middle one 3" : ""}. Count the columns and the spaces between them:</p>
 <p class="sum">${parts} = <b>${fmtModules(e.front.width)}</b></p>
 ${vitruvian ? readingTable("eustyle") : ""}
-<p>The column is ${fmtModules(IONIC_HEIGHT[s.ionicSpacing])} diameters tall${s.order === "corinthian" ? ", plus ⅔ for the Corinthian capital, which is a whole diameter high where the Ionic is a third" : ""}. Closer spacing means more slender columns: Vitruvius says wide gaps let the air 'eat' a column's apparent thickness, so they need stouter shafts.</p>`;
+<p>The ordinary column is ${fmtModules(IONIC_HEIGHT[s.ionicSpacing])} diameters tall${s.order === "corinthian" ? ", plus ⅔ for the Corinthian capital, which is a whole diameter high where the Ionic is a third" : ""}. Closer spacing means more slender columns: Vitruvius says wide gaps let the air 'eat' a column's apparent thickness, so they need stouter shafts.</p>
+<p>The corner shaft’s diameter is 1.02 times the ordinary one (III.3.11). This model retains the nominal axes, so the visible shaft span is ${fmt(physical.width)} ordinary diameters. Bases and capitals use each column’s own diameter. Their tops stay level and the shaft length accommodates those larger members; that joining convention is modern.</p>
+<p><button type="button" class="read-source" data-source-rule="corner-columns">Read the corner addition on printed page 67</button> <button type="button" class="read-source" data-source-rule="ionic-epistyle">Read architrave heights on printed page 72</button></p>`;
   const cap = ionicCapitalUnits(e.taper.columnFeet);
   const facts: [string, string][] = [
     [
-      "Front",
-      `${fmtModules(e.front.width)} diameters = ${fmt(e.front.width * s.feet.ionic)} Roman feet`,
+      "Nominal front",
+      `${fmtModules(e.front.width)} ordinary diameters = ${fmt(e.front.width * s.feet.ionic)} Roman feet`,
     ],
-    ["Column", `${fmtModules(e.height)} diameters = ${fmt(e.taper.columnFeet)} ft`],
-    ["Top of shaft", `${e.taper.parts[0]}/${e.taper.parts[1]} of the bottom (III.3.12)`],
+    [
+      "Visible shaft span",
+      `${fmt(physical.width)} ordinary diameters = ${fmt(physical.width * s.feet.ionic)} ft`,
+    ],
+    ["Column", `${fmtModules(e.height)} ordinary diameters = ${fmt(e.taper.columnFeet)} ft`],
+    [
+      "Top of shaft",
+      `${e.taper.parts[0]}/${e.taper.parts[1]} of the bottom${e.taper.columnFeet > 50 ? "; modern stepped continuation above 50 feet" : ""} (III.3.12)`,
+    ],
     [
       "Architrave",
       `${fmt(e.epistyle.height)} diameter: ${e.epistyle.rule}${e.epistyle.extrapolated ? ", continuing the text's pattern" : ""} (III.5.8)`,
     ],
     ...(s.order === "ionic"
       ? ([
-          ["Abacus", `${cap.abacus > 1.1 ? "1 + 1/9" : "1 + 1/18"} diameters (III.5.5, III.5.7)`],
+          [
+            "Abacus",
+            `${cap.abacus > 1.1 ? "1 + 1/9" : "1 + 1/18"} of each column’s own lower diameter (III.5.5, III.5.7)`,
+          ],
         ] as [string, string][])
       : []),
     ["Tympanum", `${fmt(e.tympanum)} diameters; roof pitch ${e.pitchDegrees.toFixed(1)}°`],
@@ -263,6 +209,7 @@ function segment(name: string, legend: string, options: [string, string][], valu
 
 export function mountOrders(root: HTMLElement): void {
   let s = readHash();
+  let sharedSizeNotice = ordersNotice(location.hash, s);
   let roofEnlarged = false;
   root.innerHTML = `
 <section class="lede">
@@ -289,7 +236,7 @@ export function mountOrders(root: HTMLElement): void {
   <div><div id="roof-measures"></div>
   <blockquote><p lang="la">acroteria angularia tam alta, quantum est tympanum medium, mediana altiora octava parte quam angularia.</p><p>“The corner ornaments as high as the middle of the tympanum; the middle ornaments an eighth higher than the corner ones.”</p><cite>Vitruvius III.5.12, Krohn 1912, p. 74. English is modern.</cite></blockquote>
   <button type="button" data-source-rule="sima-acroteria">Read complete printed page 74</button>
-  <p class="roof-actions"><button type="button" id="roof-svg">Save roof SVG</button> <button type="button" id="roof-csv">Save measurements CSV</button> <button type="button" id="roof-link">Copy roof link</button></p>
+  <p class="roof-actions"><button type="button" id="roof-svg">Save roof SVG</button> <button type="button" id="roof-csv">Save measurements CSV</button> <button type="button" id="roof-study">Save illustrated reading</button> <button type="button" id="roof-cancel" hidden>Cancel reading</button> <button type="button" id="roof-link">Copy roof link</button></p>
   <p id="roof-file-status" role="status"></p></div>
 </section>
   </div>
@@ -310,9 +257,13 @@ export function mountOrders(root: HTMLElement): void {
   connectSourceCards(card, source);
   const roofReading = $("#roof-reading", root);
   connectSourceCards(roofReading, source);
+  connectSourceCards($("#derivation", root), source);
   const key = $("#key", root);
   const readout = $("#readout", root);
   let current: Built | null = null;
+  let cardIdentity = "";
+  let derivationHtml = "";
+  let readingController: AbortController | undefined;
 
   function showName(part: string | null | undefined): void {
     const t = part ? term(part) : undefined;
@@ -407,11 +358,28 @@ export function mountOrders(root: HTMLElement): void {
       s.view,
     );
     const dims = `<label class="check"><input type="checkbox" name="dims"${s.dims ? " checked" : ""}> Measurements</label>`;
-    return order + columns + spacing + base + feet + view + dims;
+    return (
+      order +
+      columns +
+      spacing +
+      base +
+      feet +
+      view +
+      dims +
+      `<p class="order-size-note" id="order-size-note" role="status"${sharedSizeNotice ? "" : " hidden"}>${esc(sharedSizeNotice)}</p>`
+    );
   }
 
   function select(part: string | null, closeSource = true): void {
     if (closeSource) source.close(false);
+    if (s.part !== part && readingController) {
+      readingController.abort();
+      readingController = undefined;
+      ($("#roof-study", root) as HTMLButtonElement).disabled = false;
+      $("#roof-cancel", root).hidden = true;
+      $("#roof-file-status", root).textContent =
+        "Selected part changed. Save the reading again to keep these choices.";
+    }
     s.part = part;
     for (const el of plate.querySelectorAll(".sel")) el.classList.remove("sel");
     for (const el of key.querySelectorAll("[aria-pressed]"))
@@ -420,19 +388,28 @@ export function mountOrders(root: HTMLElement): void {
       for (const el of plate.querySelectorAll(`[data-part="${CSS.escape(part)}"]`))
         el.classList.add("sel");
       key.querySelector(`[data-part="${CSS.escape(part)}"]`)?.setAttribute("aria-pressed", "true");
-      const t = term(part);
-      card.innerHTML = t ? termCard(t, { sourceActions: true }) : "";
-    } else {
-      const intro = term(s.view === "roof" ? "acroterion" : "embater");
-      card.innerHTML = intro
-        ? `<p class="card-hint">Select a part of the drawing, or a name below.</p>${termCard(intro, { sourceActions: true })}`
+    }
+    const word = part ?? (s.view === "roof" ? "acroterion" : "embater");
+    const identity = `${part ? "selected" : "intro"}:${word}`;
+    if (identity !== cardIdentity) {
+      const entry = term(word);
+      card.innerHTML = entry
+        ? `${part ? "" : '<p class="card-hint">Select a part of the drawing, or a name below.</p>'}${termCard(entry, { sourceActions: true })}`
         : "";
+      cardIdentity = identity;
     }
     writeHash(s);
   }
 
   function draw(): void {
-    $("#roof-file-status", root).textContent = "";
+    const cancelled = Boolean(readingController);
+    readingController?.abort();
+    readingController = undefined;
+    ($("#roof-study", root) as HTMLButtonElement).disabled = false;
+    $("#roof-cancel", root).hidden = true;
+    $("#roof-file-status", root).textContent = cancelled
+      ? "Drawing changed. Save the reading again to keep these choices."
+      : "";
     current = build(s);
     const e = current.elevation;
     const title = `${s.order} ${s.order === "tuscan" ? "temple" : ORDINAL[s.columns]} front`;
@@ -505,7 +482,10 @@ export function mountOrders(root: HTMLElement): void {
         }</button></li>`;
       })
       .join("");
-    $("#derivation", root).innerHTML = current.derivation;
+    if (derivationHtml !== current.derivation) {
+      $("#derivation", root).innerHTML = current.derivation;
+      derivationHtml = current.derivation;
+    }
     $("#facts", root).innerHTML = current.facts
       .map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
       .join("");
@@ -517,6 +497,8 @@ export function mountOrders(root: HTMLElement): void {
 
   form.addEventListener("input", (event) => {
     const target = event.target as HTMLInputElement;
+    sharedSizeNotice = "";
+    $("#order-size-note", root).hidden = true;
     const k = feetKey(s.order);
     switch (target.name) {
       case "order":
@@ -547,7 +529,14 @@ export function mountOrders(root: HTMLElement): void {
         s.dims = target.checked;
         break;
     }
-    if (target.name === "order") form.innerHTML = controls();
+    if (target.name === "order") {
+      const focused = document.activeElement === target;
+      form.innerHTML = controls();
+      if (focused)
+        form
+          .querySelector<HTMLInputElement>(`[name="order"][value="${s.order}"]`)
+          ?.focus({ preventScroll: true });
+    }
     draw();
   });
 
@@ -586,11 +575,55 @@ export function mountOrders(root: HTMLElement): void {
       s.trialTarget = "middle";
       s.trial = 1 / 8;
       draw();
+    } else if (id === "roof-cancel") {
+      readingController?.abort();
+      readingController = undefined;
+      ($("#roof-study", root) as HTMLButtonElement).disabled = false;
+      $("#roof-cancel", root).hidden = true;
+      $("#roof-file-status", root).textContent = "Reading cancelled. You can save it again.";
+    } else if (id === "roof-study" && current) {
+      readingController?.abort();
+      const controller = new AbortController();
+      readingController = controller;
+      ($("#roof-study", root) as HTMLButtonElement).disabled = true;
+      $("#roof-cancel", root).hidden = false;
+      $("#roof-file-status", root).textContent =
+        "Preparing the current drawing, complete source pages, fonts and licenses…";
+      const deadline = setTimeout(
+        () =>
+          controller.abort(new Error("The reading did not finish. Reconnect and save it again.")),
+        45000,
+      );
+      try {
+        const html = await roofStudy(
+          structuredClone(s),
+          current.elevation,
+          roof,
+          controller.signal,
+        );
+        if (readingController !== controller) return;
+        saveRoof(html, "text/html;charset=utf-8", "html");
+      } catch (error) {
+        if (readingController !== controller) return;
+        const reason = controller.signal.aborted ? controller.signal.reason : error;
+        if (!controller.signal.aborted) controller.abort(error);
+        $("#roof-file-status", root).textContent =
+          reason instanceof Error
+            ? reason.message
+            : "The reading could not be saved. Reconnect and try again.";
+      } finally {
+        clearTimeout(deadline);
+        if (readingController === controller) {
+          readingController = undefined;
+          ($("#roof-study", root) as HTMLButtonElement).disabled = false;
+          $("#roof-cancel", root).hidden = true;
+        }
+      }
     } else if (id === "roof-svg")
-      saveRoof(roofSvg(roof, s.trial, s.dims, s.trialTarget), "image/svg+xml", "svg");
+      saveRoof(roofSvg(roof, s.trial, s.dims, s.trialTarget, s), "image/svg+xml", "svg");
     else if (id === "roof-csv")
       saveRoof(
-        roofCsv(roof, s.feet[feetKey(s.order)], s.trial, s.trialTarget),
+        roofCsv(roof, s.feet[feetKey(s.order)], s.trial, s.trialTarget, s),
         "text/csv;charset=utf-8",
         "csv",
       );
@@ -636,6 +669,7 @@ export function mountOrders(root: HTMLElement): void {
   });
   window.addEventListener("hashchange", () => {
     s = readHash();
+    sharedSizeNotice = ordersNotice(location.hash, s);
     form.innerHTML = controls();
     draw();
   });

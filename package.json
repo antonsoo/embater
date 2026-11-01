@@ -42,7 +42,9 @@
     "test:drill": "node --import tsx scripts/drill-review.mjs",
     "test:vocabulary": "node scripts/vocabulary-audit.mjs",
     "test:roof": "node scripts/roof-review.mjs",
-    "verify:roof-artifacts": "python3 scripts/roof-artifacts.py"
+    "verify:roof-artifacts": "python3 scripts/roof-artifacts.py",
+    "test:roof-study": "node scripts/roof-study-review.mjs",
+    "verify:roof-study": "python3 scripts/roof-study-artifacts.py examples/roof"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

@@ -135,7 +135,6 @@ body {
   fill: var(--minium);
   font-family: var(--text);
   font-style: italic;
-  text-anchor: middle;
 }
 
 /* Page frame ------------------------------------------------------------- */
@@ -1459,4 +1458,11 @@ code {
 
 .roof-reading .slider b {
   font-weight: 400;
+}
+
+.order-size-note {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
 }

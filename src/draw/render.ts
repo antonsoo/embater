@@ -30,7 +30,7 @@ function dimSvg(dim: Dim, size: number): string {
 <line x1="${n(x0)}" y1="${n(-y)}" x2="${n(x1)}" y2="${n(-y)}"/>
 <line x1="${n(x0)}" y1="${n(-y - tick)}" x2="${n(x0)}" y2="${n(-y + tick)}"/>
 <line x1="${n(x1)}" y1="${n(-y - tick)}" x2="${n(x1)}" y2="${n(-y + tick)}"/>
-<text x="${n((x0 + x1) / 2)}" y="${n(-y + size * 1.25)}" font-size="${n(size)}">${dim.label}</text></g>`;
+<text x="${n((x0 + x1) / 2)}" y="${n(-y + size * 1.25)}" font-size="${n(size)}" text-anchor="middle">${dim.label}</text></g>`;
   }
   const x = x0 + dim.offset;
   return `<g class="dim" data-rule="${dim.rule}">
