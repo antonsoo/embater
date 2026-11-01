@@ -8,7 +8,7 @@ export type Boxes = Record<string, number>;
 
 export function boxOf(boxes: Boxes, id: string): number {
   const b = boxes[id];
-  return b && b >= 1 && b <= BOXES ? b : 1;
+  return Number.isInteger(b) && b !== undefined && b >= 1 && b <= BOXES ? b : 1;
 }
 
 export function grade(boxes: Boxes, id: string, correct: boolean): Boxes {

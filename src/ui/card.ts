@@ -2,7 +2,7 @@ import type { Lang, Term } from "../content/terms";
 import { RULES } from "../core/rules";
 import { esc } from "./dom";
 
-const LANG_NAMES: Record<Lang, string> = {
+export const LANG_NAMES: Record<Lang, string> = {
   grc: "Greek",
   la: "Latin",
   egy: "Egyptian",

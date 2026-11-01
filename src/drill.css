@@ -1,0 +1,235 @@
+/* An annotated architectural plate: one drawing, a question, then its evidence. */
+.drill .controls {
+  align-items: end;
+  gap: 1rem 1.6rem;
+}
+
+.drill-language {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.98rem;
+  gap: 0.3rem;
+}
+
+.drill-language select,
+.drill-actions button,
+.drill-part-buttons button {
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--sheet);
+  color: var(--ink);
+  padding: 0.45rem 0.7rem;
+  font: inherit;
+}
+
+.drill-language select {
+  min-width: 8rem;
+}
+
+.drill-transliteration {
+  font-size: 0.98rem;
+  padding-bottom: 0.35rem;
+}
+
+.drill-transliteration input {
+  accent-color: var(--caeruleum);
+}
+
+#drill-context {
+  max-width: 70ch;
+  margin: 0.9rem 0 1.5rem;
+}
+
+.drill-grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-rows: auto auto 1fr;
+  column-gap: 2.5rem;
+  row-gap: 1rem;
+  align-items: start;
+}
+
+.drill-visual {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  min-width: 0;
+}
+
+.drill-q,
+.drill-feedback,
+.drill-boxes {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.drill-q {
+  grid-row: 1;
+}
+.drill-feedback {
+  grid-row: 2;
+}
+.drill-boxes {
+  grid-row: 3;
+  margin-top: 1rem;
+}
+
+.drill-plate {
+  padding: 0.8rem;
+}
+
+.drill-plate .plate-svg {
+  max-height: 62vh;
+}
+
+.drill-plate .pc.inspect.solid,
+.drill-plate .pc.inspect.ornament,
+.drill-plate .pc.inspect.groove,
+.drill-plate .pc.inspect.shade {
+  fill: color-mix(in srgb, var(--caeruleum) 45%, var(--sheet));
+  stroke: var(--caeruleum);
+  stroke-width: 1.6px;
+}
+
+.drill-plate .pc.inspect.line {
+  stroke: var(--caeruleum);
+  stroke-width: 2px;
+  opacity: 1;
+}
+
+.drill-plate .pc.miss.line {
+  stroke: var(--minium);
+  stroke-width: 2px;
+}
+
+.drill-part-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.drill-part-buttons button {
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.drill-part-buttons button[aria-pressed="true"] {
+  color: var(--sheet);
+  background: var(--caeruleum);
+}
+
+.drill-part-buttons button:hover:not(:disabled),
+.drill-actions button:hover {
+  border-color: var(--caeruleum);
+}
+
+.drill-part-buttons button:disabled {
+  cursor: default;
+  color: var(--ink-soft);
+}
+
+.drill button:focus-visible,
+.drill select:focus-visible,
+.drill input:focus-visible,
+.drill summary:focus-visible {
+  outline: 3px solid var(--caeruleum);
+  outline-offset: 3px;
+}
+
+.drill-inspection {
+  min-height: 1.5em;
+  color: var(--caeruleum);
+}
+
+.drill-keep {
+  margin: 2rem 0 0;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+}
+
+.drill-keep summary {
+  cursor: pointer;
+}
+.drill-keep p {
+  max-width: 75ch;
+}
+
+.drill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 0.8rem;
+}
+
+.drill-actions button {
+  cursor: pointer;
+}
+
+.drill-file {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 100%;
+}
+
+.drill-file input {
+  max-width: 100%;
+  font: inherit;
+}
+#drill-file-status {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 52rem) {
+  .drill-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .drill-q,
+  .drill-visual,
+  .drill-feedback,
+  .drill-boxes {
+    width: 100%;
+  }
+  .drill-q {
+    order: 0;
+  }
+  .drill-visual {
+    order: 1;
+  }
+  .drill-feedback {
+    order: 2;
+  }
+  .drill-boxes {
+    order: 3;
+  }
+  .drill-plate .plate-svg {
+    max-height: 54vh;
+  }
+  .drill-plate {
+    padding: 0.5rem;
+  }
+  .drill .controls {
+    gap: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drill-plate .pc {
+    transition: none;
+  }
+}
+
+.drill-reveal {
+  margin-top: 1rem;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.45rem 0.7rem;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.drill-reveal:hover {
+  border-color: var(--caeruleum);
+}
