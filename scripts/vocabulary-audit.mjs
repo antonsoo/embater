@@ -373,6 +373,49 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
     await page.waitForTimeout(100);
     assert.ok(await page.locator("#drill-source").isHidden());
     assert.equal(await page.locator(".card-title").textContent(), "torus");
+    await page.unroute("**/sources/vocabulary/p71.jpg");
+    await page.locator('[data-term="oculus"]').click();
+    for (const operation of ["source", "export"]) {
+      let finish;
+      const hold = new Promise((resolve) => {
+        finish = resolve;
+      });
+      await page.route("**/sources/vocabulary/p71.jpg", async (route) => {
+        await hold;
+        await route.continue().catch(() => {});
+      });
+      if (operation === "source") {
+        await page.locator('[data-source-rule="ionic-capital"]').first().click();
+        await page
+          .locator("#drill-source-status")
+          .filter({ hasText: /did not finish loading/ })
+          .waitFor({ timeout: 20000 });
+        assert.ok(await page.locator("#drill-source-image").isHidden());
+        await page.locator("[data-source-close]").click();
+      } else {
+        await page.locator("#drill-save-reading").click();
+        await page
+          .locator("#drill-reading-status")
+          .filter({ hasText: /did not finish/ })
+          .waitFor({ timeout: 25000 });
+        assert.equal(await page.locator("#drill-save-reading").isEnabled(), true);
+        assert.equal(downloads, 0);
+      }
+      finish();
+      await page.unroute("**/sources/vocabulary/p71.jpg");
+    }
+    await page.locator('[data-source-rule="ionic-capital"]').first().click();
+    await pageIdentity(page, 71);
+    await page.locator("[data-source-close]").click();
+    const preventedDownloads = downloads;
+    const recoveredStudy = await download(
+      page,
+      "#drill-save-reading",
+      resolve(output, `${engine}-deadline-recovered.html`),
+    );
+    assert.equal(downloads, 1);
+    assert.ok(recoveredStudy.bytes.toString().includes("centrum <mark>oculi</mark>"));
+    assert.deepEqual(await boxes(page), before);
     await context.close();
     // A malformed local record must survive an answer, not merely a failed import.
     const corrupt = await browser.newContext();
@@ -413,8 +456,11 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
       substitutedPageHidden: true,
       substitutedSourceBlocksExport: true,
       recoveryWorks: true,
-      cancelledDownloadCount: downloads,
+      cancelledDownloadCount: preventedDownloads,
+      deadlineRetryReadingBytes: recoveredStudy.bytes.length,
       lateSourceCannotReplaceNewStudy: true,
+      sourceDeadlineRecovered: true,
+      exportDeadlineRecovered: true,
       unreadSavedRecordPreserved: true,
       visibleRecoveryRoute: true,
       explicitValidRestoreWorks: true,
