@@ -101,16 +101,24 @@
       "source": "https://raw.githubusercontent.com/notofonts/noto-fonts/ffebf8c1ee449e544955a7e813c54f9b73848eac/hinted/ttf/NotoSerif/NotoSerif-Regular.ttf",
       "sourceSha256": "c8f669ceb2c9c60ccf55198b305e08a997ffca79a38cc7eeb551e643cbe66505",
       "copyright": "Copyright 2015-2021 Google LLC. All Rights Reserved.",
-      "bytes": 3560,
-      "sha256": "52cb13c744b264943bf8e91586ab4f01d82ad07a6c5f7efa8bfb72062f356f2a",
+      "bytes": 4292,
+      "sha256": "6b57b71e1fcf495d212d082991d4680863e68f14b20a21eff72fb71aaad5e36e",
       "codepoints": [
         8324,
         8326,
+        8531,
+        8532,
         8537,
+        8538,
+        8539,
+        8540,
+        8541,
+        8542,
         42787
       ],
-      "range": "U+2084,U+2086,U+2159,U+A723"
+      "range": "U+2084,U+2086,U+2153-2154,U+2159-215E,U+A723"
     }
   ],
-  "allCurrentVocabularyGlyphsCovered": true
+  "allCurrentVocabularyGlyphsCovered": true,
+  "allDrawingFractionGlyphsCovered": true
 }
