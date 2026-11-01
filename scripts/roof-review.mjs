@@ -212,6 +212,13 @@ for (const [engine, launch] of [
           .evaluate((el) => getComputedStyle(el).vectorEffect),
         "non-scaling-stroke",
       );
+      assert.equal(
+        await saved
+          .locator('[data-part="roof-trial"]')
+          .evaluate((el) => getComputedStyle(el).stroke),
+        "rgb(31, 78, 156)",
+        "the standalone SVG retains its blue measuring envelope",
+      );
       await saved.screenshot({ path: resolve(output, `${engine}-${width}-saved.png`) });
       await saved.close();
       assert.deepEqual(errors, []);

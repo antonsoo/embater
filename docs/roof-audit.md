@@ -41,6 +41,7 @@ not an inference from passing helper tests.
 | A link requesting 2.6 feet calculated 2.6 while its quarter-step slider displayed 2.5. | Both use 2.5, with a visible rounding notice. Saved settings retain that operated value. |
 | Arrow navigation between orders lost focus after rebuilding the form. | Focus remains on the new radio, allowing another arrow press. |
 | Closing the source could focus a replaced or hidden trigger. | A visible current matching source button receives focus; otherwise the current heading does. |
+| The standalone SVG painted its blue envelope grey because a chosen-line selector won. | The export uses a specific trial selector; native SVG and HTML openings verify the actual blue stroke. |
 | Saved measurements lost the order settings that produced them. | HTML, SVG and CSV retain the experiment and its reopening URL. |
 | Seven fractions emitted by geometry labels were absent from retained fonts. | All formatter fractions are covered. The supplementary subset grew from 3,560 to 4,292 bytes. A native print of 10⅔ embeds EmbaterLatinextra. |
 | Concurrent background source transfers pushed a cold foreground reading past its real 15-second deadline. | Installation uses one background transfer; controlled foreground reads complete before that deadline. |

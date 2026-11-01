@@ -128,6 +128,13 @@ for (const [engine, driver] of [
       );
       assert.ok(embeddedSvg.bytes.toString().includes("embater-settings"));
       assert.ok(embeddedCsv.bytes.toString().includes("Reopen experiment"));
+      assert.equal(
+        await saved
+          .locator('[data-part="roof-trial"]')
+          .evaluate((el) => getComputedStyle(el).stroke),
+        "rgb(31, 78, 156)",
+        "the portable reading retains its blue measuring envelope",
+      );
       assert.deepEqual(unexpected, []);
       await saved.evaluate(() => window.scrollTo(0, 0));
       await saved.screenshot({ path: resolve(output, `${engine}-${width}-saved.png`) });
