@@ -121,6 +121,10 @@ for (const [engine, launch] of [
       );
       await linked.close();
       await page.locator("#roof-link").click();
+      await page
+        .locator("#roof-file-status")
+        .filter({ hasText: /copied|Copy the current address/ })
+        .waitFor();
       const clipboardStatus = await page.locator("#roof-file-status").textContent();
       assert.ok(
         clipboardStatus.includes("copied") || clipboardStatus.includes("Copy the current address"),
