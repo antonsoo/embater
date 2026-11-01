@@ -1,0 +1,61 @@
+{
+  "base": "https://antonsoo.github.io/embater/",
+  "rows": [
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 1440,
+      "ancientSourceSha256": "6772f0d40cd53998ac21cf94ff14b0a915b95e33536528430975c195a94d49f8",
+      "boundary": "Vitruvius gives the eye’s one-part diameter, its unequal position in an eight-part height, and a half-eye reduction in quadrant operations. He does not state eight quarter turns or locate the complete set of compass centres. This drawing continues the half-eye decrement through eight quarters about one fixed eye centre: a modern two-turn schematic with linear-radius interpolation and a chosen fillet. It is not a recovered compass construction. The promised ancient figure is not preserved here; how far in from the abacus edge the eye sits is also disputed.",
+      "handoff": "https://antonsoo.github.io/gonia/volute.html",
+      "laterPlateSha256": "8ffb3059b2cbe3212e310c590a8f9c9109de38471454b8350e251cfb61b850ca",
+      "finalJoin": "The two radius directions differ by 8.130102°. Their tangents turn by the same angle.",
+      "localAlignmentShown": true,
+      "measurements": "chromium-1440-compass.csv",
+      "measurementsSha256": "93451b2615978486167d74d8b1718998332e6e02736adbc60593d3d1c7d9d722",
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "browser": "153.0.8010.12",
+      "width": 375,
+      "ancientSourceSha256": "6772f0d40cd53998ac21cf94ff14b0a915b95e33536528430975c195a94d49f8",
+      "boundary": "Vitruvius gives the eye’s one-part diameter, its unequal position in an eight-part height, and a half-eye reduction in quadrant operations. He does not state eight quarter turns or locate the complete set of compass centres. This drawing continues the half-eye decrement through eight quarters about one fixed eye centre: a modern two-turn schematic with linear-radius interpolation and a chosen fillet. It is not a recovered compass construction. The promised ancient figure is not preserved here; how far in from the abacus edge the eye sits is also disputed.",
+      "handoff": "https://antonsoo.github.io/gonia/volute.html",
+      "laterPlateSha256": "8ffb3059b2cbe3212e310c590a8f9c9109de38471454b8350e251cfb61b850ca",
+      "finalJoin": "The two radius directions differ by 8.130102°. Their tangents turn by the same angle.",
+      "localAlignmentShown": true,
+      "measurements": "chromium-375-compass.csv",
+      "measurementsSha256": "93451b2615978486167d74d8b1718998332e6e02736adbc60593d3d1c7d9d722",
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 1440,
+      "ancientSourceSha256": "6772f0d40cd53998ac21cf94ff14b0a915b95e33536528430975c195a94d49f8",
+      "boundary": "Vitruvius gives the eye’s one-part diameter, its unequal position in an eight-part height, and a half-eye reduction in quadrant operations. He does not state eight quarter turns or locate the complete set of compass centres. This drawing continues the half-eye decrement through eight quarters about one fixed eye centre: a modern two-turn schematic with linear-radius interpolation and a chosen fillet. It is not a recovered compass construction. The promised ancient figure is not preserved here; how far in from the abacus edge the eye sits is also disputed.",
+      "handoff": "https://antonsoo.github.io/gonia/volute.html",
+      "laterPlateSha256": "8ffb3059b2cbe3212e310c590a8f9c9109de38471454b8350e251cfb61b850ca",
+      "finalJoin": "The two radius directions differ by 8.130102°. Their tangents turn by the same angle.",
+      "localAlignmentShown": true,
+      "measurements": "firefox-1440-compass.csv",
+      "measurementsSha256": "b7fa31e88ba05948cebbd5176ce0cbe35f345e6f9b943c0fcefda6a7ba26b2b2",
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "browser": "155.0",
+      "width": 375,
+      "ancientSourceSha256": "6772f0d40cd53998ac21cf94ff14b0a915b95e33536528430975c195a94d49f8",
+      "boundary": "Vitruvius gives the eye’s one-part diameter, its unequal position in an eight-part height, and a half-eye reduction in quadrant operations. He does not state eight quarter turns or locate the complete set of compass centres. This drawing continues the half-eye decrement through eight quarters about one fixed eye centre: a modern two-turn schematic with linear-radius interpolation and a chosen fillet. It is not a recovered compass construction. The promised ancient figure is not preserved here; how far in from the abacus edge the eye sits is also disputed.",
+      "handoff": "https://antonsoo.github.io/gonia/volute.html",
+      "laterPlateSha256": "8ffb3059b2cbe3212e310c590a8f9c9109de38471454b8350e251cfb61b850ca",
+      "finalJoin": "The two radius directions differ by 8.130102°. Their tangents turn by the same angle.",
+      "localAlignmentShown": true,
+      "measurements": "firefox-375-compass.csv",
+      "measurementsSha256": "b7fa31e88ba05948cebbd5176ce0cbe35f345e6f9b943c0fcefda6a7ba26b2b2",
+      "errors": []
+    }
+  ]
+}

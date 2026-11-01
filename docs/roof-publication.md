@@ -49,3 +49,12 @@ not imply a different hosted runtime. This is a static web publication; no tag
 or registry release is claimed. Palmettes and assembly conventions remain
 modern, the English has not had independent philological review, and initial
 full-edition installation still transfers the retained source collection.
+
+## Later source clarification
+
+The [published scroll clarification](ionic-scroll-boundary.md#published-clarification)
+supersedes the earlier wording that called all eight quarter stations
+“prescribed.” The actual drawing continues a half-eye decrement around one
+fixed centre; that full layout is a modern choice. The follow-up retains its own
+fresh build, all 90 canonical hosted files, live browser and native-artifact
+receipts. The earlier receipts above remain observations of their named edition.

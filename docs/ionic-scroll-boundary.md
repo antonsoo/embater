@@ -85,3 +85,34 @@ remains identical. The four compass CSVs are retained beside these receipts.
 Their final direction difference independently calculates to 8.130102354156°.
 
 ![The selected scroll, modern continuation note and promised figure passage](assets/ionic-scroll-boundary.png)
+
+## Published clarification
+
+Runtime source `a19a6129bfb759b7c931f3e825714f475fabc429` was installed and
+checked from a fresh archive. All 69 tests, type checks and the production build
+passed; Biome retained the same 12 pre-existing warnings and three informational
+notes elsewhere. The [clean build](review/roof-audit/scroll-clean-build.json)
+contains 90 files. Its manifest SHA-256 is
+`0bb03c8e670df6da24399ee4259d91ec9ca82e65a6c21faa4916eacb0b08a1b9`.
+Adding the review command to package metadata changed the offline edition
+fingerprint; the final comparison and public pass use that exact new edition.
+
+Pages commit `bcb77a497c6e71e325328501e0b77381decf322d` was pushed as a
+fast-forward and reported built. All [90 canonical hosted files](review/roof-audit/scroll-public-files.json)
+match the captured clean build. The [current immutable source files](review/roof-audit/scroll-source-public.json)
+also match their local bytes, with `main` synchronized and clean at that check.
+
+The [live handoff](review/roof-audit/scroll-public.json) and
+[independent live CSV check](review/roof-audit/scroll-public-artifacts.json)
+pass in Chromium and Firefox at both widths. The
+[portable-reading public replay](review/roof-audit/scroll-public-readings-browser.json)
+and [independent artifact inspection](review/roof-audit/scroll-public-readings-artifacts.json)
+also pass: complete embedded sources/fonts/licenses, exact settings, blue
+measuring envelope, script-disabled opening, offline identity, corrupt-source
+refusal, cancellation, changed-drawing cancellation, actual 45-second deadline
+and retry. Public reading hashes equal the locally operated files.
+
+The [canonical root, explicit index and worker](review/roof-audit/scroll-public-entries-after.json)
+still matched after browser operation. No new source-CI, tag, registry-release
+or physical-printing claim is made. The earlier publication record describes its
+earlier edition; this follow-up clarifies that edition's source/model boundary.

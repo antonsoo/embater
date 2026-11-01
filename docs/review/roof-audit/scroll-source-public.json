@@ -1,0 +1,35 @@
+{
+  "sourceRevision": "a19a6129bfb759b7c931f3e825714f475fabc429",
+  "remoteMain": "a19a6129bfb759b7c931f3e825714f475fabc429",
+  "cleanTreeAtCheck": true,
+  "files": [
+    {
+      "path": "docs/roof-audit.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/a19a6129bfb759b7c931f3e825714f475fabc429/docs/roof-audit.md",
+      "bytes": 10757,
+      "sha256": "1edd482717775db600b74a4550593043db3c55123c3ae7fce026d84858ed33e2",
+      "matches": true
+    },
+    {
+      "path": "docs/ionic-scroll-boundary.md",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/a19a6129bfb759b7c931f3e825714f475fabc429/docs/ionic-scroll-boundary.md",
+      "bytes": 5011,
+      "sha256": "c501a402ce0ea1a12e960996fb2d606b8f24154d95409b910351606196102df8",
+      "matches": true
+    },
+    {
+      "path": "examples/roof/ionic.svg",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/a19a6129bfb759b7c931f3e825714f475fabc429/examples/roof/ionic.svg",
+      "bytes": 18466,
+      "sha256": "b8fd7e758355fdf9d7d1e6e2fefa65d0de8d7c524c33f82d5d321f1a2ef22f04",
+      "matches": true
+    },
+    {
+      "path": "examples/roof/ionic.csv",
+      "url": "https://raw.githubusercontent.com/antonsoo/embater/a19a6129bfb759b7c931f3e825714f475fabc429/examples/roof/ionic.csv",
+      "bytes": 1729,
+      "sha256": "4d0ff875a534ab9bc6c99a7c76357ffa64a210d9e73ce7c10290ad77ba4b6f73",
+      "matches": true
+    }
+  ]
+}

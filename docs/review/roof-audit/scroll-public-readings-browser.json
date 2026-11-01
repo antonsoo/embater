@@ -1,0 +1,132 @@
+[
+  {
+    "engine": "chromium",
+    "browser": "153.0.8010.12",
+    "width": 1440,
+    "sliderAndModelAgree": true,
+    "orderKeyboardFocus": true,
+    "sourceReturnFocus": true,
+    "scriptFreeOpening": true,
+    "noAutomaticRemoteRequests": true,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "nativeHtmlBytes": 2911301,
+    "sha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "offlineMatches": true,
+    "embeddedSvgSha256": "9a874ea821fb30a394cbbb31e7d6f6d9bc3978220229536650c76fc165320643",
+    "embeddedCsvSha256": "15d1c8b81c56ea5d8cc2a1998631782706b2e4e1e115009d3fad84e983de30a0",
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "browser": "153.0.8010.12",
+    "width": 375,
+    "sliderAndModelAgree": true,
+    "orderKeyboardFocus": true,
+    "sourceReturnFocus": true,
+    "scriptFreeOpening": true,
+    "noAutomaticRemoteRequests": true,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "nativeHtmlBytes": 2911301,
+    "sha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "offlineMatches": true,
+    "embeddedSvgSha256": "9a874ea821fb30a394cbbb31e7d6f6d9bc3978220229536650c76fc165320643",
+    "embeddedCsvSha256": "15d1c8b81c56ea5d8cc2a1998631782706b2e4e1e115009d3fad84e983de30a0",
+    "errors": []
+  },
+  {
+    "engine": "chromium",
+    "nativeEighthAndThirdReadings": true,
+    "fractionLabels": [
+      "⅜",
+      "10⅔"
+    ]
+  },
+  {
+    "engine": "chromium",
+    "failureReview": true,
+    "corruptSourceBlocked": true,
+    "explicitCancellation": true,
+    "changedDrawingCancels": true,
+    "recoverySha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c"
+  },
+  {
+    "engine": "chromium",
+    "deadlineMs": 45000,
+    "observedMs": 45024,
+    "noPartialDownload": true,
+    "timeoutRecoverySha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c"
+  },
+  {
+    "engine": "firefox",
+    "browser": "155.0",
+    "width": 1440,
+    "sliderAndModelAgree": true,
+    "orderKeyboardFocus": true,
+    "sourceReturnFocus": true,
+    "scriptFreeOpening": true,
+    "noAutomaticRemoteRequests": true,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "nativeHtmlBytes": 2911301,
+    "sha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "offlineMatches": true,
+    "embeddedSvgSha256": "9a874ea821fb30a394cbbb31e7d6f6d9bc3978220229536650c76fc165320643",
+    "embeddedCsvSha256": "15d1c8b81c56ea5d8cc2a1998631782706b2e4e1e115009d3fad84e983de30a0",
+    "errors": []
+  },
+  {
+    "engine": "firefox",
+    "browser": "155.0",
+    "width": 375,
+    "sliderAndModelAgree": true,
+    "orderKeyboardFocus": true,
+    "sourceReturnFocus": true,
+    "scriptFreeOpening": true,
+    "noAutomaticRemoteRequests": true,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "nativeHtmlBytes": 2911301,
+    "sha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "offlineMatches": true,
+    "embeddedSvgSha256": "9a874ea821fb30a394cbbb31e7d6f6d9bc3978220229536650c76fc165320643",
+    "embeddedCsvSha256": "15d1c8b81c56ea5d8cc2a1998631782706b2e4e1e115009d3fad84e983de30a0",
+    "errors": []
+  },
+  {
+    "engine": "firefox",
+    "nativeEighthAndThirdReadings": true,
+    "fractionLabels": [
+      "⅜",
+      "10⅔"
+    ]
+  },
+  {
+    "engine": "firefox",
+    "failureReview": true,
+    "corruptSourceBlocked": true,
+    "explicitCancellation": true,
+    "changedDrawingCancels": true,
+    "recoverySha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c"
+  },
+  {
+    "engine": "firefox",
+    "deadlineMs": 45000,
+    "observedMs": 45281,
+    "noPartialDownload": true,
+    "timeoutRecoverySha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c"
+  }
+]

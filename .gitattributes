@@ -13,3 +13,6 @@ examples/vocabulary/*.csv -text whitespace=cr-at-eol
 
 # Native roof CSV retains RFC 4180 line endings.
 examples/roof/*.csv -text whitespace=cr-at-eol
+
+# Exact native compass CSVs retained through the public handoff.
+docs/review/roof-audit/*-compass.csv -text whitespace=cr-at-eol

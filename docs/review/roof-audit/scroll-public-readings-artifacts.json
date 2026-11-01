@@ -1,0 +1,500 @@
+[
+  {
+    "file": "chromium-1440-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "0464923241d6bb536166581ddb9797df06042c17cbdfa658939e47a2cc11b7e3",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12\u201330-foot range. Its height and dependent roof projection continue the model\u2019s pattern; the text does not give this numeric extension.",
+      "The two-turn Ionic volute continues the half-eye decrement through eight quarters about one fixed centre. That continuation, the linear-radius interpolation and the fillet are modern choices, not a recovered compass construction."
+    ]
+  },
+  {
+    "file": "chromium-1440-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-1440.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-375-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "0464923241d6bb536166581ddb9797df06042c17cbdfa658939e47a2cc11b7e3",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12\u201330-foot range. Its height and dependent roof projection continue the model\u2019s pattern; the text does not give this numeric extension.",
+      "The two-turn Ionic volute continues the half-eye decrement through eight quarters about one fixed centre. That continuation, the linear-radius interpolation and the fillet are modern choices, not a recovered compass construction."
+    ]
+  },
+  {
+    "file": "chromium-375-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-375.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-after-timeout.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "chromium-fraction-eighths.html",
+    "order": "ionic",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "a68a713d46047c3398e20c5c357c01c2d2f55d526acdb19d5914264dc875b791",
+    "independentH": 1.007936507936508,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The two-turn Ionic volute continues the half-eye decrement through eight quarters about one fixed centre. That continuation, the linear-radius interpolation and the fillet are modern choices, not a recovered compass construction."
+    ]
+  },
+  {
+    "file": "chromium-fraction-thirds.html",
+    "order": "corinthian",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "8b90576428ae39abe98b3692c5053078690913f8fe7da29082288d73de1771ea",
+    "independentH": 1.0573192239858906,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length."
+    ]
+  },
+  {
+    "file": "chromium-recovered.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-1440-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "0464923241d6bb536166581ddb9797df06042c17cbdfa658939e47a2cc11b7e3",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12\u201330-foot range. Its height and dependent roof projection continue the model\u2019s pattern; the text does not give this numeric extension.",
+      "The two-turn Ionic volute continues the half-eye decrement through eight quarters about one fixed centre. That continuation, the linear-radius interpolation and the fillet are modern choices, not a recovered compass construction."
+    ]
+  },
+  {
+    "file": "firefox-1440-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-1440.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-375-ionic.html",
+    "order": "ionic",
+    "columns": 8,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "0464923241d6bb536166581ddb9797df06042c17cbdfa658939e47a2cc11b7e3",
+    "independentH": 3.31608005521049,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0200000000000031
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The architrave is outside the stated 12\u201330-foot range. Its height and dependent roof projection continue the model\u2019s pattern; the text does not give this numeric extension.",
+      "The two-turn Ionic volute continues the half-eye decrement through eight quarters about one fixed centre. That continuation, the linear-radius interpolation and the fillet are modern choices, not a recovered compass construction."
+    ]
+  },
+  {
+    "file": "firefox-375-offline.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-375.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "00f4e8c1a891fc7672c75240b8453e5ebced19c81a18771611f3245c873bbd2b",
+    "independentH": 3.425925925925926,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.039999999999999
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-after-timeout.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  },
+  {
+    "file": "firefox-fraction-eighths.html",
+    "order": "ionic",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "a68a713d46047c3398e20c5c357c01c2d2f55d526acdb19d5914264dc875b791",
+    "independentH": 1.007936507936508,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length.",
+      "The two-turn Ionic volute continues the half-eye decrement through eight quarters about one fixed centre. That continuation, the linear-radius interpolation and the fillet are modern choices, not a recovered compass construction."
+    ]
+  },
+  {
+    "file": "firefox-fraction-thirds.html",
+    "order": "corinthian",
+    "columns": 4,
+    "sourcePages": [
+      72,
+      73,
+      74
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "8b90576428ae39abe98b3692c5053078690913f8fe7da29082288d73de1771ea",
+    "independentH": 1.0573192239858906,
+    "drawnShaftWidths": [
+      1.02,
+      1.0,
+      1.0,
+      1.0199999999999996
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes.",
+      "Bases and capitals use each column\u2019s own lower diameter; their tops stay level by adjusting shaft length."
+    ]
+  },
+  {
+    "file": "firefox-recovered.html",
+    "order": "doric",
+    "columns": 6,
+    "sourcePages": [
+      73,
+      74,
+      84
+    ],
+    "fontSubsets": 6,
+    "htmlSha256": "4ee51696df70a44bfbda52dff1ce58ec2124d89fa90b158a30c9d554ca940d7c",
+    "independentH": 4.814814814814815,
+    "drawnShaftWidths": [
+      2.04,
+      2.0,
+      2.0,
+      2.0,
+      2.0,
+      2.0400000000000063
+    ],
+    "modelNotes": [
+      "The corner addition retains the nominal column axes."
+    ]
+  }
+]
