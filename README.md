@@ -143,9 +143,19 @@ from modern calculations and choices; the plans are not unique reconstructions.
 
 ![The Sanchi stupa plate with the harmikā selected and its Sanskrit entry from Monier-Williams](docs/assets/world-india.png)
 
-**The drill.** Name a highlighted part, or find a named one, on the same drawings. A
-Leitner schedule brings missed words back sixteen times as often as known ones.
-Progress stays in your browser.
+**The drill.** Study a labeled architectural plate, then choose a source language
+and practise naming a blue detail or finding a named part. Native part buttons
+provide a keyboard route through the drawing. Shared names accept every matching
+shape, and a reveal lets you inspect the sources without grading. Each language
+and direction keeps separate practice boxes; save and restore all of them as a
+validated JSON file. An explicit link shares the exercise settings.
+
+This vocabulary revision is available locally after the quickstart at
+`http://127.0.0.1:4412/embater/drill.html#deck=doric&lang=la&mode=study`.
+[Use cases, original grading failure and verification](docs/drill-review.md)
+separate this local work from the published edition. The selection weights favor
+box 1 over box 5 by sixteen to one before excluding the preceding question; they
+are practice scheduling, not a fluency measurement.
 
 ## What the evidence says
 

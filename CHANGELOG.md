@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Turn the vocabulary drill into a language-selectable study plate and two
+  independent exercises, with source passages and keyboard inspection controls.
+- Accept shared displayed names fairly instead of marking indistinguishable
+  answers wrong; retain separate language/direction boxes and validated portable
+  progress files, with an ungraded reveal and explicit exercise links.
+
 - Compare the 1927 Erechtheion North Door report with Ionic, Doric and exact
   double-square width relations; match height or lower width, keep the residual,
   and inspect the report's omitted later linings on complete retained pages.
