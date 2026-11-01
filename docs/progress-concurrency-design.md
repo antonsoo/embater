@@ -7,8 +7,8 @@ are valid. A visibility message alone does not coordinate simultaneous writers.
 Keep each visit's questions and practice counts independent. Before an automatic
 write, take a short exclusive origin-scoped Web Lock, then compare the current raw
 record with the exact bytes last read/written by that visit. A changed record is
-preserved; that stale visit can still answer and export its own JSON. Do not merge
-independent answers into an invented combined fluency score. A valid explicit
+preserved; that stale visit can still answer and export its own JSON. Keep the independent
+records separate rather than choosing a merge policy implicitly. A valid explicit
 restore may replace the browser record deliberately.
 
 The [Web Locks specification](https://w3c.github.io/web-locks/) defines the lock's

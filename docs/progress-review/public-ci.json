@@ -1,0 +1,63 @@
+[
+  {
+    "id": 41290446306,
+    "name": "CI",
+    "head_sha": "e3a057ee645e833f81b9dacba9d7f893f46b962a",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/antonsoo/embater/actions/runs/41290446306",
+    "created_at": "2026-11-01T09:49:14Z",
+    "updated_at": "2026-11-01T09:49:18Z",
+    "jobs": [
+      {
+        "name": "check",
+        "conclusion": "failure",
+        "stepCount": 0
+      }
+    ]
+  },
+  {
+    "id": 41290446344,
+    "name": "Pages",
+    "head_sha": "e3a057ee645e833f81b9dacba9d7f893f46b962a",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/antonsoo/embater/actions/runs/41290446344",
+    "created_at": "2026-11-01T09:49:14Z",
+    "updated_at": "2026-11-01T09:49:18Z",
+    "jobs": [
+      {
+        "name": "deploy",
+        "conclusion": "failure",
+        "stepCount": 0
+      }
+    ]
+  },
+  {
+    "id": 41290534563,
+    "name": "pages build and deployment",
+    "head_sha": "d1b759637d539241e11b32df737fa397f061d833",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/antonsoo/embater/actions/runs/41290534563",
+    "created_at": "2026-11-01T09:50:31Z",
+    "updated_at": "2026-11-01T09:50:57Z",
+    "jobs": [
+      {
+        "name": "build",
+        "conclusion": "success",
+        "stepCount": 5
+      },
+      {
+        "name": "deploy",
+        "conclusion": "success",
+        "stepCount": 3
+      },
+      {
+        "name": "report-build-status",
+        "conclusion": "success",
+        "stepCount": 3
+      }
+    ]
+  }
+]

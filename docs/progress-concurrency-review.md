@@ -9,7 +9,7 @@ this change protects its browser progress.
 
 At parent `a03683f`, open Doric / Latin / Find it and Ionic / Latin / Find it in
 two tabs **before** answering either question. Answer the Doric shaft correctly,
-then answer the Ionic plinth in the older second visit. Its whole-record save
+then answer the Ionic plinth in the still-stale second visit. Its whole-record save
 removes the Doric answer. Both records are valid; the old unread-record protection
 does not help. The [captured baseline](progress-review/before.json) reproduces the
 lost first answer in Chromium and Firefox, with no stale-visit warning.
@@ -18,8 +18,8 @@ lost first answer in Chromium and Firefox, with no stale-visit warning.
 
 Each automatic save captures that visit's boxes, takes a short exclusive lock,
 and rereads the exact browser record. A changed record is preserved. The stale
-visit continues operating and retains its own native JSON backup. It does not
-merge independent exercises into an invented combined score. Keep that visit's
+visit continues operating and retains its own native JSON backup. The visits remain
+independent; there is no automatic record merge. Keep that visit's
 JSON before reloading the current browser record. An explicitly selected, valid
 restore file may replace browser progress.
 
@@ -46,7 +46,7 @@ explain the snapshot, restore and event ordering.
 
 ## Boundaries
 
-- This coordinates **updated, cooperating visits** on one origin. A previously
+- This coordinates **updated, cooperating visits** in the same browser/profile and origin. A previously
   loaded old version, developer tools, or other code ignoring the lock can still
   mutate storage. Refresh old tabs before relying on the coordination guarantee.
 - Visits remain independent. This is protection against replacement, not automatic
@@ -78,8 +78,9 @@ in each engine:
 
 The simultaneous case checks that two real lock requests are pending before
 releasing a third page's lock. The queued-restore cases similarly control ordering.
-These are native browser/storage/download operations, not a model of the expected
-implementation. The stale phone view fits 375 px; axe finds no violations in the
+The records are controlled practice fixtures. Quota-error and unavailable-API
+cases inject those failures; lock queues, backing records, native storage events
+and downloaded files are operated in the actual browsers. The stale phone view fits 375 px; axe finds no violations in the
 reviewed dark Chromium and light Firefox recovery states. This is not a complete
 assistive-technology audit.
 
@@ -106,3 +107,35 @@ receipts here. It was not treated as an application pass.
 
 Hosted source, deployed byte and hosted browser receipts are recorded separately
 when publication completes.
+
+## Published follow-up
+
+Source `e3a057ee645e833f81b9dacba9d7f893f46b962a` is on `main`.
+Reviewed application `b018fe5` was published by fast-forward update of `gh-pages`
+to `d1b759637d539241e11b32df737fa397f061d833`, with `.nojekyll` retained.
+All **89 canonical hosted files** match the clean build through both
+[gzip after decompression](progress-review/public-bytes.json) and
+[identity responses](progress-review/public-identity.json). All **46 immutable
+raw source artifacts** match their git blobs, including the progress code,
+verification driver, source pages, fonts, licenses and manifests.
+
+The [hosted 20-case progress replay](progress-review/public-tabs.json) passes both
+engines. The separate [hosted grading replay](progress-review/public-grading.json)
+passes all eight configurations, and the [hosted source/file/offline replay](progress-review/public-source-offline.json)
+passes all four configurations plus fault, elapsed-deadline, successful retry and
+protected-record recovery cases. The actual hosted illustrated-study files again
+match the earlier edition byte for byte. Canonical entries were rechecked after
+the browser workflows.
+
+The [workflow receipt](progress-review/public-ci.json) remains separate: source
+CI `41290446306` and source Pages `41290446344` failed with zero executed steps.
+They provide no test/build validation. Internal Pages deployment `41290534563`
+succeeded for the reviewed Pages commit. Validation is the clean build and the
+operated local/hosted byte, storage, download and offline evidence above.
+
+```sh
+python3 scripts/vocabulary-publication.py --include-progress --source e3a057ee645e833f81b9dacba9d7f893f46b962a --output /tmp/embater-progress-public.json
+```
+
+Add `--encoding identity` for an independent uncompressed-response comparison.
+Documentation-only follow-up commits do not change the published application bytes.
