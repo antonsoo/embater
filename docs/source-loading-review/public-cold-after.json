@@ -1,0 +1,233 @@
+{
+  "base": "https://antonsoo.github.io/embater/",
+  "rows": [
+    {
+      "trial": 0,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "offline": "Saving these pages for offline reading…",
+      "controller": null,
+      "image": {
+        "src": "blob:https://antonsoo.github.io/6f323c33-02bf",
+        "complete": true,
+        "naturalWidth": 1350,
+        "hidden": false
+      },
+      "registration": [
+        {
+          "installing": "installing"
+        }
+      ],
+      "caches": [
+        "embater-6d2e41ea2ed4451340572d23e96ea88a91bd6ee8e28a0b1fd5df661401d88767"
+      ],
+      "events": [
+        {
+          "event": "request",
+          "ms": 873,
+          "url": "https://antonsoo.github.io/embater/sources/vocabulary/p71.jpg",
+          "resourceType": "fetch"
+        },
+        {
+          "event": "headers",
+          "ms": 1649,
+          "status": 200,
+          "fromWorker": false
+        },
+        {
+          "event": "finished",
+          "ms": 2119
+        }
+      ]
+    },
+    {
+      "trial": 1,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "offline": "Saving these pages for offline reading…",
+      "controller": null,
+      "image": {
+        "src": "blob:https://antonsoo.github.io/4deb16ae-77e9",
+        "complete": true,
+        "naturalWidth": 1350,
+        "hidden": false
+      },
+      "registration": [
+        {
+          "installing": "installing"
+        }
+      ],
+      "caches": [
+        "embater-6d2e41ea2ed4451340572d23e96ea88a91bd6ee8e28a0b1fd5df661401d88767"
+      ],
+      "events": [
+        {
+          "event": "request",
+          "ms": 2570,
+          "url": "https://antonsoo.github.io/embater/sources/vocabulary/p71.jpg",
+          "resourceType": "fetch"
+        },
+        {
+          "event": "headers",
+          "ms": 2658,
+          "status": 200,
+          "fromWorker": false
+        },
+        {
+          "event": "finished",
+          "ms": 5993
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "offline": "Saving these pages for offline reading…",
+      "controller": null,
+      "image": {
+        "src": "blob:https://antonsoo.github.io/25bba94b-ca6a",
+        "complete": true,
+        "naturalWidth": 1350,
+        "hidden": false
+      },
+      "registration": [
+        {
+          "installing": "installing"
+        }
+      ],
+      "caches": [
+        "embater-6d2e41ea2ed4451340572d23e96ea88a91bd6ee8e28a0b1fd5df661401d88767"
+      ],
+      "events": [
+        {
+          "event": "request",
+          "ms": 2253,
+          "url": "https://antonsoo.github.io/embater/sources/vocabulary/p71.jpg",
+          "resourceType": "fetch"
+        },
+        {
+          "event": "headers",
+          "ms": 2431,
+          "status": 200,
+          "fromWorker": false
+        },
+        {
+          "event": "finished",
+          "ms": 3216
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "offline": "Saving these pages for offline reading…",
+      "controller": null,
+      "image": {
+        "src": "blob:https://antonsoo.github.io/7cd66817-079e",
+        "complete": true,
+        "naturalWidth": 1350,
+        "hidden": false
+      },
+      "registration": [
+        {
+          "installing": "installing"
+        }
+      ],
+      "caches": [
+        "embater-6d2e41ea2ed4451340572d23e96ea88a91bd6ee8e28a0b1fd5df661401d88767"
+      ],
+      "events": [
+        {
+          "event": "request",
+          "ms": 1231,
+          "url": "https://antonsoo.github.io/embater/sources/vocabulary/p71.jpg",
+          "resourceType": "fetch"
+        },
+        {
+          "event": "headers",
+          "ms": 1323,
+          "status": 200,
+          "fromWorker": false
+        },
+        {
+          "event": "finished",
+          "ms": 1932
+        }
+      ]
+    },
+    {
+      "trial": 4,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "offline": "Saving these pages for offline reading…",
+      "controller": null,
+      "image": {
+        "src": "blob:https://antonsoo.github.io/9db9bd4b-5126",
+        "complete": true,
+        "naturalWidth": 1350,
+        "hidden": false
+      },
+      "registration": [
+        {
+          "installing": "installing"
+        }
+      ],
+      "caches": [
+        "embater-6d2e41ea2ed4451340572d23e96ea88a91bd6ee8e28a0b1fd5df661401d88767"
+      ],
+      "events": [
+        {
+          "event": "request",
+          "ms": 1044,
+          "url": "https://antonsoo.github.io/embater/sources/vocabulary/p71.jpg",
+          "resourceType": "fetch"
+        },
+        {
+          "event": "headers",
+          "ms": 1133,
+          "status": 200,
+          "fromWorker": false
+        },
+        {
+          "event": "finished",
+          "ms": 1242
+        }
+      ]
+    },
+    {
+      "trial": 5,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "offline": "Saving these pages for offline reading…",
+      "controller": null,
+      "image": {
+        "src": "blob:https://antonsoo.github.io/0089ffd9-094d",
+        "complete": true,
+        "naturalWidth": 1350,
+        "hidden": false
+      },
+      "registration": [
+        {
+          "installing": "installing"
+        }
+      ],
+      "caches": [
+        "embater-6d2e41ea2ed4451340572d23e96ea88a91bd6ee8e28a0b1fd5df661401d88767"
+      ],
+      "events": [
+        {
+          "event": "request",
+          "ms": 1254,
+          "url": "https://antonsoo.github.io/embater/sources/vocabulary/p71.jpg",
+          "resourceType": "fetch"
+        },
+        {
+          "event": "headers",
+          "ms": 1292,
+          "status": 200,
+          "fromWorker": false
+        },
+        {
+          "event": "finished",
+          "ms": 1530
+        }
+      ]
+    }
+  ]
+}

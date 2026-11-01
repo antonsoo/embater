@@ -107,3 +107,41 @@ Axe and viewport checks apply to the reviewed states, not every conceivable brow
 
 Hosted source, response variants and final catalogue journeys are recorded
 separately after publication.
+
+## Published reader
+
+Source `e60e1674f110dbbe8fdfb8b3b33e463dcf0d2dc3` is on `main`. Reviewed
+application `81fbec4` was published by fast-forward update of `gh-pages` to
+`f02f66f47cb1ec69b6847332ba06edb0e7b07cfb`; `.nojekyll` remains present.
+
+All **89 canonical production files** match the clean build through both
+[gzip after decompression](source-loading-review/public-bytes.json) and
+[identity responses](source-loading-review/public-identity.json). All **50 immutable
+raw source artifacts** match their git blobs, including the bounded-install code,
+source reader/verification drivers, portable typography, retained pages, fonts,
+licenses and manifests.
+
+The [six new cold Firefox visits](source-loading-review/public-cold-after.json)
+all open the original page on the first attempt. This is an observed replay,
+not a guarantee for every network. The [hosted source/file/offline journeys](source-loading-review/public-source-offline.json)
+pass all four configurations, including native dictionary-glyph equality, elapsed
+deadlines and actual successful retries. Their saved studies match the final local
+files byte for byte. The [20 hosted progress scenarios](source-loading-review/public-progress.json)
+and [eight hosted grading configurations](source-loading-review/public-grading.json)
+also pass. This publication keeps the earlier progress protection and corrects the
+newly exposed cold-source and portable-type presentation issues.
+
+The [workflow receipt](source-loading-review/public-ci.json) distinguishes source
+CI `41295109034` and source Pages `41295109087` (failure, **zero executed steps**)
+from internal Pages deployment `41295254708` (success). No source-CI success is
+claimed. Validation comes from the independently installed build, original/source
+byte checks, controlled contention/failure cases, native files and hosted browsers.
+
+```sh
+python3 scripts/vocabulary-publication.py --include-progress --include-reader --source e60e1674f110dbbe8fdfb8b3b33e463dcf0d2dc3 --output /tmp/embater-reader-public.json
+```
+
+Use `--encoding identity` to check the uncompressed variant independently. The
+catalogue's final immutable review pin links this reader audit as well as the
+earlier learning-model and progress evidence. Documentation-only commits do not
+change the reviewed application bytes.

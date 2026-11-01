@@ -1,0 +1,159 @@
+{
+  "base": "https://antonsoo.github.io/embater/",
+  "receipts": [
+    {
+      "id": "chromium-1440-light",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1482021,
+        "sha256": "194c475b61dc64b84a14b79d019b102306ffe3584575bb7564e4ade83a8fe0b6",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0,
+        "dictionaryGlyphsMatch": true
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "chromium-375-dark",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1482021,
+        "sha256": "194c475b61dc64b84a14b79d019b102306ffe3584575bb7564e4ade83a8fe0b6",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0,
+        "dictionaryGlyphsMatch": true
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-1440-dark",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1482021,
+        "sha256": "194c475b61dc64b84a14b79d019b102306ffe3584575bb7564e4ade83a8fe0b6",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0,
+        "dictionaryGlyphsMatch": true
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-375-light",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1482021,
+        "sha256": "194c475b61dc64b84a14b79d019b102306ffe3584575bb7564e4ade83a8fe0b6",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0,
+        "dictionaryGlyphsMatch": true
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    }
+  ],
+  "failures": [
+    {
+      "engine": "chromium",
+      "substitutedPageHidden": true,
+      "substitutedSourceBlocksExport": true,
+      "recoveryWorks": true,
+      "cancelledDownloadCount": 0,
+      "deadlineRetryReadingBytes": 1482020,
+      "lateSourceCannotReplaceNewStudy": true,
+      "sourceDeadlineRecovered": true,
+      "exportDeadlineRecovered": true,
+      "unreadSavedRecordPreserved": true,
+      "visibleRecoveryRoute": true,
+      "explicitValidRestoreWorks": true
+    },
+    {
+      "engine": "firefox",
+      "substitutedPageHidden": true,
+      "substitutedSourceBlocksExport": true,
+      "recoveryWorks": true,
+      "cancelledDownloadCount": 0,
+      "deadlineRetryReadingBytes": 1482020,
+      "lateSourceCannotReplaceNewStudy": true,
+      "sourceDeadlineRecovered": true,
+      "exportDeadlineRecovered": true,
+      "unreadSavedRecordPreserved": true,
+      "visibleRecoveryRoute": true,
+      "explicitValidRestoreWorks": true
+    }
+  ]
+}
