@@ -20,6 +20,7 @@ export class VocabularySource {
   private index = 0;
   private enlarged = false;
   private trigger: HTMLElement | undefined;
+  private ruleId = "";
   private readonly image: HTMLImageElement;
   private readonly frame: HTMLElement;
   private readonly status: HTMLElement;
@@ -72,6 +73,7 @@ export class VocabularySource {
     this.pages = platesForRule(rule);
     this.index = 0;
     this.trigger = trigger;
+    this.ruleId = rule.id;
     this.root.hidden = false;
     $("#drill-source-title", this.root).textContent = `Vitruvius ${rule.cite}`;
     $("#drill-source-citation", this.root).textContent =
@@ -93,10 +95,24 @@ export class VocabularySource {
     this.image.removeAttribute("src");
     if (this.objectUrl) URL.revokeObjectURL(this.objectUrl);
     this.objectUrl = undefined;
-    if (restoreFocus && this.trigger?.isConnected) {
-      const disclosure = this.trigger.closest("details");
-      if (disclosure) disclosure.open = true;
-      this.trigger.focus();
+    if (restoreFocus) {
+      const trigger =
+        this.trigger?.isConnected && !this.trigger.closest("[hidden]")
+          ? this.trigger
+          : [...this.root.ownerDocument.querySelectorAll<HTMLElement>("[data-source-rule]")].find(
+              (button) => button.dataset.sourceRule === this.ruleId && !button.closest("[hidden]"),
+            );
+      if (trigger) {
+        const disclosure = trigger.closest("details");
+        if (disclosure) disclosure.open = true;
+        trigger.focus();
+      } else {
+        const heading = this.root.ownerDocument.querySelector<HTMLElement>("main h1");
+        if (heading) {
+          heading.tabIndex = -1;
+          heading.focus();
+        }
+      }
     }
   }
 
