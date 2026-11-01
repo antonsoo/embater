@@ -205,3 +205,46 @@ The [clean-build receipt](vocabulary-audit/build.json) compares every retained
 production byte with an independently installed archive of the source commit.
 Source builds, local browser operation, remote source, deployed bytes and hosted
 browser operation remain separate claims. Publication receipts follow below.
+
+## Published edition
+
+Source `e332fea2443e1156d517e3613ff760ff9681d176` was pushed to `main`.
+The reviewed build from application source `5dac1e0` was published by ordinary
+fast-forward update of `gh-pages` to
+`d7e8c737968f1c709eefc3d0ac6f50c8e9c5f588`. The separate Pages deployment
+completed successfully. No credentials, Pages settings or billing settings changed.
+
+Every one of the **89 canonical hosted files** matches the independently rebuilt
+local bytes, and **42 immutable raw source artifacts** match their git blobs,
+including all 26 retained JPEGs, five supplementary font subsets, their manifests,
+licenses, the source reader's identities, word contexts and offline claim code.
+Both [gzip responses after decompression](vocabulary-audit/public-bytes.json)
+and [uncompressed responses](vocabulary-audit/public-identity.json) match.
+
+There was a real propagation interval: the identity variant continued returning
+older HTML/notices and 404s for newly published paths while gzip and the browsers
+already received the new edition. The [stale receipt](vocabulary-audit/public-identity-stale.json)
+retains that failed check. Probing gzip alone would not have established agreement
+of both variants. A later complete identity replay matches every file. These are
+observations of the canonical URLs, not cache-busted alternate pages.
+
+The [hosted source/download replay](vocabulary-audit/public-browser.json) passes
+all four Chromium/Firefox desktop/phone configurations, including actual source
+bytes, native file/CSV downloads, script-disabled offline reading, worker-controlled
+offline reload, substituted-source rejection and protected progress. The actual
+saved studies match the local replay's SHA-256 in all four configurations.
+The separate [hosted grading replay](vocabulary-audit/public-grading.json) passes
+all eight theme/width/browser configurations, with 19 language exercises and 124
+study entries in each, plus blocked/damaged/legacy storage cases.
+
+The [workflow receipt](vocabulary-audit/public-ci.json) keeps CI separate:
+source **CI** run `41287378208` and source **Pages** run `41287378188` failed with
+**zero executed steps**. Those runs provide no build or test validation. The
+internal Pages deployment run `41287466377` succeeded for the manually reviewed
+Pages commit. Clean local checks and the hosted browser/byte evidence above are
+the validation for this publication.
+
+`scripts/vocabulary-publication.py --source <immutable commit> --output <receipt>`
+replays the canonical hosted/source comparison. Use `--encoding identity` to
+inspect the uncompressed variant independently. Documentation-only receipts do
+not alter the reviewed application build.

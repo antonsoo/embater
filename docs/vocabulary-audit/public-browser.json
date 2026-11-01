@@ -1,0 +1,149 @@
+{
+  "base": "https://antonsoo.github.io/embater/",
+  "receipts": [
+    {
+      "id": "chromium-1440-light",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1481949,
+        "sha256": "af4d6217f2c78c5db337f3f62393c289d76c05bac16fa8bf36e3bcfcf70b1e4e",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "chromium-375-dark",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1481949,
+        "sha256": "af4d6217f2c78c5db337f3f62393c289d76c05bac16fa8bf36e3bcfcf70b1e4e",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-1440-dark",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1481949,
+        "sha256": "af4d6217f2c78c5db337f3f62393c289d76c05bac16fa8bf36e3bcfcf70b1e4e",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    },
+    {
+      "id": "firefox-375-light",
+      "sourcePages": [
+        83,
+        84,
+        69,
+        70,
+        90,
+        91,
+        71
+      ],
+      "sourceDigestsMatch": true,
+      "sourceFitsAndKeyboardPan": true,
+      "closeRestoresFocus": true,
+      "zoomLimitRetainsFocus": true,
+      "sameGeometry": true,
+      "zoomDoesNotGrade": true,
+      "selectedStudyReopened": true,
+      "reading": {
+        "bytes": 1481949,
+        "sha256": "af4d6217f2c78c5db337f3f62393c289d76c05bac16fa8bf36e3bcfcf70b1e4e",
+        "sourcePages": 1,
+        "fontSubsets": 9,
+        "nativeCsvBytes": 1040,
+        "automaticHttpRequests": 0
+      },
+      "offlineSourceAndStudy": true,
+      "a11y": [],
+      "errors": []
+    }
+  ],
+  "failures": [
+    {
+      "engine": "chromium",
+      "substitutedPageHidden": true,
+      "substitutedSourceBlocksExport": true,
+      "recoveryWorks": true,
+      "cancelledDownloadCount": 0,
+      "lateSourceCannotReplaceNewStudy": true,
+      "unreadSavedRecordPreserved": true,
+      "visibleRecoveryRoute": true,
+      "explicitValidRestoreWorks": true
+    },
+    {
+      "engine": "firefox",
+      "substitutedPageHidden": true,
+      "substitutedSourceBlocksExport": true,
+      "recoveryWorks": true,
+      "cancelledDownloadCount": 0,
+      "lateSourceCannotReplaceNewStudy": true,
+      "unreadSavedRecordPreserved": true,
+      "visibleRecoveryRoute": true,
+      "explicitValidRestoreWorks": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+npm notice run embater@0.1.0 test:drill
+npm notice run node --import tsx scripts/drill-review.mjs https://antonsoo.github.io/embater/ /tmp/claude-1000/embater-audit/hosted-grading
+chromium-1440-light: 124 study parts, 19 language exercises, downloads and offline operation verified
+chromium-1440-dark: 124 study parts, 19 language exercises, downloads and offline operation verified
+chromium-375-light: 124 study parts, 19 language exercises, downloads and offline operation verified
+chromium-375-dark: 124 study parts, 19 language exercises, downloads and offline operation verified
+firefox-1440-light: 124 study parts, 19 language exercises, downloads and offline operation verified
+firefox-1440-dark: 124 study parts, 19 language exercises, downloads and offline operation verified
+firefox-375-light: 124 study parts, 19 language exercises, downloads and offline operation verified
+firefox-375-dark: 124 study parts, 19 language exercises, downloads and offline operation verified
+Blocked storage, damaged progress and preserved legacy boxes verified.

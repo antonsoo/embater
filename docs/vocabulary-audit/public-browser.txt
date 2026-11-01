@@ -1,0 +1,34 @@
+npm notice run embater@0.1.0 test:vocabulary
+npm notice run node scripts/vocabulary-audit.mjs https://antonsoo.github.io/embater/ /tmp/claude-1000/embater-audit/hosted-browser
+download started: /tmp/claude-1000/embater-audit/hosted-browser/chromium-1440-light/eye-study.html
+chromium-1440-light: opening native file
+chromium-1440-light: native file loaded
+chromium-1440-light: native fonts loaded
+download started: /tmp/claude-1000/embater-audit/hosted-browser/chromium-1440-light/vocabulary.csv
+download started: /tmp/claude-1000/embater-audit/hosted-browser/chromium-1440-light/offline-eye-study.html
+chromium-1440-light: geometry, printed source, native study/CSV and offline use verified
+download started: /tmp/claude-1000/embater-audit/hosted-browser/chromium-375-dark/eye-study.html
+chromium-375-dark: opening native file
+chromium-375-dark: native file loaded
+chromium-375-dark: native fonts loaded
+download started: /tmp/claude-1000/embater-audit/hosted-browser/chromium-375-dark/vocabulary.csv
+download started: /tmp/claude-1000/embater-audit/hosted-browser/chromium-375-dark/offline-eye-study.html
+chromium-375-dark: geometry, printed source, native study/CSV and offline use verified
+download started: /tmp/claude-1000/embater-audit/hosted-browser/firefox-1440-dark/eye-study.html
+firefox-1440-dark: opening native file
+firefox-1440-dark: native file loaded
+firefox-1440-dark: native fonts loaded
+download started: /tmp/claude-1000/embater-audit/hosted-browser/firefox-1440-dark/vocabulary.csv
+download started: /tmp/claude-1000/embater-audit/hosted-browser/firefox-1440-dark/offline-eye-study.html
+firefox-1440-dark: geometry, printed source, native study/CSV and offline use verified
+download started: /tmp/claude-1000/embater-audit/hosted-browser/firefox-375-light/eye-study.html
+firefox-375-light: opening native file
+firefox-375-light: native file loaded
+firefox-375-light: native fonts loaded
+download started: /tmp/claude-1000/embater-audit/hosted-browser/firefox-375-light/vocabulary.csv
+download started: /tmp/claude-1000/embater-audit/hosted-browser/firefox-375-light/offline-eye-study.html
+firefox-375-light: geometry, printed source, native study/CSV and offline use verified
+download started: /tmp/claude-1000/embater-audit/hosted-browser/chromium-protected-progress.json
+chromium: corruption, cancellation, late source and protected progress verified
+download started: /tmp/claude-1000/embater-audit/hosted-browser/firefox-protected-progress.json
+firefox: corruption, cancellation, late source and protected progress verified
