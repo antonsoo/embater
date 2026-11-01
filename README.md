@@ -38,7 +38,8 @@ source pages, fonts and licenses in one script-free HTML file. It opens directly
 from disk. Palmettes and mounting details remain explicit modern choices.
 
 [Open the roof workshop](https://antonsoo.github.io/embater/#order=doric&columns=6&view=roof).
-[Audit findings, source boundaries and operated evidence](docs/roof-audit.md).
+[Audit findings, source boundaries and operated evidence](docs/roof-audit.md) ·
+[Verified publication](docs/roof-publication.md).
 
 ![An Ionic roof with the movable blue height envelope and Latin proportion reading](docs/assets/roof-desktop.png)
 

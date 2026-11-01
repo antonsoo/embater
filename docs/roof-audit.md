@@ -122,8 +122,10 @@ Receipts: [roof journey](review/roof-audit/roof-browser.json),
 [source reproduction](review/roof-audit/source-reproduction.json),
 [font reproduction](review/roof-audit/fonts-reproduction.json),
 [fraction coverage](review/roof-audit/geometry-glyphs.json).
-These receipts establish local behavior. Public publication is recorded separately
-when canonical hosted bytes and the catalogue journey have been checked.
+These receipts establish local behavior. The subsequent
+[publication record](roof-publication.md) retains canonical hosted-byte, public
+browser and immutable raw-source evidence. Catalogue discovery is verified
+separately in Officina.
 
 ## Reproduce
 

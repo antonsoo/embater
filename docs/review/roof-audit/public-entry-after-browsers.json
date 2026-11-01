@@ -1,0 +1,20 @@
+[
+  {
+    "path": "(root)",
+    "bytes": 1848,
+    "sha256": "9f08794a42ed7d5308cb6799a715e26e5c501e0dfb9d24b97ed20a98e2e2ebcf",
+    "matches": true
+  },
+  {
+    "path": "index.html",
+    "bytes": 1848,
+    "sha256": "9f08794a42ed7d5308cb6799a715e26e5c501e0dfb9d24b97ed20a98e2e2ebcf",
+    "matches": true
+  },
+  {
+    "path": "sw.js",
+    "bytes": 20695,
+    "sha256": "0a06177b525bd479cac16a3fc3f2da4f26e79c81b60f9ca398ab71f0a329263e",
+    "matches": true
+  }
+]
