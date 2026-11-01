@@ -29,10 +29,16 @@ export function mountDrill(root: HTMLElement): void {
   let settings = readSettings(decks, location.hash);
   let boxes: Boxes = {};
   let protectUnreadRecord = false;
+  let protectChangedRecord = false;
+  let lastSaved: string | null = null;
+  let saveGeneration = 0;
+  let saveRequest = 0;
+  let pendingReplacement: number | undefined;
   let persistenceIssue = false;
   let storageMessage = "Progress stays in this browser. Save a backup to keep it elsewhere.";
   try {
     const saved = localStorage.getItem(KEY);
+    lastSaved = saved;
     if (saved) boxes = parseProgress(saved, known);
     else if (localStorage.getItem("embater-drill-v1"))
       storageMessage =
@@ -76,6 +82,7 @@ export function mountDrill(root: HTMLElement): void {
     <label class="drill-transliteration"><input type="checkbox" id="drill-romanized" name="romanized"> Reading aids in questions</label>
   </form>
   <p id="drill-context" class="muted"></p>
+  <p id="drill-write-status" class="muted" role="status">${persistenceIssue ? "Progress: visit only; keep JSON." : "Progress: no new answers this visit."}</p>
   <div id="drill-persistence" class="drill-persistence" role="status"${persistenceIssue ? "" : " hidden"}><p id="drill-persistence-message">${esc(storageMessage)}</p><button type="button" id="drill-keep-visit">Keep this visit’s progress</button></div>
   <div class="drill-grid">
     <div class="drill-q" id="drill-q"></div>
@@ -142,33 +149,111 @@ export function mountDrill(root: HTMLElement): void {
     return `<span lang="${word.lang}" class="opt-native">${esc(word.word)}</span>${word.romanized && word.romanized !== word.word ? ` <span class="opt-rom"${settings.romanized ? "" : " hidden"}>${esc(word.romanized)}</span>` : ""}`;
   }
 
-  function persistence(message: string, issue: boolean): void {
+  function persistence(
+    message: string,
+    issue: boolean,
+    state: "saving" | "saved" | "visit" = issue ? "visit" : "saved",
+  ): void {
     storageMessage = message;
+    $("#drill-write-status", root).textContent =
+      state === "saving"
+        ? "Progress: saving…"
+        : state === "saved"
+          ? "Progress: saved in this browser."
+          : "Progress: visit only; keep JSON.";
     $("#drill-storage", root).textContent = message;
     $("#drill-persistence-message", root).textContent = message;
     $("#drill-persistence", root).hidden = !issue;
   }
 
-  function save(): boolean {
-    if (protectUnreadRecord) {
+  function changedRecord(): void {
+    protectChangedRecord = true;
+    persistence(
+      "Browser progress changed elsewhere. That record is preserved; this visit's answers stay separate. Keep this visit's JSON before reloading browser progress, or restore a valid file to replace it.",
+      true,
+    );
+  }
+
+  async function save(replace = false): Promise<boolean> {
+    const request = ++saveRequest;
+    const generation = replace ? ++saveGeneration : saveGeneration;
+    if (replace) pendingReplacement = generation;
+    const replacing = pendingReplacement === generation;
+    if (!replace && !replacing && protectUnreadRecord) {
       persistence(
         "Browser progress could not be read. Its saved record is untouched. New answers last for this visit until you restore a valid progress file.",
         true,
       );
       return false;
     }
+    if (!replace && !replacing && protectChangedRecord) {
+      changedRecord();
+      return false;
+    }
+    const snapshot = progressJSON(boxes);
+    const controller = new AbortController();
+    const timer = setTimeout(
+      () =>
+        controller.abort(
+          new Error(
+            "Browser saving did not finish. Your answers last for this visit; save progress JSON before leaving.",
+          ),
+        ),
+      2000,
+    );
     try {
-      localStorage.setItem(KEY, progressJSON(boxes));
-      persistence("Progress stays in this browser. Save a backup to keep it elsewhere.", false);
-      return true;
+      const manager = navigator.locks;
+      if (!manager) {
+        persistence(
+          "Browser saving is unavailable here. Your answers last for this visit; save progress JSON before leaving.",
+          true,
+        );
+        return false;
+      }
+      persistence("Saving progress in this browser…", false, "saving");
+      return await manager.request(KEY, { signal: controller.signal }, () => {
+        if (generation !== saveGeneration) return false;
+        if (!replace && (protectUnreadRecord || protectChangedRecord)) return false;
+        if (!replace && localStorage.getItem(KEY) !== lastSaved) {
+          changedRecord();
+          return false;
+        }
+        localStorage.setItem(KEY, snapshot);
+        lastSaved = snapshot;
+        protectUnreadRecord = false;
+        protectChangedRecord = false;
+        if (request === saveRequest)
+          persistence("Progress stays in this browser. Save a backup to keep it elsewhere.", false);
+        return true;
+      });
     } catch {
+      if (generation !== saveGeneration || request !== saveRequest) return false;
       persistence(
-        "Browser storage is unavailable. Your answers last for this visit; save progress JSON before leaving.",
+        controller.signal.aborted && controller.signal.reason instanceof Error
+          ? controller.signal.reason.message
+          : "Browser saving is unavailable. Your answers last for this visit; save progress JSON before leaving.",
         true,
       );
       return false;
+    } finally {
+      clearTimeout(timer);
+      if (replace && pendingReplacement === generation) pendingReplacement = undefined;
     }
   }
+
+  window.addEventListener("storage", (event) => {
+    if (event.key !== KEY && event.key !== null) return;
+    if (protectUnreadRecord) return;
+    try {
+      // The event may be delayed until after an explicit restore. Inspect current bytes.
+      if (localStorage.getItem(KEY) !== lastSaved) changedRecord();
+    } catch {
+      persistence(
+        "Browser saving is unavailable. Your answers last for this visit; save progress JSON before leaving.",
+        true,
+      );
+    }
+  });
 
   function renderBoxes(): void {
     if (settings.mode === "study") {
@@ -377,7 +462,7 @@ export function mountDrill(root: HTMLElement): void {
       score.asked++;
       if (ok) score.right++;
       boxes = grade(boxes, key(group.id), ok);
-      save();
+      void save();
     }
     question.querySelector(".drill-reveal")?.remove();
     inspectedPart = null;
@@ -607,14 +692,15 @@ export function mountDrill(root: HTMLElement): void {
       const next = parseProgress(await file.text(), known);
       if (generation !== importGeneration) return;
       boxes = next;
-      protectUnreadRecord = false;
-      const persisted = save();
       score = { right: 0, asked: 0 };
       last = null;
       ask();
+      status.textContent = "Restoring browser progress…";
+      const persisted = await save(true);
+      if (generation !== importGeneration) return;
       status.textContent = persisted
         ? "Restored the saved boxes. A new ungraded question is ready."
-        : "Restored the boxes for this visit. Browser storage is unavailable; keep your JSON backup.";
+        : "Restored the boxes for this visit. Browser saving is unavailable; keep your JSON backup.";
     } catch (error) {
       if (generation === importGeneration)
         status.textContent = `${error instanceof Error ? error.message : "The progress file could not be read."} Current progress was kept.`;

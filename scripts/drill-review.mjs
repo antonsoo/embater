@@ -14,8 +14,14 @@ const base = process.argv[2] ?? "http://127.0.0.1:4492/embater/";
 const output = resolve(process.argv[3] ?? "/tmp/claude-1000/embater-drill/browser");
 await mkdir(output, { recursive: true });
 const receipts = [];
-const currentBoxes = (page) =>
-  page.evaluate(() => JSON.parse(localStorage.getItem("embater-drill-v2") ?? '{"boxes":{}}').boxes);
+const currentBoxes = async (page) => {
+  await page.waitForFunction(
+    () => document.getElementById("drill-write-status")?.textContent !== "Progress: saving…",
+  );
+  return page.evaluate(
+    () => JSON.parse(localStorage.getItem("embater-drill-v2") ?? '{"boxes":{}}').boxes,
+  );
+};
 const firstWord = (term, lang) => term.words.find((w) => w.lang === lang);
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const mode = (page, value) => page.locator(`input[name="mode"][value="${value}"]`).check();

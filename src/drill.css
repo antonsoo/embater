@@ -315,3 +315,8 @@
   cursor: pointer;
   padding: 0.4rem 0.7rem;
 }
+
+#drill-write-status {
+  min-height: 1.55em;
+  font-size: 0.9rem;
+}

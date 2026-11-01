@@ -41,8 +41,9 @@ rule above 25 feet from the rule at and below that height.
 pages, fonts and licenses in one script-free HTML file. Its vocabulary CSV link
 works offline. Additional licensed font subsets retain the lesson's Chinese,
 Devanagari, Old Persian and Egyptological characters without relying on installed
-fonts. Practice records remain separate; an unreadable record is preserved until
-an explicit valid restore, with a visible route to save the current visit.
+fonts. Practice records remain separate; unreadable or newer browser records are preserved. A stale tab keeps its own
+answers and JSON backup; an explicit valid restore may replace browser progress.
+Saving, saved and visit-only states remain visible.
 
 [Audit, source identities, limitations and operated browser evidence](docs/vocabulary-audit.md).
 

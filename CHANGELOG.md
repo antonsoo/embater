@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Preserve newer practice records across updated tabs: serialize a short
+  read/compare/write, keep stale visits separate, and retain native JSON backups.
+- Bound pending browser writes, expose their saving/saved/visit-only states, and
+  preserve answers through queued snapshots and explicit restores. Unsupported
+  coordination environments keep the visit without pretending to persist it.
+
 - Recover control after rapid navigation during worker activation: a matching
   ready edition can repeat its claim, then the page audits the cached bytes.
 
