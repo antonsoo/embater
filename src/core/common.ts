@@ -29,6 +29,12 @@ export interface Pediment {
   tympanum: number;
   pitchDegrees: number;
   top: number;
+  base: number;
+  width: number;
+  projection: number;
+  /** Chosen normal thickness; the ancient text does not specify a section convention. */
+  coronaHeight: number;
+  ornaments: { x: number; y: number; height: number }[];
 }
 
 /**
@@ -87,14 +93,46 @@ export function pediment(
   );
   const top = base + h + t + simaT;
   const unit = Math.max(h * 0.12, 0.3);
-  pieces.push(...acroterion(W / 2, top - simaT * 0.5, (h * 9) / 8));
-  pieces.push(...acroterion(cx0 + unit * 2, endY + simaT, h));
-  pieces.push(...acroterion(cx1 - unit * 2, endY + simaT, h));
+  // Bases sit on the drawn sima, rather than burying the centre ornament in it
+  // or using the eave level for an ornament positioned uphill from the eave.
+  // Inset and mounting are drawing choices, not recovered ancient details.
+  const cornerX = cx0 + unit * 2;
+  const cornerY = endY + simaT + (cornerX + h * 0.22 - cx0) * slope;
+  const ornaments = [
+    { x: cornerX, y: cornerY, height: h },
+    { x: W / 2, y: top, height: (h * 9) / 8 },
+    { x: W - cornerX, y: cornerY, height: h },
+  ];
+  for (const ornament of ornaments) {
+    const half = ornament.height * 0.22;
+    const roofY = (x: number) => top - Math.abs(x - W / 2) * slope;
+    // Grey levelling wedges support the horizontal plinths on a sloping roof.
+    pieces.push(
+      poly(
+        "sima",
+        [
+          [ornament.x - half, roofY(ornament.x - half)],
+          [ornament.x, roofY(ornament.x)],
+          [ornament.x + half, roofY(ornament.x + half)],
+          [ornament.x + half, ornament.y],
+          [ornament.x - half, ornament.y],
+        ],
+        true,
+        "chosen",
+      ),
+    );
+    pieces.push(...acroterion(ornament.x, ornament.y, ornament.height));
+  }
   return {
     pieces,
     tympanum: h,
     pitchDegrees: (Math.atan(slope) * 180) / Math.PI,
     top: top + (h * 9) / 8,
+    base,
+    width,
+    projection,
+    coronaHeight,
+    ornaments,
   };
 }
 
@@ -108,7 +146,8 @@ export function acroterion(cx: number, y: number, height: number): Piece[] {
   for (let i = 0; i < petals; i++) {
     const t = i / (petals - 1) - 0.5;
     const angle = Math.PI / 2 - t * 2.1;
-    const length = (height - plinth) * (0.9 - 0.5 * Math.abs(t));
+    // The central tip must end at y + height, including root and plinth.
+    const length = (height - plinth - height * 0.1) * (1 - 0.5 * Math.abs(t));
     const width = length * 0.2;
     const dir: Pt = [Math.cos(angle), Math.sin(angle)];
     const nrm: Pt = [-dir[1], dir[0]];

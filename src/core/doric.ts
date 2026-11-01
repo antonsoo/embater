@@ -1,4 +1,4 @@
-import { fmtModules, pediment, steps } from "./common";
+import { fmtModules, type Pediment, pediment, steps } from "./common";
 import { band, fluteLines, mirrored, poly, quad, rect, taperRatio } from "./geometry";
 import type { Dim, Elevation, Piece, Pt } from "./types";
 
@@ -67,6 +67,7 @@ export function tympanumHeight(width: number, coronaProjection: number): number 
 }
 
 export interface DoricElevation extends Elevation {
+  roof: Pediment;
   layout: FrontLayout;
   taper: { ratio: number; parts: [number, number]; columnFeet: number };
   tympanum: number;
@@ -214,9 +215,7 @@ export function doricElevation(input: DoricInput): DoricElevation {
   const cx1 = W + CORONA_PROJECTION;
   pieces.push(rect("cymatium", cx0 + 0.05, L.friezeTop, cx1 - cx0 - 0.1, 1 / 12, "chosen"));
   pieces.push(rect("corona", cx0, L.friezeTop + 1 / 12, cx1 - cx0, 1 / 3));
-  pieces.push(
-    rect("cymatium", cx0 - 0.04, L.coronaTop - 1 / 12, cx1 - cx0 + 0.08, 1 / 12, "chosen"),
-  );
+  pieces.push(rect("cymatium", cx0, L.coronaTop - 1 / 12, cx1 - cx0, 1 / 12, "chosen"));
 
   // Mutules over every triglyph and every metope centre, six drops in a row; the gaps are "roads".
   const mutuleCentres: number[] = [];
@@ -314,6 +313,7 @@ export function doricElevation(input: DoricInput): DoricElevation {
   return {
     pieces,
     dims,
+    roof: ped,
     bounds: {
       x0: Math.min(-base.reach, cx0 - 0.6),
       x1: Math.max(W + base.reach, cx1 + 0.6),

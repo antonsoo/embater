@@ -1,4 +1,4 @@
-import { fmtModules, pediment, steps } from "./common";
+import { fmtModules, type Pediment, pediment, steps } from "./common";
 import {
   band,
   circlePiece,
@@ -102,6 +102,7 @@ export function ionicCapitalUnits(columnFeet: number): { abacus: number; part: n
 }
 
 export interface IonicElevation extends Elevation {
+  roof: Pediment;
   front: IonicFront;
   height: number;
   taper: { ratio: number; parts: [number, number]; columnFeet: number };
@@ -495,17 +496,8 @@ export function ionicElevation(input: IonicInput): IonicElevation {
   );
   y += dentilH;
   const coronaH = 4 * unit;
-  pieces.push(rect("corona", -proj, y, W + 2 * proj, coronaH * 0.78));
-  pieces.push(
-    rect(
-      "cymatium",
-      -proj - 0.03,
-      y + coronaH * 0.78,
-      W + 2 * proj + 0.06,
-      coronaH * 0.22,
-      "chosen",
-    ),
-  );
+  pieces.push(rect("corona", -proj + 0.03, y, W + 2 * proj - 0.06, coronaH * 0.78));
+  pieces.push(rect("cymatium", -proj, y + coronaH * 0.78, W + 2 * proj, coronaH * 0.22, "chosen"));
   y += coronaH;
   const ped = pediment(W, y, proj, coronaH);
   pieces.push(...ped.pieces);
@@ -560,6 +552,7 @@ export function ionicElevation(input: IonicInput): IonicElevation {
   return {
     pieces,
     dims,
+    roof: ped,
     bounds: {
       x0: Math.min(-base.reach, -proj - 0.4),
       x1: Math.max(W + base.reach, W + proj + 0.4),
