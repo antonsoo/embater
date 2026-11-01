@@ -93,6 +93,8 @@ export interface DrillSettings {
   language: Lang;
   mode: DrillMode;
   romanized: boolean;
+  /** The selected study entry; quiz targets never travel in a share link. */
+  part?: string;
 }
 
 export function readSettings(decks: readonly Deck[], hash: string): DrillSettings {
@@ -108,6 +110,12 @@ export function readSettings(decks: readonly Deck[], hash: string): DrillSetting
     language,
     mode: requested === "find" || requested === "study" ? requested : "name",
     romanized: query.get("roman") !== "0",
+    ...(requested === "study" &&
+    deck.terms.some(
+      (term) => term.id === query.get("part") && term.words.some((word) => word.lang === language),
+    )
+      ? { part: query.get("part") as string }
+      : {}),
   };
 }
 
@@ -117,5 +125,6 @@ export function settingsHash(settings: DrillSettings): string {
     lang: settings.language,
     mode: settings.mode,
     roman: settings.romanized ? "1" : "0",
+    ...(settings.mode === "study" && settings.part ? { part: settings.part } : {}),
   })}`;
 }

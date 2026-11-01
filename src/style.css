@@ -12,8 +12,8 @@
   --groove: #2a2f36;
   --doric: #a0661a;
   --ionic: #1f4e9c;
-  --display: "GFS Didot", "EB Garamond", Georgia, serif;
-  --text: "EB Garamond", Georgia, "Times New Roman", serif;
+  --display: "GFS Didot", "EB Garamond", "Embater Supplement", Georgia, serif;
+  --text: "EB Garamond", "Embater Supplement", Georgia, "Times New Roman", serif;
   color-scheme: light;
 }
 
@@ -450,8 +450,7 @@ main {
 }
 
 .card {
-  position: sticky;
-  top: 1rem;
+  position: relative;
   padding: 1.1rem 1.2rem 1.2rem;
   background: var(--sheet);
   border-top: 3px solid var(--caeruleum);

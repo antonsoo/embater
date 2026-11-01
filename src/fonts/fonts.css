@@ -1,3 +1,5 @@
+@import "./vocabulary.css";
+
 /* The page's fonts, served from the page's own origin: the files and @font-face rules
    Google Fonts gives a current Chrome for the stylesheet below, fetched once by
    .tools/selfhost_fonts.py. Licenses: LICENSE.txt in this directory.

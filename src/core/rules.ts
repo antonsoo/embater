@@ -62,6 +62,7 @@ const list: Rule[] = [
     id: "doric-triglyph",
     cite: "IV.3.5",
     page: 83,
+    pageEnd: 84,
     latin:
       "supra epistylium conlocandi sunt triglyphi cum suis metopis, alti unius ⟨et⟩ dimidiati moduli, lati in fronte unius moduli, ita divisi, ut in angularibus columnis et in mediis contra tetrantes medios sint conlocati, et intercolumniis reliquis bini, in mediis pronao et postico terni.",
     english:
@@ -129,6 +130,7 @@ const list: Rule[] = [
     id: "doric-history",
     cite: "IV.1.6, IV.1.8",
     page: 77,
+    pageEnd: 78,
     latin:
       "cum invenissent pedem sextam partem esse altitudinis in homine, item in columnam transtulerunt … posteri … septem crassitudinis diametros in altitudinem columnae doricae, ionicae novem constituerunt.",
     english:
@@ -258,6 +260,7 @@ const list: Rule[] = [
     id: "attic-base",
     cite: "III.5.1–2",
     page: 69,
+    pageEnd: 70,
     latin:
       "uti crassitudo cum plintho sit columnae ex dimidia crassitudine … ita tum lata et longa erit columnae crassitudinis unius et dimidiae. altitudo eius, si atticurges erit, ita dividatur, ut superior pars tertia parte sit crassitudinis columnae, reliquum plintho relinquatur. dempta plintho reliquum dividatur in partes quattuor, fiatque superior torus quartae; reliquae tres aequaliter dividantur, et una sit inferior torus, altera pars cum suis quadris scotia, quam Graeci τροχιλον dicunt.",
     english:
@@ -280,6 +283,15 @@ const list: Rule[] = [
       "quam crassus imus scapus fuerit addita octava decuma parte scapi, abacus habeat longitudinem et latitudinem; crassitudinem cum volutis eius dimidiam … tunc crassitudo dividenda est in partes novem et dimidiam … tunc ex novem partibus et dimidia una pars et dimidia abaci crassitudo relinquatur, reliquae octo volutis constituantur … ut quattuor partes et dimidia sub abaco relinquantur … centrum oculi ⟨conlocetur⟩ … tam magna in diametro, quam una pars ex octo partibus est.",
     english:
       "The abacus is as long and wide as the bottom of the shaft plus an eighteenth; its height with the volutes, half of that … divide the height into nine and a half parts: one and a half for the thickness of the abacus, the other eight for the volutes … leaving four and a half parts below the abacus, set the centre of the eye … a circle with a diameter of one of the eight parts.",
+  },
+  {
+    id: "ionic-tall-abacus",
+    cite: "III.5.7",
+    page: 72,
+    latin:
+      "haec erunt symmetriae capitulorum, quae columnae futurae sunt ab minimo ad pedes xxv. quae supra erunt, reliqua habebunt ad eundem modum symmetrias, abacus autem erit longus et latus, quam crassa columna est ima adiecta parte viiii",
+    english:
+      "These are the capital proportions for columns up to twenty-five feet. Those above that retain the other proportions in the same way, but the abacus is as long and wide as the lower thickness of the column with a ninth part added.",
   },
   {
     id: "volute",
@@ -330,6 +342,7 @@ const list: Rule[] = [
     id: "ionic-corona",
     cite: "III.5.11–12",
     page: 73,
+    pageEnd: 74,
     latin:
       "corona cum suo cymatio, praeter simam, quantum media fascia epistylii … tympani autem, quod est in fastigio, altitudo sic est facienda, uti frons coronae ab extremis cymatiis tota dimetiatur in partes novem et ex eis una pars in medio cacumini tympani constituatur",
     english:
@@ -402,6 +415,7 @@ const list: Rule[] = [
     id: "tuscan-column",
     cite: "IV.7.2–3",
     page: 90,
+    pageEnd: 91,
     latin:
       "eaeque sint ima crassitudine altitudinis parte vii; altitudo tertia parte latitudinis templi; summaque columna quarta parte crassitudinis imae contrahatur. spirae earum altae dimidia parte crassitudinis fiant. habeant spirae earum plinthum ad circinum, altam suae crassitudinis dimidia parte, torum insuper cum apophysi crassum quantum plinthus. capituli altitudo dimidia crassitudinis. abaci latitudo quanta ima crassitudo columnae.",
     english:

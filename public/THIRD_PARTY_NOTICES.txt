@@ -69,3 +69,30 @@ manifest records original PDF identity, page hashes and the rendering command;
 compares reported dimensions of the survey's interpreted original opening,
 explicitly omitting later inner linings. It does not reproduce a modern survey
 or claim these are measurements of today's clear opening.
+
+## Vocabulary source pages and supplementary fonts
+
+`public/sources/vocabulary/` retains 26 complete printed pages of the same
+public-domain Krohn 1912 Vitruvius. These cover the vocabulary's cited passages,
+including passages continued onto the next page. `scripts/vocabulary-sources.py`
+reproduces every JPEG from the identified original PDF and checks the manifest
+and the application's source identities. The source packet is about 16 MB;
+these images are retained offline, not downloaded as initial JavaScript.
+
+Five renamed Noto font subsets in `src/fonts/vocabulary-*.woff2` provide the
+Egyptological, Devanagari, Old Persian, Chinese and mathematical characters
+missing from the existing reading fonts. They derive from Noto Serif, Noto Serif
+Devanagari, Noto Sans Old Persian, Noto Sans Math and Noto Serif CJK TC. Full
+copyright and SIL OFL notices are retained in `public/fonts/VOCABULARY-OFL.txt`.
+`public/fonts/vocabulary-manifest.json` records immutable original URLs, hashes,
+retained characters and output identities. `scripts/vocabulary-fonts.py`, using
+`scripts/requirements-fonts.txt`, reproduces the subsets from those originals.
+The combined additional font payload is 38,888 bytes. Modified family names are
+Embater Supplement or Embater followed by the script name; original copyright
+notices and the license remain intact.
+
+The four short Latin phrase notes and English explanations are new instructional
+content. Dictionary links point to the University of Chicago's Logeion. The
+scans attest the phrases; they do not establish every vocabulary etymology or an
+ancient pronunciation. The illustrated study embeds its selected source pages,
+font bytes and license notices, with no scripts or automatic external resources.

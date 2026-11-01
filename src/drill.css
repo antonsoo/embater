@@ -233,3 +233,85 @@
 .drill-reveal:hover {
   border-color: var(--caeruleum);
 }
+
+.drill-view,
+#drill-detail-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+#drill-detail-controls[hidden] {
+  display: none;
+}
+.drill-view button {
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  background: var(--sheet);
+  color: var(--ink);
+  padding: 0.3rem 0.6rem;
+  font: inherit;
+  cursor: pointer;
+}
+.drill-view button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--sheet);
+}
+.drill-view button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+#drill-view-status {
+  margin: 0.5rem 0 0.9rem;
+  font-size: 0.95rem;
+}
+.drill-plate.is-detail .plate-svg {
+  aspect-ratio: 4 / 3;
+  max-height: none;
+}
+
+#drill-reading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+#drill-reading-actions[hidden] {
+  display: none;
+}
+#drill-reading-actions button {
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  background: var(--sheet);
+  color: var(--ink);
+  border-radius: 3px;
+  font: inherit;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+#drill-reading-actions button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.drill-persistence {
+  max-width: 70ch;
+  border: 1px solid var(--minium);
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0 1.4rem;
+}
+.drill-persistence[hidden] {
+  display: none;
+}
+.drill-persistence p {
+  margin: 0 0 0.6rem;
+}
+.drill-persistence button {
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--sheet);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  padding: 0.4rem 0.7rem;
+}

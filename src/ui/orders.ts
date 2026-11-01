@@ -15,6 +15,7 @@ import type { Bounds, Elevation } from "../core/types";
 import { renderElevation } from "../draw/render";
 import { termCard } from "./card";
 import { $, esc } from "./dom";
+import { connectSourceCards, VocabularySource } from "./vocabulary-source";
 
 type Order = "doric" | "ionic" | "corinthian" | "tuscan";
 
@@ -253,13 +254,14 @@ export function mountOrders(root: HTMLElement): void {
   <div class="plate-wrap">
     <figure class="plate" id="plate"></figure>
     <p class="readout" id="readout" aria-hidden="true">Point at a part to see its name; select it to read about it.</p>
-    <p class="legend"><span class="ink-text">Black lines</span>: Vitruvius fixes the size. <span class="ink-chosen">Grey lines</span>: he names the part but leaves its form to the draughtsman. <span class="ink-dim">Red</span>: measurements in modules.</p>
+    <p class="legend"><span class="ink-text">Black</span>: features with cited dimensions in this drawing model. <span class="ink-chosen">Grey</span>: illustrative profiles and geometry. <span class="ink-dim">Red</span>: measurements in modules. A prescribed height does not determine every contour or width.</p>
   </div>
   <aside class="side">
     <div class="card" id="card"></div>
     <div class="key"><h2>Parts in this drawing</h2><ul id="key"></ul></div>
   </aside>
 </section>
+<section class="drill-source" id="drill-source" aria-labelledby="drill-source-title" hidden></section>
 <section class="below">
   <div class="derivation" id="derivation"></div>
   <dl class="facts" id="facts"></dl>
@@ -267,6 +269,8 @@ export function mountOrders(root: HTMLElement): void {
   const form = $(".controls", root) as HTMLFormElement;
   const plate = $("#plate", root);
   const card = $("#card", root);
+  const source = new VocabularySource($("#drill-source", root));
+  connectSourceCards(card, source);
   const key = $("#key", root);
   const readout = $("#readout", root);
   let current: Built | null = null;
@@ -367,6 +371,7 @@ export function mountOrders(root: HTMLElement): void {
   }
 
   function select(part: string | null): void {
+    source.close(false);
     s.part = part;
     for (const el of plate.querySelectorAll(".sel")) el.classList.remove("sel");
     for (const el of key.querySelectorAll("[aria-pressed]"))
@@ -376,11 +381,11 @@ export function mountOrders(root: HTMLElement): void {
         el.classList.add("sel");
       key.querySelector(`[data-part="${CSS.escape(part)}"]`)?.setAttribute("aria-pressed", "true");
       const t = term(part);
-      card.innerHTML = t ? termCard(t) : "";
+      card.innerHTML = t ? termCard(t, { sourceActions: true }) : "";
     } else {
       const intro = term("embater");
       card.innerHTML = intro
-        ? `<p class="card-hint">Select a part of the drawing, or a name below.</p>${termCard(intro)}`
+        ? `<p class="card-hint">Select a part of the drawing, or a name below.</p>${termCard(intro, { sourceActions: true })}`
         : "";
     }
     writeHash(s);

@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+- Audit the drill with actual selected/plain pixel comparisons; add local detail,
+  bounded zoom/pan and recenter using the original geometry and a painted anchor.
+- Read complete, checked source pages beside vocabulary on Drill, Orders and
+  World; preserve manuscript/editor notes and correct five continuation spans.
+- Distinguish Ionic, Doric and Tuscan limits in shared word notes; add the cited
+  Ionic abacus rule for columns above 25 feet and four Latin phrase readings.
+- Keep a script-free illustrated study with native vocabulary CSV, source pages,
+  font bytes and licenses; retain licensed subsets for previously missing glyphs.
+- Preserve unreadable practice records through subsequent answers, expose recovery
+  visibly, and remove the sticky word-card overlap that blocked part buttons.
+
 - Turn the vocabulary drill into a language-selectable study plate and two
   independent exercises, with source passages and keyboard inspection controls.
 - Accept shared displayed names fairly instead of marking indistinguishable

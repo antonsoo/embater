@@ -12,10 +12,14 @@ import {
   type WordGroup,
 } from "../core/drill";
 import { buildDecks } from "../core/drill-decks";
+import { type DetailPose, detailAnchor, detailWindow } from "../core/drill-detail";
 import { BOXES, type Boxes, distractors, grade, pickNext, tally } from "../core/leitner";
 import { renderElevation } from "../draw/render";
+import { type VocabularyStudy, vocabularyStudy } from "../vocabulary-study";
 import { LANG_NAMES, termCard } from "./card";
 import { $, esc } from "./dom";
+import { visiblePartPoint } from "./visible-part";
+import { connectSourceCards, VocabularySource } from "./vocabulary-source";
 
 const KEY = "embater-drill-v2";
 
@@ -24,6 +28,8 @@ export function mountDrill(root: HTMLElement): void {
   const known = progressKeys(decks);
   let settings = readSettings(decks, location.hash);
   let boxes: Boxes = {};
+  let protectUnreadRecord = false;
+  let persistenceIssue = false;
   let storageMessage = "Progress stays in this browser. Save a backup to keep it elsewhere.";
   try {
     const saved = localStorage.getItem(KEY);
@@ -32,8 +38,10 @@ export function mountDrill(root: HTMLElement): void {
       storageMessage =
         "Earlier mixed-language progress is preserved separately. These boxes track each language and direction from now on.";
   } catch {
+    protectUnreadRecord = true;
+    persistenceIssue = true;
     storageMessage =
-      "Saved progress could not be read. This visit starts with new boxes; keep a backup before leaving.";
+      "Browser progress could not be read. Its saved record is untouched. New answers last for this visit until you restore a valid progress file.";
   }
   let group: WordGroup | undefined;
   let target: Term | undefined;
@@ -42,6 +50,14 @@ export function mountDrill(root: HTMLElement): void {
   let studyId: string | null = null;
   let score = { right: 0, asked: 0 };
   let importGeneration = 0;
+  let detail = false;
+  let detailPart: string | null = null;
+  let detailPose: DetailPose = { zoom: 1, x: 0, y: 0 };
+  let selectedParts: string[] = [];
+  let missedParts: string[] = [];
+  let inspectedPart: string | null = null;
+  let readingRequest = 0;
+  let readingController: AbortController | undefined;
 
   root.innerHTML = `
 <section class="lede">
@@ -60,15 +76,33 @@ export function mountDrill(root: HTMLElement): void {
     <label class="drill-transliteration"><input type="checkbox" id="drill-romanized" name="romanized"> Reading aids in questions</label>
   </form>
   <p id="drill-context" class="muted"></p>
+  <div id="drill-persistence" class="drill-persistence" role="status"${persistenceIssue ? "" : " hidden"}><p id="drill-persistence-message">${esc(storageMessage)}</p><button type="button" id="drill-keep-visit">Keep this visit’s progress</button></div>
   <div class="drill-grid">
     <div class="drill-q" id="drill-q"></div>
     <div class="drill-visual">
+      <div class="drill-view" aria-label="Drawing view">
+        <button type="button" data-view="plate" aria-pressed="true">Whole plate</button>
+        <button type="button" data-view="detail" aria-pressed="false">Local detail</button>
+        <div id="drill-detail-controls" hidden>
+          <button type="button" data-pan="out" aria-label="Zoom detail out">−</button>
+          <button type="button" data-pan="in" aria-label="Zoom detail in">+</button>
+          <button type="button" data-pan="left" aria-label="Pan detail left">Left</button>
+          <button type="button" data-pan="up" aria-label="Pan detail up">Up</button>
+          <button type="button" data-pan="down" aria-label="Pan detail down">Down</button>
+          <button type="button" data-pan="right" aria-label="Pan detail right">Right</button>
+          <button type="button" data-pan="reset">Recenter</button>
+        </div>
+      </div>
+      <p id="drill-view-status" class="muted"></p>
       <figure class="plate drill-plate" id="drill-plate"></figure>
       <div id="drill-parts"></div>
       <p id="drill-inspection" class="drill-inspection" role="status"></p>
+      <div id="drill-reading-actions"><button type="button" id="drill-save-reading">Save illustrated study</button><button type="button" id="drill-cancel-reading" hidden>Cancel study save</button></div>
+      <p id="drill-reading-status" role="status"></p>
     </div>
     <div class="drill-feedback" id="drill-feedback" aria-live="polite"></div>
     <div class="drill-boxes" id="drill-boxes"></div>
+    <section id="drill-source" class="drill-source" aria-labelledby="drill-source-title" hidden></section>
   </div>
   <details class="drill-keep"><summary>Keep your progress or share this exercise</summary>
     <p id="drill-storage">${esc(storageMessage)}</p>
@@ -86,6 +120,11 @@ export function mountDrill(root: HTMLElement): void {
   const inspection = $("#drill-inspection", root);
   const boxesEl = $("#drill-boxes", root);
   const status = $("#drill-file-status", root);
+  const readingButton = $("#drill-save-reading", root) as HTMLButtonElement;
+  const cancelReadingButton = $("#drill-cancel-reading", root) as HTMLButtonElement;
+  const readingStatus = $("#drill-reading-status", root);
+  const source = new VocabularySource($("#drill-source", root));
+  connectSourceCards(feedback, source);
   const languageSelect = root.querySelector<HTMLSelectElement>("#drill-language");
 
   const groups = () => groupsFor(settings.deck, settings.language);
@@ -103,12 +142,31 @@ export function mountDrill(root: HTMLElement): void {
     return `<span lang="${word.lang}" class="opt-native">${esc(word.word)}</span>${word.romanized && word.romanized !== word.word ? ` <span class="opt-rom"${settings.romanized ? "" : " hidden"}>${esc(word.romanized)}</span>` : ""}`;
   }
 
-  function save(): void {
+  function persistence(message: string, issue: boolean): void {
+    storageMessage = message;
+    $("#drill-storage", root).textContent = message;
+    $("#drill-persistence-message", root).textContent = message;
+    $("#drill-persistence", root).hidden = !issue;
+  }
+
+  function save(): boolean {
+    if (protectUnreadRecord) {
+      persistence(
+        "Browser progress could not be read. Its saved record is untouched. New answers last for this visit until you restore a valid progress file.",
+        true,
+      );
+      return false;
+    }
     try {
       localStorage.setItem(KEY, progressJSON(boxes));
+      persistence("Progress stays in this browser. Save a backup to keep it elsewhere.", false);
+      return true;
     } catch {
-      $("#drill-storage", root).textContent =
-        "Browser storage is unavailable. Your answers last for this visit; save progress JSON before leaving.";
+      persistence(
+        "Browser storage is unavailable. Your answers last for this visit; save progress JSON before leaving.",
+        true,
+      );
+      return false;
     }
   }
 
@@ -133,10 +191,65 @@ export function mountDrill(root: HTMLElement): void {
         el.classList.add(className);
   }
 
+  function drawPlate(): void {
+    const current = detailPart ?? terms()[0]?.id ?? "";
+    const view = detail
+      ? detailWindow(settings.deck.elevation, settings.deck.view, current, detailPose)
+      : settings.deck.view;
+    if (detail) {
+      const anchor = detailAnchor(settings.deck.elevation, settings.deck.view, current);
+      detailPose.x =
+        (view.x0 + view.x1) / 2 - (detailPose.focus?.[0] ?? (anchor.x0 + anchor.x1) / 2);
+      detailPose.y =
+        (view.y0 + view.y1) / 2 - (detailPose.focus?.[1] ?? (anchor.y0 + anchor.y1) / 2);
+    }
+    plate.innerHTML = renderElevation(settings.deck.elevation, {
+      id: `drill-${settings.deck.id}`,
+      title: `${settings.deck.label} architectural ${detail ? "local detail" : "plate"}. Use the part buttons below to inspect details.`,
+      dims: false,
+      view,
+      margin: detail ? 0 : 0.4,
+    });
+    plate.classList.toggle("is-detail", detail);
+    mark(selectedParts, "sel");
+    mark(missedParts, "miss");
+    if (inspectedPart) mark([inspectedPart], "inspect");
+    $("#drill-detail-controls", root).hidden = !detail;
+    for (const button of root.querySelectorAll<HTMLButtonElement>("[data-view]"))
+      button.setAttribute("aria-pressed", String((button.dataset.view === "detail") === detail));
+    const zoomIn = root.querySelector<HTMLButtonElement>('[data-pan="in"]');
+    const zoomOut = root.querySelector<HTMLButtonElement>('[data-pan="out"]');
+    if (zoomIn) zoomIn.setAttribute("aria-disabled", String(detailPose.zoom >= 8));
+    if (zoomOut) zoomOut.setAttribute("aria-disabled", String(detailPose.zoom <= 1));
+    $("#drill-view-status", root).textContent = detail
+      ? `Local crop, ${detailPose.zoom}× its initial local zoom. The same geometry is enlarged; a long feature may extend beyond the frame.`
+      : "Use Local detail to enlarge a small feature. No carving detail is added.";
+  }
+
+  function centrePart(id: string): void {
+    detailPart = id;
+    detailPose = { zoom: detailPose.zoom, x: 0, y: 0 };
+    drawPlate();
+    if (detail) {
+      const svg = plate.querySelector<SVGSVGElement>("svg");
+      const anchor = detailAnchor(settings.deck.elevation, settings.deck.view, id);
+      const focus = svg
+        ? visiblePartPoint(svg, settings.deck.view, id, [
+            (anchor.x0 + anchor.x1) / 2,
+            (anchor.y0 + anchor.y1) / 2,
+          ])
+        : undefined;
+      if (focus) {
+        detailPose = { ...detailPose, focus };
+        drawPlate();
+      }
+    }
+  }
+
   function inspect(id: string): void {
     if (settings.mode !== "find" || answered) return;
-    for (const el of plate.querySelectorAll(".inspect")) el.classList.remove("inspect");
-    mark([id], "inspect");
+    inspectedPart = id;
+    centrePart(id);
     const list = terms();
     const index = list.findIndex((term) => term.id === id);
     inspection.textContent = `Inspecting part ${index + 1}. Activate its button to answer.`;
@@ -151,29 +264,34 @@ export function mountDrill(root: HTMLElement): void {
   function study(id: string): void {
     const term = terms().find((entry) => entry.id === id);
     if (!term) return;
+    source.close(false);
+    cancelReading();
+    settings = { ...settings, part: id };
     studyId = id;
-    for (const el of plate.querySelectorAll(".sel, .inspect"))
-      el.classList.remove("sel", "inspect");
-    mark([id], "sel");
+    selectedParts = [id];
+    missedParts = [];
+    inspectedPart = null;
+    centrePart(id);
     for (const button of partControls.querySelectorAll<HTMLButtonElement>("[data-term]"))
       button.setAttribute("aria-pressed", String(button.dataset.term === id));
     inspection.textContent = `Selected: ${term.english}.`;
-    feedback.innerHTML = termCard(term);
+    feedback.innerHTML = termCard(term, { sourceActions: true, live: false });
   }
 
   function ask(focus = false): void {
+    source.close(false);
+    cancelReading();
+    $("#drill-reading-actions", root).hidden = settings.mode !== "study";
     answered = false;
     feedback.innerHTML = "";
     inspection.textContent = "";
     group = undefined;
     target = undefined;
-    plate.innerHTML = renderElevation(settings.deck.elevation, {
-      id: `drill-${settings.deck.id}`,
-      title: `${settings.deck.label} architectural plate. Use the part buttons below to inspect details.`,
-      dims: false,
-      view: settings.deck.view,
-      margin: 0.4,
-    });
+    selectedParts = [];
+    missedParts = [];
+    inspectedPart = null;
+    detailPart = null;
+    detailPose = { ...detailPose, x: 0, y: 0 };
     renderPartControls();
     const available = groups();
     $("#drill-context", root).textContent =
@@ -199,7 +317,8 @@ export function mountDrill(root: HTMLElement): void {
       target = group.terms[Math.floor(Math.random() * group.terms.length)];
       if (!target) return;
       if (settings.mode === "name") {
-        mark([target.id], "sel");
+        selectedParts = [target.id];
+        detailPart = target.id;
         const ids = [
           group.id,
           ...distractors(
@@ -226,6 +345,7 @@ export function mountDrill(root: HTMLElement): void {
         question.innerHTML = `<h2>Find a part named</h2><p class="find-word">${wordLabel(group.word)}</p><p class="muted">Choose in the drawing or with the part buttons. Any part carrying this same ${LANG_NAMES[settings.language]} name counts.</p>`;
       }
     }
+    drawPlate();
     if (group && settings.mode !== "study")
       question.insertAdjacentHTML(
         "beforeend",
@@ -260,9 +380,10 @@ export function mountDrill(root: HTMLElement): void {
       save();
     }
     question.querySelector(".drill-reveal")?.remove();
-    for (const el of plate.querySelectorAll(".inspect")) el.classList.remove("inspect");
-    mark(settings.mode === "find" ? group.terms.map((term) => term.id) : [target.id], "sel");
-    if (!ok && id !== null && settings.mode === "find") mark([id], "miss");
+    inspectedPart = null;
+    selectedParts = settings.mode === "find" ? group.terms.map((term) => term.id) : [target.id];
+    missedParts = !ok && id !== null && settings.mode === "find" ? [id] : [];
+    centrePart(target.id);
     for (const button of question.querySelectorAll<HTMLButtonElement>(".opt")) {
       button.disabled = true;
       if (button.dataset.id === group.id) button.classList.add("is-right");
@@ -275,7 +396,7 @@ export function mountDrill(root: HTMLElement): void {
     }
     inspection.textContent = "Answer revealed. Blue marks the matching part or parts.";
     const cards = settings.mode === "find" ? group.terms : [target];
-    feedback.innerHTML = `<p class="verdict ${ungraded ? "" : ok ? "ok" : "no"}">${ungraded ? "Revealed. Your boxes are unchanged." : ok ? "Right." : "Not quite."}</p>${group.terms.length > 1 ? `<p>This deck uses the same name for ${group.terms.map((term) => esc(term.english)).join(" and ")}. The name alone does not distinguish them; either form counts in Find it.</p>` : ""}${cards.map((term) => termCard(term)).join("")}<button type="button" class="next">Next word</button>`;
+    feedback.innerHTML = `<p class="verdict ${ungraded ? "" : ok ? "ok" : "no"}">${ungraded ? "Revealed. Your boxes are unchanged." : ok ? "Right." : "Not quite."}</p>${group.terms.length > 1 ? `<p>This deck uses the same name for ${group.terms.map((term) => esc(term.english)).join(" and ")}. The name alone does not distinguish them; either form counts in Find it.</p>` : ""}${cards.map((term) => termCard(term, { sourceActions: true, live: false })).join("")}<button type="button" class="next">Next word</button>`;
     renderBoxes();
     feedback.querySelector<HTMLButtonElement>(".next")?.focus({ preventScroll: true });
   }
@@ -294,7 +415,7 @@ export function mountDrill(root: HTMLElement): void {
     const romanized = root.querySelector<HTMLInputElement>("#drill-romanized");
     if (romanized) romanized.checked = settings.romanized;
     last = null;
-    studyId = null;
+    studyId = settings.part ?? null;
     score = { right: 0, asked: 0 };
     ask();
   }
@@ -359,8 +480,113 @@ export function mountDrill(root: HTMLElement): void {
             buttons.length;
     buttons[next]?.focus({ preventScroll: true });
   });
+  root.querySelector(".drill-view")?.addEventListener("click", (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>("button");
+    if (!button || button.getAttribute("aria-disabled") === "true") return;
+    if (button.dataset.view) {
+      detail = button.dataset.view === "detail";
+      if (detail && !detailPart && settings.mode === "find") {
+        const first = terms()[0]?.id;
+        if (first) {
+          inspect(first);
+          return;
+        }
+      }
+      if (detail && detailPart && !detailPose.focus) centrePart(detailPart);
+      else drawPlate();
+      return;
+    }
+    const action = button.dataset.pan;
+    if (!action) return;
+    const window = detailWindow(
+      settings.deck.elevation,
+      settings.deck.view,
+      detailPart ?? terms()[0]?.id ?? "",
+      detailPose,
+    );
+    const step = (window.x1 - window.x0) / 4;
+    if (action === "in") detailPose.zoom = Math.min(8, detailPose.zoom * 2);
+    if (action === "out") detailPose.zoom = Math.max(1, detailPose.zoom / 2);
+    if (action === "left") detailPose.x -= step;
+    if (action === "right") detailPose.x += step;
+    if (action === "up") detailPose.y += step;
+    if (action === "down") detailPose.y -= step;
+    if (action === "reset") {
+      detailPose = { zoom: 1, x: 0, y: 0 };
+      if (detailPart) {
+        centrePart(detailPart);
+        return;
+      }
+    }
+    drawPlate();
+  });
   feedback.addEventListener("click", (event) => {
     if ((event.target as Element).closest(".next")) ask(true);
+  });
+  function cancelReading(): void {
+    if (!readingController) return;
+    ++readingRequest;
+    readingController.abort();
+    readingController = undefined;
+    readingButton.disabled = false;
+    cancelReadingButton.hidden = true;
+    readingStatus.textContent = "Study save cancelled. No file was downloaded.";
+  }
+  cancelReadingButton.addEventListener("click", cancelReading);
+  readingButton.addEventListener("click", async () => {
+    const term = terms().find((entry) => entry.id === studyId);
+    if (!term || settings.mode !== "study") return;
+    cancelReading();
+    const request = ++readingRequest;
+    const controller = new AbortController();
+    readingController = controller;
+    const snapshot: VocabularyStudy = {
+      deck: settings.deck,
+      language: settings.language,
+      term,
+      pose: { ...detailPose },
+    };
+    readingButton.disabled = true;
+    cancelReadingButton.hidden = false;
+    readingStatus.textContent = `Preparing the illustrated ${term.english} study…`;
+    const timer = setTimeout(
+      () =>
+        controller.abort(
+          new Error("The illustrated study did not finish loading. Reconnect and try again."),
+        ),
+      20000,
+    );
+    try {
+      const content = await vocabularyStudy(snapshot, controller.signal);
+      if (request !== readingRequest) return;
+      const url = URL.createObjectURL(new Blob([content], { type: "text/html;charset=utf-8" }));
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `embater-${snapshot.deck.id}-${term.id}-study.html`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      readingStatus.textContent = `Saved the illustrated ${term.english} study and native vocabulary CSV.`;
+    } catch (error) {
+      if (request !== readingRequest) return;
+      readingStatus.textContent =
+        controller.signal.aborted && controller.signal.reason instanceof Error
+          ? controller.signal.reason.message
+          : error instanceof Error
+            ? error.message
+            : "The illustrated study could not be saved. Try again.";
+    } finally {
+      clearTimeout(timer);
+      if (request === readingRequest) {
+        readingController = undefined;
+        readingButton.disabled = false;
+        cancelReadingButton.hidden = true;
+      }
+    }
+  });
+  $("#drill-keep-visit", root).addEventListener("click", () => {
+    const panel = root.querySelector<HTMLDetailsElement>(".drill-keep");
+    if (panel) panel.open = true;
+    $("#drill-save", root).focus();
   });
   $("#drill-save", root).addEventListener("click", () => {
     const url = URL.createObjectURL(new Blob([progressJSON(boxes)], { type: "application/json" }));
@@ -381,11 +607,14 @@ export function mountDrill(root: HTMLElement): void {
       const next = parseProgress(await file.text(), known);
       if (generation !== importGeneration) return;
       boxes = next;
-      save();
+      protectUnreadRecord = false;
+      const persisted = save();
       score = { right: 0, asked: 0 };
       last = null;
       ask();
-      status.textContent = "Restored the saved boxes. A new ungraded question is ready.";
+      status.textContent = persisted
+        ? "Restored the saved boxes. A new ungraded question is ready."
+        : "Restored the boxes for this visit. Browser storage is unavailable; keep your JSON backup.";
     } catch (error) {
       if (generation === importGeneration)
         status.textContent = `${error instanceof Error ? error.message : "The progress file could not be read."} Current progress was kept.`;

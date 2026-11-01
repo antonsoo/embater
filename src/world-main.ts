@@ -1,5 +1,6 @@
 import "./fonts/fonts.css";
 import "./style.css";
+import "./vocabulary-source.css";
 import { footer, masthead, setupTheme } from "./ui/dom";
 import { mountWorld } from "./ui/world";
 

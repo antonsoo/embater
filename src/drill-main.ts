@@ -1,5 +1,6 @@
 import "./fonts/fonts.css";
 import "./style.css";
+import "./vocabulary-source.css";
 import "./drill.css";
 import { footer, masthead, setupTheme } from "./ui/dom";
 import { mountDrill } from "./ui/drill";

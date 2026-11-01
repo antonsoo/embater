@@ -3,6 +3,7 @@ import { renderElevation } from "../draw/render";
 import { WORLD_DRAWINGS } from "../draw/world";
 import { termCard } from "./card";
 import { $, esc } from "./dom";
+import { connectSourceCards, VocabularySource } from "./vocabulary-source";
 
 export function mountWorld(root: HTMLElement): void {
   const fromHash = new URLSearchParams(location.hash.slice(1)).get("plate");
@@ -23,13 +24,17 @@ export function mountWorld(root: HTMLElement): void {
   <p class="legend"><span class="ink-text">Black</span>: schematic, after the surviving buildings and models. <span class="ink-chosen">Grey</span>: reconstructed or uncertain.</p></div>
   <aside class="side"><div class="card" id="world-card"></div><div class="key"><h2>Parts and words</h2><ul id="world-key"></ul></div></aside>
 </section>
+<section class="drill-source" id="drill-source" aria-labelledby="drill-source-title" hidden></section>
 <section class="below world-below"><div class="derivation" id="world-text"></div><div class="facts" id="world-words"></div></section>`;
 
   const plateEl = $("#world-plate", root);
   const card = $("#world-card", root);
+  const source = new VocabularySource($("#drill-source", root));
+  connectSourceCards(card, source);
   const key = $("#world-key", root);
 
   function select(id: string | null): void {
+    source.close(false);
     if (!current) return;
     part = id;
     for (const el of plateEl.querySelectorAll(".sel")) el.classList.remove("sel");
@@ -40,7 +45,7 @@ export function mountWorld(root: HTMLElement): void {
       for (const el of plateEl.querySelectorAll(`[data-part="${CSS.escape(id)}"]`))
         el.classList.add("sel");
       key.querySelector(`[data-part="${CSS.escape(id)}"]`)?.setAttribute("aria-pressed", "true");
-      card.innerHTML = termCard(t);
+      card.innerHTML = termCard(t, { sourceActions: true });
     } else {
       card.innerHTML = `<article class="card-body"><h2 class="card-title">${esc(current.title)}</h2><p class="card-count">${esc(current.place)}</p><p class="card-note">${esc(current.lede)}</p><p class="card-hint">Select a part of the drawing, or a name below.</p></article>`;
     }

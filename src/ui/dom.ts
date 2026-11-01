@@ -42,7 +42,7 @@ export function masthead(current: Page): string {
 export function footer(): string {
   return `<footer class="foot">
   <p>Latin from F. Krohn's Teubner Vitruvius (1912); Greek senses from LSJ and Latin from Lewis &amp; Short, via Logeion; temple measurements from the Perseus Digital Library. English translations are new. <a href="https://github.com/antonsoo/embater">Source and notes</a>.</p>
-<p><a href="./LICENSE.txt">Code license</a> · <a href="./FONT-LICENSE.txt">Font licenses</a> · <a href="./THIRD_PARTY_NOTICES.txt">Text and data credits</a></p>
+<p><a href="./LICENSE.txt">Code license</a> · <a href="./FONT-LICENSE.txt">Font licenses</a> · <a href="./fonts/VOCABULARY-OFL.txt">Vocabulary font notices</a> · <a href="./THIRD_PARTY_NOTICES.txt">Text and data credits</a></p>
 <p id="offline-status" class="muted"></p><button id="offline-repair" class="offline-repair" type="button" hidden>Repair offline copy</button></footer>`;
 }
 

@@ -39,7 +39,8 @@
     "test:doorways": "node scripts/doorway-review.mjs",
     "test:doorway-recovery": "node scripts/doorway-recovery.mjs",
     "verify:doorway-artifacts": "python3 scripts/doorway-artifacts.py",
-    "test:drill": "node --import tsx scripts/drill-review.mjs"
+    "test:drill": "node --import tsx scripts/drill-review.mjs",
+    "test:vocabulary": "node scripts/vocabulary-audit.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
