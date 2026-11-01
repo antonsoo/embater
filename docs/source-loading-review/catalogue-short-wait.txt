@@ -1,0 +1,52 @@
+chromium 1440: search, pinned review, selected eye, detail, checked page and native study verified
+chromium 375: search, pinned review, selected eye, detail, checked page and native study verified
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+ExpectError: expect(locator).toContainText(expected) failed
+
+Locator: locator('#drill-source-status')
+Expected substring: "Complete printed page 71."
+Received string:    "Loading complete printed page 71…"
+Timeout: 5000ms
+
+Call log:
+  - Expect "toContainText" locator('#drill-source-status') with timeout 5000ms
+  - waiting for locator('#drill-source-status')
+    14 × locator resolved to <p role="status" id="drill-source-status">Loading complete printed page 71…</p>
+       - unexpected value "Loading complete printed page 71…"
+
+    at captureRawStack (/home/antonsoloviev/work/projects/showcases/officina/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (/home/antonsoloviev/work/projects/showcases/officina/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toContainText (/home/antonsoloviev/work/projects/showcases/officina/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at /home/antonsoloviev/work/projects/showcases/officina/scripts/embater-vocabulary-journeys.mjs:66:55 {
+  matcherResult: {
+    name: 'toContainText',
+    expected: 'Complete printed page 71.',
+    message: 'expect(locator).toContainText(expected) failed\n' +
+      '\n' +
+      "Locator: locator('#drill-source-status')\n" +
+      'Expected substring: "Complete printed page 71."\n' +
+      'Received string:    "Loading complete printed page 71…"\n' +
+      'Timeout: 5000ms\n' +
+      '\n' +
+      'Call log:\n' +
+      `  - Expect "toContainText" locator('#drill-source-status') with timeout 5000ms\n` +
+      "  - waiting for locator('#drill-source-status')\n" +
+      '    14 × locator resolved to <p role="status" id="drill-source-status">Loading complete printed page 71…</p>\n' +
+      '       - unexpected value "Loading complete printed page 71…"\n',
+    pass: false,
+    actual: 'Loading complete printed page 71…',
+    log: [
+      `  - Expect "toContainText" locator('#drill-source-status') with timeout 5000ms`,
+      "  - waiting for locator('#drill-source-status')",
+      '    14 × locator resolved to <p role="status" id="drill-source-status">Loading complete printed page 71…</p>',
+      '       - unexpected value "Loading complete printed page 71…"'
+    ],
+    timeout: 5000,
+    ariaSnapshot: '- status: Loading complete printed page 71…'
+  }
+}
+
+Node.js v26.7.0

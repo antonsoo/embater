@@ -17,6 +17,7 @@ p.add_argument('--base',default='https://antonsoo.github.io/embater/')
 p.add_argument('--source',required=True)
 p.add_argument('--encoding',choices=['gzip','identity'],default='gzip')
 p.add_argument('--include-progress',action='store_true')
+p.add_argument('--include-reader',action='store_true')
 p.add_argument('--output',type=Path,required=True)
 a=p.parse_args()
 assert re.fullmatch('[a-f0-9]{40}',a.source)
@@ -52,6 +53,9 @@ paths += [str(path.relative_to(ROOT)) for path in sorted((ROOT/'src/fonts').glob
 if a.include_progress:
     paths += ['docs/progress-concurrency-review.md','docs/progress-concurrency-design.md',
               'scripts/progress-tabs.mjs','src/drill.css']
+if a.include_reader:
+    paths += ['docs/source-loading-review.md','scripts/source-priority.mjs',
+              'src/vocabulary-study.ts','scripts/vocabulary-audit.mjs']
 for path in paths:
     expected=subprocess.check_output(['git','show',f'{a.source}:{path}'],cwd=ROOT)
     items.append(('source',path,expected,f'https://raw.githubusercontent.com/antonsoo/embater/{a.source}/{path}'))

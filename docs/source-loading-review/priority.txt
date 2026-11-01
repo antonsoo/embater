@@ -1,0 +1,4 @@
+chromium foreground-during-install 5550 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 4, throttledBytesSent: 6632663, queuedImages: 3 }
+chromium failed-install-retry 119 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 0, throttledBytesSent: 0, queuedImages: 0 }
+firefox foreground-during-install 4874 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 4, throttledBytesSent: 6632663, queuedImages: 3 }
+firefox failed-install-retry 101 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 0, throttledBytesSent: 0, queuedImages: 0 }

@@ -47,6 +47,7 @@ Saving, saved and visit-only states remain visible.
 
 [Vocabulary audit and retained sources](docs/vocabulary-audit.md).
 [Progress protection, concurrent visits and native backup review](docs/progress-concurrency-review.md).
+[Cold source reading, offline installation and saved Latin glyphs](docs/source-loading-review.md).
 
 ## A half changes the doorway
 

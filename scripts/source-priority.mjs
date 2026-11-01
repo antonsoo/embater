@@ -186,7 +186,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         });
         await writeFile(
           resolve(output, "review.json"),
-          `${JSON.stringify({ build, networkModel: "JPEG bodies share one 4 KiB chunk every 8 ms, about 512 KiB/s; headers and other resources unthrottled. Registration is gated until the initial plate is ready.", rows }, null, 2)}\n`,
+          `${JSON.stringify({ build, networkModel: "JPEG bodies share one 4 KiB chunk every 8 ms, nominally 500 KiB/s; headers and other resources unthrottled. Registration is gated until the initial plate is ready.", rows }, null, 2)}\n`,
         );
         console.log(
           engine,

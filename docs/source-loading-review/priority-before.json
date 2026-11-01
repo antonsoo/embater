@@ -1,0 +1,33 @@
+{
+  "build": "/tmp/claude-1000/embater-audit/clean-progress/dist",
+  "networkModel": "JPEG bodies share one 4 KiB chunk every 8 ms, nominally 500 KiB/s; headers and other resources unthrottled. Registration is gated until the initial plate is ready.",
+  "rows": [
+    {
+      "engine": "chromium",
+      "case": "foreground-during-install",
+      "firstStatus": "Complete printed page 71. The image matches the retained edition.",
+      "foregroundElapsedMs": 5574,
+      "offlineDuringPartial": "Offline saving did not finish. Reload online to try again.",
+      "peakImageStreams": 4,
+      "throttledBytesSent": 6649047,
+      "queuedImages": 3,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    },
+    {
+      "engine": "firefox",
+      "case": "foreground-during-install",
+      "firstStatus": "The source page did not finish loading. Reconnect and reload it.",
+      "foregroundElapsedMs": 15472,
+      "offlineDuringPartial": "Offline saving did not finish. Reload online to try again.",
+      "peakImageStreams": 6,
+      "throttledBytesSent": 7923311,
+      "queuedImages": 6,
+      "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+      "fullEditionReadyAfterRecovery": true,
+      "controlledOfflineSource": true
+    }
+  ],
+  "labelCorrection": "The original approximate 512 KiB/s label was a unit-conversion error; 4 KiB every 8 ms is nominally 500 KiB/s. Measurements are unchanged."
+}

@@ -1,9 +1,10 @@
 # Find a column's eye
 
-The later [progress protection audit](progress-concurrency-review.md) describes
-application source `b018fe5`, its current publication and concurrent-visit behavior.
-The source/model and learning-file evidence below records the earlier `5dac1e0`
-edition; the later audit confirms identical illustrated-study bytes.
+The current [reader and typography audit](source-loading-review.md) covers
+application `81fbec4`. The [progress protection audit](progress-concurrency-review.md)
+covers its concurrent-visit behavior. The source/model evidence below describes
+the earlier `5dac1e0` edition; later readers retain its learning material and
+source/font bytes, with a deliberate Latin glyph correction in saved studies.
 
 This audit extends the language-specific drill reviewed at `024c1b0`.
 The application source under review is

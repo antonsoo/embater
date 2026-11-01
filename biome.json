@@ -13,7 +13,8 @@
       "!docs/review",
       "!docs/doorway-review",
       "!docs/vocabulary-audit",
-      "!docs/progress-review"
+      "!docs/progress-review",
+      "!docs/source-loading-review"
     ]
   },
   "formatter": {
