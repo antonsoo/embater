@@ -144,6 +144,12 @@ self.addEventListener("activate", (event) => {
   );
 });
 self.addEventListener("message", (event) => {
+  if (event.data?.type === "CLAIM_EDITION" && event.data.edition === EDITION) {
+    // A page opened during activation can miss the first claim snapshot.
+    // Repeating the claim is safe; the page's controllerchange runs its byte audit.
+    event.waitUntil(self.clients.claim());
+    return;
+  }
   if (!["INSPECT_EDITION", "REPAIR_EDITION"].includes(event.data?.type) || !event.ports[0]) return;
   event.waitUntil(
     (async () => {

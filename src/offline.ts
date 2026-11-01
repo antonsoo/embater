@@ -131,6 +131,12 @@ export function setupOffline(): void {
             status.textContent = "Offline saving did not finish. Reload online to try again.";
         });
       });
+      // A navigation can begin between activation's client snapshot and claim.
+      // Ask the ready worker to claim again after this document has registered.
+      void navigator.serviceWorker.ready.then((ready) => {
+        if (!navigator.serviceWorker.controller)
+          ready.active?.postMessage({ type: "CLAIM_EDITION", edition: __OFFLINE_EDITION__ });
+      });
       void inspect();
     })
     .catch(() => {

@@ -54,6 +54,7 @@ async function correctName(page, deck, lang) {
 }
 
 for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
+  if (process.env.DRILL_ENGINE && process.env.DRILL_ENGINE !== engine) continue;
   const browser = await launcher.launch();
   try {
     for (const width of [1440, 375])
@@ -290,10 +291,27 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         assert.deepEqual(await currentBoxes(reopen), saved);
         await reopen.close();
 
-        await page
-          .locator("#offline-status")
-          .filter({ hasText: /^Ready offline/ })
-          .waitFor({ timeout: 30000 });
+        try {
+          await page
+            .locator("#offline-status")
+            .filter({ hasText: /^Ready offline/ })
+            .waitFor({ timeout: 30000 });
+        } catch (error) {
+          const state = await page.evaluate(async () => ({
+            status: document.getElementById("offline-status").textContent,
+            controller: navigator.serviceWorker.controller?.scriptURL,
+            registrations: (await navigator.serviceWorker.getRegistrations()).map((r) => ({
+              scope: r.scope,
+              active: r.active?.state,
+              installing: r.installing?.state,
+              waiting: r.waiting?.state,
+            })),
+            caches: await caches.keys(),
+          }));
+          await writeFile(`${output}/${id}-offline-failure.json`, JSON.stringify(state, null, 2));
+          await page.screenshot({ path: `${output}/${id}-offline-failure.png`, fullPage: true });
+          throw error;
+        }
         assert.equal(await page.evaluate(() => !!navigator.serviceWorker.controller), true);
         const inventory = await page.evaluate(async () => {
           const names = (await caches.keys()).filter((n) => n.startsWith("embater-"));

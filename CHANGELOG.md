@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Recover control after rapid navigation during worker activation: a matching
+  ready edition can repeat its claim, then the page audits the cached bytes.
+
 - Audit the drill with actual selected/plain pixel comparisons; add local detail,
   bounded zoom/pan and recenter using the original geometry and a painted anchor.
 - Read complete, checked source pages beside vocabulary on Drill, Orders and

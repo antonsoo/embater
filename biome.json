@@ -11,7 +11,8 @@
       "!data",
       "!**/*.md",
       "!docs/review",
-      "!docs/doorway-review"
+      "!docs/doorway-review",
+      "!docs/vocabulary-audit"
     ]
   },
   "formatter": {
