@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Bound background edition downloads so a cold foreground source read retains a
+  connection; report healthy long installs as saving, while withholding readiness
+  until the complete edition is checked.
+- Keep the portable reading's Latin u forms consistent with the workshop instead
+  of enabling the font's locale-specific v alternates; check actual rendered glyphs.
+
 - Preserve newer practice records across updated tabs: serialize a short
   read/compare/write, keep stale visits separate, and retain native JSON backups.
 - Bound pending browser writes, expose their saving/saved/visit-only states, and

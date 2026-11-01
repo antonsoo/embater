@@ -125,7 +125,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches
       .open(CACHE)
-      .then((cache) => cache.addAll(requests))
+      // Limit background traffic so a first-visit source read can use a connection.
+      // A partial cache is never activated: every request must finish first.
+      .then((cache) => pool(requests, (request) => cache.add(request), 3))
       .then(() => self.skipWaiting()),
   );
 });

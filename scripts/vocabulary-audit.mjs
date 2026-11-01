@@ -217,6 +217,21 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
       assert.equal(await file.evaluate(() => document.fonts.status), "loaded");
       console.log(`${id}: native fonts loaded`);
       assert.equal(await file.locator("svg").nth(1).getAttribute("viewBox"), domBeforeExport);
+      const nativeWord = file.locator(".word-head .word-native").first();
+      assert.equal(await nativeWord.textContent(), "oculus");
+      const latinGlyphs = await nativeWord.screenshot();
+      await nativeWord.evaluate((node) => {
+        node.lang = "en";
+      });
+      const dictionaryGlyphs = await nativeWord.screenshot();
+      assert.deepEqual(
+        latinGlyphs,
+        dictionaryGlyphs,
+        "Latin vocabulary retains dictionary u, rather than the font's locale-specific v alternate",
+      );
+      await nativeWord.evaluate((node) => {
+        node.lang = "la";
+      });
       const csv = await download(
         file,
         'a[download$="vocabulary.csv"]',
@@ -283,6 +298,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           fontSubsets: 9,
           nativeCsvBytes: csv.bytes.length,
           automaticHttpRequests: requests.length,
+          dictionaryGlyphsMatch: true,
         },
         offlineSourceAndStudy: true,
         a11y,

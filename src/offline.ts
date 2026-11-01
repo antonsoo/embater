@@ -20,6 +20,7 @@ export function setupOffline(): void {
     lastSequence = -1;
   let lastInstance = "";
   let lastWorker: ServiceWorker | null = null;
+  let pendingRegistration: ServiceWorkerRegistration | undefined;
   function show(result: EditionState, worker: ServiceWorker): void {
     if (navigator.serviceWorker.controller !== worker) return;
     if (lastWorker !== worker || lastInstance !== result.instance) {
@@ -90,8 +91,13 @@ export function setupOffline(): void {
     );
   }
   const initialDeadline = setTimeout(() => {
-    if (!navigator.serviceWorker.controller)
-      status.textContent = "Offline saving did not finish. Reload online to try again.";
+    if (!navigator.serviceWorker.controller) {
+      const installing = pendingRegistration?.installing;
+      status.textContent =
+        installing && installing.state !== "redundant"
+          ? "Offline edition is still saving. Keep this tab online; the workshop remains usable."
+          : "Offline saving did not finish. Reload online to try again.";
+    }
   }, 12000);
   status.textContent = "Saving these pages for offline reading…";
   repair.addEventListener("click", () => void inspect(true));
@@ -124,6 +130,7 @@ export function setupOffline(): void {
   void navigator.serviceWorker
     .register(`${import.meta.env.BASE_URL}sw.js`)
     .then((registration) => {
+      pendingRegistration = registration;
       registration.addEventListener("updatefound", () => {
         const worker = registration.installing;
         worker?.addEventListener("statechange", () => {
