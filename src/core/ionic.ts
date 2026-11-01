@@ -266,8 +266,9 @@ function ionicCapital(axis: number, top: number, rTop: number, columnFeet: numbe
     const outer = spiral(cx, eyeY, 4.5 * p, 0.5 * p, 4, Math.PI / 2, turn, 120);
     // Fill the first turn so the volute covers the shaft behind it.
     out.push(poly("volute", [...outer, [cx, eyeY + 4.5 * p]], true, "chosen"));
-    // Quarter-turn radii follow the text. Linear interpolation and a fillet
-    // tapering into the eye are drawing choices, not a recovered ancient contour.
+    // This schematic continues the half-eye decrement through eight quarters
+    // about one fixed centre. The text does not specify that complete layout;
+    // the continuation, interpolation and tapering fillet are modern choices.
     // 256 samples retain every quarter-turn station and the full eighth quarter.
     const a = spiral(cx, eyeY, 4.5 * p, 0.5 * p, 8, Math.PI / 2, turn, 256);
     const innerStart = 4.5 - 0.38;

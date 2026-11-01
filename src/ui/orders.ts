@@ -147,6 +147,10 @@ ${vitruvian ? readingTable("eustyle") : ""}
 <p>The ordinary column is ${fmtModules(IONIC_HEIGHT[s.ionicSpacing])} diameters tall${s.order === "corinthian" ? ", plus ⅔ for the Corinthian capital, which is a whole diameter high where the Ionic is a third" : ""}. Closer spacing means more slender columns: Vitruvius says wide gaps let the air 'eat' a column's apparent thickness, so they need stouter shafts.</p>
 <p>The corner shaft’s diameter is 1.02 times the ordinary one (III.3.11). This model retains the nominal axes, so the visible shaft span is ${fmt(physical.width)} ordinary diameters. Bases and capitals use each column’s own diameter. Their tops stay level and the shaft length accommodates those larger members; that joining convention is modern.</p>
 <p><button type="button" class="read-source" data-source-rule="corner-columns">Read the corner addition on printed page 67</button> <button type="button" class="read-source" data-source-rule="ionic-epistyle">Read architrave heights on printed page 72</button></p>`;
+  const scrollReading =
+    s.order === "ionic"
+      ? `<p>The two-turn volute is a modern schematic: it continues the half-eye decrease through eight quarters about one fixed eye centre. Vitruvius does not state that total or locate a complete set of compass centres. <button type="button" class="read-source" data-source-rule="volute-figure">Read the promised figure on printed page 72</button> <a href="${esc(term("volute")?.deeper?.url ?? "https://antonsoo.github.io/gonia/volute.html")}">Compare a later twelve-arc compass construction in Gonia</a>.</p>`
+      : "";
   const cap = ionicCapitalUnits(e.taper.columnFeet);
   const facts: [string, string][] = [
     [
@@ -182,7 +186,7 @@ ${vitruvian ? readingTable("eustyle") : ""}
     elevation: e,
     detail: { x0: -1.3, x1: a0 + 1.5, y0: e.shaftTop - 1.1, y1: e.entablatureTop + 0.5 },
     baseDetail: { x0: a0 - 1.1, x1: a0 + 1.1, y0: -0.45, y1: 1.1 },
-    derivation,
+    derivation: derivation + scrollReading,
     facts,
   };
 }

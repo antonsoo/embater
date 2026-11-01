@@ -113,7 +113,7 @@ export function fluteLines(
   return out;
 }
 
-/** Modern linear interpolation of a decreasing-radius spiral; source rules can fix quarter-turn stations without determining the intervening curve. */
+/** Modern linear-radius spiral. Its station schedule and interpolation need separate justification; this is not a compass construction. */
 export function spiral(
   cx: number,
   cy: number,

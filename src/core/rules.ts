@@ -312,6 +312,15 @@ const list: Rule[] = [
       "Then, beginning at the top under the abacus, let the spiral lessen by half the eye's width in each quarter turn, until it comes back to the same quarter, below. Make the capital so that three of the nine and a half parts hang down below the astragal at the top of the shaft.",
   },
   {
+    id: "volute-figure",
+    cite: "III.5.8",
+    page: 72,
+    latin:
+      "de volutarum descriptionibus, uti ad circinum sint recte involutae, quemadmodum describantur, in extremo libro forma et ratio earum erit subscripta.",
+    english:
+      "For drawing the volutes, so that they are wound correctly to the compass: how they are to be drawn, their figure and explanation will be set out at the end of the book.",
+  },
+  {
     id: "ionic-epistyle",
     cite: "III.5.8",
     page: 72,

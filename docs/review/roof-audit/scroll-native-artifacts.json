@@ -1,0 +1,46 @@
+[
+  {
+    "file": "chromium-1440-compass.csv",
+    "sha256": "93451b2615978486167d74d8b1718998332e6e02736adbc60593d3d1c7d9d722",
+    "exactClockwiseQuarters": 12,
+    "endTwelfthsEyeDiameter": [
+      0,
+      6
+    ],
+    "independentFinalDirectionDifferenceDegrees": 8.13010235415598,
+    "contactDoesNotImplyTangency": true
+  },
+  {
+    "file": "chromium-375-compass.csv",
+    "sha256": "93451b2615978486167d74d8b1718998332e6e02736adbc60593d3d1c7d9d722",
+    "exactClockwiseQuarters": 12,
+    "endTwelfthsEyeDiameter": [
+      0,
+      6
+    ],
+    "independentFinalDirectionDifferenceDegrees": 8.13010235415598,
+    "contactDoesNotImplyTangency": true
+  },
+  {
+    "file": "firefox-1440-compass.csv",
+    "sha256": "b7fa31e88ba05948cebbd5176ce0cbe35f345e6f9b943c0fcefda6a7ba26b2b2",
+    "exactClockwiseQuarters": 12,
+    "endTwelfthsEyeDiameter": [
+      0,
+      6
+    ],
+    "independentFinalDirectionDifferenceDegrees": 8.13010235415598,
+    "contactDoesNotImplyTangency": true
+  },
+  {
+    "file": "firefox-375-compass.csv",
+    "sha256": "b7fa31e88ba05948cebbd5176ce0cbe35f345e6f9b943c0fcefda6a7ba26b2b2",
+    "exactClockwiseQuarters": 12,
+    "endTwelfthsEyeDiameter": [
+      0,
+      6
+    ],
+    "independentFinalDirectionDifferenceDegrees": 8.13010235415598,
+    "contactDoesNotImplyTangency": true
+  }
+]

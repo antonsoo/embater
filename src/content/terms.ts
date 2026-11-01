@@ -704,9 +704,12 @@ export const GREEK_TERMS: Term[] = [
         source: "LSJ",
       },
     ],
-    note: "Start under the abacus, four and a half parts above the eye, and lessen the spiral by half an eye at every quarter turn: after two turns it reaches the eye. The quarter-turn radii are read from Vitruvius. This drawing joins them by a modern linear-radius interpolation; the fillet width is also chosen. The lost diagram does not determine this continuous contour, and how far in from the abacus edge the eye sits is a disputed reading.",
-    rules: ["ionic-capital", "volute"],
-    deeper: { label: "Draw the volute with a compass in Gonia", url: `${GONIA}volute.html` },
+    note: "Vitruvius gives the eye’s one-part diameter, its unequal position in an eight-part height, and a half-eye reduction in quadrant operations. He does not state eight quarter turns or locate the complete set of compass centres. This drawing continues the half-eye decrement through eight quarters about one fixed eye centre: a modern two-turn schematic with linear-radius interpolation and a chosen fillet. It is not a recovered compass construction. The promised ancient figure is not preserved here; how far in from the abacus edge the eye sits is also disputed.",
+    rules: ["ionic-capital", "volute", "volute-figure"],
+    deeper: {
+      label: "Compare a later twelve-arc compass construction in Gonia",
+      url: `${GONIA}volute.html`,
+    },
   },
   {
     id: "oculus",
@@ -721,8 +724,12 @@ export const GREEK_TERMS: Term[] = [
         source: "LSJ s.v. ὀφθαλμός (IG I² 374)",
       },
     ],
-    note: "One of the volute's eight parts across. Athenian builders and the Roman writer both called it an eye.",
+    note: "One of the volute's eight parts across. Athenian builders and the Roman writer both called it an eye. The surrounding two-turn outline is a modern schematic, not the missing ancient compass construction.",
     rules: ["ionic-capital"],
+    deeper: {
+      label: "Compare a later twelve-arc compass construction in Gonia",
+      url: `${GONIA}volute.html`,
+    },
   },
   {
     id: "canalis",

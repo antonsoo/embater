@@ -44,7 +44,8 @@
     "test:roof": "node scripts/roof-review.mjs",
     "verify:roof-artifacts": "python3 scripts/roof-artifacts.py",
     "test:roof-study": "node scripts/roof-study-review.mjs",
-    "verify:roof-study": "python3 scripts/roof-study-artifacts.py examples/roof"
+    "verify:roof-study": "python3 scripts/roof-study-artifacts.py examples/roof",
+    "test:scroll-handoff": "node scripts/scroll-handoff.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

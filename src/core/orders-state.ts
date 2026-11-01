@@ -124,7 +124,7 @@ export function orderRecord(state: OrderState) {
       : []),
     ...(state.order === "ionic"
       ? [
-          "The Ionic volute joins prescribed quarter-turn radii with a modern linear interpolation and a chosen fillet.",
+          "The two-turn Ionic volute continues the half-eye decrement through eight quarters about one fixed centre. That continuation, the linear-radius interpolation and the fillet are modern choices, not a recovered compass construction.",
         ]
       : []),
     ...(state.order !== "tuscan" && columnFeet > 50

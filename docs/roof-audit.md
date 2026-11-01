@@ -37,7 +37,7 @@ not an inference from passing helper tests.
 | An ornament requested at height 1 reached 1.012; the centre plinth began inside the roof. | Actual vertices meet the requested total; plinths sit above the roof slope on explicitly modern grey wedges. |
 | Cornice lips extended beyond the projection used to calculate h. | The actual horizontal corona extremities span 9h. |
 | Ionic/Corinthian corner shafts grew by 1/50, while their bases and capitals retained the ordinary diameter. | These members use each column's own diameter. Axes and capital tops stay fixed; shaft lengths accommodate the larger members. This joining convention is stated as modern. |
-| The drawn Ionic groove stopped after 7.6 quarter turns although a helper test exercised eight. | The actual drawing reaches all eight prescribed quarter-radius stations and meets its eye. The continuous curve and fillet remain modern interpolation. |
+| The drawn Ionic groove stopped after 7.6 quarter turns although a helper test exercised eight. | The actual drawing reaches all eight stations of its stated modern continuation and meets its eye. Neither eight quarters nor a fixed-centre continuous curve is claimed as the surviving ancient construction. |
 | A link requesting 2.6 feet calculated 2.6 while its quarter-step slider displayed 2.5. | Both use 2.5, with a visible rounding notice. Saved settings retain that operated value. |
 | Arrow navigation between orders lost focus after rebuilding the form. | Focus remains on the new radio, allowing another arrow press. |
 | Closing the source could focus a replaced or hidden trigger. | A visible current matching source button receives focus; otherwise the current heading does. |
@@ -64,6 +64,10 @@ independent philological review.
 
 Palmettes, plinths, insets, mounting wedges and normal cornice thickness are
 illustrative. A height rule does not establish an ornament's historical outline.
+The Ionic scroll continues a half-eye decrement through eight quarters about
+one fixed centre; this is a modern continuation, not a complete prescription
+from the text. [The scroll boundary review](ionic-scroll-boundary.md) separates
+its assumptions from the source and links the existing later compass workshop.
 The nominal front and actual widened shaft span are reported separately;
 the text does not uniquely settle their combination. Above 50 feet, the taper
 is a modern stepped continuation. Architrave dimensions outside the stated

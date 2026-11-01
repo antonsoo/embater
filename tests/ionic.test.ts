@@ -176,7 +176,7 @@ describe("the corner's own diameter, III.3.11 and III.5.1–7", () => {
 });
 
 describe("the actual Ionic scroll reaches its eye", () => {
-  it("emits all eight source quarter-turn radii rather than only testing an unused helper path", () => {
+  it("emits all eight stations of the stated modern continuation in the actual drawing", () => {
     const e = ionicElevation({
       order: "ionic",
       columns: 4,

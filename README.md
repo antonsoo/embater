@@ -43,6 +43,10 @@ from disk. Palmettes and mounting details remain explicit modern choices.
 
 ![An Ionic roof with the movable blue height envelope and Latin proportion reading](docs/assets/roof-desktop.png)
 
+The Ionic outline is a two-turn modern continuation of a half-eye reduction,
+not the missing ancient compass recipe. The [scroll boundary review](docs/ionic-scroll-boundary.md)
+connects its source passages to the separate later compass workshop in Gonia.
+
 ## Find a column's eye
 
 [Study the Ionic eye](https://antonsoo.github.io/embater/drill.html#deck=ionic&lang=la&mode=study&part=oculus):
