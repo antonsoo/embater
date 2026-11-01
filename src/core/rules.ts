@@ -105,6 +105,15 @@ const list: Rule[] = [
       "On the underside of the corona, plumb with the triglyphs and with the middles of the metopes, lay out the lines of the 'roads' and the arrangement of the drops: six drops along the length and three across.",
   },
   {
+    id: "doric-pediment",
+    cite: "IV.3.6",
+    page: 84,
+    latin:
+      "reliqua omnia, tympana, simae, coronae, quemadmodum supra scriptum est in ionicis, ita perficiantur.",
+    english:
+      "All the remaining parts, the tympana, simae and coronae, are to be completed as written above for Ionic work.",
+  },
+  {
     id: "doric-systyle",
     cite: "IV.3.7",
     page: 85,

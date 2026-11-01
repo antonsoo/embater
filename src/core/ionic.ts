@@ -6,6 +6,7 @@ import {
   poly,
   quad,
   rect,
+  scaleMember,
   spiral,
   strip,
   taperRatio,
@@ -44,7 +45,7 @@ export const IONIC_HEIGHT: Record<IonicSpacing, number> = {
 export interface IonicFront {
   spans: number[];
   axes: number[];
-  /** Columns plus intercolumniations: what III.3.7 divides into modules. */
+  /** Nominal columns plus intercolumniations, before the separate corner addition. */
   width: number;
 }
 
@@ -103,6 +104,13 @@ export function ionicCapitalUnits(columnFeet: number): { abacus: number; part: n
 
 export interface IonicElevation extends Elevation {
   roof: Pediment;
+  columnProfiles: {
+    axis: number;
+    diameter: number;
+    baseTop: number;
+    shaftTop: number;
+    capitalTop: number;
+  }[];
   front: IonicFront;
   height: number;
   taper: { ratio: number; parts: [number, number]; columnFeet: number };
@@ -257,11 +265,23 @@ function ionicCapital(axis: number, top: number, rTop: number, columnFeet: numbe
     const turn = dir as 1 | -1;
     const outer = spiral(cx, eyeY, 4.5 * p, 0.5 * p, 4, Math.PI / 2, turn, 120);
     // Fill the first turn so the volute covers the shaft behind it.
-    out.push(poly("volute", [...outer, [cx, eyeY + 4.5 * p]], true, "text"));
-    // The spiral fillet: a band between the prescribed spiral and one a third of a part inside it.
-    const a = spiral(cx, eyeY, 4.5 * p, 0.5 * p, 7.6, Math.PI / 2, turn, 260);
-    const b = spiral(cx, eyeY, 4.5 * p - 0.38 * p, 0.5 * p - 0.03 * p, 7.6, Math.PI / 2, turn, 260);
-    out.push(poly("volute", [...a, ...b.reverse()], true, "text", "groove"));
+    out.push(poly("volute", [...outer, [cx, eyeY + 4.5 * p]], true, "chosen"));
+    // Quarter-turn radii follow the text. Linear interpolation and a fillet
+    // tapering into the eye are drawing choices, not a recovered ancient contour.
+    // 256 samples retain every quarter-turn station and the full eighth quarter.
+    const a = spiral(cx, eyeY, 4.5 * p, 0.5 * p, 8, Math.PI / 2, turn, 256);
+    const innerStart = 4.5 - 0.38;
+    const b = spiral(
+      cx,
+      eyeY,
+      innerStart * p,
+      ((innerStart - 0.5) / 8) * p,
+      8,
+      Math.PI / 2,
+      turn,
+      256,
+    );
+    out.push(poly("volute", [...a, ...b.reverse()], true, "chosen", "groove"));
     out.push(circlePiece("oculus", cx, eyeY, 0.5 * p));
   }
   out.push(band("abacus", axis, half, top - 1.5 * p, top));
@@ -442,17 +462,24 @@ export function ionicElevation(input: IonicInput): IonicElevation {
   const capitalAboveShaft =
     input.order === "corinthian" ? 1 : 6.5 * ionicCapitalUnits(columnFeet).part;
   const shaftTop = H - capitalAboveShaft;
-  axes.forEach((axis, i) => {
+  const columnProfiles = axes.map((axis, i) => {
     const corner = i === 0 || i === axes.length - 1;
-    const r0 = 0.5 * (corner ? 1 + 1 / 50 : 1);
+    const diameter = corner ? 1 + 1 / 50 : 1;
+    const baseTop = 0.5 * diameter;
+    const localShaftTop = H - capitalAboveShaft * diameter;
+    const r0 = diameter / 2;
     const r1 = r0 * taper.ratio;
-    pieces.push(...columnBase(axis, input.base));
-    pieces.push(...shaft(axis, 0.5, shaftTop, r0, r1));
-    pieces.push(
-      ...(input.order === "corinthian"
-        ? corinthianCapital(axis, shaftTop, r1)
-        : ionicCapital(axis, H, r1, columnFeet)),
-    );
+    // III.5 sizes bases and capitals from the column's own lower diameter.
+    // Axes and capital tops stay level; the remaining shaft length accommodates
+    // the corner members. This joining convention is explicit in the workshop.
+    pieces.push(...scaleMember(columnBase(axis, input.base), axis, 0, diameter));
+    pieces.push(...shaft(axis, baseTop, localShaftTop, r0, r1));
+    const capital =
+      input.order === "corinthian"
+        ? corinthianCapital(axis, H - capitalAboveShaft, 0.5 * taper.ratio)
+        : ionicCapital(axis, H, 0.5 * taper.ratio, columnFeet);
+    pieces.push(...scaleMember(capital, axis, H, diameter));
+    return { axis, diameter, baseTop, shaftTop: localShaftTop, capitalTop: H };
   });
 
   // Entablature (III.5.8–11): epistyle by column height, then zophorus, dentils and corona.
@@ -515,7 +542,7 @@ export function ionicElevation(input: IonicInput): IonicElevation {
   dims.push({
     from: [0, base.bottom],
     to: [W, base.bottom],
-    label: `${fmtModules(W)} modules`,
+    label: `${fmtModules(W)} nominal diameters`,
     offset: -1.4,
     rule: input.spacing === "eustyle" ? "eustyle" : "species",
   });
@@ -553,6 +580,7 @@ export function ionicElevation(input: IonicInput): IonicElevation {
     pieces,
     dims,
     roof: ped,
+    columnProfiles,
     bounds: {
       x0: Math.min(-base.reach, -proj - 0.4),
       x1: Math.max(W + base.reach, W + proj + 0.4),

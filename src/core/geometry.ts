@@ -113,7 +113,7 @@ export function fluteLines(
   return out;
 }
 
-/** An Archimedean spiral: radius shrinks linearly with angle, as III.5.6 prescribes per quarter turn. */
+/** Modern linear interpolation of a decreasing-radius spiral; source rules can fix quarter-turn stations without determining the intervening curve. */
 export function spiral(
   cx: number,
   cy: number,
@@ -185,4 +185,35 @@ export function partsInView(
     if (b.x0 >= view.x0 && b.x1 <= view.x1 && b.y0 >= view.y0 && b.y1 <= view.y1) seen.add(p.part);
   }
   return [...seen];
+}
+
+/** Scale a local column member around its own axis and seating level. */
+export function scaleMember(
+  pieces: readonly Piece[],
+  axis: number,
+  level: number,
+  factor: number,
+): Piece[] {
+  const point = ([x, y]: Pt): Pt => [axis + (x - axis) * factor, level + (y - level) * factor];
+  return pieces.map((piece) => {
+    const shape = piece.shape;
+    if (shape.kind === "poly") return { ...piece, shape: { ...shape, pts: shape.pts.map(point) } };
+    if (shape.kind === "rect") {
+      const [x, y] = point([shape.x, shape.y]);
+      return { ...piece, shape: { ...shape, x, y, w: shape.w * factor, h: shape.h * factor } };
+    }
+    const [cx, cy] = point([shape.cx, shape.cy]);
+    return { ...piece, shape: { ...shape, cx, cy, r: shape.r * factor } };
+  });
+}
+
+/** Visible shaft span includes the separate corner thickening; nominal rhythms do not. */
+export function shaftSpan(pieces: readonly Piece[]): { x0: number; x1: number; width: number } {
+  const shafts = pieces
+    .filter((piece) => piece.part === "shaft" && piece.ink === "solid")
+    .map(pieceBounds);
+  if (!shafts.length) throw new Error("This drawing has no measurable shaft outlines.");
+  const x0 = Math.min(...shafts.map((shape) => shape.x0));
+  const x1 = Math.max(...shafts.map((shape) => shape.x1));
+  return { x0, x1, width: x1 - x0 };
 }

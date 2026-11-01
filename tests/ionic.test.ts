@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { spiral } from "../src/core/geometry";
+import { pieceBounds, spiral } from "../src/core/geometry";
 import {
   CLEAR,
   columnHeight,
@@ -91,7 +91,14 @@ describe("bases (III.5.2–3)", () => {
         (p) => ["plinth", "torus", "scotia", "astragal"].includes(p.part) && Math.min(...ys(p)) < 1,
       );
       close(Math.min(...baseParts.flatMap(ys)), 0, 1e-9);
-      close(Math.max(...baseParts.flatMap(ys)), 0.5, 1e-9);
+      close(Math.max(...baseParts.flatMap(ys)), 0.51, 1e-9);
+      for (const column of e.columnProfiles) {
+        const basePieces = baseParts.filter((p) => {
+          const bounds = pieceBounds(p);
+          return Math.abs((bounds.x0 + bounds.x1) / 2 - column.axis) < 1e-9;
+        });
+        close(Math.max(...basePieces.flatMap(ys)) / column.diameter, 0.5);
+      }
     }
     const io = ionicElevation({
       order: "ionic",
@@ -103,7 +110,7 @@ describe("bases (III.5.2–3)", () => {
     });
     const plinth = io.pieces.find((p) => p.part === "plinth");
     assert.ok(plinth?.shape.kind === "rect");
-    if (plinth?.shape.kind === "rect") close(plinth.shape.w, 1 + 1 / 4 + 1 / 8);
+    if (plinth?.shape.kind === "rect") close(plinth.shape.w / 1.02, 1 + 1 / 4 + 1 / 8);
   });
 });
 
@@ -120,12 +127,83 @@ describe("Corinthian capital (IV.1.11)", () => {
     const abaci = e.pieces.filter(
       (p) => p.part === "abacus" && p.given === "text" && p.shape.kind === "rect",
     );
-    const a = abaci[0];
-    assert.ok(a?.shape.kind === "rect");
-    if (a?.shape.kind === "rect") {
-      close(a.shape.y + a.shape.h - e.shaftTop, 1);
-      close(Math.hypot(a.shape.w, a.shape.w), 2);
-      close(a.shape.h, 1 / 7);
+    assert.equal(abaci.length, e.columnProfiles.length);
+    abaci.forEach((a, index) => {
+      const profile = e.columnProfiles[index];
+      assert.ok(a?.shape.kind === "rect" && profile);
+      if (a.shape.kind === "rect") {
+        close((a.shape.y + a.shape.h - profile.shaftTop) / profile.diameter, 1);
+        close(Math.hypot(a.shape.w, a.shape.w) / profile.diameter, 2);
+        close(a.shape.h / profile.diameter, 1 / 7);
+        close(a.shape.y + a.shape.h, e.height);
+      }
+    });
+  });
+});
+
+describe("the corner's own diameter, III.3.11 and III.5.1–7", () => {
+  it("sizes every Ionic abacus and base from its actual shaft, with level column tops", () => {
+    for (const moduleFeet of [1, 2.5, 4, 6]) {
+      const e = ionicElevation({
+        order: "ionic",
+        columns: 6,
+        spacing: "eustyle",
+        base: "attic",
+        moduleFeet,
+        sculptedFrieze: false,
+      });
+      const plinths = e.pieces.filter((p) => p.part === "plinth");
+      const abaci = e.pieces.filter((p) => p.part === "abacus" && p.given === "text");
+      const shafts = e.pieces.filter((p) => p.part === "shaft" && p.ink === "solid");
+      e.columnProfiles.forEach((column, index) => {
+        const base = plinths[index];
+        const abacus = abaci[index];
+        const shaft = shafts[index];
+        assert.ok(base?.shape.kind === "rect" && abacus?.shape.kind === "rect" && shaft);
+        const shaftBox = pieceBounds(shaft);
+        close(base.shape.w / (shaftBox.x1 - shaftBox.x0), 1.5);
+        close(column.baseTop / (shaftBox.x1 - shaftBox.x0), 0.5);
+        close(
+          abacus.shape.w / (shaftBox.x1 - shaftBox.x0),
+          ionicCapitalUnits(e.taper.columnFeet).abacus,
+        );
+        close(shaftBox.y0, column.baseTop);
+        close(shaftBox.y1, column.shaftTop);
+        close(abacus.shape.y + abacus.shape.h, e.height);
+      });
     }
+  });
+});
+
+describe("the actual Ionic scroll reaches its eye", () => {
+  it("emits all eight source quarter-turn radii rather than only testing an unused helper path", () => {
+    const e = ionicElevation({
+      order: "ionic",
+      columns: 4,
+      spacing: "eustyle",
+      base: "attic",
+      moduleFeet: 2.5,
+      sculptedFrieze: false,
+    });
+    const eyes = e.pieces.filter((p) => p.part === "oculus");
+    const scrolls = e.pieces.filter((p) => p.part === "volute" && p.ink === "groove");
+    assert.equal(scrolls.length, eyes.length);
+    scrolls.forEach((scroll, index) => {
+      const eye = eyes[index];
+      assert.ok(scroll.shape.kind === "poly" && eye?.shape.kind === "circle");
+      assert.equal(scroll.given, "chosen");
+      const outer = scroll.shape.pts.slice(0, scroll.shape.pts.length / 2);
+      for (let quarter = 0; quarter <= 8; quarter++) {
+        const point = outer[(quarter * (outer.length - 1)) / 8];
+        assert.ok(point);
+        close(
+          Math.hypot(point[0] - eye.shape.cx, point[1] - eye.shape.cy),
+          (4.5 - quarter / 2) * 2 * eye.shape.r,
+        );
+      }
+      const endpoint = outer.at(-1);
+      assert.ok(endpoint);
+      close(Math.hypot(endpoint[0] - eye.shape.cx, endpoint[1] - eye.shape.cy), eye.shape.r);
+    });
   });
 });

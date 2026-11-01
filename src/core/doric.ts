@@ -16,7 +16,7 @@ export interface FrontLayout {
   spans: number[];
   /** Column axes measured from the outer edge of the left corner column at its foot. */
   axes: number[];
-  /** Front width at the column feet: the number Vitruvius divides into parts. */
+  /** Nominal module span before the separate corner thickening. */
   width: number;
   /** Triglyph centres. */
   triglyphs: number[];
@@ -269,7 +269,7 @@ export function doricElevation(input: DoricInput): DoricElevation {
   dims.push({
     from: [0, stepsBottom],
     to: [W, stepsBottom],
-    label: `${fmtModules(W)} modules`,
+    label: `${fmtModules(W)} nominal modules`,
     offset: -2.1,
     rule: input.spacing === "diastyle" ? "doric-module" : "doric-systyle",
   });

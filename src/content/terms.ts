@@ -598,7 +598,7 @@ export const GREEK_TERMS: Term[] = [
       },
     ],
     note: "Statues or ornaments on the peak and the two ends of the pediment. Vitruvius fixes only their height: the corner ones as tall as the tympanum, the middle one an eighth taller. They are therefore huge. Their shape here is a convention.",
-    rules: ["sima-acroteria"],
+    rules: ["sima-acroteria", "doric-pediment"],
   },
   {
     id: "plinth",
@@ -704,7 +704,7 @@ export const GREEK_TERMS: Term[] = [
         source: "LSJ",
       },
     ],
-    note: "Start under the abacus, four and a half parts above the eye, and lessen the spiral by half an eye at every quarter turn: after two turns it reaches the eye. The vertical sizes are Vitruvius's; how far in from the abacus edge the eye sits is a disputed reading.",
+    note: "Start under the abacus, four and a half parts above the eye, and lessen the spiral by half an eye at every quarter turn: after two turns it reaches the eye. The quarter-turn radii are read from Vitruvius. This drawing joins them by a modern linear-radius interpolation; the fillet width is also chosen. The lost diagram does not determine this continuous contour, and how far in from the abacus edge the eye sits is a disputed reading.",
     rules: ["ionic-capital", "volute"],
     deeper: { label: "Draw the volute with a compass in Gonia", url: `${GONIA}volute.html` },
   },
