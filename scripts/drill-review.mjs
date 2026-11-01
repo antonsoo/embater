@@ -399,8 +399,10 @@ try {
     await page.locator("[data-term]").first().focus();
     await page.keyboard.press("Enter");
     assert.match(await page.locator(".verdict").textContent(), /^Right\./);
-    if (fixture === "blocked")
-      assert.match(await page.locator("#drill-storage").textContent(), /unavailable/);
+    if (fixture === "blocked") {
+      assert.match(await page.locator("#drill-storage").textContent(), /could not be read/);
+      assert.ok(await page.locator("#drill-persistence").isVisible());
+    }
     if (fixture === "legacy")
       assert.equal(
         await page.evaluate(() => localStorage.getItem("embater-drill-v1")),

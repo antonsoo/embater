@@ -60,7 +60,10 @@ export function detailWindow(
   const diameter = elevation.unitsPerDiameter;
   const context = Math.max(
     diameter * 1.5,
-    Math.min(Math.max(anchor.x1 - anchor.x0, anchor.y1 - anchor.y0) * 1.4, diameter * 4),
+    Math.min(
+      Math.max(anchor.x1 - anchor.x0, anchor.y1 - anchor.y0) * 1.4,
+      Math.max(diameter * 1.5, (view.x1 - view.x0) * 0.7),
+    ),
   );
   const zoom = Math.min(8, Math.max(1, Number.isFinite(pose.zoom) ? pose.zoom : 1));
   const width = context / zoom;
