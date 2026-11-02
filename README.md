@@ -2,7 +2,7 @@
 
 **Draw Greek temples from Vitruvius's own rules, check those rules against real buildings, and learn the Greek, Latin and native name of every part.**
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-1f4e9c)](LICENSE)
+[![License: PolyForm Noncommercial](https://img.shields.io/badge/license-PolyForm%20Noncommercial-1f4e9c)](LICENSE)
 [![Live site](https://img.shields.io/badge/live-antonsoo.github.io%2Fembater-b3321f)](https://antonsoo.github.io/embater/)
 
 ![A Doric hexastyle front computed from Vitruvius, with the triglyphs selected and their Greek name, sources and Euripides quotation beside it](docs/assets/orders-doric.png)
@@ -342,7 +342,9 @@ tower. Embater links to those rooms from the relevant parts.
 
 ## License
 
-Code: [MIT](LICENSE). The Perseus-derived data (`data/perseus-temples.json`,
+New versions are released under the [PolyForm Noncommercial License 1.0.0](LICENSE). It is free for any noncommercial purpose, including personal study, teaching and research, and for use by charities, schools, universities, research organizations and government institutions. Commercial use needs written permission from Anthony Mercer (anthony@praviel.com). Versions up to commit [`58aa6da`](https://github.com/antonsoo/embater/tree/58aa6da) (2026-11-01) were released under the MIT License, and copies of those versions keep it.
+
+Code: [PolyForm Noncommercial 1.0.0](LICENSE). The Perseus-derived data (`data/perseus-temples.json`,
 `src/data/temples.ts`) is © Tufts University, CC BY-SA 3.0 US, and is shared under the
 same license. Fonts: SIL Open Font License (`src/fonts/LICENSE.txt`). See
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

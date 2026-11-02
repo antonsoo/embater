@@ -25,4 +25,4 @@ export const PLAN_FONTS = [
   },
 ] as const;
 export const FONT_LICENSE_HASH = "da7e59f7ecc5b53057ca9c667cf4cfd585fdf4e521187ec7f1d5c0a8f7dc99bf";
-export const CODE_LICENSE_HASH = "f4cec46403514e2601f3b917ad36bfc8cd9a6d97359ac2f9bb554d2062a251eb";
+export const CODE_LICENSE_HASH = "dd67b8ad08326fe7c8582fe64b5a4d2a76c9f0e22e04defe1f0b006d1dafec05";

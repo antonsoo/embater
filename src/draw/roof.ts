@@ -144,7 +144,7 @@ export function roofSvg(
   return svg
     .replace(
       /(<svg[^>]*>)/,
-      `$1${context}<title>Embater: measured roof ornaments</title><desc>Modern schematic reading of Vitruvius III.5.12, Krohn 1912 printed page 74. h is a ninth of the model corona front. Corners h; middle 9h/8. Blue ${target} trial ${ratio}h. Palmettes, plinths, grey mounting wedges, corner insets and normal cornice thickness are drawing choices. No historical reconstruction is implied. https://archive.org/details/vitruviidearchit00vitr_1/page/n91/mode/1up . Drawing: Copyright 2026 Anthony Mercer, MIT.</desc><style>
+      `$1${context}<title>Embater: measured roof ornaments</title><desc>Modern schematic reading of Vitruvius III.5.12, Krohn 1912 printed page 74. h is a ninth of the model corona front. Corners h; middle 9h/8. Blue ${target} trial ${ratio}h. Palmettes, plinths, grey mounting wedges, corner insets and normal cornice thickness are drawing choices. No historical reconstruction is implied. https://archive.org/details/vitruviidearchit00vitr_1/page/n91/mode/1up . Drawing: Copyright 2026 Anthony Mercer, PolyForm Noncommercial.</desc><style>
 ${ROOF_SVG_STYLE}
 </style>`,
     )

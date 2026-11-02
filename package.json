@@ -5,7 +5,7 @@
   "description": "Draw Greek temples from Vitruvius's own rules, check them against measured buildings, and learn the Greek, Latin and native names of every part.",
   "type": "module",
   "author": "Anthony Mercer <anthony@praviel.com>",
-  "license": "MIT",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/antonsoo/embater.git"

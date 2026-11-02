@@ -89,7 +89,7 @@ function sheet(row: FlankRow, reading: Reading): string {
   <h2>The building record</h2>${sourceCard(row)}
   <h2>Vitruvius III.4.3</h2><p lang="la">${esc(LATIN)}</p><p>${esc(ENGLISH)}</p>
   <p class="small">Latin: Krohn (1912), p. 69; new English translation, not independently reviewed. <a href="${witness}">Printed witness</a>.</p>
-  <p class="small">${esc(attribution)} <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">Data license</a>. Diagram and English: Anthony Mercer, MIT. This file contains the selected record and diagram and needs no network to read or print. External source links need a connection.</p>
+  <p class="small">${esc(attribution)} <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">Data license</a>. Diagram and English: Anthony Mercer, PolyForm Noncommercial. This file contains the selected record and diagram and needs no network to read or print. External source links need a connection.</p>
   <p><a href="https://antonsoo.github.io/embater/compare.html?temple=${key(row)}&count=${reading}">Reopen this comparison</a></p></body></html>`;
 }
 
@@ -199,7 +199,7 @@ export function mountComparison(root: HTMLElement): void {
   $("#save-count-svg", root).addEventListener("click", () => {
     const svg = comparisonSvg(selected, reading).replace(
       "<title",
-      `<metadata>${esc(attribution)} ${esc(selected.url)} Count diagram only, not measured. Diagram: Anthony Mercer, MIT.</metadata><title`,
+      `<metadata>${esc(attribution)} ${esc(selected.url)} Count diagram only, not measured. Diagram: Anthony Mercer, PolyForm Noncommercial.</metadata><title`,
     );
     save(svg, `embater-${key(selected)}-${reading}.svg`, "image/svg+xml;charset=utf-8");
     $("#count-save-status", root).textContent =
