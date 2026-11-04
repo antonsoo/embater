@@ -69,6 +69,18 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           true,
         );
         await page.locator("#measure-equal").uncheck();
+        assert.doesNotMatch(await page.locator("#measure-result").textContent(), /pitches differ/);
+        await page.locator("#front-pitch").focus();
+        await page.keyboard.press("End");
+        await page.locator("#measure-halved").click();
+        assert.equal(await page.locator("#front-pitch").inputValue(), "6");
+        assert.equal(await page.locator("#flank-pitch").inputValue(), "3");
+        await page.locator("#front-pitch").focus();
+        await page.keyboard.press("Home");
+        assert.equal(await page.locator("#measure-halved").isDisabled(), true);
+        assert.equal(await page.locator("#measure-half-hint").isVisible(), true);
+        await page.locator("#measure-equal-example").click();
+        await page.locator("#measure-equal").uncheck();
         await page.locator("#flank-pitch").focus();
         await page.keyboard.press("Home");
         assert.equal(await page.locator("#flank-pitch").inputValue(), "1.25");

@@ -29,11 +29,17 @@ export const EDGE_LABELS: Record<MeasureEdge, string> = {
   platform: "Trial platform edges",
 };
 
-function bounded(value: string | null, fallback: number, min: number, max: number): number {
+function bounded(
+  value: string | null,
+  fallback: number,
+  min: number,
+  max: number,
+  steps = 20,
+): number {
   if (value === null || value.trim() === "") return fallback;
   const number = Number(value);
   return Number.isFinite(number) && number >= min && number <= max
-    ? Math.round(number * 20) / 20
+    ? Math.round(number * steps) / steps
     : fallback;
 }
 export function readCountTrial(params: URLSearchParams): CountTrial {
@@ -48,7 +54,7 @@ export function readCountTrial(params: URLSearchParams): CountTrial {
           ? "platform"
           : "axes",
     frontPitch,
-    flankPitch: equal ? frontPitch : bounded(params.get("flank-pitch"), 3, 1.25, 6),
+    flankPitch: equal ? frontPitch : bounded(params.get("flank-pitch"), 3, 1.25, 6, 40),
     margin: bounded(params.get("margin"), 1, 0, 2),
     equal,
   };
@@ -81,9 +87,22 @@ export function countMeasures(flank: number, trial: CountTrial): CountMeasure[] 
     return { edge, label: EDGE_LABELS[edge], width: w, length: l, ratio: l / w };
   });
 }
-export function countMeasureCsv(flank: number, trial: CountTrial): string {
+export function countMeasureCsv(
+  flank: number,
+  trial: CountTrial,
+  evidence?: {
+    label: string;
+    url: string;
+    quote: string;
+    status: string;
+    credit: string;
+    license: string;
+  },
+  series = "current",
+): string {
   const rows = [
     [
+      "trial",
       "endpoints",
       "front_columns",
       "flank_columns",
@@ -94,8 +113,15 @@ export function countMeasureCsv(flank: number, trial: CountTrial): string {
       "length_D",
       "length_over_width",
       "model",
+      "count_premise",
+      "source_url",
+      "source_quote",
+      "source_status",
+      "source_credit",
+      "source_license",
     ],
     ...countMeasures(flank, trial).map((m) => [
+      series,
       m.edge,
       6,
       flank,
@@ -106,6 +132,12 @@ export function countMeasureCsv(flank: number, trial: CountTrial): string {
       m.length,
       m.ratio,
       "modern uniform-diameter trial; no building dimensions inferred",
+      evidence?.label ?? "Count supplied by caller",
+      evidence?.url ?? "",
+      evidence?.quote ?? "",
+      evidence?.status ?? "modern trial",
+      evidence?.credit ?? "Anthony Mercer",
+      evidence?.license ?? "PolyForm Noncommercial 1.0.0",
     ]),
   ];
   return `${rows.map((r) => r.map((v) => `"${String(v).replaceAll('"', '""')}"`).join(",")).join("\r\n")}\r\n`;

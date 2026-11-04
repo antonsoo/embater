@@ -1,10 +1,20 @@
 import { dataUrl } from "../assets";
-import { countMeasureCsv, readCountTrial, writeCountTrial } from "../core/count-measure";
+import { readCountTrial, writeCountTrial } from "../core/count-measure";
+import {
+  type CountChoice,
+  type CountWork,
+  comparisonCsv,
+  countChoice,
+  countWork,
+  templeKey as key,
+  parseCountChoice,
+} from "../core/count-state";
 import { vitruvianFlank } from "../core/evidence";
 import { RULES } from "../core/rules";
 import { countStudyAssets } from "../count-study";
 import { FLANKS, type FlankRow, PERSEUS_FETCHED } from "../data/temples";
 import { countMeasureSvg } from "../draw/count-measure";
+import { READING_DEADLINE_MS } from "../transfer";
 import {
   CountMeasuringBench,
   type MeasureSnapshot,
@@ -15,11 +25,6 @@ import { $, esc } from "./dom";
 import { VocabularySource } from "./vocabulary-source";
 
 type Reading = "gaps" | "columns";
-const key = (r: FlankRow) =>
-  r.name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/-$/, "");
 const rule = RULES.get("flanks");
 if (!rule) throw new Error("The flank rule is missing.");
 const LATIN = rule.latin;
@@ -92,6 +97,8 @@ async function sheet(
   row: FlankRow,
   reading: Reading,
   trial: MeasureSnapshot,
+  reference: MeasureSnapshot | undefined,
+  work: CountWork,
   reopen: string,
   signal: AbortSignal,
 ): Promise<string> {
@@ -106,11 +113,11 @@ async function sheet(
   <p>These are count diagrams with equal spacing, not measured plans. Matching a count cannot show that a builder followed Vitruvius. The buildings mostly precede his first-century BCE treatise. This curated catalogue is not a census.</p>
   <h2>The building record</h2>${sourceCard(row)}
   <h2>Twice as long, measured where?</h2>
-  <figure class="trial-figure">${countMeasureSvg(trial.flank, trial.trial)}</figure>
-  ${measurementTable(trial)}${measurementNotes(trial)}
+  <figure class="trial-figure">${countMeasureSvg(trial.flank, trial.trial, { evidence: trial.evidence, ...(reference ? { reference } : {}) })}</figure>
+  ${reference ? `<p>Current: 6 × ${trial.flank}. Held reference: 6 × ${reference.flank}. ${trial.flank === reference.flank ? "Column count unchanged." : "Column count changed."} The two trials share one D and drawing scale.</p><div class="measure-tables">${measurementTable(trial, "Current trial · D is one shaft diameter")}${measurementTable(reference, "Held reference · same D and drawing scale")}</div><h3>Current trial</h3>${measurementNotes(trial)}<h3>Held reference</h3>${measurementNotes(reference)}` : `${measurementTable(trial)}${measurementNotes(trial)}`}
   <p>The table rounds to four decimal places; the CSV retains JavaScript number precision. The diagram retains its fixed scale. This is a modern measuring experiment, not a reconstruction of the selected building.</p>
-  <p><a href="${dataUrl(new TextEncoder().encode(countMeasureCsv(trial.flank, trial.trial)), "text/csv;charset=utf-8")}" download="embater-count-trial.csv">Measurements CSV</a> · <a href="${dataUrl(new TextEncoder().encode(countMeasureSvg(trial.flank, trial.trial)), "image/svg+xml")}" download="embater-count-trial.svg">Trial plan SVG</a></p>
-  <details><summary>Exact saved choices</summary><pre id="count-trial-settings">${esc(JSON.stringify({ ...trial, countReading: reading, temple: key(row) }, null, 2))}</pre></details>
+  <p><a href="${dataUrl(new TextEncoder().encode(comparisonCsv(trial, reference)), "text/csv;charset=utf-8")}" download="embater-count-trial.csv">Measurements CSV</a> · <a href="${dataUrl(new TextEncoder().encode(countMeasureSvg(trial.flank, trial.trial, { evidence: trial.evidence, ...(reference ? { reference } : {}) })), "image/svg+xml")}" download="embater-count-trial.svg">Trial plan SVG</a> · <a href="${dataUrl(new TextEncoder().encode(`${JSON.stringify(work, null, 2)}\n`), "application/json")}" download="embater-count-comparison.json">Reopenable comparison JSON</a></p>
+  <details><summary>Exact saved choices</summary><pre id="count-trial-settings">${esc(JSON.stringify({ ...trial, countReading: reading, temple: key(row), reference: reference ?? null }, null, 2))}</pre></details>
   <h2>Vitruvius III.4.3</h2><p lang="la">${esc(LATIN)}</p><p>${esc(ENGLISH)}</p>
   <p class="small">Latin: Krohn (1912), p. 69; new English translation, not independently reviewed. <a href="${witness}">Printed witness</a>.</p>
   <p class="small">${esc(attribution)} <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">Data license</a>. Original diagram and English: Copyright 2026 Anthony Mercer, PolyForm Noncommercial 1.0.0. This file retains both drawings, the trial, the selected record, one complete Latin source page, fonts and full licenses. It needs no network to read, download its native files or print. External source links need a connection.</p>
@@ -161,11 +168,41 @@ export function mountComparison(root: HTMLElement): void {
   });
   const include = root.querySelector<HTMLInputElement>("#include-uncertain");
   if (include) include.checked = params.get("uncertain") === "yes";
+  let initialReference: CountChoice | null = null;
+  let referenceWarning = "";
+  if (params.has("reference")) {
+    try {
+      const raw = params.get("reference") ?? "";
+      if (raw.length > 4096) throw new Error("The held reference is too large.");
+      initialReference = parseCountChoice(JSON.parse(raw));
+    } catch {
+      referenceWarning =
+        "The held reference in this link could not be restored. The current comparison is open; keep the original link if it came from another edition.";
+    }
+  }
   const bench = new CountMeasuringBench(
     $("#count-measuring", root),
     readCountTrial(params),
     syncUrl,
+    capture,
+    apply,
+    initialReference,
   );
+  function capture(): CountChoice {
+    return countChoice(key(selected), reading, include?.checked ?? false, bench.trialState());
+  }
+  function apply(work: CountWork): void {
+    const next = FLANKS.find((r) => key(r) === work.current.temple);
+    if (!next) throw new Error("This building is unavailable in the current edition.");
+    selected = next;
+    reading = work.current.count;
+    if (include) include.checked = work.current.includeUncertain;
+    for (const input of root.querySelectorAll<HTMLInputElement>('[name="reading"]'))
+      input.checked = input.value === reading;
+    ($("#temple", root) as HTMLSelectElement).value = key(selected);
+    bench.replace(work);
+    refresh();
+  }
   const source = new VocabularySource($("#drill-source", root));
   $("#count-open-source", root).addEventListener("click", () => {
     if (rule) source.open(rule, $("#count-open-source", root));
@@ -175,7 +212,10 @@ export function mountComparison(root: HTMLElement): void {
     url.searchParams.set("temple", key(selected));
     url.searchParams.set("count", reading);
     url.searchParams.set("uncertain", include?.checked ? "yes" : "no");
-    writeCountTrial(url.searchParams, bench.snapshot().trial);
+    writeCountTrial(url.searchParams, bench.trialState());
+    const reference = bench.referenceChoice();
+    if (reference) url.searchParams.set("reference", JSON.stringify(reference));
+    else url.searchParams.delete("reference");
     history.replaceState(null, "", url);
   }
   const eligible = () => FLANKS.filter((r) => include?.checked || r.status === "ok");
@@ -207,11 +247,7 @@ export function mountComparison(root: HTMLElement): void {
     $("#count-source", root).innerHTML = sourceCard(selected);
     if (!saving) $("#count-save-status", root).textContent = "";
     refreshRecords();
-    bench.update(
-      target,
-      selected.flank,
-      selected.name + (selected.status === "uncertain" ? " (uncertain restoration)" : ""),
-    );
+    bench.update();
     syncUrl();
   }
   root.querySelector(".count-reading")?.addEventListener("change", (e) => {
@@ -249,6 +285,8 @@ export function mountComparison(root: HTMLElement): void {
     const snapshotRow = { ...selected };
     const snapshotReading = reading;
     const trial = bench.snapshot();
+    const reference = bench.heldSnapshot();
+    const work = countWork(capture(), bench.referenceChoice());
     const reopen = new URL("https://antonsoo.github.io/embater/compare.html");
     reopen.search = location.search;
     const controller = new AbortController();
@@ -261,10 +299,18 @@ export function mountComparison(root: HTMLElement): void {
       "Saving the opened settings with verified source and font bytes… Changes made now belong to the next reading.";
     const timeout = setTimeout(
       () => controller.abort(new Error("Reading save timed out. Reconnect and try again.")),
-      120_000,
+      READING_DEADLINE_MS,
     );
     try {
-      const html = await sheet(snapshotRow, snapshotReading, trial, reopen.href, controller.signal);
+      const html = await sheet(
+        snapshotRow,
+        snapshotReading,
+        trial,
+        reference,
+        work,
+        reopen.href,
+        controller.signal,
+      );
       controller.signal.throwIfAborted();
       save(html, `embater-${key(snapshotRow)}-${snapshotReading}.html`, "text/html;charset=utf-8");
       $("#count-save-status", root).textContent =
@@ -280,6 +326,7 @@ export function mountComparison(root: HTMLElement): void {
           : "The reading could not be saved. Try again.";
     } finally {
       clearTimeout(timeout);
+      controller.abort();
       saving = undefined;
       button.disabled = false;
       cancel.hidden = true;
@@ -334,4 +381,5 @@ export function mountComparison(root: HTMLElement): void {
     $("#count-tally", root).textContent += " Records saved as CSV.";
   });
   refresh();
+  if (referenceWarning) $("#measure-save-status", root).textContent = referenceWarning;
 }

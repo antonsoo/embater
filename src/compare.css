@@ -448,3 +448,58 @@
 .measure-bench > div {
   min-width: 0;
 }
+.measure-reference-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  border-block: 1px solid var(--rule);
+  padding-block: 15px;
+  margin-top: 24px;
+}
+.measure-reference-actions button {
+  min-height: 44px;
+  background: var(--sheet);
+  color: var(--caeruleum);
+  border: 1px solid var(--rule);
+  font: 17px var(--text);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+#measure-reference-result {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: 17px;
+}
+.measure-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.measure-tables table {
+  min-width: 0;
+  font-size: 17px;
+}
+.measure-tables table:last-child {
+  color: var(--minium);
+}
+.measure-tables table:last-child .measure-selected {
+  color: var(--minium);
+}
+.measure-file {
+  display: block;
+  font-size: 17px;
+  margin-top: 22px;
+}
+.measure-file input {
+  display: block;
+  max-width: 100%;
+  font: 16px var(--text);
+  margin-top: 8px;
+  min-height: 44px;
+}
+@media (max-width: 1000px) {
+  .measure-tables {
+    grid-template-columns: 1fr;
+  }
+}

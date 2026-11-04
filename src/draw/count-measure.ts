@@ -1,9 +1,14 @@
 import { type CountTrial, countMeasures } from "../core/count-measure";
+import type { CountEvidence, CountSnapshot } from "../core/count-state";
 
 export const measureNumber = (n: number): string => n.toFixed(4).replace(/\.?0+$/, "");
 
 /** Fixed scale across all permitted settings. The drawing never rescales a changed pitch. */
-export function countMeasureSvg(flank: number, trial: CountTrial): string {
+export function countMeasureSvg(
+  flank: number,
+  trial: CountTrial,
+  options: { reference?: CountSnapshot; evidence?: CountEvidence } = {},
+): string {
   const measures = countMeasures(flank, trial);
   const axes = measures[0];
   const selected = measures.find((m) => m.edge === trial.edge);
@@ -12,7 +17,16 @@ export function countMeasureSvg(flank: number, trial: CountTrial): string {
   const x = 72;
   const y = 110;
   const outside = 0.5 + trial.margin;
-  const height = Math.max(440, Math.ceil(y + (axes.length + outside) * k + 90));
+  const held = options.reference;
+  const heldMeasure = held
+    ? countMeasures(held.flank, held.trial).find((m) => m.edge === held.trial.edge)
+    : undefined;
+  const heldAxes = held ? countMeasures(held.flank, held.trial)[0] : undefined;
+  const extent = Math.max(
+    axes.length + outside,
+    held && heldAxes ? heldAxes.length + 0.5 + held.trial.margin : 0,
+  );
+  const height = Math.max(440, Math.ceil(y + extent * k + (held ? 140 : 90)));
   const footer = height - 43;
   const left = x - outside * k;
   const top = y - outside * k;
@@ -29,21 +43,45 @@ export function countMeasureSvg(flank: number, trial: CountTrial): string {
         `<circle data-trial-column="" cx="${x + j * trial.frontPitch * k}" cy="${y + i * trial.flankPitch * k}" r="${k / 2}" fill="#f8f9f5" stroke="#1f2328" stroke-width="1"/>`,
       );
     }
+  const xml = (text: string) =>
+    text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+  const reference =
+    held && heldMeasure
+      ? (() => {
+          const inset =
+            held.trial.edge === "axes"
+              ? 0
+              : held.trial.edge === "faces"
+                ? 0.5
+                : 0.5 + held.trial.margin;
+          const crosses: string[] = [];
+          for (let a = 0; a < held.flank; a++)
+            for (let b = 0; b < 6; b++) {
+              if (a > 0 && a < held.flank - 1 && b > 0 && b < 5) continue;
+              const cx = x + b * held.trial.frontPitch * k,
+                cy = y + a * held.trial.flankPitch * k;
+              crosses.push(`<path data-held-column="" d="M${cx - 3} ${cy}h6m-3 -3v6"/>`);
+            }
+          return `<g data-held-reference="" stroke="#a33b26" fill="none" stroke-width="1.3">${crosses.join("")}<rect x="${x - inset * k}" y="${y - inset * k}" width="${heldMeasure.width * k}" height="${heldMeasure.length * k}" stroke-dasharray="6 4"/></g>`;
+        })()
+      : "";
   const ruler = `<path d="M${a} ${b}v-26m0 6h${w}m0 -6v26M${a + w} ${b}h28m-6 0v${h}m6 0h-28" stroke="#1f4e9c" fill="none" stroke-width="1.5"/>
     <text x="${a + w / 2}" y="${b - 31}" text-anchor="middle" fill="#1f4e9c" font-size="17">${measureNumber(selected.width)} D</text>
     <text transform="translate(${a + w + 43},${b + h / 2}) rotate(90)" text-anchor="middle" fill="#1f4e9c" font-size="17">${measureNumber(selected.length)} D</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 ${height}" role="img" aria-labelledby="measure-title measure-desc">
-  <title id="measure-title">Same columns, different measuring endpoints</title><desc id="measure-desc">Modern trial, six by ${flank} columns. ${selected.label}: width ${measureNumber(selected.width)} D, length ${measureNumber(selected.length)} D, ratio ${measureNumber(selected.ratio)}. Pitch and platform margin are chosen, not surveyed. Fixed drawing scale.</desc>
-  <metadata>Original diagram: Copyright 2026 Anthony Mercer; PolyForm Noncommercial 1.0.0. Companion text: Vitruvius III.4.3. The count comes from the selected comparison. Geometry and measuring endpoints are modern trial assumptions. Trial settings: ${JSON.stringify(trial)}; flank columns: ${flank}.</metadata>
+  <title id="measure-title">${held ? (held.flank === flank ? "Same count, two measuring trials" : "Two count arrangements, one scale") : "One count, three measuring endpoints"}</title><desc id="measure-desc">Modern trial, six by ${flank} columns. ${selected.label}: width ${measureNumber(selected.width)} D, length ${measureNumber(selected.length)} D, ratio ${measureNumber(selected.ratio)}. Pitch and platform margin are chosen, not surveyed. Fixed drawing scale.${held && heldMeasure ? ` Held reference: six by ${held.flank}, width ${measureNumber(heldMeasure.width)} D, length ${measureNumber(heldMeasure.length)} D. Red crosses and dashes identify the held trial.` : ""}</desc>
+  <metadata>Original diagram: Copyright 2026 Anthony Mercer; PolyForm Noncommercial 1.0.0. Companion text: Vitruvius III.4.3. The count comes from the selected comparison. Geometry and measuring endpoints are modern trial assumptions. Trial settings: ${xml(JSON.stringify(trial))}; flank columns: ${flank}. ${options.evidence ? xml(JSON.stringify(options.evidence)) : ""} ${held ? `Held reference: ${xml(JSON.stringify(held))}` : ""}</metadata>
   <rect width="520" height="${height}" fill="#f8f9f5"/>
   <g font-family="Georgia,serif" fill="#1f2328">
   <text x="24" y="30" font-size="17">6 × ${flank} columns · ${5 * 2 === flank - 1 ? "double" : "not double"} the spaces</text>
   <text x="24" y="54" font-size="14">Fixed scale · one shaft diameter = D</text>
   <rect x="${left}" y="${top}" width="${(axes.width + 2 * outside) * k}" height="${(axes.length + 2 * outside) * k}" fill="#eceee9" stroke="#8b9199"/>
   <rect x="${x}" y="${y}" width="${axes.width * k}" height="${axes.length * k}" fill="none" stroke="#8b9199" stroke-dasharray="4 4"/>
+  ${reference}
   ${dots.join("")}
   <rect x="${a}" y="${b}" width="${w}" height="${h}" fill="none" stroke="#1f4e9c" stroke-width="1.4"/>
   ${ruler}
+  ${held && heldMeasure ? `<text x="24" y="${footer - 48}" font-size="14" fill="#a33b26">Red crosses / dashes: held 6 × ${held.flank}; ${held.flank === flank ? "same count" : "count changed"}</text><text x="24" y="${footer - 25}" font-size="14" fill="#a33b26">Held: ${measureNumber(heldMeasure.width)} × ${measureNumber(heldMeasure.length)} D; L / W = ${measureNumber(heldMeasure.ratio)}</text>` : ""}
   <path d="M24 ${footer}h120m-120 -4v8m60 -8v8m60 -8v8" stroke="#1f2328" fill="none"/>
   <text x="84" y="${footer + 23}" text-anchor="middle" font-size="13">10 D</text>
   <text x="180" y="${footer - 2}" font-size="14">${selected.label}</text>

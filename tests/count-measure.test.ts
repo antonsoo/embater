@@ -52,3 +52,11 @@ test("every admitted link round trips and equal pitches cannot hide a competing 
   assert.throws(() => countMeasures(11, { ...DEFAULT_COUNT_TRIAL, frontPitch: 1 }), /pitches/);
   assert.throws(() => countMeasures(11, { ...DEFAULT_COUNT_TRIAL, flankPitch: 2 }), /Equal/);
 });
+
+test("a half-front pitch survives a link without rounding to the old flank grid", () => {
+  const state = { ...DEFAULT_COUNT_TRIAL, frontPitch: 2.55, flankPitch: 1.275, equal: false };
+  const params = new URLSearchParams();
+  writeCountTrial(params, state);
+  assert.deepEqual(readCountTrial(params), state);
+  assert.equal(countMeasures(11, readCountTrial(params))[0]?.ratio, 1);
+});
