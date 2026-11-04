@@ -1,0 +1,124 @@
+chromium install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 54
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 3747619, queuedImages: 1 }
+chromium install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 59
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 7564586, queuedImages: 1 }
+chromium install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 66
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 11370249, queuedImages: 1 }
+chromium install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 73
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 15178447, queuedImages: 1 }
+chromium install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 79
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 18990053, queuedImages: 1 }
+chromium install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 85
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 22789854, queuedImages: 1 }
+chromium foreground-during-install 11090 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 2, throttledBytesSent: 1645305, queuedImages: 1 }
+chromium failed-install-retry 134 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 0, throttledBytesSent: 0, queuedImages: 0 }
+firefox install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 54
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 3641123, queuedImages: 1 }
+firefox install-progress {
+  status: 'Offline edition is still saving. Keep this tab online; the workshop remains usable.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 59
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 7458090, queuedImages: 1 }
+firefox install-progress {
+  status: 'Offline saving paused. Resuming complete saved files; keep this tab online.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 66
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 11104009, queuedImages: 1 }
+firefox install-progress {
+  status: 'Offline saving paused. Resuming complete saved files; keep this tab online.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 72
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 14912460, queuedImages: 1 }
+firefox install-progress {
+  status: 'Offline saving paused. Resuming complete saved files; keep this tab online.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 78
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 18569883, queuedImages: 1 }
+firefox install-progress {
+  status: 'Offline saving paused. Resuming complete saved files; keep this tab online.',
+  worker: 'installing',
+  caches: [
+    {
+      name: 'embater-27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19',
+      files: 84
+    }
+  ]
+} { peakImageStreams: 2, throttledBytesSent: 22382957, queuedImages: 1 }
+firefox foreground-during-install 9454 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 2, throttledBytesSent: 1641209, queuedImages: 1 }
+firefox failed-install-retry 149 Complete printed page 71. The image matches the retained edition. { peakImageStreams: 0, throttledBytesSent: 0, queuedImages: 0 }

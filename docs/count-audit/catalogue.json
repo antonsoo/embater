@@ -1,0 +1,700 @@
+{
+  "method": "Rehash cached original HTML and re-extract all eight stored fields with the existing fetch parser; this is not a live refresh or an independent historical review.",
+  "records": 99,
+  "catalogueSha256": "a0b77e7a40c775b3b278e7ecc22fdc94f0861dba703bbd25e1b2a55b5b8363fd",
+  "rows": [
+    {
+      "name": "Aegina, Temple of Aphaia",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Aegina%2c+Temple+of+Aphaia&object=Building",
+      "rawSha256": "589ba91fb147e7ed3df8a0244bfd614d69f25792a0eb811b6728f80a98f0e1a4",
+      "rawBytes": 18483,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Akragas, \"Temple of the Dioskouroi\"",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Akragas%2c+%26quot%3bTemple+of+the+Dioskouroi%26quot%3b&object=Building",
+      "rawSha256": "2653a461102a8361a332148bbd61b2990bc972e1e3c769787c4cfdc663d76341",
+      "rawBytes": 8659,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Akragas, Temple of Concord",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Akragas%2c+Temple+of+Concord&object=Building",
+      "rawSha256": "e0582faec0e79f3d48ce35f25430899eb76c9993eb273afc91a6501c9b097b82",
+      "rawBytes": 11675,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Akragas, Temple of Hephaistos",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Akragas%2c+Temple+of+Hephaistos&object=Building",
+      "rawSha256": "61311260326191b7154b25d9308fcc81441e9c91450ea601695713fe486a1270",
+      "rawBytes": 5569,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Akragas, Temple of Hera",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Akragas%2c+Temple+of+Hera&object=Building",
+      "rawSha256": "283c8089491211267ccae70750ed079a46288b453270175cf40b7dc54c61a1ba",
+      "rawBytes": 9336,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Akragas, Temple of Herakles",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Akragas%2c+Temple+of+Herakles&object=Building",
+      "rawSha256": "a7fc79d7ddfb5b694ea0c4850ec048530fff5f2966e0af7d563b2f199b45f56f",
+      "rawBytes": 12123,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Akragas, Temple of Zeus Olympios",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Akragas%2c+Temple+of+Zeus+Olympios&object=Building",
+      "rawSha256": "72e5da314ef620c48b7c2d30e744bd881d74cce5d58996446dce1c46bd2855fb",
+      "rawBytes": 12749,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Amphiaraion, Earlier Temple of Amphiaraios",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Amphiaraion%2c+Earlier+Temple+of+Amphiaraios&object=Building",
+      "rawSha256": "6f0c4355fae2aede6bc061aa493486c721a41f6b4ed595d21fcd2d6abce51594",
+      "rawBytes": 4845,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Amphiaraion, Temple of Amphiaraios",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Amphiaraion%2c+Temple+of+Amphiaraios&object=Building",
+      "rawSha256": "3391619deafe2859718ccbbf6a6ab8527f624789f29a05118af6f4b7be8c4ee0",
+      "rawBytes": 7162,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Assos, Temple in the Agora",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Assos%2c+Temple+in+the+Agora&object=Building",
+      "rawSha256": "8b61b51af7d30534bf6b7ada4e8a21a9820eaa4a33d8cc86666187882adf69b6",
+      "rawBytes": 6495,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Assos, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Assos%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "ec0ca6ef66219c68fc7b4f22579eca64664bf2a2bc11818e177c33771129bc5f",
+      "rawBytes": 8342,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Earlier Temple of Dionysos",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Earlier+Temple+of+Dionysos&object=Building",
+      "rawSha256": "4b68c96662dc44d6561166fbfd48dc8b4f9db74895609bd5e97ccb7b29968aa0",
+      "rawBytes": 5080,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Erechtheion",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Erechtheion&object=Building",
+      "rawSha256": "18e62f221a33d0a3ec40bfec3c048a66779d87d4fdb823587d16539aac8c7e76",
+      "rawBytes": 13017,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Later Temple of Dionysos",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Later+Temple+of+Dionysos&object=Building",
+      "rawSha256": "baa4ec7c2b04a4f6c02447b670d775a852b281dc8bf94dc12b00f7971fa1e33a",
+      "rawBytes": 5271,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Old Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Old+Temple+of+Athena&object=Building",
+      "rawSha256": "4d096388be882d71e031f34ac214401412a1f694b7ea7dd746b161d6d1f19294",
+      "rawBytes": 5928,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Parthenon",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Parthenon&object=Building",
+      "rawSha256": "366c6d64beb8ee9f7cc6080459e64f66335452198d3a9308e6072361458ddaab",
+      "rawBytes": 13269,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Pre-Parthenon",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Pre-Parthenon&object=Building",
+      "rawSha256": "5948c9b1fccf9a0632b0d6a60be744f5d83379fd4b2b8b076651d79b3dbab451",
+      "rawBytes": 5318,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Temple of Aphrodite",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Temple+of+Aphrodite&object=Building",
+      "rawSha256": "133b98b855c1a14c711586c9e3fda191068c2605ae244e671aeafb83423575e2",
+      "rawBytes": 5834,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Temple of Apollo Patroos",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Temple+of+Apollo+Patroos&object=Building",
+      "rawSha256": "c332f8d6f85a9a329df371946e2f95315c5a380dcba9fce8bb1902ee231898ce",
+      "rawBytes": 8398,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Temple of Athena Nike",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Temple+of+Athena+Nike&object=Building",
+      "rawSha256": "b0b365960a93911c0df314cc5cc4016a547a4644af67c266318231a782555e13",
+      "rawBytes": 8475,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Temple of Hephaistos",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Temple+of+Hephaistos&object=Building",
+      "rawSha256": "f5f416e5bd01e64982445ec3863f3dd65cbba5be336f2b9cf838a50653f50f76",
+      "rawBytes": 12271,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Athens, Temple of Zeus and Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Athens%2c+Temple+of+Zeus+and+Athena&object=Building",
+      "rawSha256": "b308773dae558fdf4d4d33e74002935b1e59e027bc4cc96d0e7b706e77c6b186",
+      "rawBytes": 7030,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Bassae, Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Bassae%2c+Temple+of+Apollo&object=Building",
+      "rawSha256": "52cbccae7dca6fb4b79044338248304d50a164f3cfc6f9fb4869757bb7003d6c",
+      "rawBytes": 8345,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Brauron, Heroon of Iphigeneia",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Brauron%2c+Heroon+of+Iphigeneia&object=Building",
+      "rawSha256": "dc4e586ed4c959e61dace590b927aa393dad7cd2c034371e4094cfc3cdf8d0e4",
+      "rawBytes": 5130,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Brauron, Temple of Artemis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Brauron%2c+Temple+of+Artemis&object=Building",
+      "rawSha256": "ab659a2c2ea4746f13c6dce0aea6e7ab6cde39890de206d698b84fe52d0d1e17",
+      "rawBytes": 6147,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Corcyra, Temple of Artemis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Corcyra%2c+Temple+of+Artemis&object=Building",
+      "rawSha256": "bbe8925bb951634b39cbb46114016931b10b0a4d41d3f9be4a2b0da55bf04146",
+      "rawBytes": 7836,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Corinth, Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Corinth%2c+Temple+of+Apollo&object=Building",
+      "rawSha256": "3a84a656fc412db0f4a2436a6f660284dc497491513e771d34873945f688b353",
+      "rawBytes": 7588,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Athenian Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Athenian+Temple+of+Apollo&object=Building",
+      "rawSha256": "d2176d24d6577ca11e91f2e555c9af232cf2d78ac93aa90b8d00ce44ca80a03f",
+      "rawBytes": 4962,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Delian Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Delian+Temple+of+Apollo&object=Building",
+      "rawSha256": "6ec7c6234ed7aeeea03a5366ee3486923b29ff66b3e45f8097f72c21edea1f79",
+      "rawBytes": 5442,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Porinos Naos",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Porinos+Naos&object=Building",
+      "rawSha256": "b6e647baa0e7bc8671221c9a37a3f44aa99e5a7b99a1898618e3f75fb25ea9f5",
+      "rawBytes": 5110,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Samothrakeion",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Samothrakeion&object=Building",
+      "rawSha256": "143ab04182b673f0eb14bfb7033a28887fb3265a10ab4fd63abb1c7ea71251f3",
+      "rawBytes": 5755,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Temple of Artemis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Temple+of+Artemis&object=Building",
+      "rawSha256": "69c9a2e7ab897a3a74705ea3454e932d741de9a403f201bc1d50fec6b024d944",
+      "rawBytes": 5200,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Temple of Hera",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Temple+of+Hera&object=Building",
+      "rawSha256": "d466b507e9bf5b17254b088fe76c65493953e91baf88afe31dd349b37ca9ff37",
+      "rawBytes": 6299,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Temple of Isis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Temple+of+Isis&object=Building",
+      "rawSha256": "623aa44da73c222d8b86bdcb543bb1695ade44a155c05de127564297ce777e61",
+      "rawBytes": 6323,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Temple of Leto",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Temple+of+Leto&object=Building",
+      "rawSha256": "46b53fc53660468c2c67e348b123245c95dac17771ffd2133c0bbb63b659130c",
+      "rawBytes": 5809,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Temple of Serapis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Temple+of+Serapis&object=Building",
+      "rawSha256": "cffd63affab14390d6fa175d53a9802dfec8dbb4786c58ee7de8af52ce7db5cb",
+      "rawBytes": 5141,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Temple of the 12 Gods",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Temple+of+the+12+Gods&object=Building",
+      "rawSha256": "066c88641c647084e66e11cf903b1849ecdcb53d255df4869088545dd82d5825",
+      "rawBytes": 5393,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delos, Temple to Egyptian Gods",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delos%2c+Temple+to+Egyptian+Gods&object=Building",
+      "rawSha256": "1a5864594309bae6c24b3a683fbbb23ed83e94bbc7998f1bf997f21bc94a4e93",
+      "rawBytes": 4934,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delphi, Newer Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delphi%2c+Newer+Temple+of+Athena&object=Building",
+      "rawSha256": "3ba8248b8260dad1c48c8d4b28751dfbaa4df05e7d938c21b124a15b44c6c693",
+      "rawBytes": 5211,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delphi, Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delphi%2c+Temple+of+Apollo&object=Building",
+      "rawSha256": "5698d0b4f79f257cc38a0832cd5d1f6517cf6efaf557e758a2f6ae6137aa5e9a",
+      "rawBytes": 10446,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Delphi, Temple of Athena Pronaia",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Delphi%2c+Temple+of+Athena+Pronaia&object=Building",
+      "rawSha256": "ce27c2596aac498db43963bb1187bacfc149c44ac3de5339c58f85c818683fa0",
+      "rawBytes": 7732,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Didyma, Archaic Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Didyma%2c+Archaic+Temple+of+Apollo&object=Building",
+      "rawSha256": "c511729855f4452860184c31cf3dc7356abb8705e5c7c6675f5a30cddf781a67",
+      "rawBytes": 15553,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Didyma, Hellenistic Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Didyma%2c+Hellenistic+Temple+of+Apollo&object=Building",
+      "rawSha256": "88bdc603117d0dcc7ef9ed3e7b4c72c7754918dfd7c2baf4e38cc2de87fc48dd",
+      "rawBytes": 22438,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Eleusis, Roman Temple (B)",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Eleusis%2c+Roman+Temple+(B)&object=Building",
+      "rawSha256": "183a5a05a2dbec4680262d98305f9708adb61d25852f660fcfc036907d0ce5ae",
+      "rawBytes": 4710,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Eleusis, Temple in the Sanctuary of Demeter and Kore",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Eleusis%2c+Temple+in+the+Sanctuary+of+Demeter+and+Kore&object=Building",
+      "rawSha256": "6631ab70db992702da94665e0eeb39f60e19d4237707361fd4a94b64856e9bee",
+      "rawBytes": 4127,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Eleusis, Temple of Artemis and Poseidon",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Eleusis%2c+Temple+of+Artemis+and+Poseidon&object=Building",
+      "rawSha256": "63c419977ffc3eae88ee3f82d15da677e14709a2bb7328b889ee0d3bbfbb031c",
+      "rawBytes": 4881,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Epidauros, Anakeion",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Epidauros%2c+Anakeion&object=Building",
+      "rawSha256": "2885d51741f199ba9ae4fa2f5a7db82d24b5ed3360dd8e2b0017e8a1e4213225",
+      "rawBytes": 5379,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Epidauros, Old Temple of Asklepios",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Epidauros%2c+Old+Temple+of+Asklepios&object=Building",
+      "rawSha256": "d5dff4bd87e0b66a45655637d7a66b807e66935f5e7b9858109e5489dba38c73",
+      "rawBytes": 5092,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Epidauros, Temple of Aphrodite (Temple L)",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Epidauros%2c+Temple+of+Aphrodite+(Temple+L)&object=Building",
+      "rawSha256": "e117e9973a5f878bfa8ed5239af56109aec2db081fad140b96a62a47ed459e16",
+      "rawBytes": 5703,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Epidauros, Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Epidauros%2c+Temple+of+Apollo&object=Building",
+      "rawSha256": "5d5aed89aad09b8752cc1faebbb3d39d8c766e16e735557e33beae7e220f56cb",
+      "rawBytes": 5192,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Epidauros, Temple of Artemis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Epidauros%2c+Temple+of+Artemis&object=Building",
+      "rawSha256": "ed1ac9802ee5fa85aaa16dd8f005e1dcb667d71c1edb1bf55ba0db8ccaee3153",
+      "rawBytes": 5391,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Epidauros, Temple of Asklepios",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Epidauros%2c+Temple+of+Asklepios&object=Building",
+      "rawSha256": "17b6bf3ecb6244a2b917cc589940b02b91614126748484fa1754bba28b7b37f2",
+      "rawBytes": 5674,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Epidauros, Temple of Themis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Epidauros%2c+Temple+of+Themis&object=Building",
+      "rawSha256": "6d6ac2af225e0fb744def45a7f0f1b659f8d806794d9ee1474644f72d2ed9976",
+      "rawBytes": 4883,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Eretria, Temple of Apollo Daphnephoros",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Eretria%2c+Temple+of+Apollo+Daphnephoros&object=Building",
+      "rawSha256": "e129d59d38db7876c354bebc686d74bbc13051b1273212ab4c711fb4123d7587",
+      "rawBytes": 13715,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Eretria, Temple of Dionysos",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Eretria%2c+Temple+of+Dionysos&object=Building",
+      "rawSha256": "c11749e509829e55b64c0c48c5432550bcd3eeffe9232c821c9910ad4394f624",
+      "rawBytes": 7553,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Foce del Sele, Temple of Hera",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Foce+del+Sele%2c+Temple+of+Hera&object=Building",
+      "rawSha256": "f9a16294d369aaf158c837c8de8d4cbb850edb2aaaf944b0658e4b9485dfec55",
+      "rawBytes": 8839,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Gela, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Gela%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "5bbaef2a13e36e3a0c59ce3ba489cdf8b8a36556db65fef8616d256b6c896710",
+      "rawBytes": 7244,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Metapontum, Tavole Palatine",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Metapontum%2c+Tavole+Palatine&object=Building",
+      "rawSha256": "a853be97c9efb21d852fb1c8226409eb0bc0778f8f06da86c45549db43481e28",
+      "rawBytes": 9979,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Metapontum, Temple B",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Metapontum%2c+Temple+B&object=Building",
+      "rawSha256": "edd2b2443147a1c329b319931757b2d105f96e39d824c5d817041351a0921700",
+      "rawBytes": 10986,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Metapontum, Temple C",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Metapontum%2c+Temple+C&object=Building",
+      "rawSha256": "644e7ba46622405464b6e98f8a944fc6ac68b1f76d4c7a9d07953fb6d6212af2",
+      "rawBytes": 7838,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Metapontum, Temple D",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Metapontum%2c+Temple+D&object=Building",
+      "rawSha256": "a2e8e06f91936672e557a668a05b88d6f58ce160f9ad9b9ff9a1b2a08f1ca13a",
+      "rawBytes": 11103,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Metapontum, Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Metapontum%2c+Temple+of+Apollo&object=Building",
+      "rawSha256": "a9153d0a07fc0c72cca91276e2401adbae3b80b8dc7f0bea6b9fcf0419210cdf",
+      "rawBytes": 11166,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Miletus, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Miletus%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "a06c9ddfd6808d6f64608b4da63e25caa3e2199c2e22828ae1d505e313817c3c",
+      "rawBytes": 8229,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Miletus, Temple on Kalabaktepe",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Miletus%2c+Temple+on+Kalabaktepe&object=Building",
+      "rawSha256": "1808a32d6a11d4ecdf94d82c0456ebe7db74285c721ed29df5e853aa09964ac2",
+      "rawBytes": 4989,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Olympia, Metroon",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Olympia%2c+Metroon&object=Building",
+      "rawSha256": "5fac5678cb31b4a2dfbcf6cda1c347aa97bec470c94c531acd341b459e1499c1",
+      "rawBytes": 6389,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Olympia, Naiskos of Eileithyia and Sosipolis",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Olympia%2c+Naiskos+of+Eileithyia+and+Sosipolis&object=Building",
+      "rawSha256": "c9e8b9c1ce58306138a76573235b5cfba46d7406cf92c2a0afa6cb12b17106bd",
+      "rawBytes": 5299,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Olympia, Temple of Hera",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Olympia%2c+Temple+of+Hera&object=Building",
+      "rawSha256": "39a81bfb04893738586fbd111eed1ed832b3b41bbc34c50fe2b3e681270f19ff",
+      "rawBytes": 9276,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Olympia, Temple of Zeus",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Olympia%2c+Temple+of+Zeus&object=Building",
+      "rawSha256": "0abcb5cf47d8f614c7e958ade31c150a176152910321eabc0ba3400305eacda9",
+      "rawBytes": 10161,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Perachora, Geometric Temple of Hera Akraia",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Perachora%2c+Geometric+Temple+of+Hera+Akraia&object=Building",
+      "rawSha256": "d73bc9fb93e707e75baaba5000c7207bed0af9b0fa5dbbbea98a351ea5ca926c",
+      "rawBytes": 5022,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Perachora, Temple of Hera Akraia",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Perachora%2c+Temple+of+Hera+Akraia&object=Building",
+      "rawSha256": "785430973b04aa6e71be8abe20713aa828e0078e0bb8e3675e37ce3c7967db1b",
+      "rawBytes": 5139,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Poseidonia, \"Basilica\"",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Poseidonia%2c+%26quot%3bBasilica%26quot%3b&object=Building",
+      "rawSha256": "f37ecff4d863ec73206f9570b7fd1aec22d6ddd4683b66a86df7a8c5960ceae1",
+      "rawBytes": 12668,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Poseidonia, \"Temple of Poseidon\"",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Poseidonia%2c+%26quot%3bTemple+of+Poseidon%26quot%3b&object=Building",
+      "rawSha256": "d38add91f628a93be3daa8178ac4675707c04b9ae06f8d73eb1aceac36f5db3e",
+      "rawBytes": 15256,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Poseidonia, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Poseidonia%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "1a62a3faf1f35e35350fe804859b2a499e9d8279586f5ded9317d2186074b171",
+      "rawBytes": 12949,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Priene, Sanctuary of Demeter and Kore",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Priene%2c+Sanctuary+of+Demeter+and+Kore&object=Building",
+      "rawSha256": "c38c7bdfb9b460d3732d32c68ebbb072c4d7179c41f6d3feccc33d55147e73c4",
+      "rawBytes": 10989,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Priene, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Priene%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "969c048c54405544be93c9888099f405cfff128731acd844d8dd9761e8b80d80",
+      "rawBytes": 16453,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Priene, Temple of Zeus",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Priene%2c+Temple+of+Zeus&object=Building",
+      "rawSha256": "cd1f9af3ef24e578fa6b6da2ebf1d5bb39da6759c9cf7d2b7f155af3e7b39080",
+      "rawBytes": 9772,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, First Hekatompedon Temple",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+First+Hekatompedon+Temple&object=Building",
+      "rawSha256": "4239ac5fd86ec06d752209a488d3d347ddf1470a000f615849c1cf85e2ff55c8",
+      "rawBytes": 5249,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, Great Hera Temple",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+Great+Hera+Temple&object=Building",
+      "rawSha256": "c6210a9c56ef8b486d2f6b8f3275113105d35c29bb4b2b65e27e5d2e5c9a9c03",
+      "rawBytes": 6210,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, Hera Temple of Rhoikos and Theodoros",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+Hera+Temple+of+Rhoikos+and+Theodoros&object=Building",
+      "rawSha256": "e3456e87b6ee071adba1c6a8429d23f445e58d00c4dd063c2727013f5e65e106",
+      "rawBytes": 6029,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, North Building",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+North+Building&object=Building",
+      "rawSha256": "25d723cf52fda8cb34c781914139453973b6399be02bcca0122368550008bed4",
+      "rawBytes": 5314,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, Second Hekatompedon Temple",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+Second+Hekatompedon+Temple&object=Building",
+      "rawSha256": "0f35bddce2157d67a43645941fa9903c1cf3f253a75a5126be909e9956b91642",
+      "rawBytes": 5907,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, Temple A",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+Temple+A&object=Building",
+      "rawSha256": "febd477325d20c8e007f569fcd75489e66b3154a463841754656a988c62f4cac",
+      "rawBytes": 5116,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, Temple B",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+Temple+B&object=Building",
+      "rawSha256": "22ef83db7c5ca71aa92d4459a75789632b4b4b76aa1ea7c9ed96ecaf8fcfbffc",
+      "rawBytes": 5158,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, Temple C",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+Temple+C&object=Building",
+      "rawSha256": "333b64d9ff3aafb3bbae873d376293a60404d74e23b6eac4522cb5cb055ac0c3",
+      "rawBytes": 5198,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Samos, Temple D",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Samos%2c+Temple+D&object=Building",
+      "rawSha256": "f32065fb2e4a6e37d45454f009dc94bc254659681d9f0773ffd238c3985c3557",
+      "rawBytes": 4823,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Selinus, Temple C",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Selinus%2c+Temple+C&object=Building",
+      "rawSha256": "a436f6e68e98b56e231e60b20d9302bb87c665ce33f905383e0675ed5eb49e40",
+      "rawBytes": 10665,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Selinus, Temple E",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Selinus%2c+Temple+E&object=Building",
+      "rawSha256": "d096616f9bbe3317e4bc35ebd1fce16304eebb3d2590b24231fc7c6a245a0d1a",
+      "rawBytes": 12487,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Selinus, Temple F",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Selinus%2c+Temple+F&object=Building",
+      "rawSha256": "ae68b981d81c4838aa8f9f69358515ee91634bc7b48dff57716b3428c1c197f4",
+      "rawBytes": 11776,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Selinus, Temple G",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Selinus%2c+Temple+G&object=Building",
+      "rawSha256": "8be40accdac1a91752061e098c08ee3f1d6c26e7d74257f4d3de6221de936acf",
+      "rawBytes": 12930,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Smyrna, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Smyrna%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "d3e3391582fc4a93f3f17fc823e6f1e23a01869dcf301844b65d91f518a8ddd5",
+      "rawBytes": 10935,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Sounion, Older Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Sounion%2c+Older+Temple+of+Athena&object=Building",
+      "rawSha256": "e09fa0dbb21219ce7013adf39d989e777851028df273bcb6fa725d34b3bd4675",
+      "rawBytes": 4948,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Sounion, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Sounion%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "7b8f322d5e58e9d76f33e12f19d64b95acd13fed1a62752bb3358b815d673da8",
+      "rawBytes": 5823,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Sounion, Temple of Poseidon",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Sounion%2c+Temple+of+Poseidon&object=Building",
+      "rawSha256": "d76dd0ee06e924befa5cd297aa95f78d918be7192b8b4bacb630a64eaf852194",
+      "rawBytes": 9086,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Syracuse, Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Syracuse%2c+Temple+of+Apollo&object=Building",
+      "rawSha256": "94d1fa26ba958e9c93ea9bb311bdb521680f55d4378b941aea5c3aa67928f9aa",
+      "rawBytes": 8901,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Syracuse, Temple of Athena",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Syracuse%2c+Temple+of+Athena&object=Building",
+      "rawSha256": "22b83b652e577765653f04739c2defc0c68ad0569faef3ab03d6390323f21727",
+      "rawBytes": 7319,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Syracuse, Temple of Zeus Olympios",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Syracuse%2c+Temple+of+Zeus+Olympios&object=Building",
+      "rawSha256": "9fc20974d378270a9245a382e3d08eae6d8aba4779569e89846eae0c1097084a",
+      "rawBytes": 8366,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Temple of Diana, Aix-les-Bains",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Temple+of+Diana%2c+Aix-les-Bains&object=Building",
+      "rawSha256": "dd1e47ca2484ba0ed2e6f8460e9839cc20c7c4a2b6deac8d98257a64f88ca7a2",
+      "rawBytes": 8316,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Thermon, Megaron B",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Thermon%2c+Megaron+B&object=Building",
+      "rawSha256": "2239ef630d006644d0461356f82d66c88766c8bce41db9f4e07444cabfbe4d93",
+      "rawBytes": 5267,
+      "allExtractedFieldsMatch": true
+    },
+    {
+      "name": "Thermon, Temple of Apollo",
+      "url": "https://www.perseus.tufts.edu/hopper/artifact?name=Thermon%2c+Temple+of+Apollo&object=Building",
+      "rawSha256": "a3103e0fbf4784d048397162c6040925dd0366f72b8fcb25e2f7bb30052a500b",
+      "rawBytes": 9439,
+      "allExtractedFieldsMatch": true
+    }
+  ]
+}

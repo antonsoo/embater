@@ -1,0 +1,11 @@
+{
+  "cases": 567,
+  "circle_positions": 20412,
+  "checks": [
+    "exact decimal dimensions",
+    "unique corner sharing",
+    "selected ruler versus SVG geometry",
+    "all CSV endpoints",
+    "geometry inside viewBox"
+  ]
+}

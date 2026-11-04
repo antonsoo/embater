@@ -1,0 +1,16 @@
+[
+  {
+    "engine": "chromium",
+    "previous": "embater-4d919814f98e06239ee673de9ee7f4ac46856b76a6f0aa65128b0ae711c7b1d2",
+    "current": "27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19",
+    "retiredTabsWithheldReadiness": true,
+    "newEditionControlledOffline": true
+  },
+  {
+    "engine": "firefox",
+    "previous": "embater-4d919814f98e06239ee673de9ee7f4ac46856b76a6f0aa65128b0ae711c7b1d2",
+    "current": "27c1569c9898884850204dbe09f6ad720acc5cc9cb194b1171c62a509ea85d19",
+    "retiredTabsWithheldReadiness": true,
+    "newEditionControlledOffline": true
+  }
+]

@@ -1,0 +1,133 @@
+{
+  "method": "Independent SVG point extents and CSV parser; compare source quote with retained catalogue; source SHA-256 and native file identity",
+  "receipts": [
+    {
+      "file": "chromium-1440-dark.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    },
+    {
+      "file": "chromium-1440-light.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    },
+    {
+      "file": "chromium-375-dark.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    },
+    {
+      "file": "chromium-375-light.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    },
+    {
+      "file": "firefox-1440-dark.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    },
+    {
+      "file": "firefox-1440-light.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    },
+    {
+      "file": "firefox-375-dark.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    },
+    {
+      "file": "firefox-375-light.json",
+      "current_dimensions_D": [
+        15.0,
+        15.0
+      ],
+      "reference_dimensions_D": [
+        15.0,
+        30.0
+      ],
+      "unique_perimeter_columns_each": 30,
+      "native_csv_rows": 6,
+      "catalogue_quote_and_credits_match": true,
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "native_files_from_static_reading_match": true
+    }
+  ]
+}

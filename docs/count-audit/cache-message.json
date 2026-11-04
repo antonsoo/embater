@@ -1,0 +1,36 @@
+[
+  {
+    "engine": "chromium",
+    "refused": [
+      "changed bytes",
+      "wrong edition",
+      "foreign origin",
+      "unknown path",
+      "executable asset",
+      "client outside workshop scope",
+      "wrong font notice"
+    ],
+    "sourceReplacementVerified": true,
+    "remainingDamageWithheldReadiness": true,
+    "completeEditionReadyAfterBothReplacements": true,
+    "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+    "fontNoticeSha256": "da7e59f7ecc5b53057ca9c667cf4cfd585fdf4e521187ec7f1d5c0a8f7dc99bf"
+  },
+  {
+    "engine": "firefox",
+    "refused": [
+      "changed bytes",
+      "wrong edition",
+      "foreign origin",
+      "unknown path",
+      "executable asset",
+      "client outside workshop scope",
+      "wrong font notice"
+    ],
+    "sourceReplacementVerified": true,
+    "remainingDamageWithheldReadiness": true,
+    "completeEditionReadyAfterBothReplacements": true,
+    "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+    "fontNoticeSha256": "da7e59f7ecc5b53057ca9c667cf4cfd585fdf4e521187ec7f1d5c0a8f7dc99bf"
+  }
+]

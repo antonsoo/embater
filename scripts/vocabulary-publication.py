@@ -18,6 +18,7 @@ p.add_argument('--source',required=True)
 p.add_argument('--encoding',choices=['gzip','identity'],default='gzip')
 p.add_argument('--include-progress',action='store_true')
 p.add_argument('--include-reader',action='store_true')
+p.add_argument('--include-count',action='store_true')
 p.add_argument('--output',type=Path,required=True)
 a=p.parse_args()
 assert re.fullmatch('[a-f0-9]{40}',a.source)
@@ -56,6 +57,14 @@ if a.include_progress:
 if a.include_reader:
     paths += ['docs/source-loading-review.md','scripts/source-priority.mjs',
               'src/vocabulary-study.ts','scripts/vocabulary-audit.mjs']
+if a.include_count:
+    paths += ['docs/count-audit.md', 'src/core/count-measure.ts', 'src/core/count-state.ts',
+              'src/draw/count-measure.ts', 'src/ui/count-measure.ts', 'src/ui/compare.ts',
+              'src/count-study.ts', 'src/transfer.ts', 'src/assets.ts', 'scripts/offline-build.ts',
+              'scripts/count-reference-browser.mjs', 'scripts/count-reference-artifacts.py',
+              'examples/count-reference/comparison.json', 'examples/count-reference/comparison.csv',
+              'examples/count-reference/comparison.svg', 'examples/count-reference/reading.html.gz',
+              'examples/count-reference/reading.pdf']
 for path in paths:
     expected=subprocess.check_output(['git','show',f'{a.source}:{path}'],cwd=ROOT)
     items.append(('source',path,expected,f'https://raw.githubusercontent.com/antonsoo/embater/{a.source}/{path}'))

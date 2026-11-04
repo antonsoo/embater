@@ -15,7 +15,8 @@
       "!docs/vocabulary-audit",
       "!docs/progress-review",
       "!docs/source-loading-review",
-      "!docs/count-measure-review"
+      "!docs/count-measure-review",
+      "!docs/count-audit"
     ]
   },
   "formatter": {

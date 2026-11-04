@@ -1,0 +1,145 @@
+{
+  "policy": {
+    "connectionMs": 60000,
+    "idleMs": 15000,
+    "totalMs": 180000,
+    "maxBytes": 33554432
+  },
+  "long": true,
+  "sourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+  "sourceBytes": 594872,
+  "rows": [
+    {
+      "engine": "chromium",
+      "case": "slow",
+      "elapsedMs": 24284,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "sent": 594872,
+      "chunks": 146,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "chromium",
+      "case": "stall",
+      "elapsedMs": 15421,
+      "status": "The file stopped receiving data. Reconnect and try again.",
+      "sent": 4096,
+      "chunks": 1,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "chromium",
+      "case": "disconnect",
+      "elapsedMs": 839,
+      "status": "A source page or font could not be loaded. Reconnect and reload the source page.",
+      "sent": 4096,
+      "chunks": 1,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "chromium",
+      "case": "no-headers",
+      "elapsedMs": 60190,
+      "status": "The file did not begin loading. Reconnect and try again.",
+      "sent": 0,
+      "chunks": 0,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "chromium",
+      "case": "active-total",
+      "elapsedMs": 180304,
+      "status": "The file exceeded the three-minute transfer limit. Reconnect and try again.",
+      "sent": 46080,
+      "chunks": 180,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "chromium",
+      "case": "worker-repair-stall",
+      "elapsedMs": 15394,
+      "gzipInstalledEdition": true,
+      "twoTabInvalidation": true,
+      "incompleteBytesNeverReplaceCache": true
+    },
+    {
+      "engine": "chromium",
+      "case": "worker-repair-slow",
+      "elapsedMs": 22400,
+      "gzipInstalledEdition": true,
+      "twoTabInvalidation": true,
+      "incompleteBytesNeverReplaceCache": true
+    },
+    {
+      "engine": "chromium",
+      "case": "gzip-edition-offline",
+      "sourceMatches": true
+    },
+    {
+      "engine": "firefox",
+      "case": "slow",
+      "elapsedMs": 22437,
+      "status": "Complete printed page 71. The image matches the retained edition.",
+      "sent": 594872,
+      "chunks": 146,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "firefox",
+      "case": "stall",
+      "elapsedMs": 15462,
+      "status": "The file stopped receiving data. Reconnect and try again.",
+      "sent": 4096,
+      "chunks": 1,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "firefox",
+      "case": "disconnect",
+      "elapsedMs": 845,
+      "status": "A source page or font could not be loaded. Reconnect and reload the source page.",
+      "sent": 4096,
+      "chunks": 1,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "firefox",
+      "case": "no-headers",
+      "elapsedMs": 60818,
+      "status": "The file did not begin loading. Reconnect and try again.",
+      "sent": 0,
+      "chunks": 0,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "firefox",
+      "case": "active-total",
+      "elapsedMs": 180815,
+      "status": "The file exceeded the three-minute transfer limit. Reconnect and try again.",
+      "sent": 46336,
+      "chunks": 181,
+      "retrySourceMatches": true
+    },
+    {
+      "engine": "firefox",
+      "case": "worker-repair-stall",
+      "elapsedMs": 15522,
+      "gzipInstalledEdition": true,
+      "twoTabInvalidation": true,
+      "incompleteBytesNeverReplaceCache": true
+    },
+    {
+      "engine": "firefox",
+      "case": "worker-repair-slow",
+      "elapsedMs": 22602,
+      "gzipInstalledEdition": true,
+      "twoTabInvalidation": true,
+      "incompleteBytesNeverReplaceCache": true
+    },
+    {
+      "engine": "firefox",
+      "case": "gzip-edition-offline",
+      "sourceMatches": true
+    }
+  ]
+}

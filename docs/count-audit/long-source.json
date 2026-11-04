@@ -1,0 +1,20 @@
+[
+  {
+    "engine": "chromium",
+    "elapsedMs": 73149,
+    "sent": 594872,
+    "network": "actual JPEG, one 4096-byte chunk every 500 ms; designated verifying client takes the network stream, then the worker independently hashes the offered cache replacement",
+    "correctedSourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+    "repairedEditionReady": true,
+    "sourceAvailableAfterOfflineReload": true
+  },
+  {
+    "engine": "firefox",
+    "elapsedMs": 72853,
+    "sent": 594872,
+    "network": "actual JPEG, one 4096-byte chunk every 500 ms; designated verifying client takes the network stream, then the worker independently hashes the offered cache replacement",
+    "correctedSourceSha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569",
+    "repairedEditionReady": true,
+    "sourceAvailableAfterOfflineReload": true
+  }
+]

@@ -149,10 +149,10 @@ external source links still need a connection.
 
 [Method, limitations and browser review](docs/count-review.md).
 
-## Twice as long, measured where? (source checkout)
+## Twice as long, measured where?
 
 The count comparison now has a measuring bench at
-`compare.html#count-measuring`. With 6 × 11 columns and a uniform 3 D pitch,
+[the existing count room](https://antonsoo.github.io/embater/compare.html#count-measuring). With 6 × 11 columns and a uniform 3 D pitch,
 measure the same trial three ways:
 
 | Endpoints | Width | Length | Length / width |
@@ -161,7 +161,7 @@ measure the same trial three ways:
 | Outside shaft faces | 16 D | 31 D | 1.9375 |
 | Trial platform, 1 D beyond each shaft face | 18 D | 33 D | 1.8333… |
 
-Select **Halve the flank spacing**. Every column stays, but the centre rectangle
+Select **Hold this trial**, then **Use half the front pitch**. The red reference keeps its ruler and spacing. Every column stays, but the centre rectangle
 becomes square. Use the chosen reading's count or any selected catalogue count;
 the building supplies no dimensions. Unlock front and flank pitches, change the
 platform margin, and keep all three rulers visible in the measurement table.
@@ -171,15 +171,16 @@ does not establish which endpoints Vitruvius intended by *longitudo operis*.
 Shared links now preserve the whole comparison, including uncertain-record
 inclusion and every trial choice. The illustrated reading retains its opened
 state even if you keep experimenting while it saves. It embeds the complete
-printed page 69, fonts, licenses and native CSV/SVG links. Open it directly
+printed page 69, fonts, licenses and native JSON/CSV/SVG links. **Save comparison (JSON)** keeps both trials editable; reopening refuses unsupported or changed source counts without replacing current work. Open it directly
 from disk; read, print or extract the measurements without a connection.
 
-![The same six-by-eleven count with the centre ruler selected and independent spacing controls](docs/assets/count-measure-desktop.png)
+![A blue square beside its held red two-to-one rectangle, both using the same column count and drawing scale](docs/assets/count-reference-desktop.png)
 
-[Source, assumptions and operated review](docs/count-measure-review.md) ·
-[Actual downloaded SVG](examples/count-measure/trial.svg) ·
-[Measurements CSV](examples/count-measure/trial.csv) ·
-[Printed reading](examples/count-measure/reading.pdf).
+[Source, assumptions and operated audit](docs/count-audit.md) ·
+[Editable comparison](examples/count-reference/comparison.json) ·
+[Actual downloaded SVG](examples/count-reference/comparison.svg) ·
+[Measurements CSV](examples/count-reference/comparison.csv) ·
+[Printed reading](examples/count-reference/reading.pdf).
 The complete HTML is retained compressed:
 
 ```sh

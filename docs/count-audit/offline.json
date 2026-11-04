@@ -1,0 +1,25 @@
+{
+  "project": "embater",
+  "receipts": [
+    {
+      "engine": "chromium",
+      "cached503": true,
+      "network404Preserved": true,
+      "partialBodyFallbackMs": 2041,
+      "evictedPageNotRestored": true,
+      "missingFileReadiness": false,
+      "corruptInstallActivated": false,
+      "badStatus": "Offline saving did not finish. Reconnect and retry; complete saved files will be checked and reused."
+    },
+    {
+      "engine": "firefox",
+      "cached503": true,
+      "network404Preserved": true,
+      "partialBodyFallbackMs": 2179,
+      "evictedPageNotRestored": true,
+      "missingFileReadiness": false,
+      "corruptInstallActivated": false,
+      "badStatus": "Offline saving did not finish. Reconnect and retry; complete saved files will be checked and reused."
+    }
+  ]
+}

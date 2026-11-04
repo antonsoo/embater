@@ -1,0 +1,32 @@
+{
+  "format": "embater-count-comparison",
+  "version": 1,
+  "current": {
+    "temple": "priene-temple-of-athena",
+    "count": "gaps",
+    "includeUncertain": false,
+    "trial": {
+      "basis": "record",
+      "edge": "axes",
+      "frontPitch": 3,
+      "flankPitch": 1.5,
+      "margin": 1,
+      "equal": false
+    },
+    "flank": 11
+  },
+  "reference": {
+    "temple": "priene-temple-of-athena",
+    "count": "gaps",
+    "includeUncertain": false,
+    "trial": {
+      "basis": "record",
+      "edge": "axes",
+      "frontPitch": 3,
+      "flankPitch": 3,
+      "margin": 1,
+      "equal": true
+    },
+    "flank": 11
+  }
+}

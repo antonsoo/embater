@@ -139,3 +139,6 @@ Suggested repository description: **Draw ancient architectural rules, change the
 
 Suggested topics: `vitruvius`, `ancient-greek`, `latin`, `architecture`,
 `interactive-learning`, `svg`, `offline-first`.
+
+The subsequent [count and transfer audit](count-audit.md) records defects found in
+this local edition, the paired reference workflow, and later publication evidence.

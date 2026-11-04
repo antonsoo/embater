@@ -16,3 +16,6 @@ examples/roof/*.csv -text whitespace=cr-at-eol
 
 # Exact native compass CSVs retained through the public handoff.
 docs/review/roof-audit/*-compass.csv -text whitespace=cr-at-eol
+
+# Paired native measurements retain their original CSV line endings.
+examples/count-reference/*.csv -text whitespace=cr-at-eol
