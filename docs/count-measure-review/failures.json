@@ -1,0 +1,22 @@
+[
+  {
+    "engine": "chromium",
+    "snapshot": "original settings saved while current experiment changed",
+    "cancellation": "no partial download",
+    "corruptSource": "refused",
+    "retry": "saved",
+    "clipboard": "selectable exact link",
+    "malformedLink": "safe defaults",
+    "errors": []
+  },
+  {
+    "engine": "firefox",
+    "snapshot": "original settings saved while current experiment changed",
+    "cancellation": "no partial download",
+    "corruptSource": "refused",
+    "retry": "saved",
+    "clipboard": "selectable exact link",
+    "malformedLink": "safe defaults",
+    "errors": []
+  }
+]

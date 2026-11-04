@@ -1,0 +1,106 @@
+[
+  {
+    "id": "chromium-1440-light",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "chromium-1440-light.svg",
+      "csv": "chromium-1440-light.csv",
+      "html": "chromium-1440-light.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  },
+  {
+    "id": "chromium-1440-dark",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "chromium-1440-dark.svg",
+      "csv": "chromium-1440-dark.csv",
+      "html": "chromium-1440-dark.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  },
+  {
+    "id": "chromium-375-light",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "chromium-375-light.svg",
+      "csv": "chromium-375-light.csv",
+      "html": "chromium-375-light.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  },
+  {
+    "id": "chromium-375-dark",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "chromium-375-dark.svg",
+      "csv": "chromium-375-dark.csv",
+      "html": "chromium-375-dark.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  },
+  {
+    "id": "firefox-1440-light",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "firefox-1440-light.svg",
+      "csv": "firefox-1440-light.csv",
+      "html": "firefox-1440-light.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  },
+  {
+    "id": "firefox-1440-dark",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "firefox-1440-dark.svg",
+      "csv": "firefox-1440-dark.csv",
+      "html": "firefox-1440-dark.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  },
+  {
+    "id": "firefox-375-light",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "firefox-375-light.svg",
+      "csv": "firefox-375-light.csv",
+      "html": "firefox-375-light.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  },
+  {
+    "id": "firefox-375-dark",
+    "link": "http://127.0.0.1:4426/embater/compare.html?temple=selinus-temple-c&count=gaps&uncertain=yes&measure=record&edge=faces&front-pitch=3&flank-pitch=3&margin=1&equal=yes",
+    "files": {
+      "svg": "firefox-375-dark.svg",
+      "csv": "firefox-375-dark.csv",
+      "html": "firefox-375-dark.html"
+    },
+    "remoteRequestsFromSavedReading": [],
+    "errors": [],
+    "offline": true,
+    "axe": "no violations"
+  }
+]

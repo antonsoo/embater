@@ -1,0 +1,450 @@
+{
+  "scope": "local production build; no hosted-file claim",
+  "files": [
+    {
+      "path": "FONT-LICENSE.txt",
+      "bytes": 9519,
+      "sha256": "da7e59f7ecc5b53057ca9c667cf4cfd585fdf4e521187ec7f1d5c0a8f7dc99bf"
+    },
+    {
+      "path": "LICENSE.txt",
+      "bytes": 4653,
+      "sha256": "dd67b8ad08326fe7c8582fe64b5a4d2a76c9f0e22e04defe1f0b006d1dafec05"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "bytes": 5800,
+      "sha256": "4e70dbcb40aa2aafee80e9f109f434106608632a2b95e1314e6f22544ec04037"
+    },
+    {
+      "path": "assets/assets-B0-gaXNb.js",
+      "bytes": 7255,
+      "sha256": "d0aff8a8e4c9e6c0694656aed27497f0a2742947fb64b8c68645f124c5e12b90"
+    },
+    {
+      "path": "assets/assets-RXX621yo.css",
+      "bytes": 29962,
+      "sha256": "2eb3adf6188e75fdb837e0ef20b864f6fc1c46771c6710cb54af6aebdfd20d47"
+    },
+    {
+      "path": "assets/card-DWfB_TO0.js",
+      "bytes": 8216,
+      "sha256": "ed2e6fe68a9f37034cd0c6c3143607bb96908cfc98f796861f1f4e9544b66b49"
+    },
+    {
+      "path": "assets/compare-B3XUi2zE.js",
+      "bytes": 31525,
+      "sha256": "4fa661ed2f54411bac9bd568db3d8780d472b9f72aa4705ae2369962dd7c26f4"
+    },
+    {
+      "path": "assets/compare-f1IkfsQ-.css",
+      "bytes": 6583,
+      "sha256": "d8f159fa101350e38fd8194b61c361d122af95235d574f3469b2efc27ee88201"
+    },
+    {
+      "path": "assets/doorways-BvaIAwWY.css",
+      "bytes": 8830,
+      "sha256": "d2370c2b4fa19166c7a34b5eef64db0c30718bcfd440b8130dacfec3c2856634"
+    },
+    {
+      "path": "assets/doorways-DJei43mo.js",
+      "bytes": 53091,
+      "sha256": "ab75f83324898d4ea4de802beee8efdbc3f020929d6daeb7138cd25370c60067"
+    },
+    {
+      "path": "assets/drill-C8uOCXLh.css",
+      "bytes": 4257,
+      "sha256": "81d3cb23a1d7fc2e7cc77dfc94611c84c7799c5d882691d617ea1241df7c9a54"
+    },
+    {
+      "path": "assets/drill-lPwWir5j.js",
+      "bytes": 32248,
+      "sha256": "55af2a3e9e20b4592cd7271d756ae20b30a4ec1e33cb3969b2a00b12c2da4bd7"
+    },
+    {
+      "path": "assets/eb-garamond-greek-DCPER7xl.woff2",
+      "bytes": 19868,
+      "sha256": "f6475b2f7530f248b5d3a0237d97dc2e1987665153dcb888fbeea3b0f9019b56"
+    },
+    {
+      "path": "assets/eb-garamond-greek-ext-CW-BywWH.woff2",
+      "bytes": 11484,
+      "sha256": "3cd432d0dc2b756e69eea4325fd40f3515a31753445238f7fb5d349588192511"
+    },
+    {
+      "path": "assets/eb-garamond-italic-greek-Dc0bJcw6.woff2",
+      "bytes": 19588,
+      "sha256": "288deb73f6a27a306138997d310e4efbfba9bb623eca0829be0e4475ff164b71"
+    },
+    {
+      "path": "assets/eb-garamond-italic-greek-ext-nvsmRjVx.woff2",
+      "bytes": 11956,
+      "sha256": "4caf65dfd9a97861e20565bcec00273c1e157af7eb4f6af7bd61f3462feb7e09"
+    },
+    {
+      "path": "assets/eb-garamond-italic-latin-AvGrCMCN.woff2",
+      "bytes": 47940,
+      "sha256": "c664773f7e1d42d36326aa457becf7674236168c74cf7d74e87e5778ef7640f9"
+    },
+    {
+      "path": "assets/eb-garamond-italic-latin-ext-CYvIfuu9.woff2",
+      "bytes": 88576,
+      "sha256": "fa866520f8b7fb646ebc730fd0d3cbf8945db74d92f25fdd6fee486808652fdf"
+    },
+    {
+      "path": "assets/eb-garamond-latin-CRpggXlh.woff2",
+      "bytes": 44336,
+      "sha256": "88603384163d301aebd5bd769832a8bfe3c9004ec24178417b9817f0ad32c63b"
+    },
+    {
+      "path": "assets/eb-garamond-latin-ext-B6IpcvL2.woff2",
+      "bytes": 113928,
+      "sha256": "f8d3fa06e20989a938972165406a1b731cdc7fe33ff2b0b6798c75aa63709901"
+    },
+    {
+      "path": "assets/gfs-didot-greek-DZxOyfIP.woff2",
+      "bytes": 7192,
+      "sha256": "edd09b417c95a4d765076f3c52e2625bc1807e150dbcb1b2819f6734c3299f98"
+    },
+    {
+      "path": "assets/gfs-didot-greek-ext-BVzEyZiZ.woff2",
+      "bytes": 8968,
+      "sha256": "847f8505aa2ccc19d28b1b2681bb0b8ded127541084c54ad197968ed226e6238"
+    },
+    {
+      "path": "assets/gfs-didot-latin-BRiTEmo6.woff2",
+      "bytes": 14540,
+      "sha256": "f1748a5240008ec0964d1b001b64bc81b9abb171311110d558ef4b7acf508823"
+    },
+    {
+      "path": "assets/index-DxW8OV1d.js",
+      "bytes": 39234,
+      "sha256": "ca3ec55fe9ba3069a7c12d9e88be006452347acfb015120f6098c945c06f223c"
+    },
+    {
+      "path": "assets/plan-C1lY26az.js",
+      "bytes": 3229,
+      "sha256": "b9c2812b7de26ada4717366b8eb82fae43dcfcf683bb1304f6eaf2c2b748964d"
+    },
+    {
+      "path": "assets/plan-fonts-DdUM-jos.js",
+      "bytes": 831,
+      "sha256": "80c9856f8002500762b58b70efe686b05dc7fc7e2d4c8fded82a38c3499c5771"
+    },
+    {
+      "path": "assets/plans-DASpkrRf.js",
+      "bytes": 31853,
+      "sha256": "0ed772aa72de1378e20d519650132e39b283b865db0072c3ff2fd1f9de90769c"
+    },
+    {
+      "path": "assets/rules-C-xWpLlR.js",
+      "bytes": 31099,
+      "sha256": "13c152c8b8885e5c683bebcf923d64b345d3e0cbc27d16464f2c175967c8d5ed"
+    },
+    {
+      "path": "assets/temples-xs-Uk3fR.js",
+      "bytes": 17337,
+      "sha256": "7b0fc2a294be8855ddfd2af39c6e4302592e3c43d46dcd703ca87e936ecf917f"
+    },
+    {
+      "path": "assets/terms-jJgUPUvx.js",
+      "bytes": 33074,
+      "sha256": "91200b26054acb96b0739077a7b2d38bbffcd61234036a327453ffe15f6f5c7a"
+    },
+    {
+      "path": "assets/vocabulary-cjk-DcC6CKPN.woff2",
+      "bytes": 10580,
+      "sha256": "1cba7c1d5ded490b3dadb2b14ddd3ad3bea35dec01316a3078d362873d6a4362"
+    },
+    {
+      "path": "assets/vocabulary-devanagari-B3SMEurw.woff2",
+      "bytes": 20164,
+      "sha256": "4dbee8e3ee40c3ca4d444ac146f5a6b2ba76d9ea341e9dc968a72600c71894a1"
+    },
+    {
+      "path": "assets/vocabulary-fonts-D099o_w4.js",
+      "bytes": 21867,
+      "sha256": "00e832ce06ff920c8e041b757bad3de049fe419f18ac349278dfcebcffeb913a"
+    },
+    {
+      "path": "assets/vocabulary-latin-extra-D78IlaSS.woff2",
+      "bytes": 4292,
+      "sha256": "6b57b71e1fcf495d212d082991d4680863e68f14b20a21eff72fb71aaad5e36e"
+    },
+    {
+      "path": "assets/vocabulary-source-BEpTSFAO.js",
+      "bytes": 11105,
+      "sha256": "496a228bf7df63ba3af113f7b9de217c3c2067b396705e1ba2afde61c5030c2b"
+    },
+    {
+      "path": "assets/vocabulary-source-chqQSxjo.css",
+      "bytes": 1763,
+      "sha256": "4444ff9141a2a5ac636ddd8fd1a74bb77c64efbd9aaaab11e36f98fa20f6b43b"
+    },
+    {
+      "path": "assets/world-BcyEMIJY.js",
+      "bytes": 37862,
+      "sha256": "cca38977ca28937b7b9dcada651f35b3551c9d25251ecb8d40df0f8d80dfad19"
+    },
+    {
+      "path": "assets/world-DPTs-gex.js",
+      "bytes": 4198,
+      "sha256": "c88b1f9c9ee48ffe372a499e71ed348d3dee84c47511e10ee1ac0b93fcf57d69"
+    },
+    {
+      "path": "compare.html",
+      "bytes": 1580,
+      "sha256": "3e43d396ef81007191136608adac092d7f80c43fce0d0eb909e70e8b1d859242"
+    },
+    {
+      "path": "doorways.html",
+      "bytes": 1310,
+      "sha256": "d61758eb9faa0446b851f2b70e7a2dea4893c523ecc5fe609b82e68ae0d22627"
+    },
+    {
+      "path": "drill.html",
+      "bytes": 1924,
+      "sha256": "b84d0c80cc055dbd32b9dbe5b49348fb20d9e0e1df77bcaacb74e545847a8ac2"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 469,
+      "sha256": "15dc22d4ec9c8afa39f62deec9863d203a6959ee230331740ee9723877de4257"
+    },
+    {
+      "path": "fonts/VOCABULARY-OFL.txt",
+      "bytes": 5651,
+      "sha256": "010df7c205260119ed1725777402451ca9adda45f4962202bbc95319033245d8"
+    },
+    {
+      "path": "fonts/vocabulary-manifest.json",
+      "bytes": 4166,
+      "sha256": "bf591bd585950bf5fd5d84a6af5902a1e7c5124448b76cb7ad147df30af8bd77"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1769,
+      "sha256": "1d2d39121832105bbdcb8f35b2a6bcfdcd179450ddd5be6f1f62fbd1ad30a753"
+    },
+    {
+      "path": "plans.html",
+      "bytes": 1589,
+      "sha256": "f2cfe9e63177c7a5366ceedf243b51905158d02da1e7b6520bb26c6b495119de"
+    },
+    {
+      "path": "sources/doorways/krohn-88.jpg",
+      "bytes": 591681,
+      "sha256": "bd7e110dbd0db15f159cd48cde18910f9da0fb83128d58ae5beac673cbc115dd"
+    },
+    {
+      "path": "sources/doorways/krohn-89.jpg",
+      "bytes": 616874,
+      "sha256": "bf953dd783c62d9ec44bfea2863697400d0f5b5219c961d8ed5b5da416d76a0b"
+    },
+    {
+      "path": "sources/doorways/manifest.json",
+      "bytes": 1101,
+      "sha256": "719354930e4b0b810c899984cb152d8119ddcd21b689f7d488edd1c469553f9b"
+    },
+    {
+      "path": "sources/erechtheion/manifest.json",
+      "bytes": 1369,
+      "sha256": "9a3889663cd801f81852d6952bd27c2eb2dfafa1ea7effab1afc6d906aa73745"
+    },
+    {
+      "path": "sources/erechtheion/p98.jpg",
+      "bytes": 445339,
+      "sha256": "c3927e320fdc5005877d76fbd140c6a0c1a7c2a9e84bfa1db25241892cfdd761"
+    },
+    {
+      "path": "sources/erechtheion/p99.jpg",
+      "bytes": 579632,
+      "sha256": "c1cdb9daaa68cfd3f877c031adc34230015b9acaeac76c89431aeba2a60fa5ae"
+    },
+    {
+      "path": "sources/krohn-1912/manifest.json",
+      "bytes": 1659,
+      "sha256": "35097a67f070ce6fbaddb6f79ce8953a518939e7c94e59c5a0d17deb00730250"
+    },
+    {
+      "path": "sources/krohn-1912/p62.jpg",
+      "bytes": 657077,
+      "sha256": "46d29cbefa6278a86d1256c9a5859658a607437ac4ae15c3e7b492985c671327"
+    },
+    {
+      "path": "sources/krohn-1912/p63.jpg",
+      "bytes": 707592,
+      "sha256": "80f97b6ee1d826f60991f7671a7375205f6cd1bc715646b6da7318027dea5941"
+    },
+    {
+      "path": "sources/krohn-1912/p64.jpg",
+      "bytes": 682881,
+      "sha256": "4fe8bd16b7e7406db1b5bf1e4b15e7136629115001bce9890072043c2b3d47b5"
+    },
+    {
+      "path": "sources/krohn-1912/p66.jpg",
+      "bytes": 724523,
+      "sha256": "a7a7abd83e8ad3c98b62a7c843efdfbbef3d88ac8a3110a53999573afc74c060"
+    },
+    {
+      "path": "sources/krohn-1912/p69.jpg",
+      "bytes": 708563,
+      "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4"
+    },
+    {
+      "path": "sources/krohn-1912/p85.jpg",
+      "bytes": 673920,
+      "sha256": "d6cc055649e7ed679d602a6478ff11ea5bcbbdd839790e1e18d66ba1972e5bb1"
+    },
+    {
+      "path": "sources/krohn-1912/p86.jpg",
+      "bytes": 672397,
+      "sha256": "2bf235ca648b9e2d01b405a7fd2e41cb1f3849b539ec3d919d656e3affd326cc"
+    },
+    {
+      "path": "sources/vocabulary/manifest.json",
+      "bytes": 8088,
+      "sha256": "ec96f51b21a917bc9bfd22c4faa54cb2bd90f7e3fb2758945acc0f442a254c5d"
+    },
+    {
+      "path": "sources/vocabulary/p62.jpg",
+      "bytes": 601341,
+      "sha256": "c1125f64a73fa1ffe221801568e821541388138d9a28714c02138af833542fe1"
+    },
+    {
+      "path": "sources/vocabulary/p63.jpg",
+      "bytes": 640019,
+      "sha256": "0888ee3b81bbff29021eeb0ed0b651da2b62640dce2e3116cb8d54d20f99144b"
+    },
+    {
+      "path": "sources/vocabulary/p64.jpg",
+      "bytes": 635569,
+      "sha256": "37fed6fab142ec0e4b02c7d2b63a3549c8eade5b1f892be36850cab38d7b4f74"
+    },
+    {
+      "path": "sources/vocabulary/p65.jpg",
+      "bytes": 610983,
+      "sha256": "287cd00d599c2a7ebb1477f9b978c4b6b05a403e735cc973ce2542a1ce6eabbd"
+    },
+    {
+      "path": "sources/vocabulary/p66.jpg",
+      "bytes": 624874,
+      "sha256": "099d7b607c1bef734f02b7984dbc90d6ded4c486816e4c171ac89b8321c23a21"
+    },
+    {
+      "path": "sources/vocabulary/p67.jpg",
+      "bytes": 614606,
+      "sha256": "bc0a61f83c671d2b52996d3ab92ba6e3a6b21d560db3d3403c9c2cf3c87c30ef"
+    },
+    {
+      "path": "sources/vocabulary/p68.jpg",
+      "bytes": 632365,
+      "sha256": "d8b30e90b524b0f33f59b895c5c71b28f6f0a41a03e5a2c6a200e483a3db885a"
+    },
+    {
+      "path": "sources/vocabulary/p69.jpg",
+      "bytes": 625229,
+      "sha256": "29eb1a487e566f3ea1397f96412aeb7d51504f80c01741c81325f8eab77ec3fd"
+    },
+    {
+      "path": "sources/vocabulary/p70.jpg",
+      "bytes": 625326,
+      "sha256": "2921d20b0d70835a5c4af700cc878f1808f0a1d4028b0c99d2c1e61baaec640a"
+    },
+    {
+      "path": "sources/vocabulary/p71.jpg",
+      "bytes": 594872,
+      "sha256": "0fefc334b8fce2376b3b6ba3141f97464c9bbbbc32c322cfc9088a304527d569"
+    },
+    {
+      "path": "sources/vocabulary/p72.jpg",
+      "bytes": 621845,
+      "sha256": "6772f0d40cd53998ac21cf94ff14b0a915b95e33536528430975c195a94d49f8"
+    },
+    {
+      "path": "sources/vocabulary/p73.jpg",
+      "bytes": 626435,
+      "sha256": "b15ee14ae1955dc4cf4a510970301727bc7d2c2ff8049480ebfb21380c205aef"
+    },
+    {
+      "path": "sources/vocabulary/p74.jpg",
+      "bytes": 622397,
+      "sha256": "e0d002b98c95e98774b8e4051e47b0de235a161aced5928c55e839cba6ca13bd"
+    },
+    {
+      "path": "sources/vocabulary/p75.jpg",
+      "bytes": 546715,
+      "sha256": "59919f3bb3c5e2c3f2a09a0876a27af4c4ee1a131f83000bcc659fcaff75b2e7"
+    },
+    {
+      "path": "sources/vocabulary/p77.jpg",
+      "bytes": 607602,
+      "sha256": "b8167f04f3bb1e3b560f512d687daf2f694de5c9caeed62f547d2d6b929adedd"
+    },
+    {
+      "path": "sources/vocabulary/p78.jpg",
+      "bytes": 591085,
+      "sha256": "abc994d97fbb4341557565e12d610193bed0173d1bd115af7c454f06c7570d9e"
+    },
+    {
+      "path": "sources/vocabulary/p79.jpg",
+      "bytes": 626325,
+      "sha256": "6122b4d6775a175f647bd4a06b544bcfa98f1d56b87983796e3a995df464f1f9"
+    },
+    {
+      "path": "sources/vocabulary/p80.jpg",
+      "bytes": 624970,
+      "sha256": "394b92e67c7205834219d6b16a8947989cbd765d7b804f5b6dab80238a944ccb"
+    },
+    {
+      "path": "sources/vocabulary/p81.jpg",
+      "bytes": 594908,
+      "sha256": "598fb89a2df6780a325c5a6bddc274fe48cf6c6a734a180dcbbd4fdddfbe24f3"
+    },
+    {
+      "path": "sources/vocabulary/p83.jpg",
+      "bytes": 611469,
+      "sha256": "45c6b0d8eba0a585f9d21622ce4902a07898d1cd42f500296e1e505ed01304e5"
+    },
+    {
+      "path": "sources/vocabulary/p84.jpg",
+      "bytes": 627825,
+      "sha256": "81f7036a74620b90057609192051252fa713345536cc66b0e718ebb4857952a6"
+    },
+    {
+      "path": "sources/vocabulary/p85.jpg",
+      "bytes": 622185,
+      "sha256": "290c4da2d9187bcba32ee0b110169ff4c03f3ebfc85515cf4eb56da612549867"
+    },
+    {
+      "path": "sources/vocabulary/p86.jpg",
+      "bytes": 608837,
+      "sha256": "743329d758810af2163a31845966b323106b9bb14733b032c40454fbca446658"
+    },
+    {
+      "path": "sources/vocabulary/p90.jpg",
+      "bytes": 619889,
+      "sha256": "b46964877d37e719fd5fc4f846cf67496822bb1e4a7e6fce20be008c282df17b"
+    },
+    {
+      "path": "sources/vocabulary/p91.jpg",
+      "bytes": 605929,
+      "sha256": "0dc5a1bd452488b78cfcddbb90f145695e5fc833ad0bcef2d059825aebaa8df1"
+    },
+    {
+      "path": "sources/vocabulary/p92.jpg",
+      "bytes": 609590,
+      "sha256": "1263282daecb47d3ea1af27ef108f8970085e140556313e8a79c1d1931e90dab"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 20579,
+      "sha256": "7b89b802d7cc4e6807210e9de78f7e781733d09958b2b7a65d5794a3500a9200"
+    },
+    {
+      "path": "world.html",
+      "bytes": 1545,
+      "sha256": "7fa5dbddbda392dd659df40f6940ce07698a2cf5941556d65da8944fab87394c"
+    }
+  ]
+}

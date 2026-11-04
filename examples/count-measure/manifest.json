@@ -1,0 +1,25 @@
+{
+  "origin": "Actual Chromium desktop light browser downloads and print from the local production build",
+  "files": [
+    {
+      "file": "reading.html.gz",
+      "bytes": 916429,
+      "sha256": "a2508a8f83cb1156651214cedd42c060e631c7f326a81e02a0ed2678ef000ed7"
+    },
+    {
+      "file": "reading.pdf",
+      "bytes": 953736,
+      "sha256": "c513f204fabb8a5bffe890f6d8f76f029a932fa048f88e19e6cf2550442d5b3d"
+    },
+    {
+      "file": "trial.csv",
+      "bytes": 515,
+      "sha256": "ceb656a78a7de39462837ca59e8b82c3344985f555fdaebfc62ad3eb7fdc43d1"
+    },
+    {
+      "file": "trial.svg",
+      "bytes": 6251,
+      "sha256": "78c4594fe7c1a89c4bc4a3079d7e1bef6002036dbeb1529ab96bb96e1190794b"
+    }
+  ]
+}

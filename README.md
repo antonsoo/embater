@@ -149,6 +149,45 @@ external source links still need a connection.
 
 [Method, limitations and browser review](docs/count-review.md).
 
+## Twice as long, measured where? (source checkout)
+
+The count comparison now has a measuring bench at
+`compare.html#count-measuring`. With 6 × 11 columns and a uniform 3 D pitch,
+measure the same trial three ways:
+
+| Endpoints | Width | Length | Length / width |
+| --- | ---: | ---: | ---: |
+| Corner-column centres | 15 D | 30 D | 2 |
+| Outside shaft faces | 16 D | 31 D | 1.9375 |
+| Trial platform, 1 D beyond each shaft face | 18 D | 33 D | 1.8333… |
+
+Select **Halve the flank spacing**. Every column stays, but the centre rectangle
+becomes square. Use the chosen reading's count or any selected catalogue count;
+the building supplies no dimensions. Unlock front and flank pitches, change the
+platform margin, and keep all three rulers visible in the measurement table.
+This tests the additional assumptions needed to draw the passage's claim; it
+does not establish which endpoints Vitruvius intended by *longitudo operis*.
+
+Shared links now preserve the whole comparison, including uncertain-record
+inclusion and every trial choice. The illustrated reading retains its opened
+state even if you keep experimenting while it saves. It embeds the complete
+printed page 69, fonts, licenses and native CSV/SVG links. Open it directly
+from disk; read, print or extract the measurements without a connection.
+
+![The same six-by-eleven count with the centre ruler selected and independent spacing controls](docs/assets/count-measure-desktop.png)
+
+[Source, assumptions and operated review](docs/count-measure-review.md) ·
+[Actual downloaded SVG](examples/count-measure/trial.svg) ·
+[Measurements CSV](examples/count-measure/trial.csv) ·
+[Printed reading](examples/count-measure/reading.pdf).
+The complete HTML is retained compressed:
+
+```sh
+gzip -dc examples/count-measure/reading.html.gz > /tmp/embater-count-reading.html
+```
+
+This extension is local source work; its public delivery has not been verified.
+
 ## What it shows
 
 **The orders.** Doric, Ionic, Corinthian and Tuscan fronts with four, six or eight

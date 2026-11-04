@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Extend Count with three measuring endpoints, independent axial pitches, a
+  pitch lock and a chosen platform margin. Preserve the integer column count
+  while exposing the extra assumptions behind a length/width claim.
+- Keep the full comparison in shared links. Read complete source page 69 in
+  the room, and retain it with fonts, licenses and actual trial CSV/SVG in the
+  standalone reading. Snapshot before loading assets; support cancel and retry.
+
 - Operate Vitruvius's roof-height language in Orders: compare corner and middle
   envelopes, distinguish h/8 from h + h/8, enlarge by keyboard and save SVG/CSV.
 - Correct total palmette height, plinth mounting, actual corona extremities and

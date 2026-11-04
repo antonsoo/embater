@@ -1,0 +1,165 @@
+{
+  "downloads": [
+    {
+      "file": "chromium-1440-light.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    },
+    {
+      "file": "chromium-375-light.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    },
+    {
+      "file": "firefox-1440-light.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    },
+    {
+      "file": "firefox-375-light.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    },
+    {
+      "file": "chromium-1440-dark.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    },
+    {
+      "file": "chromium-375-dark.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    },
+    {
+      "file": "firefox-1440-dark.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    },
+    {
+      "file": "firefox-375-dark.svg",
+      "columns": 42,
+      "endpoints": {
+        "axes": [
+          15.0,
+          48.0
+        ],
+        "faces": [
+          16.0,
+          49.0
+        ],
+        "platform": [
+          18.0,
+          51.0
+        ]
+      },
+      "source_sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+      "fonts": 4
+    }
+  ],
+  "method": "SVG circle and rectangle extents / independent CSV parser; retained source and font SHA-256"
+}

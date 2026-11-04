@@ -1,0 +1,4 @@
+"endpoints","front_columns","flank_columns","front_axial_pitch_D","flank_axial_pitch_D","margin_beyond_shaft_D","width_D","length_D","length_over_width","model"
+"axes","6","17","3","3","1","15","48","3.2","modern uniform-diameter trial; no building dimensions inferred"
+"faces","6","17","3","3","1","16","49","3.0625","modern uniform-diameter trial; no building dimensions inferred"
+"platform","6","17","3","3","1","18","51","2.8333333333333335","modern uniform-diameter trial; no building dimensions inferred"
