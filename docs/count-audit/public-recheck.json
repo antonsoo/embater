@@ -1,0 +1,20 @@
+[
+  {
+    "path": "compare.html",
+    "bytes": 1580,
+    "sha256": "b03bc94d8ae5093a356be04f454e44202067850b66b38d111ad77a6da4552b74",
+    "matchesAfterBrowserJourneys": true
+  },
+  {
+    "path": "sw.js",
+    "bytes": 26038,
+    "sha256": "d54373de70473a76b7558f882469997d7baeebd64bab1e7cffd95bf77fa6c358",
+    "matchesAfterBrowserJourneys": true
+  },
+  {
+    "path": "sources/krohn-1912/p69.jpg",
+    "bytes": 708563,
+    "sha256": "783d80afa3c7401f826a74f484832d5f7e5d79255b19ae3e74b3bf35fa3878b4",
+    "matchesAfterBrowserJourneys": true
+  }
+]
