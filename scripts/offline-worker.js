@@ -48,7 +48,7 @@ async function installEdition() {
           return;
         }
       }
-      await target.add(request);
+      await fetchAndSave(path);
     },
     1,
   );
@@ -107,31 +107,34 @@ async function inspect() {
   return result;
 }
 
+function bufferedResponse(bytes, original) {
+  // Fetch exposes decoded bytes; the buffered response must describe that body,
+  // including when the origin used gzip or chunked transfer encoding.
+  const headers = new Headers(original.headers);
+  headers.delete("Content-Encoding");
+  headers.delete("Transfer-Encoding");
+  headers.set("Content-Length", String(bytes.byteLength));
+  return new Response(bytes, { status: original.status, statusText: original.statusText, headers });
+}
+
 async function fetchAndSave(path, parentSignal) {
-  const controller = new AbortController();
-  const abort = () => controller.abort();
-  parentSignal?.addEventListener("abort", abort, { once: true });
-  if (parentSignal?.aborted) abort();
-  const timer = setTimeout(abort, 10000);
-  try {
-    const response = await fetch(
-      new Request(path, { cache: "reload", integrity: INTEGRITY[path], signal: controller.signal }),
-    );
-    if (!response.ok) throw new Error("Offline repair could not fetch this file");
-    await (await caches.open(CACHE)).put(path, response.clone());
-    ++revision;
-    return response;
-  } finally {
-    clearTimeout(timer);
-    parentSignal?.removeEventListener("abort", abort);
-  }
+  const { bytes, response } = await transferBytes(path, parentSignal, true);
+  const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+  if (`sha256-${btoa(String.fromCharCode(...digest))}` !== INTEGRITY[path])
+    throw new Error("The file differs from the retained edition.");
+  parentSignal?.throwIfAborted();
+  const reviewed = bufferedResponse(bytes, response);
+  // Only complete, independently verified bytes may replace a saved file.
+  await (await caches.open(CACHE)).put(path, reviewed.clone());
+  ++revision;
+  return reviewed;
 }
 
 function repair() {
   if (repairing) return repairing;
   ++revision;
   const controller = new AbortController();
-  const deadline = setTimeout(() => controller.abort(), 45000);
+  const deadline = setTimeout(() => controller.abort(), TRANSFER_POLICY.totalMs);
   const job = (async () => {
     const before = await inspect();
     await pool(before.failures, async ({ path }) => {
@@ -172,6 +175,46 @@ self.addEventListener("activate", (event) => {
   );
 });
 self.addEventListener("message", (event) => {
+  if (event.data?.type === "VERIFIED_ASSET" && event.ports[0]) {
+    const port = event.ports[0];
+    event.waitUntil(
+      (async () => {
+        const url = new URL(event.data.url);
+        const client = event.source?.url ? new URL(event.source.url) : null;
+        const bytes = event.data.bytes;
+        if (
+          event.data.edition !== EDITION ||
+          !client ||
+          client.origin !== self.location.origin ||
+          !client.pathname.startsWith(BASE) ||
+          url.origin !== self.location.origin ||
+          !FILES.includes(url.pathname) ||
+          !/\.(jpg|woff2|txt)$/.test(url.pathname) ||
+          !(bytes instanceof ArrayBuffer) ||
+          bytes.byteLength > TRANSFER_POLICY.maxBytes
+        )
+          throw new Error("Unrecognized source replacement");
+        const hash = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+        if (`sha256-${btoa(String.fromCharCode(...hash))}` !== INTEGRITY[url.pathname])
+          throw new Error("Replacement bytes differ");
+        const type = url.pathname.endsWith(".jpg")
+          ? "image/jpeg"
+          : url.pathname.endsWith(".woff2")
+            ? "font/woff2"
+            : "text/plain;charset=utf-8";
+        await (await caches.open(CACHE)).put(
+          url.pathname,
+          new Response(bytes, {
+            headers: { "Content-Type": type, "Content-Length": String(bytes.byteLength) },
+          }),
+        );
+        ++revision;
+        await inspect();
+        port.postMessage({ stored: true, edition: EDITION });
+      })().catch(() => port.postMessage({ stored: false, edition: EDITION })),
+    );
+    return;
+  }
   if (event.data?.type === "CLAIM_EDITION" && event.data.edition === EDITION) {
     // A page opened during activation can miss the first claim snapshot.
     // Repeating the claim is safe; the page's controllerchange runs its byte audit.
@@ -204,6 +247,17 @@ self.addEventListener("fetch", (event) => {
   if (!FILES.includes(page)) return;
   if (event.request.mode !== "navigate") {
     if (event.request.cache === "reload") {
+      const claimedHash = event.request.headers.get("X-Embater-Asset-Sha256");
+      const verifiedClient =
+        event.request.destination === "" &&
+        /\.(jpg|woff2|txt)$/.test(page) &&
+        /^[a-f0-9]{64}$/.test(claimedHash ?? "") &&
+        `sha256-${btoa(String.fromCharCode(...claimedHash.match(/../g).map((part) => Number.parseInt(part, 16))))}` ===
+          INTEGRITY[page];
+      // Designated readers hash the complete bytes before using them. Let their
+      // explicit reload go to the network without a worker-owned response stream;
+      // they can offer the verified bytes back through VERIFIED_ASSET afterward.
+      if (verifiedClient) return;
       event.respondWith(
         (async () => {
           try {
@@ -232,11 +286,7 @@ self.addEventListener("fetch", (event) => {
       // Buffer the complete HTML: headers can arrive before a stalled body.
       const network = fetch(event.request).then(async (response) => {
         const body = await response.arrayBuffer();
-        return new Response(body, {
-          status: response.status,
-          statusText: response.statusText,
-          headers: response.headers,
-        });
+        return bufferedResponse(body, response);
       });
       const outcome = await Promise.race([
         network.then(

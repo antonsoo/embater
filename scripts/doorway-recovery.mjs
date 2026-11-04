@@ -337,8 +337,8 @@ try {
       });
       await p.locator("#door-save-reading").click();
       await wait(p, "#door-save-status", "Preparing");
-      await p.clock.fastForward(25001);
-      await wait(p, "#door-save-status", "Saving took too long");
+      await p.clock.fastForward(60001);
+      await wait(p, "#door-save-status", "did not begin loading");
       releaseTimeout();
       assert.equal(await p.locator("#door-save-reading").isEnabled(), true);
       await f.close();

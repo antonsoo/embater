@@ -1,3 +1,5 @@
+import { READING_DEADLINE_MS } from "./transfer";
+
 declare const __OFFLINE_EDITION__: string;
 interface EditionState {
   edition: string;
@@ -74,7 +76,7 @@ export function setupOffline(): void {
             : "Offline saving could not be checked. Reconnect and repair the offline copy.";
         }
       },
-      repairing ? 65000 : 12000,
+      repairing ? READING_DEADLINE_MS : 12000,
     );
     channel.port1.onmessage = (event: MessageEvent<EditionState>) => {
       clearTimeout(timer);

@@ -32,14 +32,14 @@ export function planHash(p: Plan): string {
   return `#${q}`;
 }
 
-export async function planReading(p: Plan): Promise<string> {
+export async function planReading(p: Plan, signal?: AbortSignal): Promise<string> {
   const pages = planPages(p);
   const [plates, fonts, license, code] = await Promise.all([
     Promise.all(
       PLAN_PLATES.filter((s) => pages.includes(s.page)).map(async (s) => ({
         ...s,
         data: dataUrl(
-          await verified(`${import.meta.env.BASE_URL}${s.path}`, s.sha256),
+          await verified(`${import.meta.env.BASE_URL}${s.path}`, s.sha256, signal),
           "image/jpeg",
         ),
       })),
@@ -47,12 +47,13 @@ export async function planReading(p: Plan): Promise<string> {
     Promise.all(
       PLAN_FONTS.map(async (f) => ({
         ...f,
-        data: dataUrl(await verified(f.url, f.hash), "font/woff2"),
+        data: dataUrl(await verified(f.url, f.hash, signal), "font/woff2"),
       })),
     ),
-    verified(`${import.meta.env.BASE_URL}FONT-LICENSE.txt`, FONT_LICENSE_HASH),
-    verified(`${import.meta.env.BASE_URL}LICENSE.txt`, CODE_LICENSE_HASH),
+    verified(`${import.meta.env.BASE_URL}FONT-LICENSE.txt`, FONT_LICENSE_HASH, signal),
+    verified(`${import.meta.env.BASE_URL}LICENSE.txt`, CODE_LICENSE_HASH, signal),
   ]);
+  signal?.throwIfAborted();
   if (plates.length !== pages.length)
     throw new Error("A cited source page is missing from this edition.");
   const card = PLAN_CARDS[p.type];

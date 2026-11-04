@@ -25,6 +25,7 @@ import type { Bounds, Elevation } from "../core/types";
 import { renderElevation } from "../draw/render";
 import { roofCsv, roofDrawing, roofSvg } from "../draw/roof";
 import { roofStudy } from "../roof-study";
+import { READING_DEADLINE_MS } from "../transfer";
 import { termCard } from "./card";
 import { $, esc } from "./dom";
 import { connectSourceCards, VocabularySource } from "./vocabulary-source";
@@ -596,7 +597,7 @@ export function mountOrders(root: HTMLElement): void {
       const deadline = setTimeout(
         () =>
           controller.abort(new Error("The reading did not finish. Reconnect and save it again.")),
-        45000,
+        READING_DEADLINE_MS,
       );
       try {
         const html = await roofStudy(
@@ -617,6 +618,7 @@ export function mountOrders(root: HTMLElement): void {
             : "The reading could not be saved. Reconnect and try again.";
       } finally {
         clearTimeout(deadline);
+        controller.abort();
         if (readingController === controller) {
           readingController = undefined;
           ($("#roof-study", root) as HTMLButtonElement).disabled = false;

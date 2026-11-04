@@ -391,6 +391,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
     assert.equal(await page.locator(".card-title").textContent(), "torus");
     await page.unroute("**/sources/vocabulary/p71.jpg");
     await page.locator('[data-term="oculus"]').click();
+    await page.clock.install();
     for (const operation of ["source", "export"]) {
       let finish;
       const hold = new Promise((resolve) => {
@@ -402,17 +403,19 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
       });
       if (operation === "source") {
         await page.locator('[data-source-rule="ionic-capital"]').first().click();
+        await page.clock.fastForward(60001);
         await page
           .locator("#drill-source-status")
-          .filter({ hasText: /did not finish loading/ })
+          .filter({ hasText: /did not begin loading/ })
           .waitFor({ timeout: 20000 });
         assert.ok(await page.locator("#drill-source-image").isHidden());
         await page.locator("[data-source-close]").click();
       } else {
         await page.locator("#drill-save-reading").click();
+        await page.clock.fastForward(60001);
         await page
           .locator("#drill-reading-status")
-          .filter({ hasText: /did not finish/ })
+          .filter({ hasText: /did not begin loading/ })
           .waitFor({ timeout: 25000 });
         assert.equal(await page.locator("#drill-save-reading").isEnabled(), true);
         assert.equal(downloads, 0);

@@ -14,6 +14,7 @@ import { EXCLUDED, FLANKS, PERSEUS_FETCHED, SLENDER } from "../data/temples";
 import { attachTooltips, type DotPoint, renderDotChart, year } from "../draw/charts";
 import { renderElevation } from "../draw/render";
 import { planHash, planReading, planSvg, verified } from "../plan-export";
+import { READING_DEADLINE_MS } from "../transfer";
 import { termCard } from "./card";
 import { $, esc } from "./dom";
 import { claimsTable, planPassages } from "./plan-reading";
@@ -184,7 +185,7 @@ export function mountPlans(root: HTMLElement): void {
   <p id="plan-save-status" role="status">The illustrated reading includes the selected plan, Latin, English and complete cited pages. It opens offline.</p>
   <label for="plan-link">Link to these choices</label><div class="plan-share"><input id="plan-link" type="text" readonly><button type="button" id="copy-plan">Copy plan link</button></div><p id="plan-copy-status" role="status"></p>
   <details class="plan-transcription"><summary>Read the Latin and English together</summary><div id="plan-passages"></div></details>
-  <div class="plan-source"><div><h3>Check the printed edition</h3><p>Krohn’s 1912 text, including the editor’s apparatus. These are complete pages, retained with the offline edition.</p><label for="plan-source-page">Printed page</label><select id="plan-source-page">${PLAN_PLATES.map((p) => `<option value="${p.page}"${p.page === 63 ? " selected" : ""}>${p.page} · ${p.page === 62 ? "in antis; prostyle begins" : p.page === 63 ? "prostyle and the other types" : p.page === 64 ? "rear access; column spacing" : p.page === 66 ? "34 or 38 inner columns" : p.page === 69 ? "double the spaces" : p.page === 85 ? "cella proportions begin" : "cella proportions continue"}</option>`).join("")}</select><button id="plan-source-zoom" type="button" aria-pressed="false">Enlarge page</button><p id="plan-source-status" role="status"></p><p><a id="plan-source-original" href="https://archive.org/details/vitruviidearchit00vitr_1">Original scan at Internet Archive</a></p></div><div id="plan-source-frame" tabindex="0" role="region" aria-label="Printed source page; scroll or use arrow keys when enlarged"><img id="plan-source-image" alt="" hidden></div></div>
+  <div class="plan-source"><div><h3>Check the printed edition</h3><p>Krohn’s 1912 text, including the editor’s apparatus. These are complete pages, retained with the offline edition.</p><label for="plan-source-page">Printed page</label><select id="plan-source-page">${PLAN_PLATES.map((p) => `<option value="${p.page}"${p.page === 63 ? " selected" : ""}>${p.page} · ${p.page === 62 ? "in antis; prostyle begins" : p.page === 63 ? "prostyle and the other types" : p.page === 64 ? "rear access; column spacing" : p.page === 66 ? "34 or 38 inner columns" : p.page === 69 ? "double the spaces" : p.page === 85 ? "cella proportions begin" : "cella proportions continue"}</option>`).join("")}</select><button id="plan-source-retry" type="button">Reload source page</button><button id="plan-source-zoom" type="button" aria-pressed="false">Enlarge page</button><p id="plan-source-status" role="status"></p><p><a id="plan-source-original" href="https://archive.org/details/vitruviidearchit00vitr_1">Original scan at Internet Archive</a></p></div><div id="plan-source-frame" tabindex="0" role="region" aria-label="Printed source page; scroll or use arrow keys when enlarged"><img id="plan-source-image" alt="" hidden></div></div>
 </section>
 <section class="evidence" id="evidence">
   <h2>Vitruvius against the buildings</h2>
@@ -341,23 +342,32 @@ export function mountPlans(root: HTMLElement): void {
     save(planSvg(plan(type, { clear, flank })), "image/svg+xml", `embater-${type}.svg`);
   });
   let saveRequest = 0;
+  let saveAbort: AbortController | undefined;
   const saveButton = $("#save-plan", root) as HTMLButtonElement;
   const cancel = $("#cancel-plan", root);
   cancel.addEventListener("click", () => {
     saveRequest++;
+    saveAbort?.abort();
     saveButton.disabled = false;
     cancel.hidden = true;
     $("#plan-save-status", root).textContent = "Save cancelled. No file was downloaded.";
   });
   saveButton.addEventListener("click", async () => {
     const request = ++saveRequest;
+    const abort = new AbortController();
+    saveAbort = abort;
+    const timer = setTimeout(
+      () =>
+        abort.abort(new Error("The reading exceeded its save deadline. Reconnect and try again.")),
+      READING_DEADLINE_MS,
+    );
     const snapshot = plan(type, { clear, flank });
     saveButton.disabled = true;
     cancel.hidden = false;
     $("#plan-save-status", root).textContent =
       `Preparing the ${snapshot.type} reading with ${snapshot.clear} D clear spacing…`;
     try {
-      const html = await planReading(snapshot);
+      const html = await planReading(snapshot, abort.signal);
       if (request !== saveRequest) return;
       save(html, "text/html", `embater-${snapshot.type}-reading.html`);
       $("#plan-save-status", root).textContent =
@@ -367,6 +377,9 @@ export function mountPlans(root: HTMLElement): void {
         $("#plan-save-status", root).textContent =
           error instanceof Error ? error.message : "The reading could not be saved.";
     } finally {
+      clearTimeout(timer);
+      abort.abort();
+      if (saveAbort === abort) saveAbort = undefined;
       if (request === saveRequest) {
         saveButton.disabled = false;
         cancel.hidden = true;
@@ -374,6 +387,7 @@ export function mountPlans(root: HTMLElement): void {
     }
   });
   let sourceRequest = 0;
+  let sourceAbort: AbortController | undefined;
   let sourceUrl: string | undefined;
   let enlarged = false;
   const sourceImage = $("#plan-source-image", root) as HTMLImageElement;
@@ -386,7 +400,10 @@ export function mountPlans(root: HTMLElement): void {
     zoom.setAttribute("aria-pressed", String(enlarged));
     zoom.textContent = enlarged ? "Fit page" : "Enlarge page";
   }
-  async function loadSource(): Promise<void> {
+  async function loadSource(refresh = false): Promise<void> {
+    sourceAbort?.abort();
+    const abort = new AbortController();
+    sourceAbort = abort;
     const request = ++sourceRequest;
     const selected = Number(($("#plan-source-page", root) as HTMLSelectElement).value);
     const plate = PLAN_PLATES.find((p) => p.page === selected);
@@ -396,7 +413,12 @@ export function mountPlans(root: HTMLElement): void {
     $("#plan-source-status", root).textContent = `Loading printed page ${selected}…`;
     ($("#plan-source-original", root) as HTMLAnchorElement).href = plate.url;
     try {
-      const bytes = await verified(`${import.meta.env.BASE_URL}${plate.path}`, plate.sha256);
+      const bytes = await verified(
+        `${import.meta.env.BASE_URL}${plate.path}`,
+        plate.sha256,
+        abort.signal,
+        refresh,
+      );
       if (request !== sourceRequest) return;
       const url = URL.createObjectURL(new Blob([bytes], { type: "image/jpeg" }));
       const img = new Image();
@@ -432,6 +454,7 @@ export function mountPlans(root: HTMLElement): void {
   $("#plan-source-page", root).addEventListener("change", () => {
     void loadSource();
   });
+  $("#plan-source-retry", root).addEventListener("click", () => void loadSource(true));
   zoom.addEventListener("click", () => {
     enlarged = !enlarged;
     sizeSource();

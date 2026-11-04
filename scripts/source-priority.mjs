@@ -10,6 +10,7 @@ const output = resolve(process.argv[3] ?? "/tmp/embater-source-priority");
 const tickMs = Number(process.env.EMBATER_SOURCE_TICK_MS ?? 8);
 assert(Number.isFinite(tickMs) && tickMs >= 1);
 const requireReady = process.env.REQUIRE_SOURCE_READY === "1";
+const finishSlow = process.env.EMBATER_FINISH_SLOW_INSTALL === "1";
 await mkdir(output, { recursive: true });
 const types = {
   ".html": "text/html",
@@ -108,13 +109,34 @@ async function imageHash(p) {
     );
 }
 for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
+  if (process.env.EMBATER_ENGINE && process.env.EMBATER_ENGINE !== engine) continue;
   const browser = await launcher.launch();
   try {
     for (const fault of requireReady ? [false, true] : [false]) {
       const server = await site(fault);
       const c = await browser.newContext({ viewport: { width: 375, height: 1000 } });
       const p = await c.newPage();
+      let progress;
       try {
+        progress = setInterval(async () => {
+          try {
+            console.log(
+              engine,
+              "install-progress",
+              await p.evaluate(async () => ({
+                status: document.querySelector("#offline-status")?.textContent,
+                worker: (await navigator.serviceWorker.getRegistration())?.installing?.state,
+                caches: await Promise.all(
+                  (await caches.keys()).map(async (name) => ({
+                    name,
+                    files: (await (await caches.open(name)).keys()).length,
+                  })),
+                ),
+              })),
+              server.stats(),
+            );
+          } catch {}
+        }, 30000);
         // Gate registration only to isolate foreground reading from background installation.
         await p.addInitScript(() => {
           const register = navigator.serviceWorker.register.bind(navigator.serviceWorker);
@@ -132,7 +154,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         await p
           .locator("#drill-source-status")
           .filter({ hasText: /^(Complete|The source|A source)/ })
-          .waitFor({ timeout: 22000 });
+          .waitFor({ timeout: 195000 });
         const firstStatus = await p.locator("#drill-source-status").textContent();
         const elapsed = Date.now() - started;
         if (!fault && elapsed < 13000) await p.waitForTimeout(13000 - elapsed);
@@ -149,7 +171,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           path: resolve(output, `${engine}-${fault ? "failed-install" : "partial-install"}.png`),
           fullPage: true,
         });
-        server.accelerate();
+        if (!finishSlow || fault) server.accelerate();
         if (fault) {
           await p.reload();
           await p.evaluate(() => window.__beginOffline());
@@ -157,7 +179,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         await p
           .locator("#offline-status")
           .filter({ hasText: /^Ready offline/ })
-          .waitFor({ timeout: 60000 });
+          .waitFor({ timeout: finishSlow ? 450000 : 60000 });
         assert(await p.evaluate(() => !!navigator.serviceWorker.controller));
         if (!fault) {
           await p.locator("#drill-source-retry").click();
@@ -184,6 +206,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
           ...stats,
           sourceSha256: sourceHash,
           fullEditionReadyAfterRecovery: true,
+          fullInstallStayedThrottled: finishSlow && !fault,
           controlledOfflineSource: true,
         });
         await writeFile(
@@ -208,7 +231,14 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
             "healthy partial installation must not be reported failed",
           );
         }
+      } catch (error) {
+        await writeFile(
+          resolve(output, `${engine}-failure.json`),
+          `${JSON.stringify({ error: String(error), stats: server.stats(), state: await p.evaluate(async () => ({ status: document.querySelector("#offline-status")?.textContent, registration: (await navigator.serviceWorker.getRegistration())?.installing?.state, caches: await Promise.all((await caches.keys()).map(async (name) => ({ name, files: (await (await caches.open(name)).keys()).length }))) })) }, null, 2)}\n`,
+        );
+        throw error;
       } finally {
+        clearInterval(progress);
         await c.close();
         await server.close();
       }

@@ -126,13 +126,6 @@ export class VocabularySource {
     this.controller?.abort();
     const controller = new AbortController();
     this.controller = controller;
-    const timer = setTimeout(
-      () =>
-        controller.abort(
-          new Error("The source page did not finish loading. Reconnect and reload it."),
-        ),
-      15000,
-    );
     this.image.hidden = true;
     this.image.removeAttribute("src");
     if (this.objectUrl) URL.revokeObjectURL(this.objectUrl);
@@ -172,8 +165,6 @@ export class VocabularySource {
           : error instanceof Error
             ? error.message
             : "The source page could not be verified. Reconnect and reload it.";
-    } finally {
-      clearTimeout(timer);
     }
   }
 }

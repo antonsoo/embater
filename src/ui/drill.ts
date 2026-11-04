@@ -15,6 +15,7 @@ import { buildDecks } from "../core/drill-decks";
 import { type DetailPose, detailAnchor, detailWindow } from "../core/drill-detail";
 import { BOXES, type Boxes, distractors, grade, pickNext, tally } from "../core/leitner";
 import { renderElevation } from "../draw/render";
+import { READING_DEADLINE_MS } from "../transfer";
 import { type VocabularyStudy, vocabularyStudy } from "../vocabulary-study";
 import { LANG_NAMES, termCard } from "./card";
 import { $, esc } from "./dom";
@@ -639,7 +640,7 @@ export function mountDrill(root: HTMLElement): void {
         controller.abort(
           new Error("The illustrated study did not finish loading. Reconnect and try again."),
         ),
-      20000,
+      READING_DEADLINE_MS,
     );
     try {
       const content = await vocabularyStudy(snapshot, controller.signal);
@@ -661,6 +662,7 @@ export function mountDrill(root: HTMLElement): void {
             : "The illustrated study could not be saved. Try again.";
     } finally {
       clearTimeout(timer);
+      controller.abort();
       if (request === readingRequest) {
         readingController = undefined;
         readingButton.disabled = false;

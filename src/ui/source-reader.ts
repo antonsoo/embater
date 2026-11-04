@@ -28,8 +28,7 @@ export function mountSourceReader(
     sourceAbort?.abort();
     const abort = new AbortController();
     sourceAbort = abort;
-    const request = ++pageRequest,
-      timer = setTimeout(() => abort.abort(), 12000);
+    const request = ++pageRequest;
     image.hidden = true;
     image.removeAttribute("src");
     if (currentUrl) {
@@ -67,7 +66,6 @@ export function mountSourceReader(
             ? e.message
             : "This source page could not be opened. Reload it to try again.";
     } finally {
-      clearTimeout(timer);
       if (url) URL.revokeObjectURL(url);
     }
   }

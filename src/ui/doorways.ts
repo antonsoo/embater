@@ -22,6 +22,7 @@ import {
 } from "../doorway-export";
 import { doorCorner, doorNumber, doorPlate, savedDoorSvg } from "../draw/doorway";
 import { measuredSvg } from "../draw/measured-doorway";
+import { READING_DEADLINE_MS } from "../transfer";
 import { $, esc } from "./dom";
 import { MEASURE_LIMITS, measureControls, measureResult, measureTable } from "./measured-reading";
 import { mountSourceReader } from "./source-reader";
@@ -271,7 +272,7 @@ export function mountDoorways(root: HTMLElement): void {
         abort.abort(
           new DOMException("Saving took too long. Reconnect and try again.", "TimeoutError"),
         ),
-      25000,
+      READING_DEADLINE_MS,
     );
     $("#door-save-reading", root).setAttribute("disabled", "");
     $("#door-cancel", root).hidden = false;
@@ -296,6 +297,7 @@ export function mountDoorways(root: HTMLElement): void {
       })
       .finally(() => {
         clearTimeout(timer);
+        abort.abort();
         saving = null;
         $("#door-save-reading", root).removeAttribute("disabled");
         $("#door-cancel", root).hidden = true;

@@ -1257,7 +1257,8 @@ code {
 }
 .plan-actions button,
 .plan-share button,
-#plan-source-zoom {
+#plan-source-zoom,
+#plan-source-retry {
   font: inherit;
   border: 1px solid var(--rule);
   background: var(--sheet);

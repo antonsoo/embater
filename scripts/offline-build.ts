@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import type { Plugin } from "vite";
+import { type Plugin, transformWithOxc } from "vite";
 
 async function filesIn(directory: string): Promise<string[]> {
   const files = await readdir(directory, { withFileTypes: true });
@@ -55,6 +55,12 @@ export async function offlineBuild(
             ]),
           ),
         );
+        // Compile the same typed transfer policy used by page modules, rather
+        // than maintaining a second timeout or stream reader in the worker.
+        const transfer = await transformWithOxc(
+          await readFile("src/transfer.ts", "utf8"),
+          "transfer.ts",
+        );
         await writeFile(
           "dist/sw.js",
           `/* Complete edition ${edition}; generated from the build. */
@@ -64,6 +70,7 @@ const EDITION = ${JSON.stringify(edition)};
 const BASE = ${JSON.stringify(base)};
 const FILES = ${JSON.stringify(urls)};
 const INTEGRITY = ${JSON.stringify(integrity)};
+${transfer.code.replace(/^export /gm, "")}
 ${await readFile("scripts/offline-worker.js", "utf8")}
 `,
         );
