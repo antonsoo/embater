@@ -23,6 +23,69 @@ export function setupOffline(): void {
   let lastInstance = "";
   let lastWorker: ServiceWorker | null = null;
   let pendingRegistration: ServiceWorkerRegistration | undefined;
+  let registering = false;
+  let resumePending = false;
+  let resumeAttempts = 0;
+  let savedCount = 0;
+  const watched = new WeakSet<ServiceWorker>();
+  async function resumeInstallation(): Promise<void> {
+    if (navigator.serviceWorker.controller || resumePending) return;
+    resumePending = true;
+    let count = 0;
+    try {
+      const name = `embater-${__OFFLINE_EDITION__}`;
+      if (await caches.has(name)) count = (await (await caches.open(name)).keys()).length;
+    } catch {
+      // Unavailable storage cannot provide evidence of installation progress.
+    }
+    if (navigator.serviceWorker.controller) {
+      resumePending = false;
+      return;
+    }
+    if (navigator.onLine && count > savedCount && resumeAttempts < 8) {
+      savedCount = count;
+      ++resumeAttempts;
+      repair.hidden = true;
+      status.textContent =
+        "Offline saving paused. Resuming complete saved files; keep this tab online.";
+      setTimeout(() => {
+        resumePending = false;
+        void registerOffline();
+      }, 1000);
+    } else {
+      resumePending = false;
+      status.textContent =
+        "Offline saving did not finish. Reconnect and retry; complete saved files will be checked and reused.";
+      repair.textContent = "Retry offline saving";
+      repair.hidden = false;
+      repair.disabled = false;
+    }
+  }
+  function watch(worker: ServiceWorker | null): void {
+    if (!worker || watched.has(worker)) return;
+    watched.add(worker);
+    worker.addEventListener("statechange", () => {
+      if (worker.state === "redundant") void resumeInstallation();
+    });
+    if (worker.state === "redundant") void resumeInstallation();
+  }
+  async function registerOffline(): Promise<void> {
+    if (registering) return;
+    registering = true;
+    try {
+      const registration = await navigator.serviceWorker.register(
+        `${import.meta.env.BASE_URL}sw.js`,
+      );
+      pendingRegistration = registration;
+      registration.addEventListener("updatefound", () => watch(registration.installing));
+      watch(registration.installing);
+      void inspect();
+    } catch {
+      await resumeInstallation();
+    } finally {
+      registering = false;
+    }
+  }
   function show(result: EditionState, worker: ServiceWorker): void {
     if (navigator.serviceWorker.controller !== worker) return;
     if (lastWorker !== worker || lastInstance !== result.instance) {
@@ -38,6 +101,7 @@ export function setupOffline(): void {
       repair.hidden = true;
       return;
     }
+    repair.textContent = "Repair offline copy";
     repair.disabled = result.repairing;
     repair.hidden = result.complete && !result.repairing;
     if (result.repairing)
@@ -95,14 +159,23 @@ export function setupOffline(): void {
   const initialDeadline = setTimeout(() => {
     if (!navigator.serviceWorker.controller) {
       const installing = pendingRegistration?.installing;
-      status.textContent =
-        installing && installing.state !== "redundant"
-          ? "Offline edition is still saving. Keep this tab online; the workshop remains usable."
-          : "Offline saving did not finish. Reload online to try again.";
+      if (installing && installing.state !== "redundant")
+        status.textContent =
+          "Offline edition is still saving. Keep this tab online; the workshop remains usable.";
+      else if (!resumePending) void resumeInstallation();
     }
   }, 12000);
   status.textContent = "Saving these pages for offline reading…";
-  repair.addEventListener("click", () => void inspect(true));
+  repair.addEventListener("click", () => {
+    if (navigator.serviceWorker.controller) void inspect(true);
+    else {
+      resumeAttempts = 0;
+      savedCount = 0;
+      repair.hidden = true;
+      status.textContent = "Saving these pages for offline reading…";
+      void registerOffline();
+    }
+  });
   navigator.serviceWorker.addEventListener("controllerchange", () => void inspect());
   navigator.serviceWorker.addEventListener(
     "message",
@@ -129,27 +202,10 @@ export function setupOffline(): void {
     if (document.visibilityState === "visible") void inspect();
   });
   void inspect();
-  void navigator.serviceWorker
-    .register(`${import.meta.env.BASE_URL}sw.js`)
-    .then((registration) => {
-      pendingRegistration = registration;
-      registration.addEventListener("updatefound", () => {
-        const worker = registration.installing;
-        worker?.addEventListener("statechange", () => {
-          if (worker.state === "redundant" && !navigator.serviceWorker.controller)
-            status.textContent = "Offline saving did not finish. Reload online to try again.";
-        });
-      });
-      // A navigation can begin between activation's client snapshot and claim.
-      // Ask the ready worker to claim again after this document has registered.
-      void navigator.serviceWorker.ready.then((ready) => {
-        if (!navigator.serviceWorker.controller)
-          ready.active?.postMessage({ type: "CLAIM_EDITION", edition: __OFFLINE_EDITION__ });
-      });
-      void inspect();
-    })
-    .catch(() => {
-      if (!navigator.serviceWorker.controller)
-        status.textContent = "Offline saving is unavailable. Keep this tab open.";
-    });
+  // A navigation can begin between activation's client snapshot and claim.
+  void navigator.serviceWorker.ready.then((ready) => {
+    if (!navigator.serviceWorker.controller)
+      ready.active?.postMessage({ type: "CLAIM_EDITION", edition: __OFFLINE_EDITION__ });
+  });
+  void registerOffline();
 }

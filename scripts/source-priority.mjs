@@ -140,10 +140,14 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         // Gate registration only to isolate foreground reading from background installation.
         await p.addInitScript(() => {
           const register = navigator.serviceWorker.register.bind(navigator.serviceWorker);
-          navigator.serviceWorker.register = (...args) =>
-            new Promise((resolve, reject) => {
+          let first = true;
+          navigator.serviceWorker.register = (...args) => {
+            if (!first) return register(...args);
+            first = false;
+            return new Promise((resolve, reject) => {
               window.__beginOffline = () => register(...args).then(resolve, reject);
             });
+          };
         });
         await p.goto(`${server.base}drill.html#deck=ionic&lang=la&mode=study&part=oculus`);
         await p.evaluate(() => document.fonts.ready);
@@ -173,8 +177,7 @@ for (const [engine, launcher] of Object.entries({ chromium, firefox })) {
         });
         if (!finishSlow || fault) server.accelerate();
         if (fault) {
-          await p.reload();
-          await p.evaluate(() => window.__beginOffline());
+          await p.locator("#offline-repair").click();
         }
         await p
           .locator("#offline-status")
