@@ -45,7 +45,10 @@
     "verify:roof-artifacts": "python3 scripts/roof-artifacts.py",
     "test:roof-study": "node scripts/roof-study-review.mjs",
     "verify:roof-study": "python3 scripts/roof-study-artifacts.py examples/roof",
-    "test:scroll-handoff": "node scripts/scroll-handoff.mjs"
+    "test:scroll-handoff": "node scripts/scroll-handoff.mjs",
+    "test:count-measure": "node scripts/count-measure-browser.mjs",
+    "test:count-failures": "node scripts/count-measure-failures.mjs",
+    "verify:count-artifacts": "python3 scripts/count-measure-artifacts.py"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

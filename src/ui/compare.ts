@@ -1,7 +1,18 @@
+import { dataUrl } from "../assets";
+import { countMeasureCsv, readCountTrial, writeCountTrial } from "../core/count-measure";
 import { vitruvianFlank } from "../core/evidence";
 import { RULES } from "../core/rules";
+import { countStudyAssets } from "../count-study";
 import { FLANKS, type FlankRow, PERSEUS_FETCHED } from "../data/temples";
+import { countMeasureSvg } from "../draw/count-measure";
+import {
+  CountMeasuringBench,
+  type MeasureSnapshot,
+  measurementNotes,
+  measurementTable,
+} from "./count-measure";
 import { $, esc } from "./dom";
+import { VocabularySource } from "./vocabulary-source";
 
 type Reading = "gaps" | "columns";
 const key = (r: FlankRow) =>
@@ -77,20 +88,33 @@ function sourceCard(row: FlankRow): string {
   <a href="${esc(row.url)}">Read the Perseus entry ↗</a>`;
 }
 
-function sheet(row: FlankRow, reading: Reading): string {
+async function sheet(
+  row: FlankRow,
+  reading: Reading,
+  trial: MeasureSnapshot,
+  reopen: string,
+  signal: AbortSignal,
+): Promise<string> {
+  const assets = await countStudyAssets(signal);
   const side = required(reading);
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(row.name)}: count comparison</title>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
-  <style>body{margin:3rem auto;padding:0 1.2rem;max-width:52rem;color:#232923;background:#f8f9f5;font:19px/1.6 Georgia,serif}h1,h2{line-height:1.2}svg{width:100%;height:auto}a{color:#1f4e9c;overflow-wrap:anywhere}blockquote{margin:1rem 0;border-left:2px solid #777;padding-left:1rem}.small{font-size:15px}@media print{body{margin:0;max-width:none;font-size:12pt}svg{max-height:16cm}h2{break-after:avoid}}</style></head><body>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; font-src data:; base-uri 'none'; form-action 'none'">
+  <style>body{margin:3rem auto;padding:0 1.2rem;max-width:52rem;color:#232923;background:#f8f9f5;font:19px/1.6 Georgia,serif}h1,h2{line-height:1.2}svg{width:100%;height:auto}a{color:#1f4e9c;overflow-wrap:anywhere}blockquote{margin:1rem 0;border-left:2px solid #777;padding-left:1rem}.small{font-size:15px}@media print{body{margin:0;max-width:none;font-size:12pt}svg{max-height:16cm}h2{break-after:avoid}}${assets.style}</style></head><body>
   <h1>Count the spaces</h1><p>${esc(row.name)} beside ${reading === "gaps" ? "Vitruvius’s count" : "a trial that doubles columns"}.</p>
   ${comparisonSvg(row, reading)}
   <p>The selected reading predicts ${side} flank columns. The catalogue records ${row.flank}. Six columns enclose five spaces. Doubling five spaces gives ten, with eleven columns at their ends; doubling six columns gives twelve, with eleven spaces.</p>
   <p>These are count diagrams with equal spacing, not measured plans. Matching a count cannot show that a builder followed Vitruvius. The buildings mostly precede his first-century BCE treatise. This curated catalogue is not a census.</p>
   <h2>The building record</h2>${sourceCard(row)}
+  <h2>Twice as long, measured where?</h2>
+  <figure class="trial-figure">${countMeasureSvg(trial.flank, trial.trial)}</figure>
+  ${measurementTable(trial)}${measurementNotes(trial)}
+  <p>The table rounds to four decimal places; the CSV retains JavaScript number precision. The diagram retains its fixed scale. This is a modern measuring experiment, not a reconstruction of the selected building.</p>
+  <p><a href="${dataUrl(new TextEncoder().encode(countMeasureCsv(trial.flank, trial.trial)), "text/csv;charset=utf-8")}" download="embater-count-trial.csv">Measurements CSV</a> · <a href="${dataUrl(new TextEncoder().encode(countMeasureSvg(trial.flank, trial.trial)), "image/svg+xml")}" download="embater-count-trial.svg">Trial plan SVG</a></p>
+  <details><summary>Exact saved choices</summary><pre id="count-trial-settings">${esc(JSON.stringify({ ...trial, countReading: reading, temple: key(row) }, null, 2))}</pre></details>
   <h2>Vitruvius III.4.3</h2><p lang="la">${esc(LATIN)}</p><p>${esc(ENGLISH)}</p>
   <p class="small">Latin: Krohn (1912), p. 69; new English translation, not independently reviewed. <a href="${witness}">Printed witness</a>.</p>
-  <p class="small">${esc(attribution)} <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">Data license</a>. Diagram and English: Anthony Mercer, PolyForm Noncommercial. This file contains the selected record and diagram and needs no network to read or print. External source links need a connection.</p>
-  <p><a href="https://antonsoo.github.io/embater/compare.html?temple=${key(row)}&count=${reading}">Reopen this comparison</a></p></body></html>`;
+  <p class="small">${esc(attribution)} <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">Data license</a>. Original diagram and English: Copyright 2026 Anthony Mercer, PolyForm Noncommercial 1.0.0. This file retains both drawings, the trial, the selected record, one complete Latin source page, fonts and full licenses. It needs no network to read, download its native files or print. External source links need a connection.</p>
+  <p><a href="${esc(reopen)}">Reopen this complete comparison</a></p>${assets.licenses}${assets.source}</body></html>`;
 }
 
 export function mountComparison(root: HTMLElement): void {
@@ -103,6 +127,7 @@ export function mountComparison(root: HTMLElement): void {
   let reading: Reading = params.get("count") === "columns" ? "columns" : "gaps";
   root.innerHTML = `<section class="count-intro"><p class="count-kicker">A word changes the plan · Vitruvius III.4.3</p><h1>Count the spaces.</h1>
   <p>Six columns across the front. Twice as many along the side? Read the noun carefully: Vitruvius doubles the <i>intercolumnia</i>, the spaces between them. Try both readings, then put the rule beside a building record.</p></section>
+  <p class="count-jump"><a href="#count-measuring">Try measuring the same count three ways ↓</a></p>
   <section class="count-bench" aria-label="Compare a rule with a temple">
     <div class="count-drawing"><div id="count-frame" class="count-frame" tabindex="0" role="region" aria-label="Count diagram; enlarge to read and pan"><figure id="count-plate"></figure></div><button type="button" id="count-zoom" aria-pressed="false" aria-controls="count-frame">Enlarge the diagram</button><p id="count-pan-hint" class="count-limit" hidden>Swipe or focus the diagram and use the arrow keys to pan.</p><p class="count-limit">Equal spacing makes the counts visible. These are not measured plans; column counts alone do not give a building’s length or width.</p></div>
     <aside class="count-controls">
@@ -112,15 +137,17 @@ export function mountComparison(root: HTMLElement): void {
       <select id="temple">${FLANKS.map((r) => `<option value="${key(r)}"${r === selected ? " selected" : ""}>${esc(r.name)}${r.status === "uncertain" ? " (?)" : ""}</option>`).join("")}</select>
       <p id="count-result" class="count-result"></p><div id="count-source" class="count-source"></div>
       <div class="count-downloads"><button type="button" id="save-count">Save illustrated reading</button><button type="button" id="save-count-svg">Save diagram (SVG)</button></div>
-      <p id="count-save-status" role="status" class="muted"></p>
+      <button type="button" id="cancel-count-save" hidden>Cancel reading save</button><p id="count-save-status" role="status" class="muted"></p>
     </aside>
   </section>
+  <section id="count-measuring" class="count-measuring" aria-labelledby="measure-heading"></section>
   <section class="count-population" id="records"><div><h2>Does the catalogue agree?</h2><p>There are ${FLANKS.length} six-column temple records here. Two restorations are uncertain. Include them to see how the denominator changes; select a building to read its evidence above.</p>
     <label><input id="include-uncertain" type="checkbox"> Include uncertain restorations</label><p id="count-tally" aria-live="polite"></p><button type="button" id="save-count-csv">Save these records (CSV)</button>
     <p class="muted">A count match is not evidence of influence. Most of these buildings are centuries older than Vitruvius. Perseus is a curated catalogue, not a census. This tally tests one prescription, not the merit of a building.</p></div>
     <div id="count-records" class="count-records" aria-label="Temple records"></div>
   </section>
-  <section class="count-reading-text" id="latin"><h2>The noun matters</h2><div class="count-language"><blockquote lang="la">${esc(LATIN)}</blockquote><div><p>${esc(ENGLISH)}</p><p class="muted">Vitruvius III.4.3, Krohn (1912), p. 69. New translation. <a href="${witness}">Read the printed page ↗</a></p></div></div>
+  <section class="count-reading-text" id="latin"><h2>The noun matters</h2><div class="count-language"><blockquote lang="la">${esc(LATIN)}</blockquote><div><p>${esc(ENGLISH)}</p><p class="muted">Vitruvius III.4.3, Krohn (1912), p. 69. New translation. <button type="button" id="count-open-source">Read the complete printed page</button> · <a href="${witness}">Archive record ↗</a></p></div></div>
+  <section class="drill-source" id="drill-source" aria-labelledby="drill-source-title" hidden></section>
   <dl class="count-words"><div><dt lang="la">intercolumnia</dt><dd>spaces between columns; neuter plural</dd></div><div><dt lang="la">totidem bis</dt><dd>twice as many; the number of spaces</dd></div><div><dt lang="la">columnarum</dt><dd>of columns; the rival count he criticizes</dd></div></dl>
   <p>His separate description of the peripteral plan is explicit: <span lang="la">senas columnas</span>, six columns at each end, and <span lang="la">cum angularibus undenas</span>, eleven along the sides including the corners (III.2.5). <a href="./plans.html#type=peripteral">Explore the seven plan types</a>.</p>
   <p class="muted">${esc(attribution)} <a href="https://creativecommons.org/licenses/by-sa/3.0/us/">License</a>. <a href="./plans.html#evidence">Date ranges, exclusions and the full method</a>.</p></section>`;
@@ -133,6 +160,24 @@ export function mountComparison(root: HTMLElement): void {
     $("#count-pan-hint", root).hidden = !enlarged;
   });
   const include = root.querySelector<HTMLInputElement>("#include-uncertain");
+  if (include) include.checked = params.get("uncertain") === "yes";
+  const bench = new CountMeasuringBench(
+    $("#count-measuring", root),
+    readCountTrial(params),
+    syncUrl,
+  );
+  const source = new VocabularySource($("#drill-source", root));
+  $("#count-open-source", root).addEventListener("click", () => {
+    if (rule) source.open(rule, $("#count-open-source", root));
+  });
+  function syncUrl(): void {
+    const url = new URL(location.href);
+    url.searchParams.set("temple", key(selected));
+    url.searchParams.set("count", reading);
+    url.searchParams.set("uncertain", include?.checked ? "yes" : "no");
+    writeCountTrial(url.searchParams, bench.snapshot().trial);
+    history.replaceState(null, "", url);
+  }
   const eligible = () => FLANKS.filter((r) => include?.checked || r.status === "ok");
   function refreshRecords(): void {
     const rows = eligible();
@@ -160,8 +205,14 @@ export function mountComparison(root: HTMLElement): void {
         ? `The counts agree: ${target} columns down each side.${selected.status === "uncertain" ? " This restoration is uncertain." : ""}`
         : `${selected.flank} recorded, ${target} predicted: ${Math.abs(difference)} ${difference > 0 ? "more" : "fewer"} columns down each side.${selected.status === "uncertain" ? " This restoration is uncertain." : ""}`;
     $("#count-source", root).innerHTML = sourceCard(selected);
-    $("#count-save-status", root).textContent = "";
+    if (!saving) $("#count-save-status", root).textContent = "";
     refreshRecords();
+    bench.update(
+      target,
+      selected.flank,
+      selected.name + (selected.status === "uncertain" ? " (uncertain restoration)" : ""),
+    );
+    syncUrl();
   }
   root.querySelector(".count-reading")?.addEventListener("change", (e) => {
     reading = (e.target as HTMLInputElement).value === "columns" ? "columns" : "gaps";
@@ -186,15 +237,53 @@ export function mountComparison(root: HTMLElement): void {
       control.focus();
     }
   });
-  include?.addEventListener("change", refreshRecords);
-  $("#save-count", root).addEventListener("click", () => {
-    save(
-      sheet(selected, reading),
-      `embater-${key(selected)}-${reading}.html`,
-      "text/html;charset=utf-8",
-    );
+  include?.addEventListener("change", () => {
+    refreshRecords();
+    syncUrl();
+  });
+  let saving: AbortController | undefined;
+  $("#cancel-count-save", root).addEventListener("click", () => saving?.abort());
+  $("#save-count", root).addEventListener("click", async () => {
+    if (saving) return;
+    syncUrl();
+    const snapshotRow = { ...selected };
+    const snapshotReading = reading;
+    const trial = bench.snapshot();
+    const reopen = new URL("https://antonsoo.github.io/embater/compare.html");
+    reopen.search = location.search;
+    const controller = new AbortController();
+    saving = controller;
+    const button = $("#save-count", root) as HTMLButtonElement;
+    const cancel = $("#cancel-count-save", root);
+    button.disabled = true;
+    cancel.hidden = false;
     $("#count-save-status", root).textContent =
-      "Saved the diagram, selected record, Latin, translation and source links. Open the HTML file offline or print it.";
+      "Saving the opened settings with verified source and font bytes… Changes made now belong to the next reading.";
+    const timeout = setTimeout(
+      () => controller.abort(new Error("Reading save timed out. Reconnect and try again.")),
+      120_000,
+    );
+    try {
+      const html = await sheet(snapshotRow, snapshotReading, trial, reopen.href, controller.signal);
+      controller.signal.throwIfAborted();
+      save(html, `embater-${key(snapshotRow)}-${snapshotReading}.html`, "text/html;charset=utf-8");
+      $("#count-save-status", root).textContent =
+        `Saved ${snapshotRow.name}, ${snapshotReading}, trial 6 × ${trial.flank}: drawings, measurements, complete printed page 69, fonts and licenses. Open the HTML offline or print it.`;
+    } catch (error) {
+      $("#count-save-status", root).textContent = controller.signal.aborted
+        ? controller.signal.reason instanceof Error &&
+          controller.signal.reason.name !== "AbortError"
+          ? controller.signal.reason.message
+          : "Reading save cancelled. No incomplete file was saved."
+        : error instanceof Error
+          ? error.message
+          : "The reading could not be saved. Try again.";
+    } finally {
+      clearTimeout(timeout);
+      saving = undefined;
+      button.disabled = false;
+      cancel.hidden = true;
+    }
   });
   $("#save-count-svg", root).addEventListener("click", () => {
     const svg = comparisonSvg(selected, reading).replace(

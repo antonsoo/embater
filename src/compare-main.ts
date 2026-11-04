@@ -1,6 +1,7 @@
 import "./fonts/fonts.css";
 import "./style.css";
 import "./compare.css";
+import "./vocabulary-source.css";
 import { mountComparison } from "./ui/compare";
 import { footer, masthead, setupTheme } from "./ui/dom";
 

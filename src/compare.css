@@ -248,3 +248,203 @@
     font-size: 19px;
   }
 }
+
+/* The measuring leaf extends the existing engraving, with choices beside the plate. */
+.count-measuring {
+  border-top: 2px solid var(--ink);
+  margin-top: 64px;
+  padding-top: 28px;
+}
+.measure-intro {
+  max-width: 74ch;
+}
+.measure-intro h2 {
+  font: 400 clamp(32px, 4vw, 52px) / 1.1 var(--display);
+  margin: 12px 0;
+}
+.measure-intro > p:last-child {
+  font-size: 21px;
+}
+.measure-bench {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 1fr);
+  gap: 40px;
+  margin-block: 28px;
+  align-items: start;
+}
+.measure-frame {
+  overflow: auto;
+  background: #f8f9f5;
+  border: 1px solid var(--rule);
+  max-height: 800px;
+}
+#measure-plate {
+  margin: 0;
+}
+#measure-plate svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.measure-frame.is-enlarged {
+  max-height: 75vh;
+}
+.measure-frame.is-enlarged #measure-plate {
+  min-width: 840px;
+}
+.measure-frame.is-enlarged svg {
+  max-height: none;
+}
+.measure-controls > label:first-child,
+.measure-range {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-top: 18px;
+}
+.measure-controls > label:first-child {
+  margin-top: 0;
+}
+.measure-controls output {
+  white-space: nowrap;
+  color: var(--caeruleum);
+}
+.measure-controls select {
+  width: 100%;
+  min-height: 44px;
+  background: var(--sheet);
+  color: var(--ink);
+  border: 1px solid var(--ink-soft);
+  font: 17px var(--text);
+  padding: 8px;
+  margin-top: 8px;
+}
+.measure-controls input[type="range"] {
+  width: 100%;
+  accent-color: var(--caeruleum);
+  min-height: 36px;
+  margin: 0;
+}
+.measure-edges {
+  border: 0;
+  padding: 0;
+  margin: 20px 0;
+}
+.measure-edges legend {
+  font-size: 18px;
+}
+.measure-edges label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+}
+.measure-edges input,
+.measure-lock input {
+  accent-color: var(--caeruleum);
+  width: 18px;
+  height: 18px;
+}
+.measure-lock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.measure-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.measure-presets button,
+#measure-zoom,
+#count-open-source,
+#cancel-count-save {
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  background: var(--sheet);
+  padding: 8px 12px;
+  font: 16px var(--text);
+  cursor: pointer;
+}
+#measure-zoom {
+  margin-top: 12px;
+}
+.measure-result {
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--caeruleum);
+}
+.measure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 19px;
+}
+.measure-table caption {
+  text-align: left;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+.measure-table th,
+.measure-table td {
+  text-align: right;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.measure-table th:first-child {
+  text-align: left;
+}
+.measure-selected {
+  color: var(--caeruleum);
+  background: var(--sheet);
+}
+.measure-derivation {
+  margin-block: 22px;
+  max-width: 78ch;
+}
+.measure-derivation summary {
+  font-size: 20px;
+  cursor: pointer;
+  min-height: 44px;
+}
+#measure-save-status input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  font: 16px var(--text);
+  color: var(--ink);
+  background: var(--sheet);
+}
+@media (max-width: 850px) {
+  .measure-bench {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .measure-frame.is-enlarged svg {
+    max-height: none;
+  }
+  .measure-table {
+    font-size: 16px;
+  }
+  .measure-table th,
+  .measure-table td {
+    padding: 12px 5px;
+  }
+  .measure-table th:first-child {
+    width: 40%;
+  }
+  .measure-intro > p:last-child {
+    font-size: 19px;
+  }
+}
+
+.count-jump {
+  margin: -8px 0 28px;
+  font-size: 18px;
+}
+.measure-bench > div {
+  min-width: 0;
+}
