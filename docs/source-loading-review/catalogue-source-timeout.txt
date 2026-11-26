@@ -20,10 +20,10 @@ Call log:
     10 × locator resolved to <p role="status" id="drill-source-status">The source page did not finish loading. Reconnect…</p>
        - unexpected value "The source page did not finish loading. Reconnect and reload it."
 
-    at captureRawStack (/home/antonsoloviev/work/projects/showcases/officina/node_modules/playwright-core/lib/coreBundle.js:8588:17)
-    at callMatcherAsStep (/home/antonsoloviev/work/projects/showcases/officina/node_modules/playwright/lib/matchers/expect.js:13310:57)
-    at Object.toContainText (/home/antonsoloviev/work/projects/showcases/officina/node_modules/playwright/lib/matchers/expect.js:13302:23)
-    at /home/antonsoloviev/work/projects/showcases/officina/scripts/embater-vocabulary-journeys.mjs:66:55 {
+    at captureRawStack (<workspace>/officina/node_modules/playwright-core/lib/coreBundle.js:8588:17)
+    at callMatcherAsStep (<workspace>/officina/node_modules/playwright/lib/matchers/expect.js:13310:57)
+    at Object.toContainText (<workspace>/officina/node_modules/playwright/lib/matchers/expect.js:13302:23)
+    at <workspace>/officina/scripts/embater-vocabulary-journeys.mjs:66:55 {
   matcherResult: {
     name: 'toContainText',
     expected: 'Complete printed page 71.',
